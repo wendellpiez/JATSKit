@@ -10,4 +10,7 @@ JATS documents along with BITS 0.2, the NLM book DTD specification
 CSS files for authoring in oXygen, and stylesheets (XSLT) for 
 production of HTML and PDF (preview) outputs.
 
+To install, copy the 'jats' directory into the 'frameworks' directory
+of your oXygen installation, and you should be good.
+
 Wendell Piez (http://www.wendellpiez.com), November 2012
