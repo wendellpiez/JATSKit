@@ -1,0 +1,213 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Piez: An oXygen framework for JATS</title>
+      <link rel="stylesheet" type="text/css" href="jats-preview-xslt/jats-preview.css">
+   </head>
+   <body>
+      <div id="article1-front" class="front">
+         <div class="metadata two-column table">
+            <div class="row">
+               <div class="cell">
+                  <h4 class="generated">Article Information</h4>
+                  <div class="metadata-group"></div>
+               </div>
+            </div>
+         </div>
+         <hr class="part-rule">
+         <div class="metadata centered">
+            <h1 class="document-title">An oXygen framework for JATS</h1>
+         </div>
+         <div class="metadata two-column table">
+            <div class="row">
+               <div class="cell" style="text-align: right">
+                  <div class="metadata-group">
+                     <p class="metadata-entry"><a id="d2e9">
+                           <!-- named anchor --></a>Wendell Piez
+                     </p>
+                  </div>
+               </div>
+               <div class="cell">
+                  <div class="metadata-group">
+                     <p class="metadata-entry"><a id="d2e14">
+                           <!-- named anchor --></a>Piez Consulting Services,
+                        <a target="xrefwindow" href="http://www.wendellpiez.org" id="d2e16">http://www.wendellpiez.org</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <hr class="section-rule">
+         <div class="metadata two-column table">
+            <div class="row">
+               <div class="cell" style="text-align: right">
+                  <h4 class="callout-title"><span class="generated">Abstract</span></h4>
+               </div>
+               <div class="cell">
+                  <p class="first" id="d2e19">Describing the components of a framework for JATS customization of oXygen XML Editor,
+                     the
+                     industy-leading XML IDE (integrated development environment).
+                  </p>
+               </div>
+            </div>
+         </div>
+         <hr class="part-rule">
+      </div>
+      <div id="article1-body" class="body">
+         <p class="first" id="d2e22">As the NLM/NISO JATS (Journal article tag suite) matures and standard practices and
+            tools
+            associated with it are better formalized, it becomes possible for users to develop
+            and share
+            customizations without fear of rapid obsolescence. This document describes such a
+            framework,
+            its contents, and strategies for customizing it further for local application and
+            development.
+         </p>
+         <p id="d2e24">Users should expect this framework to be useful as it stands for lightweight application
+            of
+            the JATS and for evaluation purposes (of JATS and/or of oXygen when using it). It
+            can also
+            (and should) be developed further to use local customizations of the JATS DTD, extensions
+            such
+            as Schematron validation to enforce local policies and business rules, and more and
+            better
+            stylesheets for editing and production.
+         </p>
+         <div class="section"><a id="d2e26">
+               <!-- named anchor --></a><h2 class="main-title">DTDs</h2>
+            <p id="d2e29">Normalized, "reduced" versions of the JATS DTDs have been produced for this distribution.
+               In addition to being flattened for better performance, these are populated with comments
+               derived from the public documentation in order to provide oXygen with legible, informative
+               popups (tool tips) in its content completion. There are seven DTDs in total: the Authoring
+               or "orange" DTD plus two forms, with and without OASIS tables, of the Publishing ("blue"),
+               Archiving ("green") and book (BITS) DTDs. They come from the following sources:
+               <div class="list"><a id="d2e31">
+                     <!-- named anchor --></a><ul>
+                     <li>
+                        <p id="d2e33">Archiving (green) DTD:
+                           <a target="xrefwindow" href="ftp://ftp.ncbi.nlm.nih.gov/pub/jats/archiving/1.0/jats-archiving-dtd-1.0.zip" id="d2e35">ftp://ftp.ncbi.nlm.nih.gov/pub/jats/archiving/1.0/jats-archiving-dtd-1.0.zip</a></p>
+                     </li>
+                     <li>
+                        <p id="d2e38">Publishing (blue) DTD:
+                           <a target="xrefwindow" href="ftp://ftp.ncbi.nlm.nih.gov/pub/jats/publishing/1.0/jats-publishing-dtd-1.0.zip" id="d2e40">ftp://ftp.ncbi.nlm.nih.gov/pub/jats/publishing/1.0/jats-publishing-dtd-1.0.zip</a></p>
+                     </li>
+                     <li>
+                        <p id="d2e43">Authoring (orange) DTD:
+                           <a target="xrefwindow" href="ftp://ftp.ncbi.nlm.nih.gov/pub/jats/articleauthoring/1.0/jats-articleauthoring-dtd-1.0.zip" id="d2e45">ftp://ftp.ncbi.nlm.nih.gov/pub/jats/articleauthoring/1.0/jats-articleauthoring-dtd-1.0.zip</a></p>
+                     </li>
+                     <li>
+                        <p id="d2e48">Book DTD (BITS),
+                           v0.2<a target="xrefwindow" href="ftp://ftp.ncbi.nlm.nih.gov/pub/jats/extensions/bits/0.2/bits-dtd-0.2.zip%0A              " id="d2e50">ftp://ftp.ncbi.nlm.nih.gov/pub/jats/extensions/bits/0.2/bits-dtd-0.2.zip
+                              </a></p>
+                     </li>
+                  </ul>
+               </div>
+            </p>
+            <div class="section"><a id="d2e52">
+                  <!-- named anchor --></a><h3 class="section-title">Catalog file</h3>
+               <p id="d2e55">A catalog file has been provided for the framework, which resolves references to each
+                  of
+                  the seven possible DTDs, via their formal public identifiers, to the optimized form
+                  of
+                  that DTD.
+               </p>
+            </div>
+         </div>
+         <div class="section"><a id="d2e57">
+               <!-- named anchor --></a><h2 class="main-title">CSS stylesheets for oXygen Author</h2>
+            <p id="d2e60">Stylesheets developed at Mulberry Technologies, Inc., and generously shared with the
+               community, provide two views: a "clean" view and a "labeled" view. They are largely
+               identical, the only difference being that many elements in the labeled view are provided
+               with (yes) identifying labels.
+            </p>
+            <p id="d2e62">The stylesheets have been extended to cover elements in the new BITS 0.2 DTD, and
+               should
+               also work tolerably well with both Publishing (blue) and Authoring (orange) documents.
+               There
+               may be gaps in its coverage of obscure elements, especially in Archiving (green) model.
+            </p>
+         </div>
+         <div class="section"><a id="d2e64">
+               <!-- named anchor --></a><h2 class="main-title">Preview stylesheets and transformations</h2>
+            <p id="d2e67">Preview stylesheets capable of rendering Publishing (blue) and Authoring (orange)
+               articles
+               are included from <a target="xrefwindow" href="https://github.com/NCBITools/JATSPreviewStylesheets" id="d2e69">https://github.com/NCBITools/JATSPreviewStylesheets</a>.
+               They are designed for local customization and extension, and include many options,
+               as
+               described in their documentation.
+            </p>
+            <div class="section"><a id="d2e72">
+                  <!-- named anchor --></a><h3 class="section-title">Transformations generating HTML</h3>
+               <p id="d2e75">HTML files resulting from running these scenarios will point to a CSS file here
+                  (distributed with the
+                  XSLT):<pre class="preformat">${frameworks}/jats/jats-preview-xslt/jats-preview.css</pre>For
+                  local use, you may prefer a different CSS; copy and edit the oXygen scenario generating
+                  HTML and modify the runtime parameter setting.</p>
+            </div>
+            <div class="section"><a id="d2e80">
+                  <!-- named anchor --></a><h3 class="section-title">Transformations generating PDF</h3>
+               <p id="d2e83">The Preview stylesheets also include XSL-FO stylesheets for generating PDF. These
+                  require
+                  a capable XSL-FO formatting engine (they were tested with AntennaHouse). So they are
+                  left
+                  for local users to set up.
+               </p>
+            </div>
+         </div>
+         <div class="section"><a id="d2e85">
+               <!-- named anchor --></a><h2 class="main-title">Document templates</h2>
+            <p id="d2e88">Document templates are provided for each of the main document types: Authoring, Archiving,
+               Publishing and BITS 0.2, without OASIS tables.
+            </p>
+         </div>
+         <div class="section"><a id="d2e90">
+               <!-- named anchor --></a><h2 class="main-title">Extending the framework</h2>
+            <p id="d2e93">Local developers may wish to do any or all of the following:
+               <div class="list"><a id="d2e95">
+                     <!-- named anchor --></a><ul>
+                     <li>
+                        <p id="d2e97">Rewrite the parameter setting in the HTML Transformation Scenario to point to a local
+                           (customized) CSS.
+                        </p>
+                     </li>
+                     <li>
+                        <p id="d2e100">Provide transformation scenarios for any of the JATS Preview transformations or
+                           production pipelines given in the package, or for customized transformations.
+                        </p>
+                     </li>
+                     <li>
+                        <p id="d2e103">Provide templates using the JATS DTDs supporting OASIS tables instead of or in
+                           addition to the templates here.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </p>
+            <p id="d2e105">In addition, there are many enhancements possible to this framework, including (but
+               not
+               limited to)
+               <div class="list"><a id="d2e107">
+                     <!-- named anchor --></a><ul>
+                     <li>
+                        <p id="d2e109">More and better CSS.</p>
+                     </li>
+                     <li>
+                        <p id="d2e112">Custom actions, tools and buttons in oXygen for operations useful in writing and
+                           editing JATS documents, such as graphics, list and table support.
+                        </p>
+                     </li>
+                  </ul>
+               </div>If you make such extensions, please consider sharing them with the community!
+            </p>
+         </div>
+      </div>
+      <div id="article1-footer" class="footer">
+         <hr class="part-rule">
+         <div class="branding">
+            <p>This display is generated from NISO JATS XML with <b>jats-html.xsl</b>. The XSLT engine is Saxonica.
+            </p>
+         </div>
+      </div>
+   </body>
+</html>

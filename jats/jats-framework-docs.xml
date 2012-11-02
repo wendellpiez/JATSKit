@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Article Authoring DTD v1.0 20120330//EN"
+  "JATS-articleauthoring1.dtd">
+<article dtd-version="1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <article-meta>
+      <title-group>
+        <article-title>An oXygen framework for JATS</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib>
+          <name>
+            <surname>Piez</surname>
+            <given-names>Wendell</given-names>
+          </name>
+          <aff>Piez Consulting Services,
+            <uri>http://www.wendellpiez.org</uri></aff>
+        </contrib>
+      </contrib-group>
+      <abstract>
+        <p>Describing the components of a framework for JATS customization of oXygen XML Editor, the
+          industy-leading XML IDE (integrated development environment).</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <p>As the NLM/NISO JATS (Journal article tag suite) matures and standard practices and tools
+      associated with it are better formalized, it becomes possible for users to develop and share
+      customizations without fear of rapid obsolescence. This document describes such a framework,
+      its contents, and strategies for customizing it further for local application and
+      development.</p>
+    <p>Users should expect this framework to be useful as it stands for lightweight application of
+      the JATS and for evaluation purposes (of JATS and/or of oXygen when using it). It can also
+      (and should) be developed further to use local customizations of the JATS DTD, extensions such
+      as Schematron validation to enforce local policies and business rules, and more and better
+      stylesheets for editing and production.</p>
+    <sec>
+      <title>DTDs</title>
+      <p>Normalized, "reduced" versions of the JATS DTDs have been produced for this distribution.
+        In addition to being flattened for better performance, these are populated with comments
+        derived from the public documentation in order to provide oXygen with legible, informative
+        popups (tool tips) in its content completion. There are seven DTDs in total: the Authoring
+        or "orange" DTD plus two forms, with and without OASIS tables, of the Publishing ("blue"),
+        Archiving ("green") and book (BITS) DTDs. They come from the following sources:<list>
+          <list-item>
+            <p>Archiving (green) DTD:
+                <ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/archiving/1.0/jats-archiving-dtd-1.0.zip</ext-link></p>
+          </list-item>
+          <list-item>
+            <p>Publishing (blue) DTD:
+                <ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/publishing/1.0/jats-publishing-dtd-1.0.zip</ext-link></p>
+          </list-item>
+          <list-item>
+            <p>Authoring (orange) DTD:
+                <ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/articleauthoring/1.0/jats-articleauthoring-dtd-1.0.zip</ext-link></p>
+          </list-item>
+          <list-item>
+            <p>Book DTD (BITS),
+                v0.2<ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/extensions/bits/0.2/bits-dtd-0.2.zip
+              </ext-link></p>
+          </list-item>
+        </list></p>
+      <sec>
+        <title>Catalog file</title>
+        <p>A catalog file has been provided for the framework, which resolves references to each of
+          the seven possible DTDs, via their formal public identifiers, to the optimized form of
+          that DTD.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>CSS stylesheets for oXygen Author</title>
+      <p>Stylesheets developed at Mulberry Technologies, Inc., and generously shared with the
+        community, provide two views: a "clean" view and a "labeled" view. They are largely
+        identical, the only difference being that many elements in the labeled view are provided
+        with (yes) identifying labels.</p>
+      <p>The stylesheets have been extended to cover elements in the new BITS 0.2 DTD, and should
+        also work tolerably well with both Publishing (blue) and Authoring (orange) documents. There
+        may be gaps in its coverage of obscure elements, especially in Archiving (green) model.</p>
+    </sec>
+    <sec>
+      <title>Preview stylesheets and transformations</title>
+      <p>Preview stylesheets capable of rendering Publishing (blue) and Authoring (orange) articles
+        are included from <ext-link>https://github.com/NCBITools/JATSPreviewStylesheets</ext-link>.
+        They are designed for local customization and extension, and include many options, as
+        described in their documentation.</p>
+      <sec>
+        <title>Transformations generating HTML</title>
+        <p>HTML files resulting from running these scenarios will point to a CSS file here
+          (distributed with the
+          XSLT):<preformat>${frameworks}/jats/jats-preview-xslt/jats-preview.css</preformat>For
+          local use, you may prefer a different CSS; copy and edit the oXygen scenario generating
+          HTML and modify the runtime parameter setting.</p>
+      </sec>
+      <sec>
+        <title>Transformations generating PDF</title>
+        <p>The Preview stylesheets also include XSL-FO stylesheets for generating PDF. These require
+          a capable XSL-FO formatting engine (they were tested with AntennaHouse). So they are left
+          for local users to set up.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Document templates</title>
+      <p>Document templates are provided for each of the main document types: Authoring, Archiving,
+        Publishing and BITS 0.2, without OASIS tables.</p>
+    </sec>
+    <sec>
+      <title>Extending the framework</title>
+      <p>Local developers may wish to do any or all of the following:<list>
+          <list-item>
+            <p>Rewrite the parameter setting in the HTML Transformation Scenario to point to a local
+              (customized) CSS.</p>
+          </list-item>
+          <list-item>
+            <p>Provide transformation scenarios for any of the JATS Preview transformations or
+              production pipelines given in the package, or for customized transformations.</p>
+          </list-item>
+          <list-item>
+            <p>Provide templates using the JATS DTDs supporting OASIS tables instead of or in
+              addition to the templates here.</p>
+          </list-item>
+        </list></p>
+      <p>In addition, there are many enhancements possible to this framework, including (but not
+        limited to)<list>
+          <list-item>
+            <p>More and better CSS.</p>
+          </list-item>
+          <list-item>
+            <p>Custom actions, tools and buttons in oXygen for operations useful in writing and
+              editing JATS documents, such as graphics, list and table support.</p>
+          </list-item>
+        </list>If you make such extensions, please consider sharing them with the community!</p>
+    </sec>
+  </body>
+</article>
