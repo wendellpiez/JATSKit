@@ -17,9 +17,7 @@
           Its design is based on the NLM Journal Archiving and Publishing DTDs
           through version 3.0.</p>
         </xt:description>
-        <xt:license>
-<![CDATA[
-This work is in the public domain. It includes artifacts published by the National
+        <xt:license><![CDATA[This work is in the public domain. It includes artifacts published by the National
 Library of Medicine (NLM) with the following language:
 
 "This work is in the public domain and may be reproduced, published or 
