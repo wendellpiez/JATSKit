@@ -3,18 +3,29 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
     <xt:extension id="v0.0.2">
-        <xt:location href="https://github.com/MenteaXML/oXygenJATSframework/archive/v0.0.2.zip"/>
-        <xt:version>0.0.2</xt:version>
+        <xt:location href="https://github.com/wendellpiez/oXygenJATSframework/archive/master.zip"/>
+        <xt:version>0.9.0</xt:version>
         <xt:oxy_version>14.0+</xt:oxy_version>
         <xt:type>framework</xt:type>
-        <xt:author>MenteaXML</xt:author>
+        <xt:author>Wendell Piez</xt:author>
         <xt:name>oXygenJATSFramework</xt:name>
-        <xt:description xmlns="http://www.w3.org/1999/xhtml"></xt:description>
+        <xt:description xmlns="http://www.w3.org/1999/xhtml">
+          <h2>oXygen XML Editor framework for NISO JATS 1.0 / NLM BITS</h2>
+          
+          <p>NISO JATS Z39.96-2012 defines an XML-based format for the authoring,
+          publication and archiving of journal articles and related information.
+          Its design is based on the NLM Journal Archiving and Publishing DTDs
+          through version 3.0.</p>
+        </xt:description>
         <xt:license>
 <![CDATA[
+This work is in the public domain. It includes artifacts published by the National
+Library of Medicine (NLM) with the following language:
 
-END USER LICENSE AGREEMENT
-
+"This work is in the public domain and may be reproduced, published or 
+otherwise used without the permission of the National Library of Medicine (NLM).
+  
+We request only that the NLM is cited as the source of the work."
 ]]></xt:license>
     </xt:extension>
 </xt:extensions>
