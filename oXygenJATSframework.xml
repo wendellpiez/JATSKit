@@ -8,7 +8,7 @@
         <xt:oxy_version>14.0+</xt:oxy_version>
         <xt:type>framework</xt:type>
         <xt:author>Wendell Piez</xt:author>
-        <xt:name>oXygenJATSFramework</xt:name>
+        <xt:name>JATS</xt:name><!--oXygenJATSFramework-->
         <xt:description xmlns="http://www.w3.org/1999/xhtml">
           <h2>oXygen XML Editor framework for NISO JATS 1.0 / NLM BITS</h2>
           
