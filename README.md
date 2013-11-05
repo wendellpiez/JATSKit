@@ -15,7 +15,7 @@ documentation for display in oXygen, CSS files for authoring, document
 templates, and XSLT stylesheets for production of HTML and PDF
 (preview) outputs.
 
-To install, copy the 'jats' directory into the 'frameworks' directory
-of your oXygen installation.
+See the project wiki at https://github.com/wendellpiez/oXygenJATSframework/wiki
+for installation instructions.
 
 Wendell Piez (http://www.wendellpiez.com), November 2012
