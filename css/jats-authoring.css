@@ -795,3 +795,7 @@ see-entry:before { content: "See: " }
 
 see-also-entry:before { content: "See also: " }
 
+xref:before {
+   link:"#" attr(rid);
+   content: url('../img/link.png');
+} 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<translation>
+<languageList>
+        <language description="English" lang="en_US"/>
+        <language description="German" lang="de_DE"/>
+        <language description="French" lang="fr_FR"/>
+        <language description="Japanese" lang="ja_JP"/>
+        <language description="Dutch" lang="nl_NL"/>
+    </languageList>
+<key value="bold">
+        <comment>Bold action name.</comment>
+        <val lang="en_US">Bold</val>
+        <val lang="de_DE">Fett</val>
+        <val lang="fr_FR">Gras</val>
+        <val lang="ja_JP">ボールド</val>
+        <val lang="nl_NL">Vet</val>
+    </key>
+<key type="action" value="bold_description">
+        <comment>Bold action description.</comment>
+        <val lang="en_US">Inserts the 'b' element</val>
+        <val lang="de_DE">Ausgewählten Text fett machen</val>
+        <val lang="fr_FR">Graisser le texte de documentation sélectionné</val>
+        <val lang="ja_JP">選択された文書のテキストをボールドに</val>
+        <val lang="nl_NL">Voeg het element 'b' in</val>
+    </key>
+<key value="italic">
+        <comment>Italic action name.</comment>
+        <val lang="en_US">Italic</val>
+        <val lang="de_DE">Kursiv</val>
+        <val lang="fr_FR">Italique</val>
+        <val lang="ja_JP">イタリック</val>
+        <val lang="nl_NL">Cursief</val>
+    </key>
+<key type="action" value="italic_description">
+        <comment>Italic action description.</comment>
+        <val lang="en_US">Inserts the 'i' element</val>
+        <val lang="de_DE">Ausgewählten Text kursiv machen</val>
+        <val lang="fr_FR">Mettre en italique le texte de documentation sélectionné</val>
+        <val lang="ja_JP">選択された文書のテキストをイタリックに</val>
+        <val lang="nl_NL">Voeg het element 'i' in</val>
+    </key>
+<key type="action" value="underline_description">
+        <comment>Underline action description.</comment>
+        <val lang="en_US">Inserts the 'u' element</val>
+        <val lang="de_DE">Fügt das 'u' Element ein</val>
+        <val lang="fr_FR">Insérer l'élément 'u'</val>
+        <val lang="ja_JP">'u' 要素の挿入</val>
+        <val lang="nl_NL">Voegt het element 'u' in</val>
+    </key>
+<key type="action" value="paragraph">
+        <comment>Insert Paragraph action name.</comment>
+        <val lang="en_US">Insert Paragraph</val>
+        <val lang="de_DE">Paragraph einfügen</val>
+        <val lang="fr_FR">Insérer Paragraphe</val>
+        <val lang="ja_JP">段落の挿入</val>
+        <val lang="nl_NL">Voeg paragraaf in</val>
+    </key>
+<key type="action" value="paragraph_description">
+        <comment>Insert Paragraph action description.</comment>
+        <val lang="en_US">Insert a new paragraph</val>
+        <val lang="de_DE">Einen neuen Dokumentaionsparagraph einfügen</val>
+        <val lang="fr_FR">Insérer un nouveau paragraphe de documentation</val>
+        <val lang="ja_JP">新しい文書パラグラフを挿入</val>
+        <val lang="nl_NL">Voeg een nieuwe paragraaf in</val>
+    </key>
+</translation>
