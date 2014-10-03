@@ -8,7 +8,7 @@
         <xt:oxy_version>14.0+</xt:oxy_version>
         <xt:type>framework</xt:type>
         <xt:author>Wendell Piez</xt:author>
-        <xt:name>JATS</xt:name><!--oXygenJATSFramework-->
+        <xt:name>JATS (v1.0.0)</xt:name><!--oXygenJATSFramework-->
         <xt:description xmlns="http://www.w3.org/1999/xhtml">
           <h2>oXygen XML Editor framework for NISO JATS 1.0 / NLM BITS</h2>
           <p>NISO JATS Z39.96-2012 defines an XML-based format for the authoring,
@@ -23,6 +23,29 @@
                <li>Insert ordered list</li>
                <li>Insert list item</li>
            </ol>             
+        </xt:description>
+        <xt:license><![CDATA[This work is in the public domain. It includes artifacts published by the National
+Library of Medicine (NLM) with the following language:
+
+"This work is in the public domain and may be reproduced, published or 
+otherwise used without the permission of the National Library of Medicine (NLM).
+  
+We request only that the NLM is cited as the source of the work."
+]]></xt:license>
+    </xt:extension>
+    <xt:extension id="v0.0.2">
+        <xt:location href="https://github.com/wendellpiez/oXygenJATSframework/archive/cbf5babebc3e01c864b0b31f5e374cb7b73afbcb.zip"/>
+        <xt:version>0.9.0</xt:version>
+        <xt:oxy_version>14.0+</xt:oxy_version>
+        <xt:type>framework</xt:type>
+        <xt:author>Wendell Piez</xt:author>
+        <xt:name>JATS (v0.9.0)</xt:name><!--oXygenJATSFramework-->
+        <xt:description xmlns="http://www.w3.org/1999/xhtml">
+            <h2>oXygen XML Editor framework for NISO JATS 1.0 / NLM BITS</h2>
+            <p>NISO JATS Z39.96-2012 defines an XML-based format for the authoring,
+                publication and archiving of journal articles and related information.
+                Its design is based on the NLM Journal Archiving and Publishing DTDs
+                through version 3.0.</p>
         </xt:description>
         <xt:license><![CDATA[This work is in the public domain. It includes artifacts published by the National
 Library of Medicine (NLM) with the following language:
