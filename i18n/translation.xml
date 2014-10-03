@@ -7,6 +7,22 @@
         <language description="Japanese" lang="ja_JP"/>
         <language description="Dutch" lang="nl_NL"/>
     </languageList>
+    <key type="action" value="listitem">
+        <comment>Insert step or List Item action name.</comment>
+        <val lang="en_US">Insert step or List Item</val>
+        <val lang="de_DE">Listeneintrag einfügen</val>
+        <val lang="fr_FR">Insérer Élément de Liste</val>
+        <val lang="ja_JP">リスト項目の挿入</val>
+        <val lang="nl_NL">Voeg lijstwaarde in</val>
+    </key>
+    <key type="action" value="listitem_description">
+        <comment>Insert step or List Item action description.</comment>
+        <val lang="en_US">Insert a step or list item</val>
+        <val lang="de_DE">Einen Listeneintrag einfügen</val>
+        <val lang="fr_FR">Insérer un élément de liste</val>
+        <val lang="ja_JP">リスト項目の挿入</val>
+        <val lang="nl_NL">Voeg een lijstwaarde in</val>
+    </key>
     <key type="action" value="list">
         <comment>List menu item name.</comment>
         <val lang="en_US">List</val>
@@ -15,7 +31,6 @@
         <val lang="ja_JP">リスト</val>
         <val lang="nl_NL">Lijst</val>
     </key>
-    
     <key type="action" value="unorderedList">
         <comment>Insert Unordered List action name.</comment>
         <val lang="en_US">Insert Unordered List</val>

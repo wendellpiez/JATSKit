@@ -344,6 +344,73 @@
 											</actionMode-array>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>listitem</String>
+										</field>
+										<field name="name">
+											<String>${i18n(listitem)}</String>
+										</field>
+										<field name="description">
+											<String>${i18n(listitem_description)}</String>
+										</field>
+										<field name="largeIconPath">
+											<String>/images/ListItem20.gif</String>
+										</field>
+										<field name="smallIconPath">
+											<String>/images/ListItem16.gif</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>self::list</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;list-item>&lt;p/>&lt;/list-item></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>ancestor-or-self::list-item</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;list-item>&lt;p/>&lt;/list-item></String>
+															</entry>
+															<entry>
+																<String>insertLocation</String>
+																<String>ancestor-or-self::*:list-item[1]</String>
+															</entry>
+															<entry>
+																<String>insertPosition</String>
+																<String>After</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -387,6 +454,11 @@
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>listitem</String>
+															</field>
+														</menuItem>
 														<menuItem>
 															<field name="actionID">
 																<String>unorderedList</String>
@@ -447,6 +519,11 @@
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
+																<String>listitem</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
 																<String>unorderedList</String>
 															</field>
 														</menuItem>
@@ -494,6 +571,11 @@
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
+											<toolbarItem>
+												<field name="actionID">
+													<String>listitem</String>
+												</field>
+											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
 													<String>unorderedList</String>
