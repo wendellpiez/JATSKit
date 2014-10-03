@@ -143,6 +143,14 @@
         <val lang="ja_JP">選択された文書のテキストをイタリックに</val>
         <val lang="nl_NL">Voeg het element 'italic' in</val>
     </key>
+    <key type="action" value="underline">
+        <comment>Underline action name.</comment>
+        <val lang="en_US">Underline</val>
+        <val lang="de_DE">Unterstreichen</val>
+        <val lang="fr_FR">Soulignage</val>
+        <val lang="ja_JP">アンダーライン</val>
+        <val lang="nl_NL">Onderstreep</val>
+    </key>
 <key type="action" value="underline_description">
         <comment>Underline action description.</comment>
         <val lang="en_US">Inserts the 'underline' element</val>
