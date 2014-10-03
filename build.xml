@@ -1,0 +1,13 @@
+<project basedir="." default="dist" name="JATS">
+    <target name="dist">
+        <mkdir dir="classes"/>
+        <javac srcdir="src" destdir="classes" includeantruntime="false" debug="on" source="1.6" target="1.6">
+            <classpath>
+                <fileset dir="D:\Program Files (x86)\Oxygen XML Editor 16.0\lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+        <jar destfile="jats.jar" basedir="classes"/>
+    </target>
+</project>

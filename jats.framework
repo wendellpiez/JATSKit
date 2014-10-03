@@ -17,6 +17,8 @@
 					<field name="classpath">
 						<String-array>
 							<String>${framework}/i18n/</String>
+							<String>${framework}/resources/</String>
+							<String>${framework}/jats.jar</String>
 						</String-array>
 					</field>
 					<field name="parentClassLoaderID">
@@ -574,7 +576,7 @@
 						<null/>
 					</field>
 					<field name="externalObjectInsertionHandler">
-						<null/>
+						<String>com.oxygenxml.jats.JATSExternalObjectInsertionHandler</String>
 					</field>
 					<field name="customAttributeValueEditor">
 						<null/>
