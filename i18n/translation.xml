@@ -7,6 +7,38 @@
         <language description="Japanese" lang="ja_JP"/>
         <language description="Dutch" lang="nl_NL"/>
     </languageList>
+    <key type="action" value="unorderedList">
+        <comment>Insert Unordered List action name.</comment>
+        <val lang="en_US">Insert Unordered List</val>
+        <val lang="de_DE">Ungeordnete Liste einfügen</val>
+        <val lang="fr_FR">Insérer liste non ordonnée</val>
+        <val lang="ja_JP">順序付けなしのリストを挿入</val>
+        <val lang="nl_NL">Voeg niet-geordende lijst in</val>
+    </key>
+    <key type="action" value="unorderedList_description">
+        <comment>Insert Unordered List action description.</comment>
+        <val lang="en_US">Insert an unordered list at the caret position</val>
+        <val lang="de_DE">Eine ungeordnete Liste an der Eingabeposition einfügen</val>
+        <val lang="fr_FR">Insérer une liste non ordonnée à la position du curseur</val>
+        <val lang="ja_JP">キャレット位置に順序付けなしのリストを挿入</val>
+        <val lang="nl_NL">Voeg een niet-geordende lijst in bij de cursorpositie</val>
+    </key>
+    <key type="action" value="orderedList">
+        <comment>Insert Ordered List action name.</comment>
+        <val lang="en_US">Insert Ordered List</val>
+        <val lang="de_DE">Geordnete Liste einfügen</val>
+        <val lang="fr_FR">Insérer liste ordonnée</val>
+        <val lang="ja_JP">順序付けリストの挿入</val>
+        <val lang="nl_NL">Voeg geordende lijst in</val>
+    </key>
+    <key type="action" value="orderedList_description">
+        <comment>Insert Ordered List action description.</comment>
+        <val lang="en_US">Insert an ordered list at the caret position</val>
+        <val lang="de_DE">Eine geordnete Liste an der Eingabeposition einfügen</val>
+        <val lang="fr_FR">Insérer une liste ordonnée à la position du curseur</val>
+        <val lang="ja_JP">キャレット位置に順序付けリストの挿入</val>
+        <val lang="nl_NL">Voeg een geordende lijst in bij de cursorpositie</val>
+    </key>
 <key value="bold">
         <comment>Bold action name.</comment>
         <val lang="en_US">Bold</val>

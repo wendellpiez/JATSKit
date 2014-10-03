@@ -258,6 +258,49 @@
 											</actionMode-array>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>unorderedList</String>
+										</field>
+										<field name="name">
+											<String>${i18n(unorderedList)}</String>
+										</field>
+										<field name="description">
+											<String>${i18n(unorderedList_description)}</String>
+										</field>
+										<field name="largeIconPath">
+											<String>/images/UnorderedList20.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>/images/UnorderedList16.gif</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;list list-type="bullet">&lt;list-item>&lt;p>&lt;/p>&lt;/list-item>&lt;/list></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -286,6 +329,12 @@
 											<menuItem>
 												<field name="actionID">
 													<String>Paragraph</String>
+												</field>
+											</menuItem>
+											<menuSeparator/>
+											<menuItem>
+												<field name="actionID">
+													<String>unorderedList</String>
 												</field>
 											</menuItem>
 										</menuEntry-array>
@@ -318,6 +367,12 @@
 											<menuItem>
 												<field name="actionID">
 													<String>Bold</String>
+												</field>
+											</menuItem>
+											<menuSeparator/>
+											<menuItem>
+												<field name="actionID">
+													<String>unorderedList</String>
 												</field>
 											</menuItem>
 										</menuEntry-array>
@@ -353,6 +408,12 @@
 											<toolbarItem>
 												<field name="actionID">
 													<String>Paragraph</String>
+												</field>
+											</toolbarItem>
+											<toolbarSeparator/>
+											<toolbarItem>
+												<field name="actionID">
+													<String>unorderedList</String>
 												</field>
 											</toolbarItem>
 										</toolbarEntry-array>
