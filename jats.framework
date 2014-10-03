@@ -114,7 +114,7 @@
 											<String>/images/Italic20.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/Italic16.gif</String>
+											<String>/images/Italic16.png</String>
 										</field>
 										<field name="accessKey">
 											<String>I</String>
@@ -263,16 +263,32 @@
 							<field name="menubarDescriptor">
 								<menu>
 									<field name="label">
-										<String>Menu</String>
+										<String>JATS</String>
 									</field>
 									<field name="accessKey">
-										<null/>
+										<String></String>
 									</field>
 									<field name="iconPath">
-										<null/>
+										<String></String>
 									</field>
 									<field name="menuEntriesDescriptorList">
-										<menuEntry-array/>
+										<menuEntry-array>
+											<menuItem>
+												<field name="actionID">
+													<String>Bold</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>Italic</String>
+												</field>
+											</menuItem>
+											<menuItem>
+												<field name="actionID">
+													<String>Paragraph</String>
+												</field>
+											</menuItem>
+										</menuEntry-array>
 									</field>
 								</menu>
 							</field>
@@ -311,7 +327,7 @@
 							<field name="toolbarDescriptor">
 								<toolbar>
 									<field name="id">
-										<String>Toolbar</String>
+										<String>JATS</String>
 									</field>
 									<field name="type">
 										<Integer>2</Integer>
