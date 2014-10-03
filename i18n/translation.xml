@@ -7,6 +7,15 @@
         <language description="Japanese" lang="ja_JP"/>
         <language description="Dutch" lang="nl_NL"/>
     </languageList>
+    <key type="action" value="list">
+        <comment>List menu item name.</comment>
+        <val lang="en_US">List</val>
+        <val lang="de_DE">Liste</val>
+        <val lang="fr_FR">Liste</val>
+        <val lang="ja_JP">リスト</val>
+        <val lang="nl_NL">Lijst</val>
+    </key>
+    
     <key type="action" value="unorderedList">
         <comment>Insert Unordered List action name.</comment>
         <val lang="en_US">Insert Unordered List</val>
