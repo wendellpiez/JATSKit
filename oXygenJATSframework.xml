@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
     <xt:extension id="v0.0.2">
         <xt:location href="https://github.com/wendellpiez/oXygenJATSframework/archive/master.zip"/>
-        <xt:version>0.9.0</xt:version>
+        <xt:version>1.0.0</xt:version>
         <xt:oxy_version>14.0+</xt:oxy_version>
         <xt:type>framework</xt:type>
         <xt:author>Wendell Piez</xt:author>
