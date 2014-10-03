@@ -7,17 +7,65 @@
         <language description="Japanese" lang="ja_JP"/>
         <language description="Dutch" lang="nl_NL"/>
     </languageList>
+    <key type="action" value="insert">
+        <comment>Insert menu item name.</comment>
+        <val lang="en_US">Insert</val>
+        <val lang="de_DE">Einfügen</val>
+        <val lang="fr_FR">Insérer</val>
+        <val lang="ja_JP">挿入</val>
+        <val lang="nl_NL">Voeg in</val>
+    </key>
+    <key type="action" value="Choose_image">
+        <comment>Image file chooser title.</comment>
+        <val lang="en_US">Choose image</val>
+        <val lang="de_DE">Grafik auswählen</val>
+        <val lang="fr_FR">Choisir image</val>
+        <val lang="ja_JP">画像の選択</val>
+        <val lang="nl_NL">Kies afbeelding</val>
+    </key>
+    <key value="Image_files">
+        <comment>Image file chooser file description.</comment>
+        <val lang="en_US">Image files</val>
+        <val lang="de_DE">Grafikdateien</val>
+        <val lang="fr_FR">Fichiers image</val>
+        <val lang="ja_JP">画像ファイル</val>
+        <val lang="nl_NL">Afbeeldingsbestanden</val>
+    </key>
+    <key value="style">
+        <comment>Style menu item name.</comment>
+        <val lang="en_US">Style</val>
+        <val lang="de_DE">Stil</val>
+        <val lang="fr_FR">Style</val>
+        <val lang="ja_JP">スタイル</val>
+        <val lang="nl_NL">Stijl</val>
+    </key>
+    <key type="action" value="insert.image">
+        <comment>Insert Image action name.</comment>
+        <val lang="en_US">Insert Image...</val>
+        <val lang="de_DE">Grafik einfügen...</val>
+        <val lang="fr_FR">Insérer Image...</val>
+        <val lang="ja_JP">画像の挿入...</val>
+        <val lang="nl_NL">Voeg afbeelding in...</val>
+    </key>
+    <key type="action" value="insert.image_description">
+        <comment>Insert Image action description.</comment>
+        <val lang="en_US">Insert Image Reference</val>
+        <val lang="de_DE">Grafikreferenz einfügen</val>
+        <val lang="fr_FR">Insert Image Reference</val>
+        <val lang="ja_JP">画像参照の挿入</val>
+        <val lang="nl_NL">Voeg afbeeldingreferentie in</val>
+    </key>
     <key type="action" value="listitem">
-        <comment>Insert step or List Item action name.</comment>
-        <val lang="en_US">Insert step or List Item</val>
-        <val lang="de_DE">Listeneintrag einfügen</val>
-        <val lang="fr_FR">Insérer Élément de Liste</val>
-        <val lang="ja_JP">リスト項目の挿入</val>
-        <val lang="nl_NL">Voeg lijstwaarde in</val>
+        <comment>String used for criterion name.</comment>
+        <val lang="en_US">List item</val>
+        <val lang="de_DE">Listenobjekt</val>
+        <val lang="fr_FR">Élément de liste</val>
+        <val lang="ja_JP">リスト項目</val>
+        <val lang="nl_NL">Lijstitem</val>
     </key>
     <key type="action" value="listitem_description">
-        <comment>Insert step or List Item action description.</comment>
-        <val lang="en_US">Insert a step or list item</val>
+        <comment>Insert List Item action description.</comment>
+        <val lang="en_US">Insert a list item</val>
         <val lang="de_DE">Einen Listeneintrag einfügen</val>
         <val lang="fr_FR">Insérer un élément de liste</val>
         <val lang="ja_JP">リスト項目の挿入</val>
@@ -73,11 +121,11 @@
     </key>
 <key type="action" value="bold_description">
         <comment>Bold action description.</comment>
-        <val lang="en_US">Inserts the 'b' element</val>
+        <val lang="en_US">Inserts the 'bold' element</val>
         <val lang="de_DE">Ausgewählten Text fett machen</val>
         <val lang="fr_FR">Graisser le texte de documentation sélectionné</val>
         <val lang="ja_JP">選択された文書のテキストをボールドに</val>
-        <val lang="nl_NL">Voeg het element 'b' in</val>
+        <val lang="nl_NL">Voeg het element 'bold' in</val>
     </key>
 <key value="italic">
         <comment>Italic action name.</comment>
@@ -89,19 +137,19 @@
     </key>
 <key type="action" value="italic_description">
         <comment>Italic action description.</comment>
-        <val lang="en_US">Inserts the 'i' element</val>
+        <val lang="en_US">Inserts the 'italic' element</val>
         <val lang="de_DE">Ausgewählten Text kursiv machen</val>
         <val lang="fr_FR">Mettre en italique le texte de documentation sélectionné</val>
         <val lang="ja_JP">選択された文書のテキストをイタリックに</val>
-        <val lang="nl_NL">Voeg het element 'i' in</val>
+        <val lang="nl_NL">Voeg het element 'italic' in</val>
     </key>
 <key type="action" value="underline_description">
         <comment>Underline action description.</comment>
-        <val lang="en_US">Inserts the 'u' element</val>
-        <val lang="de_DE">Fügt das 'u' Element ein</val>
-        <val lang="fr_FR">Insérer l'élément 'u'</val>
+        <val lang="en_US">Inserts the 'underline' element</val>
+        <val lang="de_DE">Fügt das 'underline' Element ein</val>
+        <val lang="fr_FR">Insérer l'élément 'underline'</val>
         <val lang="ja_JP">'u' 要素の挿入</val>
-        <val lang="nl_NL">Voegt het element 'u' in</val>
+        <val lang="nl_NL">Voegt het element 'underline' in</val>
     </key>
 <key type="action" value="paragraph">
         <comment>Insert Paragraph action name.</comment>

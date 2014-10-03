@@ -77,7 +77,7 @@
 											<String>B</String>
 										</field>
 										<field name="accelerator">
-											<String>ctrl B</String>
+											<String>M1 B</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
@@ -120,7 +120,7 @@
 											<String>I</String>
 										</field>
 										<field name="accelerator">
-											<String>ctrl I</String>
+											<String>M1 I</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
@@ -163,7 +163,7 @@
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<String>ctrl shift P</String>
+											<String>M1 M2 P</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
@@ -411,6 +411,87 @@
 											</actionMode-array>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>insert.image</String>
+										</field>
+										<field name="name">
+											<String>${i18n(insert.image)}</String>
+										</field>
+										<field name="description">
+											<String>${i18n(insert.image_description)}</String>
+										</field>
+										<field name="largeIconPath">
+											<String>/images/Image20.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>/images/Image16.gif</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>oxy:allows-child-element("graphic") or oxy:allows-child-element("inline-graphic") </String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap/>
+													</field>
+													<field name="operationID">
+														<String>com.oxygenxml.jats.InsertGraphicOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>Underline</String>
+										</field>
+										<field name="name">
+											<String>${i18n(underline)}</String>
+										</field>
+										<field name="description">
+											<String>${i18n(underline_description)}</String>
+										</field>
+										<field name="largeIconPath">
+											<String>/images/Underline20.png</String>
+										</field>
+										<field name="smallIconPath">
+											<String>/images/Underline16.gif</String>
+										</field>
+										<field name="accessKey">
+											<String>I</String>
+										</field>
+										<field name="accelerator">
+											<String>M1 U</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>element</String>
+																<String>&lt;underline/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -426,22 +507,61 @@
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array>
-											<menuItem>
-												<field name="actionID">
-													<String>Bold</String>
+											<menu>
+												<field name="label">
+													<String>${i18n(insert)}</String>
 												</field>
-											</menuItem>
-											<menuItem>
-												<field name="actionID">
-													<String>Italic</String>
+												<field name="accessKey">
+													<String></String>
 												</field>
-											</menuItem>
-											<menuItem>
-												<field name="actionID">
-													<String>Paragraph</String>
+												<field name="iconPath">
+													<String></String>
 												</field>
-											</menuItem>
-											<menuSeparator/>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>Paragraph</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.image</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
+											<menu>
+												<field name="label">
+													<String>${i18n(style)}</String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>Bold</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>Italic</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>Underline</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
 											<menu>
 												<field name="label">
 													<String>${i18n(list)}</String>
@@ -489,22 +609,61 @@
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array>
-											<menuItem>
-												<field name="actionID">
-													<String>Paragraph</String>
+											<menu>
+												<field name="label">
+													<String>${i18n(insert)}</String>
 												</field>
-											</menuItem>
-											<menuItem>
-												<field name="actionID">
-													<String>Italic</String>
+												<field name="accessKey">
+													<String></String>
 												</field>
-											</menuItem>
-											<menuItem>
-												<field name="actionID">
-													<String>Bold</String>
+												<field name="iconPath">
+													<String></String>
 												</field>
-											</menuItem>
-											<menuSeparator/>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>Paragraph</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.image</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
+											<menu>
+												<field name="label">
+													<String>${i18n(style)}</String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="iconPath">
+													<String></String>
+												</field>
+												<field name="menuEntriesDescriptorList">
+													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>Bold</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>Italic</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>Underline</String>
+															</field>
+														</menuItem>
+													</menuEntry-array>
+												</field>
+											</menu>
 											<menu>
 												<field name="label">
 													<String>${i18n(list)}</String>
@@ -567,7 +726,18 @@
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
+													<String>Underline</String>
+												</field>
+											</toolbarItem>
+											<toolbarSeparator/>
+											<toolbarItem>
+												<field name="actionID">
 													<String>Paragraph</String>
+												</field>
+											</toolbarItem>
+											<toolbarItem>
+												<field name="actionID">
+													<String>insert.image</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
