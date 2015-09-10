@@ -2,7 +2,7 @@
 
 @namespace xlink "http://www.w3.org/1999/xlink";
 
-article, book, book-part-wrapper {
+article, book, book-part-wrapper, collection, collection-list {
   display: block;
   margin:0.5em
 }
@@ -26,6 +26,12 @@ book-part { border-top: thin solid black; margin-top: 1em; padding-top: 0.5em }
 
 journal-meta, article-meta, collection-meta, book-meta, book-part-meta, sec-meta {
   display: block;
+}
+
+book-part-meta > *,
+book-meta > *,
+book-part > *{
+    display:block;
 }
 
 journal-id, journal-title, issn , publisher {
@@ -55,6 +61,11 @@ title-group article-title, book-title-group book-title {
 subtitle {
   display: block;
   font-size: 140%;
+}
+
+alt-title {
+  display: block;
+  font-size: 110%;
 }
 
 contrib-group, permissions {
@@ -152,7 +163,7 @@ email:after {
 }
 
 article-categories subject, article-meta > pub-date,
-volume, issue, fpage, lpage, article-meta > ext-link, history, pub-history {
+volume, issue, fpage, lpage, article-meta > ext-link, collection-member > ext-link, history, pub-history {
   display: block }
 
 history > *, pub-history > *, event > * { display: block }
@@ -222,7 +233,7 @@ kwd-group {
   margin-top: 0.5em;
 }
 
-kwd {
+kwd, collection-member {
   display:list-item;
   margin-left:2em;
 }
@@ -542,6 +553,10 @@ label:after {
   content: " ";
 }
 
+table-wrap > label {
+    display:block;
+}
+
 verse-group {
   display: block;
   margin-top: 0.5em;
@@ -747,6 +762,10 @@ ref {
 
 ref citation {
   display: block;
+}
+
+mixed-citation {
+    display:block;
 }
 
 citation *, mixed-citation * {
