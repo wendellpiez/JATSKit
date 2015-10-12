@@ -19,6 +19,7 @@
 							<String>${framework}/i18n/</String>
 							<String>${framework}/resources/</String>
 							<String>${framework}/jats.jar</String>
+							<String>${framework}/styleguide/</String>
 						</String-array>
 					</field>
 					<field name="parentClassLoaderID">
