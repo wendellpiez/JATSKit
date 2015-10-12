@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contentCompletionElementsMap 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/ccfilter/annotations http://www.oxygenxml.com/ns/ccfilter/annotations/ccAnnotationsSchemaFilter.xsd"
+  xmlns="http://www.oxygenxml.com/ns/ccfilter/annotations">
+
+  <!-- Small description XHTML file for each JATS element. -->
+  <mappingGroup xml:base="descriptions/">
+    <mapping elementName="contrib" path="contrib.html" type="content"/>
+    <mapping attributeName="contrib-type" path="attr-contrib-type.html" type="content"/>
+    <!-- add other element and attribute mappings -->
+  </mappingGroup>
+  
+  <!-- Links to tag library for some of the JATS elements. -->
+  <mappingGroup>
+    <mapping elementName="contrib" path="http://jats.nlm.nih.gov/publishing/tag-library/1.0/index.html?elem=contrib" type="link" linkText="JATS Tag Library"/>
+    <mapping attributeName="contrib-type" path="http://jats.nlm.nih.gov/publishing/tag-library/1.0/index.html?attr=contrib-type" type="link" linkText="JATS Tag Library"/>
+  </mappingGroup>
+</contentCompletionElementsMap>
