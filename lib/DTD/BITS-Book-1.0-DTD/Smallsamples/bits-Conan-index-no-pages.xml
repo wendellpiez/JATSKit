@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC 
+"-//NLM//DTD BITS Book Interchange DTD v1.0 20130520//EN"
+ "../BITS-book1.dtd">
+<book
+  dtd-version="1.0" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<book-meta><?mtl hellip?>
+<book-id></book-id>
+<book-title-group>
+<book-title>Our Next Book</book-title>
+</book-title-group>
+<pub-date>
+<year></year>
+</pub-date>
+<?mtl /hellip?></book-meta>
+<front-matter><?mtl hellip?>
+<toc><title-group><title></title></title-group>
+<toc-entry><title></title></toc-entry>
+</toc>
+<?mtl /hellip?></front-matter>
+<book-body><?mtl hellip?>
+<book-part>
+<book-part-meta>
+<title-group>
+<title></title>
+<subtitle></subtitle>
+<alt-title></alt-title>
+</title-group>
+</book-part-meta>
+<body>
+<p id="idx1-1"></p>
+<p id="idx1-2"></p>
+<p id="idx2-1"></p>
+<p id="idx2-2"></p>
+<p id="idx3-1"></p>
+<p id="idx3-2"></p>
+<p id="idx4-1"></p>
+<p id="idx4-2"></p>
+<p id="idx5-1"></p>
+<p id="idx5-2"></p>
+<p id="idx6-1"></p>
+<p id="idx6-2"></p>
+<p id="idx7-1"></p>
+<p id="idx7-2"></p>
+<p id="idx8-1"></p>
+<p id="idx8-2"></p>
+<p id="idx9"></p>
+<p id="idx10-1"></p>
+<p id="idx10-2"></p>
+<p id="idx11-1"></p>
+<p id="idx11-2"></p>
+<p id="idx12"></p>
+<p id="idx13-1"></p>
+<p id="idx13-2"></p>
+<p id="idx14"></p>
+<p id="idx15"></p>
+<p id="idx16-1"></p>
+<p id="idx16-2"></p>
+<p id="idx17-1"></p>
+<p id="idx17-2"></p>
+<p id="idx18-1"></p>
+<p id="idx18-2"></p>
+<p id="idx19-1"></p>
+<p id="idx19-2"></p>
+<p id="idx20-1"></p>
+<p id="idx20-2"></p>
+</body>
+</book-part>
+<?mtl /hellip?></book-body>
+<book-back>
+<index>
+<title-group><title>Subject Index</title></title-group>
+<?mtl hellip?><?mtl /hellip?>
+<index-div>
+<title-group>
+<title>I</title>
+</title-group>
+<?mtl hellip?><?mtl /hellip?>
+<index-entry>
+<term>Interstate commerce:</term>
+<?mtl hellip?><?mtl /hellip?>
+<index-entry>
+<term>State powers, taxation and regulation</term>
+<nav-pointer-group>
+<nav-pointer rid="idx1-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx1-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group>
+<index-entry>
+<term>Balancing test, modern standard</term>
+<nav-pointer-group>
+<nav-pointer rid="idx2-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx2-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group></index-entry>
+<index-entry>
+<term>Congressional authorization of impermissible state action</term>
+<nav-pointer-group>
+<nav-pointer rid="idx3-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx3-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group></index-entry>
+<index-entry>
+<term>Dormant commerce clause, development and theories</term>
+<nav-pointer-group>
+<nav-pointer rid="idx4-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx4-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group></index-entry>
+<index-entry>
+<term>Foreign commerce</term>
+<nav-pointer-group>
+<nav-pointer rid="idx5-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx5-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group></index-entry>
+<index-entry>
+<term>Regulation of commerce</term>
+<nav-pointer-group>
+<nav-pointer rid="idx6-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx6-2" nav-pointer-type="end-of-range"/>, <nav-pointer rid="idx7-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx7-2" nav-pointer-type="end-of-range"/>, <nav-pointer rid="idx8-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx8-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group>
+</index-entry>
+<index-entry>
+<term>State proprietary activity exception</term>
+<nav-pointer rid="idx9" nav-pointer-type="point"/>
+</index-entry>
+<index-entry>
+<term>Taxation of commerce</term>
+<nav-pointer-group>
+<nav-pointer rid="idx10-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx10-2" nav-pointer-type="end-of-range"/>, <nav-pointer rid="idx11-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx11-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group>
+<index-entry>
+<term>Apportionment</term>
+<nav-pointer-group>
+<nav-pointer rid="idx12" nav-pointer-type="point"/>, 
+<nav-pointer rid="idx13-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx13-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group>
+</index-entry>
+<index-entry>
+<term>Benefit relationship</term>
+<nav-pointer rid="idx14" nav-pointer-type="point"/>
+</index-entry>
+<index-entry>
+<term>Discrimination</term>
+<nav-pointer-group>
+<nav-pointer rid="idx15" nav-pointer-type="point"/>, 
+<nav-pointer rid="idx16-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx16-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group>
+</index-entry>
+<index-entry>
+<term>Nexus</term>
+<nav-pointer-group>
+<nav-pointer rid="idx17-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx17-2" nav-pointer-type="end-of-range"/>
+</nav-pointer-group>
+</index-entry>
+</index-entry>
+</index-entry>
+</index-entry>
+<index-entry>
+<term>Interstate Commerce Commission</term>
+<nav-pointer-group>
+<nav-pointer rid="idx18-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx18-2" nav-pointer-type="end-of-range"/>, 
+<nav-pointer rid="idx19-1" nav-pointer-type="start-of-range"/>&ndash;<nav-pointer rid="idx19-2" nav-pointer-type="end-of-range"/>, 
+<nav-pointer rid="idx20-1" nav-pointer-type="point"/>
+</nav-pointer-group>
+</index-entry>
+<index-entry>
+<term>Interstate compacts.</term>
+<see-entry>States, Agreements with other States</see-entry>
+</index-entry>
+<?mtl hellip?><?mtl /hellip?>
+</index-div>
+<?mtl hellip?><?mtl /hellip?>
+</index>
+</book-back>
+</book>

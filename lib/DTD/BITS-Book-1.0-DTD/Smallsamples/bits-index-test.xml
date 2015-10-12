@@ -1,0 +1,404 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC 
+"-//NLM//DTD BITS Book Interchange DTD v1.0 20130520//EN"
+ "../BITS-book1.dtd">
+<book
+ dtd-version="1.0" 
+ xml:lang="en" 
+ xmlns:mml="http://www.w3.org/1998/Math/MathML" 
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- =============== Front Matter (Metadata) =========== -->
+<book-meta>
+<book-id>Lapdeb-1</book-id>
+<book-id>real ODI here</book-id>
+<subj-group>
+<subject>Canines</subject>
+<subj-group>
+<subject>Large Dogs</subject>
+<subj-group>
+<subject>Poodles</subject>
+</subj-group>
+</subj-group>
+<subj-group>
+<subject>Small Dogs</subject>
+<subj-group>
+<subject>Cocker Spaniels</subject>
+</subj-group>
+</subj-group>
+</subj-group>
+
+<book-title-group>
+<book-title>Archival DTD Test Article</book-title>
+<subtitle>(Just a small one for parsing)</subtitle>
+<alt-title>Just a song at twilight</alt-title>
+</book-title-group>
+
+<contrib-group>
+<contrib  id="Prime-jjb" rid="aff-1">
+<name-alternatives>
+<name><surname>Jones</surname>
+<given-names>John Browning</given-names>
+<prefix>The Honorable</prefix><suffix>III</suffix>
+</name>
+<name  specific-use="Indexing"><surname>Jones</surname>
+<given-names>JBB</given-names>
+</name>
+<name name-style="eastern" xml:lang="ja-Jpan"  specific-use="Honorary">
+<surname>flower-characters here</surname>
+<given-names>flower-characters here</given-names>
+</name>
+</name-alternatives>
+</contrib>
+<contrib>
+<name><surname>Jones</surname>
+<given-names>John Browning</given-names>
+<prefix>The Honorable</prefix><suffix>III</suffix>
+</name>
+</contrib>
+<aff-alternatives  id="aff-1" >
+<aff><institution xmlns:xlink="http://www.w3.org/1999/xlink" 
+xlink:type="simple">County Jail</institution> down Aberdeen way
+</aff>
+<aff>
+<institution xmlns:xlink="http://www.w3.org/1999/xlink" 
+xlink:type="simple">Montgomery County Jail</institution>
+<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+ xlink:href="http://www.archiemcphee.com">Archie McPhee</uri>
+</aff>
+</aff-alternatives>
+</contrib-group>
+
+<pub-date iso-8601-date="2004">
+<year>2004</year></pub-date>
+<issn>03-647-1</issn>
+<issn-l>03-647-1</issn-l>
+<isbn>0-265-03-647-1x</isbn>
+<publisher><publisher-name>Mulberry Technologies, Inc.</publisher-name>
+</publisher>
+<edition designator="13">13th</edition>
+
+<pub-history>
+<date date-type="manuscript-received">
+<day>29</day>
+<month>01</month>
+<year>1999</year></date>
+<event>
+<event-desc>43rd printing special gold bindings edition</event-desc>
+<date iso-8601-date="20120401">
+<day>April Fool's Day</day>
+<month>04</month>
+<year>2012</year></date>
+<notes><p>Published as a giveaway for our 16th birthday
+party</p>
+</notes>
+</event>
+</pub-history>
+
+<permissions>
+<copyright-year>2004</copyright-year>
+</permissions>
+</book-meta>
+
+<!-- =============== Body Matter (Content) =========== -->
+<book-body>
+<book-part
+  indexed="yes"
+  book-part-type="chapter"
+  seq="1" 
+  xml:lang="en"
+  specific-use="only-and-only-chapter">
+  <book-part-meta>
+    <book-part-id book-part-id-type="DOI">a real DOI</book-part-id>
+    <book-part-id book-part-id-type="publisherid">X14=-297853904-A</book-part-id>
+    <title-group>
+      <title>We Sing Silly Songs</title>
+    </title-group>
+  </book-part-meta>
+<body>
+  <p>This is a list inside a paragraph:
+<list list-type="order" prefix-word="Test">
+<list-item><label>1.</label><p>Poodles</p></list-item>
+<list-item><label>2.</label><p>Persian Cats</p></list-item>
+<list-item><label>3.</label><p>Weaver Finches</p></list-item>
+<list-item><label>4.</label><p>Gechos</p></list-item>
+</list>
+</p>
+<p>This following is an XHTML table, inside a
+Table Wrapper %lt;table-wrap&gt; wrapper.</p>
+<!-- AN XHTML Table for testing -->
+<table-wrap id="table-wrap-XHTML" position="anchor">
+<label>Table 1</label>
+<caption><title>XHTML Table</title>
+<p>Additional caption material</p>
+</caption>
+<alternatives>
+<table>
+<tbody>
+<tr>
+<td>A cell!</td>
+<td>Another</td>
+<td>Still a third&gt;</td>
+</tr>
+<tr>
+<td>2 A cell!</td>
+<td>An xref: <xref ref-type="statement" rid="statement16">See the 
+statement</xref></td>
+<td>2 Still a third&mdash;</td>
+</tr>
+</tbody>
+</table>
+<textual-form>
+  A cell!   Another   Still a third&mdash;
+  2 A cell! An xref<sup>16</sup>  2 Still a third&gt;
+</textual-form>
+<graphic id="Tab-1" xlink:href="Xhtml-tab-1.jpg"  content-type="XHTML-table-graphic" specific-use="For cell-phones" xml:lang="en"/> 
+</alternatives>
+</table-wrap>
+<sec sec-type="methods">
+<label>I. </label>
+<title>There be <sans-serif>statements</sans-serif> here.</title>
+<subtitle>here, right here</subtitle>
+<statement id="statement11">
+<p>The IDREFs need to point to something</p>
+</statement>
+<statement id="statement15">
+<p>No Matter How Wise You Get, Wet Birds Don't 
+Fly at Night</p>
+</statement>
+<statement id="statement16">
+<p>Post Hoc Propter Ergo Hoc</p>
+</statement>
+</sec>
+</body>
+<back>
+<ack><p>We thank you all.</p></ack>
+<ref-list>
+<title>Bibliography</title>
+<p>Just a reference or two for testing:</p>
+<ref>
+<mixed-citation>A citation ain't nothing but a 
+sandwich &mdash; personal communication 
+</mixed-citation>
+</ref>
+<ref>
+<mixed-citation>
+<name>
+<surname>Piggy</surname> 
+<prefix>Ms.</prefix></name>
+<article-title>Can't Help Lovin&rsquo; That 
+Frog of Mine</article-title>;
+<source>Swine Review</source>, <issue>145</issue>:
+<fpage>12</fpage>&ndash;<lpage>24</lpage>; 
+<year>2003</year>. 
+<trans-title xml:lang="cpe">Ant-cay Elp-hay 
+Ovin&rsquo;-lay At-thay Og-fray of-ay Ine-may</trans-title>
+</mixed-citation>
+</ref>
+</ref-list>
+</back>
+</book-part>
+<book-part
+  indexed="yes"
+  book-part-type="chapter"
+  seq="1" 
+  xml:lang="en"
+  specific-use="only-and-only-chapter">
+  <book-part-meta>
+    <book-part-id>ownd doi here</book-part-id>
+    <book-part-id>Songs from Camp</book-part-id>
+    <title-group>
+      <title>We Sing Silly Songs</title>
+    </title-group>
+  </book-part-meta>
+<body>
+  <p>This is a list inside a paragraph:
+<list list-type="order" prefix-word="Test">
+<list-item><label>1.</label><p>Poodles</p></list-item>
+<list-item><label>2.</label><p>Persian Cats</p></list-item>
+<list-item><label>3.</label><p>Weaver Finches</p></list-item>
+<list-item><label>4.</label><p>Gechos</p></list-item>
+</list>
+</p>
+<p>This following is an XHTML table, inside a
+Table Wrapper %lt;table-wrap&gt; wrapper.</p>
+<!-- AN XHTML Table for testing -->
+<table-wrap id="table-wrap-XHTML-1" position="anchor">
+<label>Table 1</label>
+<caption><title>XHTML Table</title>
+<p>Additional caption material</p>
+</caption>
+<alternatives>
+<table>
+<tbody>
+<tr>
+<td>A cell!</td>
+<td>Another</td>
+<td>Still a third&gt;</td>
+</tr>
+<tr>
+<td>2 A cell!</td>
+<td>An xref: <xref ref-type="statement" rid="statement16">See the 
+statement</xref></td>
+<td>2 Still a third&mdash;</td>
+</tr>
+</tbody>
+</table>
+<textual-form>
+  A cell!   Another   Still a third&mdash;
+  2 A cell! An xref<sup>16</sup>  2 Still a third&gt;
+</textual-form>
+<graphic id="Tab-1-1" xlink:href="Xhtml-tab-1.jpg"  content-type="XHTML-table-graphic" specific-use="For cell-phones" xml:lang="en"/> 
+</alternatives>
+</table-wrap>
+<sec sec-type="methods">
+<label>II. </label>
+<title>There be <sans-serif>statements</sans-serif> here.</title>
+<statement id="statement1-1-1">
+<p>The IDREFs need to point to something</p>
+</statement>
+<statement id="statement-1-5">
+<p>No Matter How Wise You Get, Wet Birds Don't 
+Fly at Night</p>
+</statement>
+<statement id="statement-1-6">
+<p>Post Hoc Propter Ergo Hoc</p>
+</statement>
+</sec>
+</body>
+</book-part>
+</book-body>
+<!-- =============== Back Matter (Ancillary) ======= -->
+<book-back>
+<ack><p>We thank you all, again!</p></ack>
+<ref-list>
+<title>Bibliography</title>
+<p>Just a reference or two for testing:</p>
+<ref>
+<mixed-citation>A citation ain't nothing but a 
+sandwich &mdash; personal communication 
+</mixed-citation>
+</ref>
+<ref>
+<mixed-citation>
+<name>
+<surname>Piggy</surname> 
+<prefix>Ms.</prefix></name>
+<article-title>Can't Help Lovin&rsquo; That 
+Frog of Mine</article-title>;
+<source>Swine Review</source>, <issue>145</issue>:
+<fpage>12</fpage>&ndash;<lpage>24</lpage>; 
+<year>2003</year>. 
+<trans-title xml:lang="cpe">Ant-cay Elp-hay 
+Ovin&rsquo;-lay At-thay Og-fray of-ay Ine-may</trans-title>
+</mixed-citation>
+</ref>
+</ref-list>
+
+<index>
+<title-group>
+<label>Part the Last</label>
+<title>Combined Subject, Author, and Term Index</title>
+<subtitle>a very cool index</subtitle>
+<alt-title specific-use="short">Combined Index</alt-title>
+</title-group>
+<boxed-text><p>Witty epigraph from a great scholar</p>
+<attrib>the scholar's name</attrib></boxed-text>
+<graphic xlink:href="large-smershy-piocture.gif"/>
+
+<index-entry>
+  <term>Dedication</term><nav-pointer rid="Tab-1" specific-use="pagenum">216</nav-pointer>
+</index-entry>
+
+<index-entry>
+  <term>DePreface</term>
+  <nav-pointer-group>
+  <nav-pointer rid="Tab-1-1"  nav-pointer-type="start-of-range"
+     specific-use="pagenum">25</nav-pointer>&ndash; <nav-pointer 
+     rid="Tab-1-1"  nav-pointer-type="start-of-range"
+     specific-use="pagenum">28</nav-pointer>
+  </nav-pointer-group>
+  <see-entry>The great and wonderful one</see-entry>
+  <see-also-entry>DeBackMatter Preface</see-also-entry>
+</index-entry>
+
+<index-entry>
+<term>Good Pets for Children Under Seven</term>
+  <index-entry>
+    <term>Large Dogs</term>
+    <nav-pointer rid="statement-1-5"  specific-use="pagenum">127</nav-pointer>
+  </index-entry>
+  <index-entry>
+    <term>Small Dogs</term>
+    <nav-pointer rid="statement-1-6" specific-use="pagenum">176</nav-pointer>
+  </index-entry>
+</index-entry>
+
+<index-entry>
+<term>Good Pets for Children Under Seven</term>
+  <index-entry>
+    <term>Large Dogs</term>
+    <nav-pointer rid="statement11" specific-use="pagenum">220</nav-pointer>
+  </index-entry>
+  <index-entry>
+    <term>Collies</term><nav-pointer rid="statement-1-6"/>                      
+  </index-entry> 
+  <index-entry>
+    <term>Small Dogs</term>
+    <nav-pointer rid="statement15" specific-use="pagenum">250</nav-pointer>
+    <index-entry>
+      <term>Poodles</term>
+      <see-entry>Schnoodles</see-entry>
+      <see-entry>Labrdoodles</see-entry>
+      <index-entry>
+         <term>Black Poodles</term>
+         <nav-pointer rid="statement16" specific-use="pagenum">270</nav-pointer>
+      </index-entry>
+      <index-entry>
+         <term rid="table-wrap-XHTML-1" specific-use="pagenum">Blue Poodles</term>
+         <nav-pointer rid="statement-1-6" specific-use="pagenum">280</nav-pointer>
+      </index-entry>
+       <index-entry>
+         <term>Chocolate Poodles</term>
+         <nav-pointer rid="Tab-1-1"  specific-use="pagenum">290</nav-pointer>
+      </index-entry>
+      </index-entry>                       
+      <index-entry>
+        <term>Party Poodles</term>
+        <nav-pointer rid="statement16" specific-use="pagenum">413</nav-pointer>
+        <see-also-entry><italic>AKC Regulations Against Party
+           Poodles</italic></see-also-entry>
+      </index-entry>
+      <see-also-entry>Intelligence and Obedience Training</see-also-entry>
+      <see-also-entry>Training the Intelligent Dog</see-also-entry>
+    </index-entry>
+</index-entry>                     
+
+<index-entry>
+  <term>Terrible Pets for Children Under Seven</term>
+  <nav-pointer rid="Tab-1-1" specific-use="pagenum">299</nav-pointer>
+  <index-entry>
+    <term>Poisonous Snakes and Biters</term>
+    <nav-pointer rid="statement-1-6" specific-use="pagenum">310</nav-pointer>
+    <see-entry>Snakes, venomous</see-entry>
+    <see-also-entry>Spiders and Scorpions</see-also-entry>                      
+    <index-entry>
+       <term>Animals Easily mauled and Crushed</term>
+       <index-entry>
+         <term>Salamanders and Eels</term>
+         <nav-pointer rid="statement15" specific-use="pagenum">325</nav-pointer>
+       </index-entry>
+       <index-entry>
+         <term>Walking Sticks and Other Small Insects</term>
+         <nav-pointer rid="statement11" specific-use="pagenum">315</nav-pointer>
+       </index-entry>
+    </index-entry>                      
+  </index-entry>
+</index-entry>
+
+</index>
+</book-back>
+</book>
+
+

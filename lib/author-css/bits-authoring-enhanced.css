@@ -1,0 +1,52 @@
+@import url("bits-authoring.css");
+
+@namespace xlink "http://www.w3.org/1999/xlink";
+
+/*named-content[@content-type=('quoted','quote','quoted-title','called')]*/
+
+book-part {
+    -oxy-foldable:true;
+    -oxy-not-foldable-child: book-part-meta }
+ 
+sec {
+    -oxy-foldable:true;
+    -oxy-not-foldable-child: title }
+ 
+book-part:before {
+    font-family: sans-serif; font-size: 80%;
+    content: "book-part id: "
+        oxy_textfield(           
+            edit, "@id",
+            columns, 10);
+}
+
+named-content { background-color: #fff8dc /*cornsilk*/ }
+
+named-content:not([content-type]):after,
+named-content[content-type=""]:after {
+    content: 
+        oxy_combobox(           
+            edit, "@content-type",
+            editable, true,
+            values, "called, quoted, quote, quoted-title, stress, mention, worktitle");
+}
+
+named-content[content-type=stress],
+named-content[content-type=worktitle] { font-style: italic }
+
+named-content[content-type=called]:before,
+named-content[content-type=quoted]:before,
+named-content[content-type=quote]:before,
+named-content[content-type=quoted-title]:before { content: "“"  }
+
+named-content[content-type=called]:after,
+named-content[content-type=quoted]:after,
+named-content[content-type=quote]:after,
+named-content[content-type=quoted-title]:after { content: "”"  }
+
+ext-link:after {
+    content:
+        oxy_urlChooser(        
+        edit, "@xlink:href",
+        columns 40);
+}
