@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ojf="https://github.com/wendellpiez/oXygenJATSframework/ns"
+  xmlns:jatskit="https://github.com/wendellpiez/JATSKit/ns"
   exclude-result-prefixes="xs"
   version="2.0">
   
@@ -47,7 +47,7 @@
   
   <!-- By default, splits at any book-part at any level (recursive) -->
   <xsl:template match="book-part" mode="mark-for-split">
-    <xsl:attribute name="ojf:split" select="local-name(.)"/>
+    <xsl:attribute name="jatskit:split" select="local-name(.)"/>
   </xsl:template>
 
 </xsl:stylesheet>

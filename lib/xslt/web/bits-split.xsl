@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ojf="https://github.com/wendellpiez/oXygenJATSframework/ns"
+  xmlns:jatskit="https://github.com/wendellpiez/JATSKit/ns"
   exclude-result-prefixes="xs"
   version="2.0">
   
@@ -34,18 +34,40 @@
          
          -->
   
-  <xsl:template match="book">
-    <ojf:book-sequence>
+  <xsl:template match="/book">
+    <jatskit:book-sequence>
       <xsl:copy-of select="/*/namespace::*"/>
-      <xsl:apply-templates select="//*[exists(@ojf:split)]" mode="split"/>
-    </ojf:book-sequence>
+      <xsl:apply-templates select="//*[exists(@jatskit:split)]" mode="split"/>
+    </jatskit:book-sequence>
   </xsl:template>
   
-  <xsl:template match="*" mode="split">
-    <book>
-      <xsl:copy-of select="/book/book-meta"/>
-      <xsl:apply-templates select="." mode="make-book-part"/>
-    </book>
+  <!-- To split, we create a book, copy the top-level metadata,
+       and go back up to the top to recurse back down to ourselves,
+       copying the structure as we go. -->
+  <xsl:template match="*[exists(@jatskit:split)]" mode="split">
+    <xsl:apply-templates select="ancestor::book" mode="copy-split">
+      <xsl:with-param tunnel="yes" name="splitting" select="."/>
+    </xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template match="*" mode="copy-split">
+    <!-- $splitting is the element being split out.
+      Inside a copy of the context node, we convert the $splitting to
+      a book-part if it is a child, or continue descending if not. -->
+    <xsl:param tunnel="yes" name="splitting" as="element()" required="yes"/>
+    <xsl:copy>
+      <xsl:copy-of select="@* except @jatskit:split"/>
+      <!-- When at the book level, we copy the book-level metadata as well. -->
+      <xsl:copy-of select="book-meta"/>
+      <xsl:choose>
+        <xsl:when test="exists(* intersect $splitting)">
+          <xsl:apply-templates select="$splitting" mode="make-book-part"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="* intersect $splitting/ancestor::*" mode="#current"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:copy>
   </xsl:template>
   
   <xsl:template match="book-part" mode="make-book-part">
@@ -62,8 +84,8 @@
     </book-part>
   </xsl:template>
 
-  <xsl:template match="*[exists(@ojf:split)]">
-    <ojf:split to="{@id}"/>
+  <xsl:template match="*[exists(@jatskit:split)]">
+    <jatskit:split to="{@id}"/>
   </xsl:template>
   
   <xsl:template match="node() | @*">

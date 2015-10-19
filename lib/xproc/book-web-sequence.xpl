@@ -1,69 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc"
-  xmlns:xprs="http://xpressionspub.com/xproc/util"
-  xmlns:ojf="https://github.com/wendellpiez/oXygenJATSframework/ns"
+  xmlns:jatskit="https://github.com/wendellpiez/JATSKit/ns"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0"
-  type="ojf:book-web-sequence" name="book-web-sequence">
+  type="jatskit:book-web-sequence" name="book-web-sequence">
 
-  <!-- serialization steps for steps -->
 
-  
-  <!--<p:serialization port="final" indent="false"
-    encoding="utf-8" method="xhtml"
-    doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-    doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
-    omit-xml-declaration="false"/>-->
-
-  
-
-<!-- set intput ports -->
-
+<!-- XProc pipeline produces outputs for a "web sequence" version of
+     a BITS or JATS file.
+     
+     An input document is split into separate pieces for separate files
+     (HTML pages), with functioning links.
+     
+     An apparatus is also produced - title page, directory page and colophon,
+     likewise with links.
+     
+     The splitting logic is configurable, by modifying the component
+     stylesheet ../xslt/web/bits-mark-for-splitting.xsl.
+     
+     Doesn't yet support JATS! we need to fix that.
+  -->
   <p:input port="source"/>
   
   <p:input port="parameters" kind="parameter"/>
   
-<!-- set output ports - these are mostly for debugging;
-     we need only the primary port for production -->
-
-<!--  <p:output primary="false" port="oasis-tables-xhtml">
-    <p:pipe port="result" step="oasis-tables-xhtml"/>
-  </p:output>
--->
-  <p:output primary="false" port="marked-for-splitting"><!-- A single BITS document, with marks for splitting -->
-    <!-- x -->
+  <!-- Port for development and debugging. -->
+  <!--<p:output primary="false" port="marked-for-splitting">
     <p:pipe port="result" step="marked-for-splitting"/>
-  </p:output>
+  </p:output>-->
   
-  <p:output primary="false" port="bookparts-split-document"><!-- A 'book-sequence' element aggregating books, each containing a (split) section as a (single) book-part. -->
-    <!-- x -->
+  <!-- Port for development and debugging. -->
+  <!-- A 'book-sequence' element aggregating books, each containing a (split) section as a (single) book-part. -->
+  <!--<p:output primary="false" port="bookparts-split-document">
     <p:pipe port="result" step="bookparts-split"/>
-  </p:output>
+  </p:output>-->
+  
+  <!-- Port for development and debugging. -->
+  <!--<p:output primary="false" port="bookparts-html-pages">
+    <p:pipe port="result" step="bookparts-html-pages"/>
+  </p:output>-->
+  
+  <!-- Port for development and debugging. -->
+  <!--<p:output primary="false" port="bookparts-xhtml-pages">
+    <p:pipe port="result" step="bookparts-xhtml-pages"/>
+  </p:output>-->
   
   <!-- Ports for actual (wanted) results go here -->
-  <!-- These are captured on the secondary port that binds the results
-       via xsl:result-document to the indicated baseURI (to be available for zipping later). -->
-  <p:output primary="false" port="page-sequence" sequence="true"><!-- A sequence of HTML pages, one per (split) chunk -->
-    <p:pipe port="secondary" step="bookpart-page-sequence"/>
+  <!-- These are captured on the secondary port of the respective
+       transformations, which bind the results via xsl:result-document 
+       to the indicated baseURI (to be available for zipping later). -->
+  <!-- A sequence of HTML pages, one per (split) chunk -->
+  <p:output primary="false" port="page-sequence" sequence="true">
+    <p:pipe port="bound-to-URI" step="bookpart-page-sequence"/>
   </p:output>
   
-  <!--<p:output primary="false" port="page-files" sequence="true"><!-\- A sequence of HTML pages, one per (split) chunk -\->
-    <p:pipe port="secondary" step="page-files"/>
-  </p:output>-->
-  
-  <!--<p:output primary="false" port="directory-page"><!-\- An HTML ToC page for the (entire) book, accounting for splitting -\->
-    <p:pipe port="result" step="directory-page"/>
-  </p:output>-->
-  
   <p:output primary="false" port="apparatus" sequence="true">
-    <p:pipe port="secondary" step="directory-file"/>
+    <p:pipe port="bound-to-URI" step="directory-file"/>
     <!--<p:pipe port="result" step="titlepage"/>
     <p:pipe port="result" step="colophon"/>-->
   </p:output>
   
+  <p:output primary="false" port="graphics-manifest">
+    <p:pipe port="result" step="graphics-manifest"/>
+  </p:output>
   
-  <p:serialization port="page-sequence" indent="true"/>
+  <p:output primary="false" port="support-manifest">
+    <p:pipe port="result" step="support-manifest"/>
+  </p:output>
   
+  <p:output primary="false" port="source-marked" sequence="true">
+    <p:pipe port="result" step="marked-for-splitting"/>
+  </p:output>
   
+  <p:import href="xml-bindtoURI.xpl"/>
+  
+  <p:serialization port="page-sequence"     indent="true"/>
+  <p:serialization port="apparatus"         indent="true"/>
+  <p:serialization port="graphics-manifest" indent="true"/>
+  <p:serialization port="support-manifest"  indent="true"/>
+  <!--<p:serialization port="bookparts-split-document" indent="true"/>-->
+  <p:serialization port="source-marked"     indent="true"/>
+  
+  <!-- Delivers a copy of the input BITS document, with marks for splitting.
+       Can be modified to provide a different splitting logic. -->
   <p:xslt name="marked-for-splitting">
     <!-- Adds a flag where files should be split out. Note: these can nest!
          Splitting will occur recursively.
@@ -77,6 +96,9 @@
          The assumption is that all other XIncludes or other inclusion
          mechanism will provide unique identifiers within the *new* (assembled) document scope.
          
+     XXX Finally, bits-mark-for-splitting expands relative URIs given on graphic/@href into absolute URIs
+         (found relative to the location of the source).
+         
          An exception: if subordinate JATS 'article' elements are found, their IDs and @rid values
          are prepended with the JATS @id value for disambiguation.
     -->
@@ -86,69 +108,47 @@
   </p:xslt>
   
   <!--<p:identity name="bookparts-split"/>-->
+  <!-- Delivers a single jatskit:book-sequence element, containing
+       a series of discrete book elements. Each is a complete BITS document containing
+       (in its book-body or book-back) a single book-part, with the top-level
+       book-meta replicated across the books. Within each book document, the location of other
+       split components (for example, nested book-part elements) are indicated with
+       jatskit:split elements, whose target IDs are marked as @to.
+       -->
   <p:xslt name="bookparts-split">
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-split.xsl"/>
     </p:input>  
   </p:xslt>
   
-  <!--<p:identity name="bookpart-page-sequence"/>-->
-  <!--  For each of the split 'books', generate an HTML page result.
-        Note that the page contains a single book-part, but most of
-        its templates can be the same-old plain vanilla HTML page production.
-  -->
-  <!--<p:for-each name="bookpart-page-sequence">
-    <p:iteration-source select="/book | /*/book"/>
-    <p:output port="result" sequence="true"/>
-    <p:xslt name="bits-html">
-      <p:input port="stylesheet">
-        <p:document href="../xslt/web/bits-web-html.xsl"/>
-      </p:input>
-    </p:xslt>
-    <!-\- In a subsequent step we write the files out via xsl:result-document,
-         so they will appear on the pipeline's secondary port. -\->
-    <!-\-<p:xslt name="tuned-for-web">
-      <p:input port="stylesheet">
-        <p:document href="xslt/web/bits-web-tune.xsl"/>
-      </p:input>  
-    </p:xslt>-\->
-    
-  </p:for-each>-->
-
-  <p:xslt name="bookpart-page-sequence">
-    <!--<p:input port="source">
-      <p:pipe port="result" step="bookpart-page-sequence"/>
-    </p:input>-->
+  <!-- Next, transpose each of these books into HTML, still in their wrapper -->
+  <!-- bits-web-html.xsl also marks @xml:base attributes
+       on /jatksit-page-sequence/html, indicating a safe file name for
+       the results. Note these are still 'logical' results, not serialized anywhere
+       until told to (perhaps in a subsequent pipeline). -->
+  <p:xslt name="bookparts-html-pages">
+    <p:with-param name="path-to-root" select="'..'"/>
     <p:input port="stylesheet">
-      <p:inline>
-        <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-          <xsl:import href="../xslt/web/bits-web-html.xsl"/>
-          <xsl:template match="/">
-            <pages>
-              <xsl:apply-templates select="/book | /*/book"/>
-            </pages>
-          </xsl:template>
-          <xsl:template match="book">
-            <xsl:variable name="html-result" as="element()?">
-              <xsl:apply-imports/>
-            </xsl:variable>
-            <xsl:result-document href="{$html-result/@xml:base}">
-              <xsl:sequence select="$html-result"/>
-            </xsl:result-document>
-          </xsl:template>
-        </xsl:stylesheet>
-      </p:inline>
+      <p:document href="../xslt/web/bits-web-html.xsl"/>
     </p:input>
   </p:xslt>
   
+  <!-- Before producing, we map no namespace over to XHTML as well. -->
+  <p:xslt name="bookparts-xhtml-pages">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/jatskit-xhtml-ns.xsl"/>
+    </p:input>  
+  </p:xslt>
+  
+  
+  <!-- Finally we call a step that produces discrete XHTML documents bound
+       to target URIs by calling xsl:result-document and reading the secondary port. -->
+  <jatskit:xml-bindtoURI name="bookpart-page-sequence"/>
+  
   <p:sink/>
   
-  <!--<p:identity name="directory-page">
-    <p:input port="source">
-      <p:pipe port="result" step="marked-for-splitting"/>
-    </p:input>
-  </p:identity>-->
-  <p:xslt name="directory-page">
+  <!-- Starting up again - to produce a directory (ToC) page -->
+  <p:xslt>
     <p:input port="source">
       <!-- Main source port: the original, unsplit BITS documen, after ID cleanup, marked for splitting -->
       <p:pipe port="result" step="marked-for-splitting"/>
@@ -156,25 +156,21 @@
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-web-directory-html.xsl"/>
       <!-- Note the directory needs to know where files are being split, to
-           write links correctly ... -->
+           write links correctly ... hence the usefulness of @jatskit:spit markers. -->
     </p:input>  
   </p:xslt>
 
-  <p:xslt name="directory-file">
+  <!-- Cast it into XHTML. (We can't produce XHTML directly since we again wish to fall back
+       to NLM Preview XSLT for our display, and it produces HTML in no namespace. -->
+  <p:xslt name="directory-xhtml-page">
     <p:input port="stylesheet">
-      <p:inline>
-        <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-          <xsl:template match="/*">
-            <xsl:result-document href="{@xml:base}">
-              <xsl:sequence select="."/>
-            </xsl:result-document>
-            <xsl:sequence select="."/>
-          </xsl:template>
-        </xsl:stylesheet>
-      </p:inline>
-    </p:input>
+      <p:document href="../xslt/web/jatskit-xhtml-ns.xsl"/>
+    </p:input>  
   </p:xslt>
   
+  <!-- Now, bind it to a URI on a secondary port, and produce that. -->
+  <jatskit:xml-bindtoURI name="directory-file"/>
+
   <p:sink/>
   
   <p:identity name="titlepage">
@@ -199,8 +195,8 @@
   
   <p:identity name="colophon">
     <p:input port="source">
-    <p:pipe port="result" step="marked-for-splitting"/>
-  </p:input>
+      <p:pipe port="result" step="marked-for-splitting"/>
+    </p:input>
   </p:identity>
   <!--<p:xslt name="colophon">
     <p:input port="source">
@@ -216,6 +212,63 @@
   </p:xslt>-->
   
   <p:sink/>
+
+  <p:xslt name="graphics-manifest">
+    <p:input port="source">
+      <p:pipe port="result" step="marked-for-splitting"/>
+    </p:input>
+    <p:input port="stylesheet">
+      <p:inline>
+        <xsl:stylesheet version="2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Function declarations for here... -->
+          <xsl:import href="../xslt/web/jatskit-util.xsl"/>
+          <xsl:template match="/">
+            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
+            <jatskit:resources>
+              <!-- Element proxies for graphics files support copying them around. Both @target (a full pathname),
+                   and @as (a relative pathname) are available for subsequent pipelines. -->
+              <xsl:for-each-group select="//(graphic|inline-graphic)/@xlink:href" group-by=".">
+                <xsl:variable name="relative-path" select="concat('graphics/',replace(current-grouping-key(),'^.*/',''))"/>
+                <jatskit:graphic href="{resolve-uri(current-grouping-key(),document-uri(/))}"
+                target="{string-join(($target-dir,$relative-path),'/')}"
+                as="{$relative-path}"/>
+              </xsl:for-each-group>
+            </jatskit:resources>
+          </xsl:template>
+        </xsl:stylesheet>
+      </p:inline>
+    </p:input>
+  </p:xslt>
+
+  <!-- Produces a manifest of support files required by all pipeline targets,
+       not only particular ones. E.g., CSS files, images for JATSKit branding etc.
+       (But not specific to particular targets, such as EPUB) -->
+  <!-- This could be static, except the paths to which the resources will be written will vary. -->
+  <p:xslt name="support-manifest">
+    <p:input port="source">
+      <p:pipe port="result" step="marked-for-splitting"/>
+    </p:input>
+    <p:input port="stylesheet">
+      <p:inline>
+        <xsl:stylesheet version="2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <!-- Function declarations for here... -->
+          <xsl:import href="../xslt/web/jatskit-util.xsl"/>
+          <xsl:template match="/">
+            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
+            <jatskit:resources>
+              <jatskit:css href="../web-css/jatskit-web.css"
+                target="{$target-dir}/css/jatskit-web.css"
+                as="css/jatskit-web.css"/>
+              <jatskit:css href="../xslt/jats-preview-xslt/jats-preview.css"
+                target="{$target-dir}/css/jats-preview.css"
+                as="css/jats-preview.css"/>
+            </jatskit:resources>
+          </xsl:template>
+        </xsl:stylesheet>
+      </p:inline>
+    </p:input>
+  </p:xslt>
+  
 
 </p:declare-step>
 

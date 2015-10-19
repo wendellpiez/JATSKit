@@ -1,79 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc"
-  xmlns:ojf="https://github.com/wendellpiez/oXygenJATSframework/ns"
+  xmlns:jatskit="https://github.com/wendellpiez/JATSKit/ns"
   xmlns:pxp="http://exproc.org/proposed/steps"
+  xmlns:pxf="http://exproc.org/proposed/steps/file"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0">
-  <!--
-  
-  -->
-  <p:input  port="source"/>
+
+  <p:input port="source"/>
   
   <p:input port="parameters" kind="parameter"/>
+
+  <!--<p:output port="result"/>-->
   
   <p:import href="book-web-sequence.xpl"/>
   
-  <p:variable name="result-basedir" select="resolve-uri('web',document-uri(/))"/>
+  <!--<p:variable name="result-basedir" select="resolve-uri('web',document-uri(/))"/>-->
 
-  
+  <p:declare-step type="pxf:copy">
+    <p:output port="result" primary="false"/>
+    <p:option name="href" required="true"/>                       <!-- anyURI -->
+    <p:option name="target" required="true"/>                     <!-- boolean -->
+    <p:option name="fail-on-error" select="'true'"/>              <!-- boolean -->
+  </p:declare-step>
+
   <!-- The subpipeline produces a set of HTML files including Title page, ToC and colophon. -->
-  <ojf:book-web-sequence name="web-sequence"/>
+  <jatskit:book-web-sequence name="web-sequence"/>
   
-  <!--<p:sink/>-->
-  
-  <!--<p:store name="directory">
-    <p:with-option name="href" select="string-join(($result-basedir,'directory.html'),'/')"/>
-    <p:input port="source">
-      <p:pipe step="web-sequence" port="directory-page"/>
-    </p:input>
-  </p:store>-->
-  
-  <p:for-each name="scrubbed-fileset">
+  <!-- Hey having specified that, we are all set up to serialize and copy resources
+       here and there. -->
+
+  <p:for-each>
     <p:iteration-source>
+      <!-- page-sequence is the bare HTML pages -->
       <p:pipe step="web-sequence" port="page-sequence"/>
+      <!-- Additionally, there are top-level files such as title page and what not. -->
       <p:pipe step="web-sequence" port="apparatus"/>
     </p:iteration-source>
-    <p:xslt name="scrubbed">
-      <p:input port="stylesheet">
-        <p:inline>
-          <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-            version="2.0">
-            <!--<xsl:param name="source-filename" required="yes"/>
-            <xsl:variable name="base-dir" select="concat(replace($source-filename,'\..*$',''),'/')"/>-->
-            <xsl:template match="/*">
-              <xsl:copy copy-namespaces="no">
-                <xsl:copy-of select="attribute::* except @xml:base" copy-namespaces="no"/>
-                <xsl:copy-of select="child::node()"                 copy-namespaces="no"/>
-              </xsl:copy>
-            </xsl:template>
-          </xsl:stylesheet>
-        </p:inline>
-      </p:input>
-    </p:xslt>  
-  </p:for-each>
-  
-  <p:for-each>
-    <!--<p:iteration-source select="/"/>-->
-    <!--<p:iteration-source>
-      <p:pipe step="web-sequence" port="page-sequence"/> 
-      <p:pipe step="web-sequence" port="apparatus"/> 
-    </p:iteration-source>-->
-    <!--<p:variable name="page-name" select="concat(/*/@id,'.html')"/>-->
+    
     <p:store>
       <p:with-option name="method" select="'xml'" />
       <p:with-option name="href" select="base-uri(/)" />
     </p:store>
   </p:for-each>
   
-<!-- Also have to copy in graphics via another subpipeline also available to  -->
-  <!--<p:identity name="collected-epub-pages">
+  <!-- Next we produce a graphics list and iterate over its
+       members in order to copy graphics over. -->
+  <p:identity name="graphics-list">
     <p:input port="source">
-      <p:pipe step="bookpart-page-sequence" port="result"/>
-      <p:pipe step="directory-page" port="result"/>
-      <p:pipe step="titlepage" port="result"/>
-      <p:pipe step="colophon" port="result"/>
-      <!-\- CSS ... -\->
+      <p:pipe step="web-sequence" port="graphics-manifest"/>
     </p:input>
-  </p:identity> -->
+  </p:identity>
   
-<!--  <p:identity/>-->
+  <p:for-each name="store-graphics">
+    <p:iteration-source select="/*/jatskit:graphic"/>
+    <!--<p:identity/>-->
+    <pxf:copy>
+      <p:with-option name="href" select="/*/@href"/>
+      <p:with-option name="target" select="/*/@target"/>
+    </pxf:copy>
+  </p:for-each>
+
+<!-- And then having done that, we do the same for a manifest
+     of any static resources we need. (At time of writing only CSS,
+     but this could include branding, javascript etc.) -->
+  <p:identity name="support-file-list">
+    <p:input port="source">
+      <p:pipe step="web-sequence" port="support-manifest"/>
+    </p:input>
+  </p:identity>
+  
+  <p:for-each name="store-support-files">
+    <p:iteration-source select="/*/jatskit:*"/>
+    <!--<p:identity/>-->
+    <pxf:copy>
+      <p:with-option name="href" select="/*/@href"/>
+      <p:with-option name="target" select="/*/@target"/>
+    </pxf:copy>
+  </p:for-each>
+  
 </p:declare-step>

@@ -56,7 +56,7 @@
        from W3C. This will enable MathML display in browsers that
        support MathML using this mechanism.                        -->
       
-      
+
 
 <xsl:stylesheet version="1.0"
   xmlns:mml="http://www.w3.org/1998/Math/MathML"

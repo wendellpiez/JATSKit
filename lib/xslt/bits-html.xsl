@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   exclude-result-prefixes="xs"
   version="2.0">
   
@@ -8,7 +9,7 @@
   
   <xsl:param name="transform" as="xs:string">bits-html.xsl</xsl:param>
   
-  <xsl:param name="css"       as="xs:string">bits-preview.css</xsl:param>
+  <xsl:param name="css" select="resolve-uri('../web-css/jatskit-preview.css',document-uri(document('')))"/>
   
   <xsl:template match="book">
     <!--  (collection-meta*,book-meta?,front-matter?,book-body?,book-back?)  -->
