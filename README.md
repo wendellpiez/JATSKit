@@ -45,8 +45,8 @@ In this directory find the following:
       * This directory includes a copy of the JATS Preview XSLT stylesheets
       (See https://github.com/ncbi/JATSPreviewStylesheets)
 * `resources` - mainly XSLT for oXygen import into JATS (smart paste)
-* `src - Source code for java extensions to oXygen
-* `templates - Document templates for JATS and BITS
+* `src` - Source code for java extensions to oXygen
+* `templates` - Document templates for JATS and BITS
 * `build.xml`
 * `jats-framework-docs.html` (HTML version via XSLT)
 * `jats-framework-docs.xml` (source JATS article)
