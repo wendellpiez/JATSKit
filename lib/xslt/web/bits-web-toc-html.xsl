@@ -10,7 +10,12 @@
   <xsl:template match="/">
     <xsl:call-template name="make-html-page">
       <xsl:with-param name="attribute-proxies" as="element()?">
-        <html id="{jatskit:book-code(.)}-directory" base="{resolve-uri(concat(jatskit:book-code(/),'/directory.html'),document-uri(/))}"/>        
+        <html>
+          <xsl:call-template name="locate-page">
+            <xsl:with-param name="page-label"  as="xs:string">toc</xsl:with-param>
+            <xsl:with-param name="page-format" as="xs:string">html</xsl:with-param>
+          </xsl:call-template>
+        </html>        
       </xsl:with-param>      
       <xsl:with-param name="html-contents">
         <xsl:for-each-group select="/book/(book-body | bookback)/book-part" group-by="true()">

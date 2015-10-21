@@ -6,6 +6,8 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0">
 
+  <p:option name="debug" select="false()"/>
+  
   <p:input port="source"/>
   
   <p:input port="parameters" kind="parameter"/>

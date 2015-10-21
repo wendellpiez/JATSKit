@@ -5,183 +5,28 @@
   xmlns:pxp="http://exproc.org/proposed/steps"
   xmlns:opf="http://www.idpf.org/2007/opf"
   xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0">
-  <!--
   
-  -->
+  <p:option name="debug" select="'no'"/>
+  
   <p:input  port="source"/>
 
-  <p:output primary="true" port="zip-echo"/>
-  
-  <p:output primary="false" port="zip-manifest">
-    <p:pipe port="result" step="zip-manifest"/>
-  </p:output>
-  
-  <!--<p:output primary="false" port="page-sequence" sequence="true">
-    <p:pipe port="page-sequence" step="web-sequence"/>
-  </p:output>-->
+  <p:output primary="true" port="result" sequence="true"/>
   
   <p:output primary="false" port="debug" sequence="true">
-    <p:pipe port="diagnostic" step="opf-file"/>
+    <!--<p:pipe step="file-manifest"   port="result"/>
+    <p:pipe step="zip-manifest"   port="result"/>-->
+    <p:pipe step="opf-file"   port="bound-to-URI"/>
   </p:output>
   
-  <!--<p:output primary="false" port="wrapped-fileset">
-    <p:pipe port="result" step="fileset"/>
-  </p:output>-->
-  
   <p:input port="parameters" kind="parameter"/>
+  
+  <p:serialization port="result" indent="true"/>
+  <p:serialization port="debug" indent="true"/>
   
   <p:import href="xml-bindtoURI.xpl"/>
   
   <p:import href="book-web-sequence.xpl"/>
-  
-  <p:serialization port="zip-manifest" indent="true"/>
-  <p:serialization port="zip-echo" indent="true"/>
-  <p:serialization port="debug" indent="true"/>
-  
-  <p:variable name="source-filename" select="document-uri(/)"/>
-  
-  <p:variable name="book-code" select="replace($source-filename,'^.*/|\.\w*$','')"/>
-  <!-- The subpipeline supports production of two file sets:
-    A page sequence of results of splitting BITS book and rendering as HTML
-    A set of top-level pages, apparatus and metadata for the former.
-    
-    produces a set of HTML files including Title page, ToC and colophon. -->
-  
-<!-- Initially we execute a sub-pipeline to whose ports we will be binding. -->
-  <!--
-    It is able to produce not only paged HTML files, but page apparatus
-    such as table of contents, colophon etc. -->
-  
-  <jatskit:book-web-sequence name="web-sequence"/>
- 
- 
-<!-- Next we generate files proper to EPUB, not produced in the subpipeline. -->
-  <!--Files specific to EPUB
-        META-INF/container.xml - subpipeline 'meta-inf-container'
-        {$bookID}-ncx.ncx
-        {$bookID}-opf.opf
--->
-  
- 
-  <!--Files specific to EPUB
-        META-INF/container.xml - subpipeline 'meta-inf-container'
-        {$bookID}-ncx.ncx
-        {$bookID}-opf.opf
-      
-      Generic files (from book-web-sequence.xpl)
-      Also collects a pipeline that generates, with the book,
-        Title page {$bookID}-titlepage.html 
-        ToC (directory) page (contents.html)
-        Colophon   {$bookID}-colophon.html
-          Post-processes all these to rewrite their CSS file links
-          to the EPUB css, as well as attach a base-uri()
-      Placing them in a "files" directory or some such?
--->
 
-  <p:xslt name="make-opf">
-    <p:input port="source">
-      <!-- Main source port: the original, unsplit BITS documen, after ID cleanup, marked for splitting -->
-      <p:pipe port="source-marked" step="web-sequence"/>
-    </p:input>
-    <p:input port="stylesheet">
-      <p:document href="../xslt/epub/jatskit-opf.xsl"/>
-      <!-- Note the directory needs to know where files are being split, to
-           write links correctly ... hence the usefulness of @jatskit:spit markers. -->
-    </p:input>  
-  </p:xslt>
-  
-  <!-- Now, bind it to its URI (as given on @xml:base) on a secondary port, and make that available. -->
-  <jatskit:xml-bindtoURI name="opf-file"/>
-  
-  <p:sink/>
-  <!--<p:xslt name="opf-file">
-    <p:input port="source">
-      <p:pipe port="source-marked" step="web-sequence"/>
-    </p:input>
-    <p:input port="stylesheet">
-      <p:inline>
-        <xsl:stylesheet version="2.0" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <!-\- Function declarations for here... -\->
-          <xsl:import href="../xslt/web/html-util.xsl"/>
-          <xsl:template match="/">
-            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
-            <jatskit:resources>
-              <jatskit:css href="../web-css/jatskit-web.css"
-                target="{$target-dir}/css/jatskit-web.css"
-                as="css/jatskit-web.css"/>
-              <jatskit:css href="../xslt/jats-preview-xslt/jats-preview.css"
-                target="{$target-dir}/css/jats-preview.css"
-                as="css/jats-preview.css"/>
-            </jatskit:resources>
-          </xsl:template>
-        </xsl:stylesheet>
-      </p:inline>
-    </p:input>
-  </p:xslt>
-  
-  <jatskit:xml-bindtoURI name="bookpart-page-sequence"/>-->
-  
-  <!-- For producing the output, we assemble a sequence of resources,
-       including both pipeline results (bound to URIs for zipping), or
-       references to resources on the file system (such as graphics files). --> 
-       
-  <p:wrap-sequence name="fileset" wrapper="fileset">
-    <p:input port="source">
-      <!-- EPUB apparatus -->
-      <p:pipe step="opf-file"     port="bound-to-URI"/>
-      
-      <!-- Web apparatus (top-level files) -->
-      <p:pipe step="web-sequence" port="apparatus"/>
-      <!-- Web page sequence -->
-      <p:pipe step="web-sequence" port="page-sequence"/>
-      <!-- List of graphics -->
-      <p:pipe step="web-sequence" port="graphics-manifest"/>
-      <!-- List of static resources -->
-      <p:pipe step="web-sequence" port="support-manifest"/>
-      <!--<p:pipe port="result" step="make-opf"/>-->
-    </p:input>
-  </p:wrap-sequence>
-
-  <p:xslt name="zip-manifest">
-    <p:with-param name="source-filename" select="$source-filename"/>
-    <p:input port="stylesheet">
-      <p:inline>
-        <xsl:stylesheet version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-          <xsl:param name="source-filename" required="yes"/>
-          <xsl:variable name="base-dir" select="concat(replace($source-filename,'\..*$',''),'/')"/>
-          <xsl:template match="/fileset">
-            <c:zip-manifest>
-              <!-- @name is the full path of the file in the zip (epub); @href is where we find it -->
-              <!-- For now, we only want a single 'mimetype' file, compression level 0 as per EPUB specs. -->
-              <c:entry name="mimetype" compression-method="stored" compression-level="none"
-                href="../epub/mimetype.text"/>
-              <c:entry href="../epub/container.xml" name="META-INF/container.xml"/>
-              
-              <!-- Static files should go here: CSS etc., excluding those that appear
-              on the 'fileset' port due to having been auto-generated e.g. ncx etc. -->
-              <!-- Finally, we need graphics files called in. Do this by grouping
-                 over //xhtml:img/@src ! to generate references for files to be copied... -->
-              <xsl:apply-templates select="xhtml:html | opf:package | jatskit:resources/*"/>
-            </c:zip-manifest>
-          </xsl:template>
-
-          <xsl:template match="xhtml:html | opf:package">
-            <c:entry name="{substring-after(base-uri(.),$base-dir)}" href="{base-uri(.)}"/>
-          </xsl:template>
-          <!-- Handling proxies for resources not generated by pipelines. -->
-          <xsl:template match="jatskit:resources/*">
-            <c:entry name="{@as}" href="{@href}"/>
-          </xsl:template>
-
-          <xsl:template match="text()"/>
-
-        </xsl:stylesheet>
-      </p:inline>
-    </p:input>
-  </p:xslt>
- 
- 
- 
   <p:declare-step type="pxp:zip" xml:base="file:/projects/github/docs-calabash/src/declarations.xml">
     <p:input port="source" sequence="true" primary="true"/>
     <p:input port="manifest"/>
@@ -192,30 +37,214 @@
     <p:option name="command" select="'update'"/>                  <!-- "update" | "freshen" | "create" | "delete" -->
   </p:declare-step>
   
-  <pxp:zip name="zipped">
-    <!-- Primary input source contains documents with base-uris assigned via /*/@xml:base, which should correspond to the files
-         listed in the (dynamically generated) zip-manifest. -->
-    <p:input port="source">
-      <!-- Add pipelines for dynamic EPUB-specific files here
-           such as meta-inf, ncx and what not.
-       -->
-      <!-- page-sequence is the dynamically produced set of HTML files -->
-      <p:pipe step="web-sequence" port="page-sequence"/>
-      <!-- apparatus includes top-level files eg ToC, titlepage -->
-      <p:pipe step="web-sequence" port="apparatus"/>
-      
-      <!-- Files generated for the EPUB only also go here. -->
-      <p:pipe step="opf-file"     port="bound-to-URI"/>
-    </p:input>
-    <p:input port="manifest">
-      <p:pipe step="zip-manifest" port="result"/>
-    </p:input>
-    <!--<p:with-option name="href"    select="resolve-uri(concat('eLibrary-packages/',/zip/@href),$source-path)"/>-->
-    <!--<p:with-option name="href" select="'file:/D:/Work/Projects/PublicProjects/JATS-oXygen-framework/Working/test.epub'"/>-->
-    <p:with-option name="href" select="replace($source-filename,'\..*$','.epub')"/>
-    <p:with-option name="command" select="'create'"/>
-  </pxp:zip>
+  <p:variable name="source-filename" select="document-uri(/)"/>
   
-  <p:identity name="zip-echo"/>
+  <p:variable name="book-code" select="replace($source-filename,'^.*/|\.\w*$','')"/>
+
+  <!-- The next subpipeline (called via import) supports production of two file sets:
+    A page sequence of results of splitting BITS book and rendering as HTML
+    A set of top-level pages, apparatus and metadata for the former.
+    
+    These are produced as a set of HTML files including Title page, ToC and colophon, all linked.
+    They come already bound to document URIs although those contents have not been serialized.
+
+    In subsequent steps we will be binding to the results of ports in the sub pipeline.
+  -->
+  
+  <jatskit:book-web-sequence name="web-sequence"/>
+ 
+
+<!-- For producing the output, we assemble a sequence of resources,
+     including both pipeline results (bound to URIs for zipping), or
+     references to resources on the file system (such as graphics files).
+  --> 
+
+  <!-- Aggregates files acquired from the web-sequence sub pipeline into one sequence. -->
+  <p:identity name="web-files">
+    <p:input port="source">
+      <!-- Web apparatus (top-level files) including ToC, colophon etc. -->
+      <p:pipe step="web-sequence" port="apparatus"/>
+      <!-- Web page sequence for book contents -->
+      <p:pipe step="web-sequence" port="page-sequence"/>
+    </p:input>
+  </p:identity>
+  
+  <!-- Same with any files produced only for the EPUB such as NCX or what have you.
+       Note this does not include the generated OPF file, which we produce later
+       once we have generated and listed all the other results, or any files
+       to be produced statically, such as mimetype and META-INF/control.xml. -->
+  <p:identity name="epub-files">
+    <p:input port="source">
+      <p:empty/>
+      <!-- Any EPUB apparatus, except for mimetype, META-INF/control.xml (which are static)
+           as well as the .opf file (which is not included since these results are
+           inputs to the step that produces it). -->
+      <!-- <p:pipe step="opf-file"     port="bound-to-URI"/>-->
+    </p:input>
+  </p:identity>
+
+
+  <!-- Additionally, we need pipelines able to generate result files proper to EPUB,
+     hence not produced in the subpipeline. -->
+  
+  <!-- 
+    Map of the EPUB produced - {$book-code}.epub :
+    
+    Files specific to EPUB
+        mimetype - static file
+        META-INF/container.xml - static file
+        JATSKit-ncx.ncx - dynamically generated for this book
+        JATSKit-opf.opf - "           "         "   "    "
+      
+    Generic files (produced in pipeline book-web-sequence.xpl)
+        ToC (directory) page {$book-code}-toc.html
+        Title page           {$book-code}-title.html 
+        Colophon             {$bookID-code}-colophon.html
+    Content files produced for each book-part or other "split" from XML source
+        contents/{$partID-page.html}
+    Graphics files copied from source directory
+        graphics
+    CSS (copied from JATSKit)
+    
+  -->
+  
+<!-- Next we produce a compilation of all this stuff (wrapped as $jatskit:kit)
+     which we can process to produce manifests for the EPUB internally (OPF file)
+     and for zipping the results. -->
+  <p:wrap-sequence name="file-set" wrapper="jatskit:kit">
+    <p:input port="source">
+      <p:pipe port="result" step="web-files"/>
+      <p:pipe port="result" step="epub-files"/>
+      
+      <!-- List of graphics -->
+      <p:pipe step="web-sequence" port="graphics-manifest"/>
+      <!-- List of static resources -->
+      <p:pipe step="web-sequence" port="support-manifest"/>
+    </p:input>
+  </p:wrap-sequence>
+  
+  <!-- The inputs are a mix of XHTML files and references to files
+       as jatskit:graphic jatskit:css etc. These are flattened
+       out to a simple list of references. -->
+  <p:xslt name="file-manifest">
+    <p:input port="stylesheet">
+      <p:inline>
+        <xsl:stylesheet version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+           exclude-result-prefixes="#all">
+          <!-- Unwrapping these ... -->
+          <xsl:template match="jatskit:kit//jatskit:kit">
+            <xsl:apply-templates/>
+          </xsl:template>
+          <xsl:template match="xhtml:html">
+            <jatskit:html target="{base-uri(.)}">
+              <xsl:copy-of select="@*"/>
+            </jatskit:html>
+          </xsl:template>
+          <xsl:template match="*">
+            <xsl:copy>
+              <xsl:copy-of select="@*"/>
+              <xsl:apply-templates/>
+            </xsl:copy>
+          </xsl:template>
+          <xsl:template match="text()"/>
+        </xsl:stylesheet>
+      </p:inline>
+    </p:input>
+  </p:xslt>
+ 
+<!-- For the zipping process, we need a zip manifest, which we produce here
+     from the jatskit:kit element resulting from the last step. -->
+  <p:xslt name="zip-manifest">
+    <p:with-param name="source-filename" select="$source-filename"/>
+    <p:input port="stylesheet">
+      <p:inline>
+        <xsl:stylesheet version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+          <xsl:param name="source-filename" required="yes"/>
+          <xsl:variable name="base-dir" select="concat(replace($source-filename,'\..*$',''),'/')"/>
+          <xsl:template match="/jatskit:kit">
+            <c:zip-manifest>
+              <!-- First, the files that are always the same. -->
+              <c:entry name="mimetype" compression-method="stored" compression-level="none"
+                href="../epub/mimetype.text"/>
+              <c:entry href="../epub/container.xml" name="META-INF/container.xml"/>
+              <!-- OPF file named literally, since it doesn't come in through the 'source' pipe -->
+              <!--<c:entry href="../epub/mimetype.text" name="JATSKit-opf.opf"/>-->
+              <c:entry href="{$base-dir}JATSKit-opf.opf" name="JATSKit-opf.opf"/>
+              <!-- Attributes on XML inside jatskit:fileset provides for these to be listed.
+                   These include EPUB resources such as OPF, HTML resources, and static
+                   resources listed in pipeline steps above (graphics etc.) -->
+              <xsl:apply-templates/>
+            </c:zip-manifest>
+          </xsl:template>
+
+          <xsl:template match="jatskit:html">
+            <c:entry name="{substring-after(@target,$base-dir)}" href="{@target}"/>
+          </xsl:template>
+          <xsl:template match="jatskit:*">
+            <c:entry name="{@as}" href="{@href}"/>
+          </xsl:template>
+          <xsl:template match="text()"/>
+        </xsl:stylesheet>
+      </p:inline>
+    </p:input>
+  </p:xslt>
+
+  <!-- Here we aggregate resources from which we will generate the OPF file:
+       The jatskit:kit file listing (for an internal manifest) along with
+       a copy of original book input (for its metadata). -->
+  <p:wrap-sequence wrapper="jatskit:kit" name="opf-source">
+    <p:input port="source"  sequence="true">
+      <p:pipe port="result" step="file-manifest"/>
+      <p:pipe port="source-marked" step="web-sequence"/>
+    </p:input>
+  </p:wrap-sequence>
+
+  <!-- The OPF is produced by running this through a transformation. -->
+  <p:xslt name="make-opf">
+    <p:with-param name="source-filename" select="$source-filename"/>
+    <p:input port="stylesheet">
+      <p:document href="../xslt/epub/jatskit-opf.xsl"/>
+    </p:input>
+  </p:xslt>
+  
+  <!-- Now, bind it to its URI (as given on @xml:base) on a secondary port, and make that available. -->
+  <jatskit:xml-bindtoURI name="opf-file"/>
+  
+  <p:sink/>
+
+<!-- All set up: this is the main step of the pipeline. Depending on a runtime option provided, we
+     either echo all the pipeline results we see, or run it through a zip routine, which
+     pulls the zip manifest in along with the bound results of file generation. -->
+
+  <p:choose>
+    <p:when test="$debug='yes'">
+      <p:identity name="generated-sources">
+        <p:input port="source">
+          <p:pipe port="bound-to-URI" step="opf-file"/>
+          <p:pipe port="result"       step="epub-files"/>
+          <p:pipe port="result"       step="web-files"/>
+        </p:input>
+      </p:identity>
+    </p:when>
+    <p:otherwise>
+      <pxp:zip name="zipped">
+        <p:input port="source">
+          <p:pipe port="bound-to-URI" step="opf-file"/>
+          <p:pipe port="result" step="epub-files"/>
+          <p:pipe port="result" step="web-files"/>
+        </p:input>
+        <p:input port="manifest">
+          <!-- Note that the zip manifest lists not only generated files, but also files to be copied
+               (e.g. graphics and other resources). -->
+          <p:pipe step="zip-manifest" port="result"/>
+        </p:input>
+        <!-- We write the EPUB to a file named after the input, with 'EPUB' replacing any current "*ml" file suffix. -->
+        <p:with-option name="href" select="replace($source-filename,'\..*ml$','.epub')"/>
+        <p:with-option name="command" select="'create'"/>
+      </pxp:zip>
+      
+      <p:identity name="zip-echo"/>
+    </p:otherwise>
+  </p:choose>
   
 </p:declare-step>

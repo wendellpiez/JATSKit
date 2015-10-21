@@ -55,7 +55,7 @@
   </p:output>
   
   <p:output primary="false" port="apparatus" sequence="true">
-    <p:pipe port="bound-to-URI" step="directory-file"/>
+    <p:pipe port="bound-to-URI" step="toc-file"/>
     <!--<p:pipe port="result" step="titlepage"/>
     <p:pipe port="result" step="colophon"/>-->
   </p:output>
@@ -72,7 +72,6 @@
     <p:pipe port="result" step="marked-for-splitting"/>
   </p:output>
   
-  <p:import href="xml-bindtoURI.xpl"/>
   
   <p:serialization port="page-sequence"     indent="true"/>
   <p:serialization port="apparatus"         indent="true"/>
@@ -80,6 +79,8 @@
   <p:serialization port="support-manifest"  indent="true"/>
   <!--<p:serialization port="bookparts-split-document" indent="true"/>-->
   <p:serialization port="source-marked"     indent="true"/>
+  
+  <p:import href="xml-bindtoURI.xpl"/>
   
   <!-- Delivers a copy of the input BITS document, with marks for splitting.
        Can be modified to provide a different splitting logic. -->
@@ -154,7 +155,7 @@
       <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-web-directory-html.xsl"/>
+      <p:document href="../xslt/web/bits-web-toc-html.xsl"/>
       <!-- Note the directory needs to know where files are being split, to
            write links correctly ... hence the usefulness of @jatskit:spit markers. -->
     </p:input>  
@@ -162,14 +163,14 @@
 
   <!-- Cast it into XHTML. (We can't produce XHTML directly since we again wish to fall back
        to NLM Preview XSLT for our display, and it produces HTML in no namespace. -->
-  <p:xslt name="directory-xhtml-page">
+  <p:xslt name="toc-xhtml-page">
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-xhtml-ns.xsl"/>
     </p:input>  
   </p:xslt>
   
   <!-- Now, bind it to a URI on a secondary port, and produce that. -->
-  <jatskit:xml-bindtoURI name="directory-file"/>
+  <jatskit:xml-bindtoURI name="toc-file"/>
 
   <p:sink/>
   
@@ -186,8 +187,6 @@
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-web-titlepage-html.xsl"/>
-      <!-\- Note the directory needs to know where files are being split, to
-           write links correctly ... -\->
     </p:input>  
   </p:xslt>-->
   
@@ -206,8 +205,6 @@
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-colophon-html.xsl"/>
-      <!-\- Note the directory needs to know where files are being split, to
-           write links correctly ... -\->
     </p:input>  
   </p:xslt>-->
   
@@ -224,7 +221,7 @@
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
             <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
-            <jatskit:resources>
+            <jatskit:kit>
               <!-- Element proxies for graphics files support copying them around. Both @target (a full pathname),
                    and @as (a relative pathname) are available for subsequent pipelines. -->
               <xsl:for-each-group select="//(graphic|inline-graphic)/@xlink:href" group-by=".">
@@ -233,7 +230,7 @@
                 target="{string-join(($target-dir,$relative-path),'/')}"
                 as="{$relative-path}"/>
               </xsl:for-each-group>
-            </jatskit:resources>
+            </jatskit:kit>
           </xsl:template>
         </xsl:stylesheet>
       </p:inline>
@@ -255,14 +252,14 @@
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
             <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
-            <jatskit:resources>
+            <jatskit:kit>
               <jatskit:css href="../web-css/jatskit-web.css"
                 target="{$target-dir}/css/jatskit-web.css"
                 as="css/jatskit-web.css"/>
               <jatskit:css href="../xslt/jats-preview-xslt/jats-preview.css"
                 target="{$target-dir}/css/jats-preview.css"
                 as="css/jats-preview.css"/>
-            </jatskit:resources>
+            </jatskit:kit>
           </xsl:template>
         </xsl:stylesheet>
       </p:inline>
