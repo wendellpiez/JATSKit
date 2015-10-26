@@ -12,6 +12,18 @@
 
   <xsl:include href="jatskit-util.xsl"/>
 
+
+  <xsl:variable name="auto-label-app"              select="true()"/>
+  <xsl:variable name="auto-label-boxed-text"       select="true()"/>
+  <xsl:variable name="auto-label-chem-struct-wrap" select="true()"/>
+  <xsl:variable name="auto-label-disp-formula"     select="true()"/>
+  <xsl:variable name="auto-label-fig"              select="true()"/>
+  <xsl:variable name="auto-label-ref"              select="not(//ref[label])"/>
+  <!-- ref elements are labeled unless any ref already has a label -->
+  <xsl:variable name="auto-label-statement"        select="true()"/>
+  <xsl:variable name="auto-label-supplementary"    select="true()"/>
+  <xsl:variable name="auto-label-table-wrap"       select="true()"/>
+  
   <!-- Overriding the imported one, just in case. -->
   <xsl:template match="/">
     <xsl:apply-templates/>
@@ -26,8 +38,7 @@
   <xsl:template match="book">
     <xsl:call-template name="make-html-page">
       <xsl:with-param name="attribute-proxies" as="element()?">
-        <html id="{jatskit:page-id(.)}" book="{jatskit:book-code(/)}"
-              base="{jatskit:page-path(.)}"/>        
+        <html id="{jatskit:page-id(.)}" base="{jatskit:page-path(.)}"/>        
       </xsl:with-param>
       <xsl:with-param name="page-title">
           <xsl:apply-templates select="book-meta/book-title-group/book-title" mode="plain"/>
@@ -63,8 +74,54 @@
     </img>
   </xsl:template>
   
-  <xsl:template match="graphic/@xlink:href">
+  <!--<xsl:template match="graphic/@xlink:href">
     
+  </xsl:template>
+  -->
+
+  <!-- xref becomes a no-op unless its @rid points to a single @id. -->
+  <xsl:template match="xref">
+    <xsl:apply-templates/>
+  </xsl:template>
+  
+  <xsl:template match="xref[@rid = //@id]">
+    <xsl:variable name="target" select="key('element-by-id',@rid)"/>
+    <xsl:apply-templates select="$target" mode="link-here">
+      <xsl:with-param name="path">../contents</xsl:with-param>
+    </xsl:apply-templates>
+  </xsl:template>
+  
+  <xsl:template match="*" mode="link-here">
+    <xsl:param name="path"/>
+    <xsl:param name="text">
+      <xsl:apply-templates select="." mode="link-text"/>
+    </xsl:param>
+    <xsl:variable name="href">
+      <xsl:apply-templates select="ancestor-or-self::*[exists(@jatskit:split)][1]" mode="id"/>
+      <xsl:text>-page.xhtml#</xsl:text>
+      <xsl:apply-templates select="." mode="id"/>
+    </xsl:variable>
+    <a href="{string-join(($path,$href),'/')}">
+      <xsl:sequence select="$text"/>
+    </a>
+  </xsl:template>
+  
+  <xsl:template match="sec" mode="link-text">
+    <xsl:for-each select="title">
+      <xsl:apply-templates mode="link-text"/>
+    </xsl:for-each>
+  </xsl:template>
+  
+  <xsl:template match="book-part" mode="link-text">
+    <xsl:for-each select="book-meta/book-title-group/title">
+      <xsl:apply-templates mode="link-text"/>
+    </xsl:for-each>
+  </xsl:template>
+  
+  <xsl:template match="boxed-text | chem-struct-wrap | disp-formula-group | fig | fig-group |
+    graphic | media | supplementary-material | table-wrap | table-wrap-group" mode="link-text">
+    <xsl:apply-templates select="." mode="label-text"/>
+    <xsl:apply-templates select="caption/title"/>
   </xsl:template>
   
 </xsl:stylesheet>

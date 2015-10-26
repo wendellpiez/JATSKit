@@ -137,7 +137,7 @@
   <!-- Before producing, we map no namespace over to XHTML as well. -->
   <p:xslt name="bookparts-xhtml-pages">
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/jatskit-xhtml-ns.xsl"/>
+      <p:document href="../xslt/web/jatskit-cast-xhtml.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -165,7 +165,7 @@
        to NLM Preview XSLT for our display, and it produces HTML in no namespace. -->
   <p:xslt name="toc-xhtml-page">
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/jatskit-xhtml-ns.xsl"/>
+      <p:document href="../xslt/web/jatskit-cast-xhtml.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -228,7 +228,7 @@
                 <xsl:variable name="relative-path" select="concat('graphics/',replace(current-grouping-key(),'^.*/',''))"/>
                 <jatskit:graphic href="{resolve-uri(current-grouping-key(),document-uri(/))}"
                 target="{string-join(($target-dir,$relative-path),'/')}"
-                as="{$relative-path}"/>
+                as="{$relative-path}" suffix="{replace(current-grouping-key(),'^.*\.','')}"/>
               </xsl:for-each-group>
             </jatskit:kit>
           </xsl:template>

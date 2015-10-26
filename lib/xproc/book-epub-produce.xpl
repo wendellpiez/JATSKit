@@ -11,17 +11,18 @@
   <p:input  port="source"/>
 
   <p:output primary="true" port="result" sequence="true"/>
+  <p:serialization         port="result" indent="true"/>
   
   <p:output primary="false" port="debug" sequence="true">
-    <!--<p:pipe step="file-manifest"   port="result"/>
-    <p:pipe step="zip-manifest"   port="result"/>-->
+    <p:pipe step="opf-source" port="result"/>
     <p:pipe step="opf-file"   port="bound-to-URI"/>
   </p:output>
+  <p:serialization port="debug" indent="true"/>
+  
   
   <p:input port="parameters" kind="parameter"/>
   
-  <p:serialization port="result" indent="true"/>
-  <p:serialization port="debug" indent="true"/>
+  
   
   <p:import href="xml-bindtoURI.xpl"/>
   
@@ -59,7 +60,7 @@
      references to resources on the file system (such as graphics files).
   --> 
 
-  <!-- Aggregates files acquired from the web-sequence sub pipeline into one sequence. -->
+  <!-- Aggregates files acquired from the web-sequence sub pipeline into a single sequence. -->
   <p:identity name="web-files">
     <p:input port="source">
       <!-- Web apparatus (top-level files) including ToC, colophon etc. -->
@@ -77,9 +78,9 @@
     <p:input port="source">
       <p:empty/>
       <!-- Any EPUB apparatus, except for mimetype, META-INF/control.xml (which are static)
-           as well as the .opf file (which is not included since these results are
-           inputs to the step that produces it). -->
-      <!-- <p:pipe step="opf-file"     port="bound-to-URI"/>-->
+           and the OPF file - which is not included since these results are
+           inputs to the step that produces it. -->
+      <!-- <p:pipe step="ncx-file" port="result"/>-->
     </p:input>
   </p:identity>
 
@@ -127,16 +128,21 @@
        as jatskit:graphic jatskit:css etc. These are flattened
        out to a simple list of references. -->
   <p:xslt name="file-manifest">
+    <p:with-param name="source-filename" select="$source-filename"/>
+    <p:with-param name="book-code" select="$book-code"/>
     <p:input port="stylesheet">
       <p:inline>
         <xsl:stylesheet version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml"
            exclude-result-prefixes="#all">
+          <xsl:param name="source-filename" required="yes"/>
+          <xsl:param name="book-code" required="yes"/>
+          <xsl:variable name="target-dir" select="concat(resolve-uri($book-code,$source-filename),'/')"/>
           <!-- Unwrapping these ... -->
           <xsl:template match="jatskit:kit//jatskit:kit">
             <xsl:apply-templates/>
           </xsl:template>
           <xsl:template match="xhtml:html">
-            <jatskit:html target="{base-uri(.)}">
+            <jatskit:html target="{base-uri(.)}" as="{substring-after(base-uri(.),$target-dir)}">
               <xsl:copy-of select="@*"/>
             </jatskit:html>
           </xsl:template>
@@ -246,5 +252,35 @@
       <p:identity name="zip-echo"/>
     </p:otherwise>
   </p:choose>
+  
+  <p:xslt name="report-results">
+    <p:with-param name="source-filename" select="$source-filename"/>
+    <p:input port="stylesheet">
+      <p:inline>
+        <xsl:stylesheet version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+          exclude-result-prefixes="#all">
+
+          <xsl:param name="source-filename" required="yes"/>
+          <xsl:variable name="base-dir" select="concat(replace($source-filename,'\..*$',''),'/')"/>
+          <xsl:template match="c:zipfile" priority="2">
+            <report>
+              <source>
+                <xsl:value-of select="$source-filename"/>
+              </source>
+              <result filecount="{count(c:file)}">
+                <xsl:value-of select="@href"/>
+              </result>
+            </report>
+          </xsl:template>
+          
+          <xsl:template match="/*">
+            <xsl:copy-of select="."/>
+          </xsl:template>
+        </xsl:stylesheet>
+      </p:inline>
+    </p:input>
+  </p:xslt>
+  
+  <p:identity name="result"/>
   
 </p:declare-step>

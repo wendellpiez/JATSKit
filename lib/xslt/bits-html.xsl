@@ -79,6 +79,7 @@
     
   </xsl:template>
   
+  
   <xsl:template match="named-content[@content-type=('worktitle','stress')]">
     <i class="{@content-type}">
       <xsl:apply-templates/>
@@ -114,6 +115,88 @@
   
   <xsl:template match="named-content" mode="right-quote">
     <xsl:text>”</xsl:text>
+  </xsl:template>
+  
+<!-- For generating a footnotes section when no back matter is present, we have to override
+     the imported templates to avoid colliding @ids ...  -->
+  <xsl:template name="footnotes">
+    <xsl:call-template name="backmatter-section">
+      <xsl:with-param name="generated-title">Notes</xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates select="$loose-footnotes" mode="footnote"/>
+      </xsl:with-param>
+      <xsl:with-param name="nominated-id" select="concat(@id,'-footnotes')"/>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template name="backmatter-section">
+    <xsl:param name="generated-title"/>
+    <xsl:param name="contents">
+      <xsl:apply-templates/>
+    </xsl:param>
+    <xsl:param name="nominated-id" select="''"/>
+    <div class="back-section">
+      <xsl:call-template name="named-anchor">
+        <xsl:with-param name="nominated-id" select="$nominated-id"/>
+      </xsl:call-template>
+      <xsl:if test="not(title) and $generated-title">
+        <xsl:choose>
+          <!-- The level of title depends on whether the back matter itself
+               has a title -->
+          <xsl:when test="ancestor::back/title">
+            <xsl:call-template name="section-title">
+              <xsl:with-param name="contents" select="$generated-title"/>
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:call-template name="main-title">
+              <xsl:with-param name="contents" select="$generated-title"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:if>
+      <xsl:copy-of select="$contents"/>
+    </div>
+  </xsl:template>
+  
+  <!-- The 'named-anchor' template from jats-html.xsl has a subtle
+       bug when applied for a generated section e.g. back matter
+       for a 'Notes' section created ad-hoc. Since the context node
+       when this template is called is at the top of the book-part,
+       we get the book-part's ID, which is no good, since we use it
+       for the book-part div.
+       So this override permits us to assign an ID in the call. -->
+  <xsl:template name="named-anchor">
+    <xsl:param name="nominated-id" select="''"/>
+    <!-- generates an HTML named anchor -->
+    <xsl:variable name="id">
+      <xsl:choose>
+        <xsl:when test="normalize-space($nominated-id)">
+          <xsl:value-of select="$nominated-id"/>
+        </xsl:when>
+        <xsl:when test="@id">
+          <!-- if we have an @id, we use it -->
+          <xsl:value-of select="@id"/>
+        </xsl:when>
+        <xsl:when test="not(preceding-sibling::*) and
+          (parent::alternatives | parent::name-alternatives |
+          parent::citation-alternatives | parent::collab-alternatives |
+          parent::aff-alternatives)/@id">
+          <!-- if not, and we are first among our siblings inside one of
+               several 'alternatives' wrappers, we use its @id if available -->
+          <xsl:value-of select="(parent::alternatives | parent::name-alternatives |
+            parent::citation-alternatives | parent::collab-alternatives |
+            parent::aff-alternatives)/@id"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <!-- otherwise we simply generate an ID -->
+          <xsl:value-of select="generate-id(.)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <a id="{$id}">
+      <xsl:comment> named anchor </xsl:comment>
+    </a>
   </xsl:template>
   
   

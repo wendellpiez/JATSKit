@@ -32,7 +32,10 @@
   <xsl:template match="book" mode="opf-metadata">
     <!-- For JATSKit, a process ID marks the result with a timestamp, which makes it likely to be
          unique among documents produced even from the same source file. For production use of this
-         framework, a better identifier should be assigned. Depends on the EPUB. -->
+         framework, a better identifier should be assigned. This is much more granular than it should be,
+         but the range of inputs is such that simply pulling some declared identifier from the data 
+         (even /descendant::book-id[1]) is not safe either. So this should be revised to reflect local practice.
+         Depends on the EPUB. -->
     <package version="3.0" unique-identifier="jatskit-process-id">
       <xsl:attribute name="xml:base" select="$target-URI"/>
       <metadata>
@@ -83,29 +86,32 @@
         </meta>
       </metadata>
       <manifest>
+<!-- Manifest contains references to
+        All pages generated for the content sequence
+        All pages generated for apparatus
+        All pages generated for EPUB only (ncx? nav?)
+        Images and any resources copied in
+          Support jpeg, jpg, png, svg images
+        CSS files and any other resources e.g. generic logos. 
+        -->
         <!--<item media-type="application/x-dtbncx+xml" id="ncx" href="{jatskit:book-code(/)}-epub.ncx"/>-->
         
-        <item media-type="text/css" id="style" href="content/balisage-epub.css"/>
-        <!-- <item id="pagetemplate" href="page-template.xpgt" media-type="application/vnd.adobe-page-template+xml"/> -->
-<!--        <item media-type="application/xhtml+xml" id="titlepage"  href="content/{$titlepage-file}"/>
-        <item media-type="application/xhtml+xml" id="article"    href="content/{$article-file}"/>
-        <item media-type="application/xhtml+xml" id="colophon"   href="content/{$authorpage-file}"/>
--->        
-        <xsl:for-each-group select="/*/body/div[@id='main']/div[@class='article']//img[normalize-space(@src)]"
-          group-by="@src/replace(.,'^.*/','')" xpath-default-namespace="http://www.w3.org/1999/xhtml">
-          <item/>
-          <!--<xsl:variable name="suffix" select="replace(current-grouping-key(),'^.*\.','')"/>-->
-<!--          <item media-type="{$image-types[lower-case(@suffix)=$suffix]/@mime-type}"
-            id="img-{replace(current-grouping-key(),'\.[^\.]*$','')}" href="content/images/{current-grouping-key()}"/>
--->        </xsl:for-each-group>
+        <xsl:apply-templates mode="manifest" select="/jatskit:kit/jatskit:*"/>
         
-        <!--<item media-type="image/png" id="Balisage-logo" href="content/images/BalisageSeries-Proceedings.png"/>-->
+        <!--<item media-type="text/css" id="style" href="content/balisage-epub.css"/>
+        <item media-type="application/xhtml+xml" id="titlepage"  href="content/{$titlepage-file}"/>
+        <item media-type="image/png" id="Balisage-logo" href="content/images/BalisageSeries-Proceedings.png"/>-->
       </manifest>
-      <spine toc="ncx">
-        <itemref idref="titlepage"/>
-        <!--<itemref idref="article"/>-->
-        <!-- Top-level Toc? -->
-        <itemref idref="colophon"/>
+      <spine>
+        <!-- The spine defines presentation order. All presented items are XHTML.
+             $backmatter is EPUB specific (such as a colophon or any indexes) not
+             back matter in contents, which comes through in $pages. -->
+        <xsl:variable name="backmatter" select="/jatskit:kit//jatskit:html[ends-with(@id,'-colophon')]"/>
+        <xsl:variable name="pages"      select="/jatskit:kit//jatskit:html[ends-with(@id,'-page')]"/>
+        <xsl:apply-templates select="/jatskit:kit//jatskit:html except ($pages,$backmatter)" mode="spine-item"/>
+        <xsl:apply-templates select="$pages" mode="spine-item"/>
+        
+        <xsl:apply-templates select="$backmatter" mode="spine-item"/>
       </spine>
     </package>
   </xsl:template>
@@ -231,6 +237,73 @@
     </dc:rights>
   </xsl:template>
   
+  <xsl:template mode="manifest" match="jatskit:kit">
+    <xsl:apply-templates mode="#current"/>
+  </xsl:template>
+  
+  <xsl:template mode="manifest" match="jatskit:*">
+    <item href="{@as}">
+      <xsl:attribute name="id">
+        <xsl:apply-templates select="." mode="manifest-id"/>
+      </xsl:attribute>
+      <!-- @class is slightly overloaded to indicate a nav file. -->
+      <xsl:if test="tokenize(@class,'\s+')='nav'">
+        <xsl:attribute name="properties">nav</xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates select="." mode="media-type"/>
+    </item>
+  </xsl:template>
+  
+  <xsl:template mode="manifest-id" match="jatskit:graphic">
+    <xsl:text>graphic-</xsl:text>
+    <xsl:value-of select="jatskit:safe-id(jatskit:uri-basename(@target))"/>
+  </xsl:template>
+  
+  <xsl:template mode="manifest-id" match="jatskit:html">
+    <xsl:value-of select="jatskit:safe-id(@id)"/>
+  </xsl:template>
+  
+  <xsl:template mode="manifest-id" match="jatskit:css">
+    <xsl:text>resource-</xsl:text>
+    <xsl:value-of select="jatskit:safe-id(jatskit:uri-basename(@target))"/>
+  </xsl:template>
+  
+  <xsl:template mode="manifest-id" match="jatskit:*">
+    <xsl:text>ID-</xsl:text>
+    <xsl:value-of select="jatskit:safe-id(jatskit:uri-basename(@target))"/>
+  </xsl:template>
+  
+  <xsl:template mode="media-type" match="jatskit:graphic[@suffix=('jpg','jpeg')]">
+    <xsl:attribute name="media-type">image/jpeg</xsl:attribute>
+  </xsl:template>
+  <xsl:template mode="media-type" match="jatskit:graphic[@suffix=('svg')]">
+    <xsl:attribute name="media-type">image/svg+xml</xsl:attribute>
+  </xsl:template>
+  <xsl:template mode="media-type" match="jatskit:graphic[@suffix=('png')]">
+    <xsl:attribute name="media-type">image/png</xsl:attribute>
+  </xsl:template>
+  <xsl:template mode="media-type" match="jatskit:css">
+    <xsl:attribute name="media-type">text/css</xsl:attribute>
+  </xsl:template>
+  <xsl:template mode="media-type" match="jatskit:html">
+    <xsl:attribute name="media-type">application/xhtml+xml</xsl:attribute>
+  </xsl:template>
+  
+  <xsl:template mode="mediatype" match="*">
+    <xsl:comment>
+      <xsl:text> Warning: file suffix '</xsl:text>
+      <xsl:value-of select="@suffix"/>
+      <xsl:text>' is not bound to a media type. </xsl:text>
+    </xsl:comment>
+  </xsl:template>
+  
+  <xsl:template mode="spine-item" match="jatskit:*">
+    <itemref>
+      <xsl:attribute name="idref">
+        <xsl:apply-templates select="." mode="manifest-id"/>
+      </xsl:attribute>
+    </itemref>
+  </xsl:template>
   
   
 </xsl:stylesheet>

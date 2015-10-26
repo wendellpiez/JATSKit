@@ -20,6 +20,15 @@ book-part:before {
             columns, 10);
 }
 
+
+
+xref:after {
+  content:  oxy_combobox(           
+            edit, "@rid",
+            editable, true,
+            columns, 12 );
+}
+
 named-content { background-color: #fff8dc /*cornsilk*/ }
 
 named-content:not([content-type]):after,
@@ -49,4 +58,12 @@ ext-link:after {
         oxy_urlChooser(        
         edit, "@xlink:href",
         columns 40);
+}
+
+graphic:after {
+    font-family: sans-serif; font-size: 80%; color: #228B22; /*forestgreen*/
+    content: 'graphic xlink:href '
+        oxy_urlChooser(
+          edit, '@xlink:href',
+          columns 25 )
 }

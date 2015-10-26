@@ -72,30 +72,15 @@
 
   <xsl:function name="jatskit:page-path" as="xs:anyURI">
     <xsl:param name="book" as="element(book)"/>
-    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(root($book)),'/contents/',jatskit:page-id($book),'.html'),document-uri(root($book)))"/>
+    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(root($book)),'/contents/',jatskit:page-id($book),'.xhtml'),document-uri(root($book)))"/>
   </xsl:function>
   
   <xsl:function name="jatskit:current-lang" as="xs:string?">
     <xsl:param name="who" as="element()"/>
     <xsl:sequence select="$who/ancestor::*[exists(@xml:lang)][1]/@xml:lang/string(.)"/>
   </xsl:function>
-  
-  <xsl:template match="*" mode="target-link">
-    <xsl:param name="path"/>
-    <xsl:param name="text">
-      <xsl:apply-templates mode="link-text"/>
-    </xsl:param>
-    <xsl:variable name="href">
-      <xsl:apply-templates select="ancestor-or-self::*[exists(@jatskit:split)][1]" mode="id"/>
-      <xsl:text>-page.html#</xsl:text>
-      <xsl:apply-templates select="." mode="id"/>
-    </xsl:variable>
-    <a href="{string-join(($path,$href),'/')}">
-      <xsl:sequence select="$text"/>
-    </a>
-  </xsl:template>
-  
-  <xsl:template match="*" mode="id">
+    
+  <xsl:template match="sec" mode="id">
     <xsl:value-of select="(@id,generate-id())[1]"/>
   </xsl:template>
   
@@ -112,7 +97,7 @@
     <xsl:variable name="page-code" select="string-join((jatskit:book-code(/),$page-label),'-')"/>
     
     <xsl:attribute name="id" select="$page-code"/>
-    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(/),'/',$page-code,'.html'),document-uri(/))"/>
+    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(/),'/',$page-code,'.',$page-format),document-uri(/))"/>
   </xsl:template>
   
 <!-- Attempts to produce an ISO formatted date string from a JATS/BITS 'date' element.
@@ -136,5 +121,13 @@
         </xsl:value-of>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:function>
+  
+  <!-- Function returns values 'safe' for XML IDs
+       by casting any sequence of \C to underscore '_' ... nb an additional prefix
+       should be added to ensure we match ^\i ... -->
+  <xsl:function name="jatskit:safe-id" as="xs:string">
+    <xsl:param name="id" as="xs:string"/>
+    <xsl:sequence select="replace($id,'[\C]+','_')"/>
   </xsl:function>
 </xsl:stylesheet>

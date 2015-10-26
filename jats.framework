@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="17.0" xml:space="preserve">
+<serialized version="17.1" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -64,10 +64,10 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/lib/author-css/bits-authoring-enhanced.css</String>
+											<String>${framework}/lib/author-css/jatskit-authoring.css</String>
 										</field>
 										<field name="title">
-											<String>BITS - Enhanced book</String>
+											<String>JATSKit - enhanced</String>
 										</field>
 										<field name="alternate">
 											<Boolean>false</Boolean>
@@ -890,7 +890,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>JATS simple preview (HTML, XSLT 1.0)</String>
+									<String>NLM/NCBI JATS simple preview (HTML, XSLT 1.0)</String>
 								</field>
 								<field name="baseURL">
 									<String></String>
@@ -998,7 +998,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>JATS with OASIS tables preview (simple HTML, XSLT 2.0)</String>
+									<String>NLM/NCBI JATS with OASIS tables preview (simple HTML, XSLT 2.0)</String>
 								</field>
 								<field name="baseURL">
 									<String></String>
@@ -1101,6 +1101,124 @@
 									<String-array/>
 								</field>
 							</scenario>
+							<xprocScenario>
+								<field name="inputPorts">
+									<xprocInputPort-array>
+										<xprocInputPort>
+											<field name="portName">
+												<String>source</String>
+											</field>
+											<field name="urls">
+												<String-array>
+													<String>${currentFileURL}</String>
+												</String-array>
+											</field>
+										</xprocInputPort>
+									</xprocInputPort-array>
+								</field>
+								<field name="outputPorts">
+									<xprocOutputPort-array/>
+								</field>
+								<field name="xprocOptions">
+									<xprocOption-array/>
+								</field>
+								<field name="xprocParameters">
+									<xprocParameterPort-array>
+										<xprocParameterPort>
+											<field name="portName">
+												<String>*</String>
+											</field>
+											<field name="parameters">
+												<xprocParameter-array/>
+											</field>
+										</xprocParameterPort>
+									</xprocParameterPort-array>
+								</field>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>JATSKit BITS to EPUB</String>
+								</field>
+								<field name="baseURL">
+									<null/>
+								</field>
+								<field name="footerURL">
+									<null/>
+								</field>
+								<field name="fOPMethod">
+									<null/>
+								</field>
+								<field name="fOProcessorName">
+									<null/>
+								</field>
+								<field name="headerURL">
+									<null/>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xproc/book-epub-produce.xpl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String></String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="type">
+									<String>XPROC</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="outputFile">
+									<null/>
+								</field>
+								<field name="outputResource">
+									<null/>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list/>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Calabash XProc</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</xprocScenario>
 						</scenario-array>
 					</field>
 					<field name="validationScenarios">
@@ -1190,7 +1308,7 @@
 														<Integer>7</Integer>
 													</field>
 													<field name="uri">
-														<String>${framework}/lib/Schematron/book-integrity.sch</String>
+														<String>${framework}/lib/Schematron/jatskit-epub.sch</String>
 													</field>
 												</validationUnitSchema>
 											</field>
@@ -1201,13 +1319,15 @@
 									<String>Validation_scenario</String>
 								</field>
 								<field name="name">
-									<String>BITS intregity Schematron</String>
+									<String>JATSKit EPUB-ready Schematron</String>
 								</field>
 							</validationScenario>
 						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
-						<null/>
+						<list>
+							<String>Detected DTD</String>
+						</list>
 					</field>
 					<field name="defaultTransformationScenarios">
 						<null/>
