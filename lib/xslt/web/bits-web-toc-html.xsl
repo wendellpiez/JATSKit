@@ -23,28 +23,56 @@
         </html>        
       </xsl:with-param>      
       <xsl:with-param name="html-contents">
-        <xsl:for-each-group select="(book-body | bookback)/book-part" group-by="true()">
-          <nav epub:type="toc">
-            <xsl:for-each select="/book-meta/title-group/title">
-              <h1>
-                <xsl:apply-templates/>
-                <xsl:text>: Table of Contents</xsl:text>
-              </h1>
-            </xsl:for-each>
-            <ol>
+        <nav epub:type="toc">
+          <xsl:for-each select="book-meta/book-title-group/book-title">
+            <h1>
+              <xsl:apply-templates/>
+              <xsl:text>: Table of Contents</xsl:text>
+            </h1>
+          </xsl:for-each>
+          <ol>
+            <xsl:call-template name="toc-component-links">
+              <xsl:with-param name="pages" as="element()*">
+                <jatskit:titlepage/>
+                <jatskit:halftitle/>
+              </xsl:with-param>
+            </xsl:call-template>
+            <xsl:for-each-group
+              select="
+                (front-matter | book-body | book-back)/
+                (book-part | *[exists(named-book-part-body)])"
+              group-by="true()">
               <xsl:apply-templates select="current-group()" mode="directory"/>
-            </ol>
-          </nav>
-        </xsl:for-each-group>
+            </xsl:for-each-group>
+            <xsl:call-template name="toc-component-links">
+              <xsl:with-param name="pages" as="element()*">
+                <jatskit:colophon/>
+              </xsl:with-param>
+            </xsl:call-template>
+          </ol>
+        </nav>
       </xsl:with-param>
     </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template name="toc-component-links">
+    <xsl:param name="pages" as="element()+"/>
+    <xsl:variable name="book-code" select="jatskit:book-code(/)"/>
+    <xsl:for-each select="$pages">
+      <li>
+        <xsl:call-template name="jatskit-component-link">
+          <xsl:with-param name="page" select="."/>
+          <xsl:with-param name="book-code" select="$book-code"/>
+        </xsl:call-template>
+      </li>
+    </xsl:for-each>
   </xsl:template>
   
   <xsl:template match="*" mode="directory">
    <xsl:apply-templates mode="#current"/>
   </xsl:template>
   
-  <xsl:template match="book-part" mode="directory">
+  <xsl:template match="book-part | *[exists(named-book-part-body)]" mode="directory">
     <li>
       <xsl:apply-templates select="." mode="title-link"/>
       <xsl:for-each-group select="*/sec | */book-part" group-by="true()">
@@ -71,8 +99,7 @@
     <xsl:apply-templates select="." mode="link-here">
       <xsl:with-param name="path">contents</xsl:with-param>
       <xsl:with-param name="text">
-        <xsl:apply-templates select="$title"/>
-        <xsl:if test="empty($title)">[Untitled]</xsl:if>
+        <xsl:apply-templates select="$title" mode="link-text"/>
       </xsl:with-param>
     </xsl:apply-templates>
   </xsl:template>

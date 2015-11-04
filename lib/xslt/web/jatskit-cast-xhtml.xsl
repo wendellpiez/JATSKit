@@ -14,6 +14,15 @@
   
   <xsl:import href="../jats-preview-xslt/xslt/post/xhtml-ns.xsl"/>
   
+  <!-- Comes in as 'web' when we are creating a non-EPUB ebook mockup. -->
+  <xsl:param name="format" as="xs:string">epub</xsl:param>
+  
+  <!-- Conditionally overriding the imported template, which adds a PI calling a MathML stylesheet.
+       (If we want this, it should probably go into a different pipeline step such as bind-to-URI.) -->
+  <xsl:template match="/">
+    <xsl:apply-templates/>
+  </xsl:template>
+  
   <!-- We want to keep the jatskit namespace, to head off any confusion.
        These should produce validation errors when found in final results
        (as indications of unaddressed issues). -->

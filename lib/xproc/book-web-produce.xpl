@@ -26,7 +26,9 @@
   </p:declare-step>
 
   <!-- The subpipeline produces a set of HTML files including Title page, ToC and colophon. -->
-  <jatskit:book-web-sequence name="web-sequence"/>
+  <jatskit:book-web-sequence name="web-sequence">
+    <p:with-option name="target-format" select="'web'"/>
+  </jatskit:book-web-sequence>
   
   <!-- Hey having specified that, we are all set up to serialize and copy resources
        here and there. -->

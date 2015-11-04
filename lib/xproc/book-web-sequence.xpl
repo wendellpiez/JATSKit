@@ -25,20 +25,15 @@
   <p:input port="parameters" kind="parameter"/>
   
   <!-- Port for development and debugging. -->
-  <!--<p:output primary="false" port="marked-for-splitting">
-    <p:pipe port="result" step="marked-for-splitting"/>
+  <!--<p:output primary="false" port="ready-to-split">
+    <p:pipe port="result" step="ready-to-split"/>
   </p:output>-->
   
   <!-- Port for development and debugging. -->
   <!-- A 'book-sequence' element aggregating books, each containing a (split) section as a (single) book-part. -->
-  <!--<p:output primary="false" port="bookparts-split-document">
+  <p:output primary="false" port="bookparts-split-document">
     <p:pipe port="result" step="bookparts-split"/>
-  </p:output>-->
-  
-  <!-- Port for development and debugging. -->
-  <!--<p:output primary="false" port="bookparts-html-pages">
-    <p:pipe port="result" step="bookparts-html-pages"/>
-  </p:output>-->
+  </p:output>
   
   <!-- Port for development and debugging. -->
   <!--<p:output primary="false" port="bookparts-xhtml-pages">
@@ -50,14 +45,18 @@
        transformations, which bind the results via xsl:result-document 
        to the indicated baseURI (to be available for zipping later). -->
   <!-- A sequence of HTML pages, one per (split) chunk -->
+  
+  <p:option name="target-format" select="'epub'"/>
+  
   <p:output primary="false" port="page-sequence" sequence="true">
     <p:pipe port="bound-to-URI" step="bookpart-page-sequence"/>
   </p:output>
   
   <p:output primary="false" port="apparatus" sequence="true">
     <p:pipe port="bound-to-URI" step="toc-file"/>
-    <!--<p:pipe port="result" step="titlepage"/>
-    <p:pipe port="result" step="colophon"/>-->
+    <p:pipe port="bound-to-URI" step="titlepage-file"/>
+    <p:pipe port="bound-to-URI" step="halftitle-file"/>
+    <p:pipe port="bound-to-URI" step="colophon-file"/>
   </p:output>
   
   <p:output primary="false" port="graphics-manifest">
@@ -68,17 +67,16 @@
     <p:pipe port="result" step="support-manifest"/>
   </p:output>
   
-  <p:output primary="false" port="source-marked" sequence="true">
-    <p:pipe port="result" step="marked-for-splitting"/>
+  <p:output primary="false" port="source-ready" sequence="true">
+    <p:pipe port="result" step="ready-to-split"/>
   </p:output>
-  
   
   <p:serialization port="page-sequence"     indent="true"/>
   <p:serialization port="apparatus"         indent="true"/>
   <p:serialization port="graphics-manifest" indent="true"/>
   <p:serialization port="support-manifest"  indent="true"/>
-  <!--<p:serialization port="bookparts-split-document" indent="true"/>-->
-  <p:serialization port="source-marked"     indent="true"/>
+  <p:serialization port="bookparts-split-document" indent="true"/>
+  <p:serialization port="source-ready"     indent="true"/>
   
   <p:import href="xml-bindtoURI.xpl"/>
   
@@ -108,6 +106,17 @@
     </p:input>  
   </p:xslt>
   
+  <!-- There are a number of small interventions that may also need to be
+       performed, such as adding titles where there are none. This step
+       is also a good one for content improvements such as automated labeling. -->
+  <!-- The results of this step are also inputs for steps in subpipelines
+       that generate ToC page, etc. -->
+  <p:xslt name="ready-to-split">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/bits-fixup.xsl"/>
+    </p:input>  
+  </p:xslt>
+  
   <!--<p:identity name="bookparts-split"/>-->
   <!-- Delivers a single jatskit:book-sequence element, containing
        a series of discrete book elements. Each is a complete BITS document containing
@@ -128,7 +137,10 @@
        the results. Note these are still 'logical' results, not serialized anywhere
        until told to (perhaps in a subsequent pipeline). -->
   <p:xslt name="bookparts-html-pages">
+    <!-- These pages will be placed down a level so path-to-root goes back up. -->
     <p:with-param name="path-to-root" select="'..'"/>
+    <!-- Target format defaults to 'epub' but can be overridden for other (web) outputs. -->
+    <p:with-param name="format" select="$target-format"/>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-web-html.xsl"/>
     </p:input>
@@ -141,7 +153,6 @@
     </p:input>  
   </p:xslt>
   
-  
   <!-- Finally we call a step that produces discrete XHTML documents bound
        to target URIs by calling xsl:result-document and reading the secondary port. -->
   <jatskit:xml-bindtoURI name="bookpart-page-sequence"/>
@@ -152,7 +163,7 @@
   <p:xslt>
     <p:input port="source">
       <!-- Main source port: the original, unsplit BITS documen, after ID cleanup, marked for splitting -->
-      <p:pipe port="result" step="marked-for-splitting"/>
+      <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-web-toc-html.xsl"/>
@@ -174,45 +185,69 @@
 
   <p:sink/>
   
-  <p:identity name="titlepage">
+  <!-- Next, the same for the title page. -->
+  <p:xslt>
     <p:input port="source">
-      <p:pipe port="result" step="marked-for-splitting"/>
-    </p:input>
-  </p:identity>
-  <!--<p:xslt name="titlepage">
-    <p:input port="source">
-      <!-\- Main source port: the original, unsplit BITS document -
-           after ID cleanup, marked for splitting -\->
-      <p:pipe port="result" step="marked-for-splitting"/>
+      <!-- Main source port: the original, unsplit BITS document -
+           after ID cleanup, marked for splitting -->
+      <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/bits-web-titlepage-html.xsl"/>
     </p:input>  
-  </p:xslt>-->
+  </p:xslt>
+  
+  <p:xslt name="titlepage-xhtml-page">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/jatskit-cast-xhtml.xsl"/>
+    </p:input>  
+  </p:xslt>
+  
+  <jatskit:xml-bindtoURI name="titlepage-file"/>
   
   <p:sink/>
   
-  <p:identity name="colophon">
+  <p:xslt>
     <p:input port="source">
-      <p:pipe port="result" step="marked-for-splitting"/>
-    </p:input>
-  </p:identity>
-  <!--<p:xslt name="colophon">
-    <p:input port="source">
-      <!-\- Main source port: the original, unsplit BITS document -
-           after ID cleanup, marked for splitting -\->
-      <p:pipe port="result" step="marked-for-splitting"/>
+      <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-colophon-html.xsl"/>
+      <p:document href="../xslt/web/bits-web-halftitle-html.xsl"/>
     </p:input>  
-  </p:xslt>-->
+  </p:xslt>
+  
+  <p:xslt name="halftitle-xhtml-page">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/jatskit-cast-xhtml.xsl"/>
+    </p:input>  
+  </p:xslt>
+   
+  <jatskit:xml-bindtoURI name="halftitle-file"/>
+  
+  <p:sink/>
+  
+  <p:xslt>
+    <p:input port="source">
+      <p:pipe port="result" step="ready-to-split"/>
+    </p:input>
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/bits-web-colophon-html.xsl"/>
+    </p:input>  
+  </p:xslt>
+   
+  <p:xslt name="colophon-xhtml-page">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/jatskit-cast-xhtml.xsl"/>
+    </p:input>  
+  </p:xslt>
+  
+  <jatskit:xml-bindtoURI name="colophon-file"/>
   
   <p:sink/>
 
   <p:xslt name="graphics-manifest">
     <p:input port="source">
-      <p:pipe port="result" step="marked-for-splitting"/>
+      <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
       <p:inline>
@@ -243,7 +278,7 @@
   <!-- This could be static, except the paths to which the resources will be written will vary. -->
   <p:xslt name="support-manifest">
     <p:input port="source">
-      <p:pipe port="result" step="marked-for-splitting"/>
+      <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
       <p:inline>
@@ -253,9 +288,12 @@
           <xsl:template match="/">
             <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
             <jatskit:kit>
-              <jatskit:css href="../web-css/jatskit-web.css"
-                target="{$target-dir}/css/jatskit-web.css"
+              <jatskit:css href="../web-css/jatskit-epub.css"
+                target="{$target-dir}/css/jatskit-epub.css"
                 as="css/jatskit-web.css"/>
+              <jatskit:css href="../web-css/jatskit-simple.css"
+                target="{$target-dir}/css/jatskit-simple.css"
+                as="css/jatskit-simple.css"/>
               <jatskit:css href="../xslt/jats-preview-xslt/jats-preview.css"
                 target="{$target-dir}/css/jats-preview.css"
                 as="css/jats-preview.css"/>

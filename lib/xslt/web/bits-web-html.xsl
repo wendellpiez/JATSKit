@@ -8,10 +8,11 @@
   
   <!-- Should include bits-html.xsl, OASIS table handling -->
   
-  <xsl:import  href="../bits-html.xsl"/>
+  <xsl:import  href="../jatskit-html.xsl"/>
 
   <xsl:include href="jatskit-util.xsl"/>
 
+  <!-- Inside jatskit-util.xsl: <xsl:param name="format" as="xs:string">epub</xsl:param> -->
 
   <xsl:variable name="auto-label-app"              select="true()"/>
   <xsl:variable name="auto-label-boxed-text"       select="true()"/>
@@ -36,26 +37,86 @@
   </xsl:template>
   
   <xsl:template match="book">
+    <!-- $discrete-part is true iff there is only a single top-level book-part for the book -
+         which should be the case when the input has been split. -->
+    <xsl:variable name="single-part" select=".[count(*/book-part) eq 1]/*/book-part"/>
     <xsl:call-template name="make-html-page">
       <xsl:with-param name="attribute-proxies" as="element()?">
-        <html id="{jatskit:page-id(.)}" base="{jatskit:page-path(.)}"/>        
+        <html id="{jatskit:page-id(.)}" base="{jatskit:page-path(.)}"/>
       </xsl:with-param>
       <xsl:with-param name="page-title">
-          <xsl:apply-templates select="book-meta/book-title-group/book-title" mode="plain"/>
-          <xsl:if test="count(*/book-part) eq 1">
-            <xsl:for-each  select="descendant::book-part/book-part-meta/title-group/title">
-            <xsl:text>: </xsl:text>
-            <xsl:apply-templates select="." mode="plain"/>
-            </xsl:for-each>
-          </xsl:if>
-        
+        <xsl:sequence select="$show-book-title"/>
+        <xsl:for-each select="$single-part">
+          <xsl:text>: </xsl:text>
+          <xsl:apply-templates select="." mode="link-text"/>
+        </xsl:for-each>
       </xsl:with-param>
       <xsl:with-param name="html-contents">
+        <xsl:for-each select="$single-part[not($format = 'epub')]">
+          <xsl:call-template name="web-navigation"/>
+        </xsl:for-each>
         <xsl:apply-templates select="*/book-part" mode="build-part"/>
+        <xsl:for-each select="$single-part[not($format = 'epub')]">
+          <xsl:call-template name="web-navigation"/>
+        </xsl:for-each>
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
   
+  <!-- The context for $web-navigation should be a book-part. -->
+  
+  <xsl:template name="web-navigation">
+    <xsl:variable name="here"  select="self::book-part"/>
+    <xsl:variable name="first" select="empty($here/preceding::book-part)"/>
+    <xsl:variable name="last"  select="empty($here/following::book-part)"/>
+    <table class="navigation" style="width:100%">
+      <tr>
+        <td colspan="3" style="text-align:center; font-weight: bold">
+          <xsl:for-each select="ancestor::book/book-meta/book-title-group/book-title">
+            <xsl:apply-templates/>
+          </xsl:for-each>
+        </td>
+      </tr>
+      <tr>
+        <xsl:for-each select="preceding::book-part[1]">
+          <!-- If there is a following book-part in another book, split from this one. --> 
+          <td width="{if (not($last)) then '30%' else '50%'}">
+            <span class="label">Back: </span>
+            <xsl:apply-templates select="." mode="link-here">
+              <xsl:with-param name="text">
+                <xsl:apply-templates select="book-part-meta/title-group/title" mode="link-text"/>
+              </xsl:with-param>
+              <xsl:with-param name="path">../contents</xsl:with-param>
+            </xsl:apply-templates>
+          </td>
+        </xsl:for-each>
+        <td style="text-align: {if ($first) then 'left' else if ($last) then 'right' else 'center'}">
+          <span class="label">
+          <xsl:call-template name="jatskit-component-link">
+            <xsl:with-param name="page" as="element()">
+              <jatskit:toc/>
+            </xsl:with-param>
+          </xsl:call-template>
+          </span>
+<!--          <a href="{$path-to-root}/{jatskit:book-code(/)}-toc.xhtml">Contents</a>-->
+        </td>
+        <xsl:for-each select="following::book-part[1]">
+          <!-- If there is a following book-part in another book, split from this one. --> 
+          <td width="{if (not($first)) then '30%' else '50%'}" style="text-align: right">
+            <span class="label">Next: </span>
+            <xsl:apply-templates select="." mode="link-here">
+              <xsl:with-param name="text">
+                <xsl:apply-templates select="book-part-meta/title-group/title" mode="link-text"/>
+              </xsl:with-param>
+              <xsl:with-param name="path">../contents</xsl:with-param>
+            </xsl:apply-templates>
+          </td>
+        </xsl:for-each>
+      </tr>
+    </table>
+  </xsl:template>
+
+
   <!-- Rewriting graphic links to point to destination location. -->
   
   <xsl:template match="graphic | inline-graphic">
@@ -88,18 +149,28 @@
     <xsl:variable name="target" select="key('element-by-id',@rid)"/>
     <xsl:apply-templates select="$target" mode="link-here">
       <xsl:with-param name="path">../contents</xsl:with-param>
+      <!-- Unlike other links, here we want the contents of the xref, not any generated text,
+           as the link text.
+           (For special handling, modify the xref coming in, in XSLT bits-fixup.xsl.) -->
+      <xsl:with-param name="text">
+        <xsl:apply-templates/>
+      </xsl:with-param>
     </xsl:apply-templates>
   </xsl:template>
   
   <xsl:template match="*" mode="link-here">
-    <xsl:param name="path"/>
+    <xsl:param name="path" select="$path-to-root"/>
     <xsl:param name="text">
       <xsl:apply-templates select="." mode="link-text"/>
     </xsl:param>
     <xsl:variable name="href">
       <xsl:apply-templates select="ancestor-or-self::*[exists(@jatskit:split)][1]" mode="id"/>
-      <xsl:text>-page.xhtml#</xsl:text>
-      <xsl:apply-templates select="." mode="id"/>
+      <xsl:text>-page.xhtml</xsl:text>
+      <!-- We point the link deeper into the file only if not splitting here. -->
+      <xsl:if test="empty(@jatskit:split)">
+        <xsl:text>#</xsl:text>
+        <xsl:apply-templates select="." mode="id"/>
+      </xsl:if>
     </xsl:variable>
     <a href="{string-join(($path,$href),'/')}">
       <xsl:sequence select="$text"/>
@@ -113,7 +184,7 @@
   </xsl:template>
   
   <xsl:template match="book-part" mode="link-text">
-    <xsl:for-each select="book-meta/book-title-group/title">
+    <xsl:for-each select="book-meta/title-group/title">
       <xsl:apply-templates mode="link-text"/>
     </xsl:for-each>
   </xsl:template>
@@ -123,5 +194,37 @@
     <xsl:apply-templates select="." mode="label-text"/>
     <xsl:apply-templates select="caption/title"/>
   </xsl:template>
+  
+  
+  <xsl:template name="toc-component-links">
+    <xsl:param name="pages" as="element()+"/>
+    <xsl:variable name="book-code" select="jatskit:book-code(/)"/>
+    <xsl:for-each select="$pages">
+      <li>
+        <xsl:call-template name="jatskit-component-link">
+          <xsl:with-param name="page" select="."/>
+          <xsl:with-param name="book-code" select="$book-code"/>
+        </xsl:call-template>
+      </li>
+    </xsl:for-each>
+  </xsl:template>
+  
+  <xsl:template name="jatskit-component-link">
+    <xsl:param name="page" as="element()"/>
+    <xsl:param name="book-code" select="jatskit:book-code(.)"/>
+    <a href="{$path-to-root}/{$book-code}-{local-name($page)}.xhtml">
+      <xsl:apply-templates select="$page" mode="component-title"/>
+    </a>
+  </xsl:template>
+  
+  <xsl:template match="jatskit:toc" mode="component-title">Contents</xsl:template>
+  
+  <xsl:template match="jatskit:titlepage" mode="component-title">Title page</xsl:template>
+  
+  <xsl:template match="jatskit:halftitle" mode="component-title">Metadata</xsl:template>
+  
+  <xsl:template match="jatskit:colophon" mode="component-title">Colophon</xsl:template>
+  
+  
   
 </xsl:stylesheet>

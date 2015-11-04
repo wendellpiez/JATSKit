@@ -10,6 +10,8 @@
   
   <p:input  port="source"/>
 
+  <p:input port="parameters" kind="parameter"/>
+  
   <p:output primary="true" port="result" sequence="true"/>
   <p:serialization         port="result" indent="true"/>
   
@@ -18,11 +20,6 @@
     <p:pipe step="opf-file"   port="bound-to-URI"/>
   </p:output>
   <p:serialization port="debug" indent="true"/>
-  
-  
-  <p:input port="parameters" kind="parameter"/>
-  
-  
   
   <p:import href="xml-bindtoURI.xpl"/>
   
@@ -53,7 +50,6 @@
   -->
   
   <jatskit:book-web-sequence name="web-sequence"/>
- 
 
 <!-- For producing the output, we assemble a sequence of resources,
      including both pipeline results (bound to URIs for zipping), or
@@ -201,7 +197,7 @@
   <p:wrap-sequence wrapper="jatskit:kit" name="opf-source">
     <p:input port="source"  sequence="true">
       <p:pipe port="result" step="file-manifest"/>
-      <p:pipe port="source-marked" step="web-sequence"/>
+      <p:pipe port="source-ready" step="web-sequence"/>
     </p:input>
   </p:wrap-sequence>
 

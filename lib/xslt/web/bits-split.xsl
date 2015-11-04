@@ -34,10 +34,17 @@
          
          -->
   
+  <!-- Mostly everything is copied. -->
+  <xsl:template match="node() | @*">
+    <xsl:copy>
+      <xsl:apply-templates select="node() | @*"/>
+    </xsl:copy>
+  </xsl:template>
+  
   <xsl:template match="/book">
     <jatskit:book-sequence>
       <xsl:copy-of select="/*/namespace::*"/>
-      <xsl:apply-templates select="//*[exists(@jatskit:split)]" mode="split"/>
+      <xsl:apply-templates select="//@jatskit:split/.." mode="split"/>
     </jatskit:book-sequence>
   </xsl:template>
   
@@ -45,53 +52,80 @@
        and go back up to the top to recurse back down to ourselves,
        copying the structure as we go. -->
   <xsl:template match="*[exists(@jatskit:split)]" mode="split">
-    <xsl:apply-templates select="ancestor::book" mode="copy-split">
-      <xsl:with-param tunnel="yes" name="splitting" select="."/>
-    </xsl:apply-templates>
+    <xsl:variable name="splitting" select="."/>
+    <book>
+      <xsl:copy-of select="/book/@*"/>
+      <xsl:copy-of select="/book/collection-meta"/>
+      <xsl:copy-of select="/book/book-meta"/>
+      <xsl:for-each select="ancestor::front-matter | ancestor::book-body | ancestor::book-back">
+        <xsl:copy>
+          <xsl:copy-of select="@*"/>
+          <xsl:apply-templates select="$splitting" mode="make-book-part"/>
+        </xsl:copy>
+      </xsl:for-each>
+    </book>
   </xsl:template>
-
-  <xsl:template match="*" mode="copy-split">
-    <!-- $splitting is the element being split out.
+  
+  <!--<!-\- Template matches everything since it may be called recursively. -\->
+  <xsl:template match="book" mode="copy-split">
+    <!-\- $splitting is the element being split out.
       Inside a copy of the context node, we convert the $splitting to
-      a book-part if it is a child, or continue descending if not. -->
+      a book-part if it is a child, or continue descending if not. -\->
     <xsl:param tunnel="yes" name="splitting" as="element()" required="yes"/>
     <xsl:copy>
       <xsl:copy-of select="@* except @jatskit:split"/>
-      <!-- When at the book level, we copy the book-level metadata as well. -->
+      <!-\- When at the book level, we copy the book-level metadata as well. -\->
       <xsl:copy-of select="book-meta"/>
-      <xsl:choose>
+      <xsl:apply-templates select="$splitting" mode="make-book-part"/>
+      <!-\-<xsl:choose>
         <xsl:when test="exists(* intersect $splitting)">
           <xsl:apply-templates select="$splitting" mode="make-book-part"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:apply-templates select="* intersect $splitting/ancestor::*" mode="#current"/>
         </xsl:otherwise>
-      </xsl:choose>
+      </xsl:choose>-\->
     </xsl:copy>
-  </xsl:template>
+  </xsl:template>-->
   
-  <xsl:template match="book-part" mode="make-book-part">
+  <!--<xsl:template match="book-part" mode="make-book-part">
     <xsl:copy>
       <xsl:apply-templates select="node() | @*"/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="*" mode="make-book-part">
-    <book-part>
-      <xsl:copy>
-        <xsl:apply-templates select="node() | @*"/>
-      </xsl:copy>
-    </book-part>
-  </xsl:template>
-
-  <xsl:template match="*[exists(@jatskit:split)]">
-    <jatskit:split to="{@id}"/>
+    <xsl:apply-templates select="."/>
+  </xsl:template>-->
+  
+  <xsl:template match="book-part" mode="make-book-part">
+    <xsl:apply-templates select=".">
+      <xsl:with-param name="splitting" tunnel="yes" select="."/>
+    </xsl:apply-templates>
   </xsl:template>
   
-  <xsl:template match="node() | @*">
-    <xsl:copy>
-      <xsl:apply-templates select="node() | @*"/>
-    </xsl:copy>
+  <!-- Error trapping; if splitting is to happen on elements other than book-parts,
+       they need (new) templates to make book-parts out of them. -->
+  <xsl:template match="*" mode="make-book-part">
+    <jatskit:error>
+      <xsl:text>Unexpected match in mode 'make-book-part' on element </xsl:text>
+      <xsl:value-of select="name()"/>
+    </jatskit:error>
   </xsl:template>
+  
 
+  <xsl:template match="*[exists(@jatskit:split)]">
+    <xsl:param name="splitting" tunnel="yes" required="yes"/>
+    <xsl:choose>
+      <!-- When at the element we are splitting out, we continue... -->
+      <xsl:when test=". is $splitting">
+        <xsl:next-match/>
+      </xsl:when>
+      <!-- When at any other element (marked for splitting) we insert a reference instead. --> 
+      <xsl:otherwise>
+        <jatskit:split to="{@id}"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+ 
 </xsl:stylesheet>

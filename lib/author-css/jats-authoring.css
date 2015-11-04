@@ -148,7 +148,9 @@ addr-line,
 country {
   display:block;
 }
-  
+
+publisher-loc * { display: inline }
+
 email {
   font-size: 90%;
   color: blue;

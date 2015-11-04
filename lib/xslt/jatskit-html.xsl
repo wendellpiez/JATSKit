@@ -7,9 +7,9 @@
   
   <xsl:import href="jats-preview-xslt/xslt/main/jats-html.xsl"/>
   
-  <xsl:param name="transform" as="xs:string">bits-html.xsl</xsl:param>
+  <xsl:param name="transform" as="xs:string">jatskit-html.xsl</xsl:param>
   
-  <xsl:param name="css" select="resolve-uri('../web-css/jatskit-preview.css',document-uri(document('')))"/>
+  <xsl:param name="css" select="resolve-uri('../web-css/jatskit-simple.css',document-uri(document('')))"/>
   
   <xsl:template match="book">
     <!--  (collection-meta*,book-meta?,front-matter?,book-body?,book-back?)  -->

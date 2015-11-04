@@ -7,23 +7,31 @@
   
   <xsl:param name="path-to-root" as="xs:string">.</xsl:param>
   
+  <xsl:param name="format" as="xs:string">epub</xsl:param>
+  
   <!-- Files may need links to CSS. 
        The assumption is that the file generated will be placed at the top level;
        a runtime override permits files to be placed elsewhere. -->
-  <xsl:variable name="path-to-css" select="concat($path-to-root,'/css/jatskit-web.css')"/>
+  <xsl:variable name="path-to-css">
+    <xsl:value-of select="$path-to-root"/>
+    <xsl:text>/css/jatskit-</xsl:text>
+    <xsl:value-of select="if ($format='epub') then 'epub' else 'simple'"/>
+    <xsl:text>.css</xsl:text>
+  </xsl:variable>
 
   <xsl:key name="element-by-id" match="*[exists(@id)]" use="@id"/>
   
+  <xsl:variable name="show-book-title">
+    <xsl:apply-templates select="/descendant::book-title[1]" mode="link-text"/>
+  </xsl:variable>
+  
   <xsl:template name="make-html-page">
     <xsl:param name="attribute-proxies" as="element()?"/>
-    <xsl:param name="page-title">
-      <xsl:apply-templates select="/descendant::book-title[1]" mode="plain"/>
-    </xsl:param>
+    <xsl:param name="page-title" select="$show-book-title"/>
     <xsl:param name="html-contents">
       <xsl:apply-templates/>
     </xsl:param>
     <html>
-      
       <xsl:apply-templates select="$attribute-proxies/@*" mode="html-page-attrs"/>
       <head>
         <title>
@@ -47,7 +55,7 @@
     <!-- Non-standard @base becomes xml:base -->
     <xsl:attribute name="xml:base" select="."/>
   </xsl:template>
-  
+ 
   <xsl:function name="jatskit:uri-basename" as="xs:string">
     <xsl:param name="file-uri" as="xs:string"/>
     <!-- Trimming for and aft from the document's URI to get a nominal code.
@@ -66,8 +74,8 @@
       (a) the assigned ID of the first component (probably a book-part) marked for splitting
           (there will always be one, and only one, on controlled inputs)
       (b) or, the @id of the book (if no splits are marked)
-      (c) or, the string 'book' -->
-    <xsl:sequence select="concat(($page//@jatskit:split/../@id,$page/@id,'book')[1],'-page')"/>
+      (c) or, the string 'ERROR' which of course we should never see. -->
+    <xsl:sequence select="concat(($page//@jatskit:split/../@id,$page/@id,'ERROR')[1],'-page')"/>
   </xsl:function>
 
   <xsl:function name="jatskit:page-path" as="xs:anyURI">

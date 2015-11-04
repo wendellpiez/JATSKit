@@ -37,18 +37,21 @@ named-content[content-type=""]:after {
         oxy_combobox(           
             edit, "@content-type",
             editable, true,
-            values, "called, quoted, quote, quoted-title, stress, mention, worktitle");
+            values, "called, foreign, mention, quote, quoted, quoted-title, stress, worktitle");
 }
 
+named-content[content-type=foreign],
 named-content[content-type=stress],
 named-content[content-type=worktitle] { font-style: italic }
 
 named-content[content-type=called]:before,
+named-content[content-type=mention]:before,
 named-content[content-type=quoted]:before,
 named-content[content-type=quote]:before,
 named-content[content-type=quoted-title]:before { content: "“"  }
 
 named-content[content-type=called]:after,
+named-content[content-type=mention]:after,
 named-content[content-type=quoted]:after,
 named-content[content-type=quote]:after,
 named-content[content-type=quoted-title]:after { content: "”"  }
