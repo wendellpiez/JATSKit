@@ -33,9 +33,9 @@
           <ol>
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
+                <jatskit:titlepage/>
                 <jatskit:halftitle/>
                 <jatskit:toc/>
-                <jatskit:colophon/>
               </xsl:with-param>
             </xsl:call-template>
           </ol>

@@ -69,7 +69,7 @@
     <sch:rule context="graphic">
       <sch:let name="filename" value="tokenize(@xlink:href,'/')[last()]"/>
       <sch:assert test="matches($filename,'^\i\c*$')">
-        A graphic/@xlink:href has troublesome characters in its filename, causing confusion in EPUB assembly. Please
+        A graphic/@xlink:href has troublesome characters in its filename, which will cause confusion in EPUB assembly. Please
         rename the file or pick another.</sch:assert>
       <sch:assert test="replace($filename,'^.+\.','') = $known-imagefile-suffixes">
         A graphic appears to point to an unknown image type, given its file suffix. The EPUB wants jpegs,

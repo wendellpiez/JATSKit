@@ -24,13 +24,10 @@
       </xsl:with-param>      
       <xsl:with-param name="html-contents">
         <div class="titlepage-body">
-          <xsl:for-each select="book-meta/book-title-group/book-title">
-            <h1>
-              <xsl:apply-templates/>
-            </h1>
-          </xsl:for-each>
-          
-          <ol>
+          <xsl:apply-templates select="book-meta/book-title-group"/>
+          <xsl:apply-templates select="book-meta/contrib-group"/>
+          <xsl:apply-templates select="book-meta/(publisher, pub-date, edition)"/>
+          <ul class="pagelinks">
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
                 <jatskit:halftitle/>
@@ -38,12 +35,50 @@
                 <jatskit:colophon/>
               </xsl:with-param>
             </xsl:call-template>
-          </ol>
+          </ul>
         </div>
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
- 
+  
+  <xsl:template match="book-title">
+    <h1 class="book-title">
+      <xsl:apply-templates/>
+    </h1>
+  </xsl:template>
+  
+  <xsl:template match="subtitle">
+    <h2 class="book-subtitle">
+      <xsl:apply-templates/>
+    </h2>
+  </xsl:template>
+  
+  <xsl:template match="alt-title">
+    <h3 class="book-alt-title">
+      <xsl:apply-templates/>
+    </h3>
+  </xsl:template>
+  
+  <xsl:template match="trans-title">
+    <h3 class="book-trans-title">
+      <xsl:for-each select="@xml:lang">
+        <xsl:text>[</xsl:text>
+        <xsl:value-of select="."/>
+        <xsl:text>] </xsl:text>
+      </xsl:for-each>
+      <xsl:apply-templates/>
+    </h3>
+  </xsl:template>
+
+  <xsl:template match="contrib">
+    <xsl:apply-templates select="(anonymous | collab | */collab | name | */name )"/>
+  </xsl:template>
+  
+  <xsl:template match="contrib/* | collab | name" priority="100">
+    <p class="contrib {local-name()}">
+      <xsl:next-match/>
+    </p>
+  </xsl:template>
   
   
 </xsl:stylesheet>

@@ -199,5 +199,23 @@
     </a>
   </xsl:template>
   
+  <xsl:template match="name[@name-style='eastern']">
+    <xsl:apply-templates select="prefix, (* except prefix)"/>
+  </xsl:template>
+  
+  <xsl:template match="name">
+    <xsl:apply-templates select="prefix, given-names, surname, suffix"/>
+  </xsl:template>
+  
+  <xsl:template match="name/*">
+    <xsl:if test="position() gt 1">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:template>
+  
+  
+  
+  
   
 </xsl:stylesheet>

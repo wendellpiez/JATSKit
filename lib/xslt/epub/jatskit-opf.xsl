@@ -116,6 +116,14 @@
     </package>
   </xsl:template>
   
+  <!-- With extreme prejudice, we prefer not to generate anything that has no useful string value.
+       So stub (placeholder) elements will be dropped. -->
+  <xsl:template match="*" priority="100" mode="opf-metadata">
+    <xsl:if test="matches(string(.),'\S')">
+      <xsl:next-match/>
+    </xsl:if>
+  </xsl:template>
+  
   <xsl:template mode="opf-metadata" match="book-id">
     <dc:identifier>
       <xsl:apply-templates select="@book-id-type" mode="#current"/>

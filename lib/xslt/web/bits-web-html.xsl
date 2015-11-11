@@ -225,6 +225,85 @@
   
   <xsl:template match="jatskit:colophon" mode="component-title">Colophon</xsl:template>
   
+  <xsl:template match="book-id" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+        <xsl:choose>
+          <xsl:when test="@book-id-type='art-access-id'">Accession ID</xsl:when>
+          <xsl:when test="@book-id-type='coden'">Coden</xsl:when>
+          <xsl:when test="@book-id-type='doi'">DOI</xsl:when>
+          <xsl:when test="@book-id-type='manuscript'">Manuscript ID</xsl:when>
+          <xsl:when test="@book-id-type='medline'">Medline ID</xsl:when>
+          <xsl:when test="@book-id-type='pii'">Publisher Item ID</xsl:when>
+          <xsl:when test="@book-id-type='pmid'">PubMed ID</xsl:when>
+          <xsl:when test="@book-id-type='publisher-id'">Publisher ID</xsl:when>
+          <xsl:when test="@book-id-type='sici'">Serial Item and Contribution ID</xsl:when>
+          <xsl:when test="@book-id-type='doaj'">DOAJ ID</xsl:when>
+          <xsl:when test="@book-id-type='arXiv'">arXiv.org ID</xsl:when>
+          <xsl:otherwise>
+            <xsl:text>Book ID</xsl:text>
+            <xsl:for-each select="@pub-id-type">
+              <xsl:text> (</xsl:text>
+              <span class="data">
+                <xsl:value-of select="."/>
+              </span>
+              <xsl:text>)</xsl:text>
+            </xsl:for-each>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
   
+  <xsl:template match="book-title-group" mode="metadata">
+    <!-- content model:
+    article-title, subtitle*, trans-title-group*, alt-title*, fn-group? -->
+    <!-- trans-title and trans-subtitle included for 2.3 -->
+    <xsl:apply-templates select="*" mode="metadata"/>
+  </xsl:template>
+  
+  
+  <xsl:template match="book-title-group/book-title" mode="metadata">
+    <h1 class="book-title">
+      <xsl:apply-templates/>
+      <xsl:if test="../subtitle">:</xsl:if>
+    </h1>
+  </xsl:template>
+  
+  
+  <xsl:template match="book-title-group/subtitle | book-trans-title-group/subtitle"
+    mode="metadata">
+    <h2 class="book-title">
+      <xsl:apply-templates/>
+    </h2>
+  </xsl:template>
+  
+  
+  <xsl:template match="book-title-group/trans-title-group" mode="metadata">
+    <!-- content model: (trans-title, trans-subtitle*) -->
+    <xsl:apply-templates mode="metadata"/>
+  </xsl:template>
+  
+  
+  
+  <xsl:template match="book-title-group/alt-title" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+        <xsl:text>Alternative title</xsl:text>
+        <xsl:for-each-group select="@alt-title-type | @xml:lang" group-by="true()">
+          <xsl:text> (</xsl:text>
+          <span class="data">
+            <xsl:value-of select="current-group()" separator=", "/>
+          </span>
+          <xsl:text>)</xsl:text>
+        </xsl:for-each-group>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+  <xsl:template match="book-title-group/fn-group" mode="metadata">
+    <xsl:apply-templates/>
+  </xsl:template>
   
 </xsl:stylesheet>

@@ -288,15 +288,15 @@
           <xsl:template match="/">
             <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
             <jatskit:kit>
-              <jatskit:css href="../web-css/jatskit-epub.css"
-                target="{$target-dir}/css/jatskit-epub.css"
-                as="css/jatskit-web.css"/>
-              <jatskit:css href="../web-css/jatskit-simple.css"
-                target="{$target-dir}/css/jatskit-simple.css"
-                as="css/jatskit-simple.css"/>
-              <jatskit:css href="../xslt/jats-preview-xslt/jats-preview.css"
-                target="{$target-dir}/css/jats-preview.css"
-                as="css/jats-preview.css"/>
+              <jatskit:css as="css/jatskit-epub.css"
+                  href="../web-css/jatskit-epub.css"
+         target="{$target-dir}/css/jatskit-epub.css"/>
+              <jatskit:css as="css/jatskit-simple.css"
+                  href="../web-css/jatskit-simple.css"
+         target="{$target-dir}/css/jatskit-simple.css"/>
+              <jatskit:css as="css/jats-preview.css"
+   href="../xslt/jats-preview-xslt/jats-preview.css"
+         target="{$target-dir}/css/jats-preview.css"/>
             </jatskit:kit>
           </xsl:template>
         </xsl:stylesheet>

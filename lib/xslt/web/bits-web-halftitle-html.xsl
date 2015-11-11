@@ -23,28 +23,42 @@
         </html>        
       </xsl:with-param>      
       <xsl:with-param name="html-contents">
-        <div class="titlepage-body">
-          <xsl:for-each select="book-meta/book-title-group/book-title">
-            <h1>
-              <xsl:apply-templates/>
-            </h1>
-          </xsl:for-each>
-          
-          <xsl:apply-templates select="book-meta" mode="metadata"/>
-          <ol>
+        <div class="halftitle-body">
+          <xsl:apply-templates select="book-meta/*" mode="halftitle-div"/>
+          <ul class="pagelinks">
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
-                <jatskit:halftitle/>
+                <jatskit:titlepage/>
                 <jatskit:toc/>
                 <jatskit:colophon/>
               </xsl:with-param>
             </xsl:call-template>
-          </ol>
+          </ul>
         </div>
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
  
+  <xsl:template match="*" mode="halftitle-div">
+    <div class="{local-name(.)}">
+      <xsl:apply-templates mode="metadata" select="."/>
+    </div>
+  </xsl:template>
+  
+  <xsl:template match="name[@name-style='eastern']">
+    <xsl:apply-templates select="prefix, (* except prefix)"/>
+  </xsl:template>
+  
+  <xsl:template match="name">
+    <xsl:apply-templates select="prefix, given-names, surname, suffix"/>
+  </xsl:template>
+  
+  <xsl:template match="name/*">
+    <xsl:if test="position() gt 1">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:template>
   
   
 </xsl:stylesheet>
