@@ -102,7 +102,7 @@
          are prepended with the JATS @id value for disambiguation.
     -->
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-mark-for-splitting.xsl"/>
+      <p:document href="../xslt/web/jatskit-mark-for-splitting.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -113,7 +113,7 @@
        that generate ToC page, etc. -->
   <p:xslt name="ready-to-split">
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-fixup.xsl"/>
+      <p:document href="../xslt/web/jatskit-fixup.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -127,7 +127,7 @@
        -->
   <p:xslt name="bookparts-split">
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-split.xsl"/>
+      <p:document href="../xslt/web/jatskit-split.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -142,7 +142,7 @@
     <!-- Target format defaults to 'epub' but can be overridden for other (web) outputs. -->
     <p:with-param name="format" select="$target-format"/>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-web-html.xsl"/>
+      <p:document href="../xslt/web/jatskit-ebook-html.xsl"/>
     </p:input>
   </p:xslt>
   
@@ -166,7 +166,7 @@
       <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-web-toc-html.xsl"/>
+      <p:document href="../xslt/web/jatskit-ebook-toc.xsl"/>
       <!-- Note the directory needs to know where files are being split, to
            write links correctly ... hence the usefulness of @jatskit:spit markers. -->
     </p:input>  
@@ -193,7 +193,7 @@
       <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-web-titlepage-html.xsl"/>
+      <p:document href="../xslt/web/jatskit-ebook-titlepage.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -212,7 +212,7 @@
       <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-web-halftitle-html.xsl"/>
+      <p:document href="../xslt/web/jatskit-ebook-halftitle.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -231,7 +231,7 @@
       <p:pipe port="result" step="ready-to-split"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="../xslt/web/bits-web-colophon-html.xsl"/>
+      <p:document href="../xslt/web/jatskit-ebook-colophon.xsl"/>
     </p:input>  
   </p:xslt>
    

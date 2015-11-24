@@ -6,7 +6,7 @@
   exclude-result-prefixes="xs jatskit"
   version="2.0">
 
-  <xsl:import href="bits-web-html.xsl"/>
+  <xsl:import href="jatskit-ebook-html.xsl"/>
   
   <xsl:template match="/">
     <xsl:apply-templates select="book"/>
