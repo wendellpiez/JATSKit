@@ -25,3 +25,6 @@ ul.pagelinks  { display: block; padding: 0em; line-height: 300%; text-align: cen
                 font-family: sans-serif; font-weight: bold; font-size: 80% }
 ul.pagelinks li { display: block; width: 8em; margin: 0.25em auto; line-height: 200%;
                   padding: 0.25em; border: medium ridge black; background-color: gainsboro }
+
+div.colophon-body ul.pagelinks li { display: inline-block; margin: 0.25em 1em }
+

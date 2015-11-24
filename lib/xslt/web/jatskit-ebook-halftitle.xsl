@@ -45,20 +45,19 @@
     </div>
   </xsl:template>
   
-  <xsl:template match="name[@name-style='eastern']">
+  <xsl:template mode="metadata" match="name[@name-style='eastern']">
     <xsl:apply-templates select="prefix, (* except prefix)"/>
   </xsl:template>
   
-  <xsl:template match="name">
+  <xsl:template mode="metadata" match="name">
     <xsl:apply-templates select="prefix, given-names, surname, suffix"/>
   </xsl:template>
   
-  <xsl:template match="name/*">
+  <xsl:template mode="metadata" match="name/*">
     <xsl:if test="position() gt 1">
       <xsl:text> </xsl:text>
     </xsl:if>
     <xsl:apply-templates/>
   </xsl:template>
-  
   
 </xsl:stylesheet>

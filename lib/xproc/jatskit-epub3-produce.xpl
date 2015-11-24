@@ -23,7 +23,7 @@
   
   <p:import href="xml-bindtoURI.xpl"/>
   
-  <p:import href="book-web-sequence.xpl"/>
+  <p:import href="jatskit-ebook-sequence.xpl"/>
 
   <p:declare-step type="pxp:zip" xml:base="file:/projects/github/docs-calabash/src/declarations.xml">
     <p:input port="source" sequence="true" primary="true"/>

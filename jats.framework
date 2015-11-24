@@ -1026,7 +1026,7 @@
 									<null/>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/lib/xproc/book-epub-produce.xpl</String>
+									<String>${framework}/lib/xproc/jatskit-epub-produce.xpl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String></String>
@@ -1144,7 +1144,7 @@
 									<null/>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/lib/xproc/book-web-produce.xpl</String>
+									<String>${framework}/lib/xproc/jatskit-ebook-produce.xpl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String></String>

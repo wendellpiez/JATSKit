@@ -14,7 +14,7 @@
 
   <!--<p:output port="result"/>-->
   
-  <p:import href="book-web-sequence.xpl"/>
+  <p:import href="jatskit-ebook-sequence.xpl"/>
   
   <!--<p:variable name="result-basedir" select="resolve-uri('web',document-uri(/))"/>-->
 
