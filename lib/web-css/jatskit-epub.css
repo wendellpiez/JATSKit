@@ -13,9 +13,12 @@ p.metadata-entry { border: thin inset black; padding: 0.25em }
 div.metadata-area p.metadata-entry { border: none; padding: 0em }
 
 
-a { color: inherit }
+a { color: inherit; border: thin dotted black; padding: 0.2em }
+a:hover { color: white; background-color: black }
 
 nav a { text-decoration: none }
+
+nav ol li { margin-top: 1em; margin-bottom: 1em }
 
 div.titlepage-body { text-align: center; line-height: 300%; margin-top: 5em }
 

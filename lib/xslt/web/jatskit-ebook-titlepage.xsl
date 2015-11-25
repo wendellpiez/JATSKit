@@ -24,9 +24,13 @@
       </xsl:with-param>      
       <xsl:with-param name="html-contents">
         <div class="titlepage-body">
-          <xsl:apply-templates select="book-meta/book-title-group"/>
-          <xsl:apply-templates select="book-meta/contrib-group"/>
-          <xsl:apply-templates select="book-meta/(publisher, pub-date, edition)"/>
+          <xsl:for-each select="book-meta">
+            <xsl:apply-templates select="book-title-group"/>
+            <xsl:apply-templates select="contrib-group"/>
+            <div class="publication">
+              <xsl:apply-templates select="publisher, pub-date, edition"/>
+            </div>
+          </xsl:for-each>
           <ul class="pagelinks">
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
@@ -78,6 +82,40 @@
     <p class="contrib {local-name()}">
       <xsl:next-match/>
     </p>
+  </xsl:template>
+  
+  
+  <xsl:template match="publisher">
+    <span class="publisher">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="pub-date">
+    <xsl:if test="exists(../publisher)">
+      <xsl:text>, </xsl:text>
+    </xsl:if>
+    <span class="pub-date">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="pub-date/*">
+    <xsl:if test="exists(preceding-sibling::*)">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+    <span class="{local-name(.)}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="edition">
+    <xsl:if test="exists(../(publisher|pub-date))">
+      <xsl:text>. </xsl:text>
+    </xsl:if>
+    <span class="edition">
+      <xsl:apply-templates/>
+    </span>
   </xsl:template>
   
   
