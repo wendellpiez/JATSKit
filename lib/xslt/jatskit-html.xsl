@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  exclude-result-prefixes="xs"
+  exclude-result-prefixes="#all"
   version="2.0">
   
   <xsl:import href="jats-preview-xslt/xslt/main/jats-html.xsl"/>
@@ -11,6 +11,49 @@
   
   <xsl:param name="css" select="resolve-uri('../web-css/jatskit-simple.css',document-uri(document('')))"/>
   
+<!--  -->
+
+<!-- Overriding certain templates to patch jats-html.xsl - these can be pushed upstream! -->
+  <xsl:template name="make-html-header">
+    <head>
+      <title>
+        <xsl:variable name="authors">
+          <xsl:call-template name="author-string"/>
+        </xsl:variable>
+        <xsl:value-of select="normalize-space(string($authors))"/>
+        <xsl:if test="normalize-space(string($authors))">: </xsl:if>
+        <xsl:value-of
+          select="(/article/front/article-meta/title-group/article-title,
+                   /book/book-meta/book-title-group/book-title[1])[1]"/>
+      </title>
+      <link rel="stylesheet" type="text/css" href="{$css}"/>
+      <!-- When importing jats-oasis-html.xsl, we can call a template to insert CSS for our tables. -->
+      <!--<xsl:call-template name="p:table-css" xmlns:p="http://www.wendellpiez.com/oasis-tables/util"/>-->
+    </head>
+  </xsl:template>
+  
+  
+  <xsl:template name="author-string">
+    <xsl:variable name="all-contribs"
+      select="(/article/front/article-meta/contrib-group/contrib |
+               /book/book-meta/contrib-group/contrib)
+            / ( name/surname | collab )"/>
+    <xsl:for-each select="$all-contribs">
+      <xsl:if test="count($all-contribs) &gt; 1">
+        <xsl:if test="position() &gt; 1">
+          <xsl:if test="count($all-contribs) &gt; 2">,</xsl:if>
+          <xsl:text> </xsl:text>
+        </xsl:if>
+        <xsl:if test="position() = count($all-contribs)">and </xsl:if>
+      </xsl:if>
+      <xsl:value-of select="."/>
+    </xsl:for-each>
+  </xsl:template>
+  
+
+<!--  -->
+  
+<!-- Now, amendments to cover 'book' elements. -->
   <xsl:template match="book">
     <!--  (collection-meta*,book-meta?,front-matter?,book-body?,book-back?)  -->
     <xsl:apply-templates/>  
@@ -20,6 +63,189 @@
     </div>
   </xsl:template>
   
+  <xsl:template match="book-meta">
+    <div class="metadata book-meta">
+      <xsl:apply-templates mode="metadata"/>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="book-meta/subj-group" mode="metadata">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">Subject assignments</xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-meta/subj-group" mode="metadata">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">Electronic Location Identifier</xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+<!--book-id book-title-group contrib-group isbn publisher edition pub-history permissions counts-->
+  <xsl:template match="book-meta/book-id" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+        <xsl:text>Book ID</xsl:text>
+        <xsl:for-each select="@book-id-type">
+          <xsl:text> (</xsl:text>
+          <span class="data">
+            <xsl:value-of select="."/>
+          </span>
+          <xsl:text>)</xsl:text>
+        </xsl:for-each>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-title-group | book-part-meta/title-group" mode="metadata" priority="0.5">
+    <xsl:apply-templates mode="metadata"/>
+  </xsl:template>
+  
+  <xsl:template match="book-title" mode="metadata" priority="0.5">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">Title</xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+  <xsl:template match="book-title-group/subtitle" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">Subtitle</xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="trans-title-group" mode="metadata">
+    <xsl:apply-templates mode="metadata"/>
+  </xsl:template>
+  
+  <xsl:template match="book-title-group/alt-title" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+        <xsl:text>Alternative title</xsl:text>
+        <xsl:for-each select="@alt-title-type">
+          <xsl:text> (</xsl:text>
+          <span class="data">
+            <xsl:value-of select="."/>
+          </span>
+          <xsl:text>)</xsl:text>
+        </xsl:for-each>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-meta/contrib-group" mode="metadata">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">
+        <xsl:text>Contributor</xsl:text>
+        <xsl:if test="exists(contrib[2])">s</xsl:if>
+      </xsl:with-param>
+      
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="isbn | issn" mode="metadata" priority="0.5">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+        <xsl:value-of select="upper-case(local-name())"/>
+        <xsl:for-each select="@content-type">
+          <xsl:text> (</xsl:text>
+          <xsl:value-of select="."/>
+          <xsl:text>)</xsl:text>
+        </xsl:for-each>
+        <xsl:text>:</xsl:text>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-meta/publisher" mode="metadata">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">Publisher</xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-meta/edition" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">Edition</xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-meta/pub-history" mode="metadata">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">Publication history</xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+  <xsl:template match="pub-history/date" mode="metadata">
+    <xsl:call-template name="metadata-labeled-entry">
+      <xsl:with-param name="label">
+        <xsl:text>Date</xsl:text>
+        <xsl:for-each select="@date-type">
+          <xsl:choose>
+            <xsl:when test=".='accepted'"> accepted</xsl:when>
+            <xsl:when test=".='received'"> received</xsl:when>
+            <xsl:when test=".='rev-request'"> revision requested</xsl:when>
+            <xsl:when test=".='rev-recd'"> revision received</xsl:when>
+            <xsl:otherwise>
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="."/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:for-each>
+      </xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:call-template name="format-date"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template match="book-meta/permissions" mode="metadata">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">Rights and permissions</xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+  
+  <xsl:template match="book-meta/* | book-part-meta/*" mode="metadata" priority="0.4">
+    <xsl:call-template name="metadata-area">
+      <xsl:with-param name="label">
+        <xsl:value-of select="local-name()"/>
+      </xsl:with-param>
+      <xsl:with-param name="contents">
+        <xsl:apply-templates mode="metadata"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
+  
+  
+  
+  
+  <xsl:template match="front-matter | front-matter/*">
+    <div class="{ local-name(.) }">
+      <xsl:apply-templates/>
+    </div>
+    
+  </xsl:template>
   <xsl:template match="book-body">
     <xsl:apply-templates/>
     <xsl:apply-templates select="book-part" mode="build-part"/>
@@ -49,7 +275,7 @@
     
     <div class="book-part book-part{count(ancestor-or-self::book-part)}" id="{$this}">
       
-    <xsl:apply-templates select="book-part-meta"/>
+    <xsl:apply-templates select="book-part-meta" mode="metadata"/>
     <xsl:apply-templates select="front-matter"/>
     
     
@@ -78,7 +304,8 @@
     </div>
     
   </xsl:template>
-  
+ 
+ 
   
   <xsl:template match="named-content[@content-type=('worktitle','stress')]">
     <i class="{@content-type}">

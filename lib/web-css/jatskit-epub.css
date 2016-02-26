@@ -5,7 +5,7 @@ img { max-width: 100% }
 h1, h2, h3, h4, h5, h6 { color: inherit }
 .generated { color: grey; font-size: 80%; font-family: sans-serif }
 
-div.metadata-area { margin-left: 2em }
+div.metadata-area { }
 
 div.metadata-area,
 p.metadata-entry { border: thin inset black; padding: 0.25em }
@@ -29,5 +29,6 @@ ul.pagelinks  { display: block; padding: 0em; line-height: 300%; text-align: cen
 ul.pagelinks li { display: block; width: 8em; margin: 0.25em auto; line-height: 200%;
                   padding: 0.25em; border: medium ridge black; background-color: gainsboro }
 
-div.colophon-body ul.pagelinks li { display: inline-block; margin: 0.25em 1em }
+ul.pagelinks li
+{ display: inline-block; margin: 0.25em 1em }
 

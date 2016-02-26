@@ -24,6 +24,15 @@
       </xsl:with-param>      
       <xsl:with-param name="html-contents">
         <div class="halftitle-body">
+          <ul class="pagelinks">
+            <xsl:call-template name="toc-component-links">
+              <xsl:with-param name="pages" as="element()*">
+                <jatskit:titlepage/>
+                <jatskit:toc/>
+                <jatskit:colophon/>
+              </xsl:with-param>
+            </xsl:call-template>
+          </ul>
           <xsl:apply-templates select="book-meta/*" mode="halftitle-div"/>
           <ul class="pagelinks">
             <xsl:call-template name="toc-component-links">

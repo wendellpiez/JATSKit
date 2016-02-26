@@ -40,7 +40,7 @@
             <xsl:for-each-group
               select="
                 (front-matter | book-body | book-back)/
-                (book-part | *[exists(named-book-part-body)])"
+                (book-part | *[exists(named-book-part-body)] | ack)"
               group-by="true()">
               <xsl:apply-templates select="current-group()" mode="directory"/>
             </xsl:for-each-group>
@@ -69,10 +69,12 @@
   </xsl:template>
   
   <xsl:template match="*" mode="directory">
-   <xsl:apply-templates mode="#current"/>
+    <li>
+      <xsl:value-of select="local-name()"/>
+    </li>
   </xsl:template>
   
-  <xsl:template match="book-part | *[exists(named-book-part-body)]" mode="directory">
+  <xsl:template match="book-part | *[exists(named-book-part-body)] | ack" mode="directory">
     <li>
       <xsl:apply-templates select="." mode="title-link"/>
       <xsl:for-each-group select="*/sec | */book-part" group-by="true()">
@@ -92,6 +94,37 @@
         </ol>
       </xsl:for-each-group>
     </li>
+  </xsl:template>
+  
+  <xsl:template match="*[exists(named-book-part-body)]" mode="title-link">
+    <xsl:variable name="title" select="book-part-meta/title-group/title | title"/>
+    <xsl:apply-templates select="." mode="link-here">
+      <xsl:with-param name="path">contents</xsl:with-param>
+      <xsl:with-param name="text">
+        <xsl:apply-templates select="$title" mode="link-text"/>
+        <xsl:if test="empty($title)">
+          <xsl:apply-templates select="@book-part-type" mode="link-text"/>
+          <xsl:if test="empty(@book-part-type)">
+            <xsl:value-of select="local-name()"/>
+          </xsl:if>
+        </xsl:if>
+      </xsl:with-param>
+    </xsl:apply-templates>
+  </xsl:template>
+  
+  <xsl:template match="ack" mode="title-link">
+    <xsl:apply-templates select="." mode="link-here">
+      <xsl:with-param name="path">contents</xsl:with-param>
+      <xsl:with-param name="text">Acknowledgements</xsl:with-param>
+    </xsl:apply-templates>
+  </xsl:template>
+  
+  <xsl:template match="@book-part-type" mode="link-text">
+    <xsl:value-of select="."/>
+  </xsl:template>
+  
+  <xsl:template match="@book-part-type[.]" mode="link-text">
+    <xsl:value-of select="."/>
   </xsl:template>
   
   <xsl:template match="book-part | sec" mode="title-link">

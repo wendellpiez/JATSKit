@@ -1744,7 +1744,6 @@ or pipeline) parameterized.
     <xsl:apply-templates mode="metadata"/>
   </xsl:template>
 
-
   <xsl:template match="article-categories/subj-group" mode="metadata">
     <xsl:call-template name="metadata-area">
       <xsl:with-param name="label">Categories</xsl:with-param>
