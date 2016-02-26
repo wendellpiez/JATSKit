@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contentCompletionElementsMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                              xmlns="http://www.oxygenxml.com/ns/ccfilter/annotations"
+                              xsi:schemaLocation="http://www.oxygenxml.com/ns/ccfilter/annotations http://www.oxygenxml.com/ns/ccfilter/annotations/ccAnnotationsSchemaFilter.xsd">
+   <mappingGroup xml:base="descriptions/">
+      <mapping elementName="abbrev" path="abbrev.html" type="content"/>
+      <mapping elementName="abbrev-journal-title"
+               path="abbrev-journal-title.html"
+               type="content"/>
+      <mapping elementName="abstract" path="abstract.html" type="content"/>
+      <mapping elementName="access-date" path="access-date.html" type="content"/>
+      <mapping elementName="ack" path="ack.html" type="content"/>
+      <mapping elementName="addr-line" path="addr-line.html" type="content"/>
+      <mapping elementName="address" path="address.html" type="content"/>
+      <mapping elementName="aff" path="aff.html" type="content"/>
+      <mapping elementName="aff-alternatives"
+               path="aff-alternatives.html"
+               type="content"/>
+      <mapping elementName="ali:free_to_read"
+               path="ali_free_to_read.html"
+               type="content"/>
+      <mapping elementName="ali:license_ref"
+               path="ali_license_ref.html"
+               type="content"/>
+      <mapping elementName="alt-text" path="alt-text.html" type="content"/>
+      <mapping elementName="alt-title" path="alt-title.html" type="content"/>
+      <mapping elementName="alternatives" path="alternatives.html" type="content"/>
+      <mapping elementName="annotation" path="annotation.html" type="content"/>
+      <mapping elementName="anonymous" path="anonymous.html" type="content"/>
+      <mapping elementName="app" path="app.html" type="content"/>
+      <mapping elementName="app-group" path="app-group.html" type="content"/>
+      <mapping elementName="array" path="array.html" type="content"/>
+      <mapping elementName="article" path="article.html" type="content"/>
+      <mapping elementName="article-categories"
+               path="article-categories.html"
+               type="content"/>
+      <mapping elementName="article-id" path="article-id.html" type="content"/>
+      <mapping elementName="article-meta" path="article-meta.html" type="content"/>
+      <mapping elementName="article-title"
+               path="article-title.html"
+               type="content"/>
+      <mapping elementName="attrib" path="attrib.html" type="content"/>
+      <mapping elementName="author-comment"
+               path="author-comment.html"
+               type="content"/>
+      <mapping elementName="author-notes" path="author-notes.html" type="content"/>
+      <mapping elementName="award-group" path="award-group.html" type="content"/>
+      <mapping elementName="award-id" path="award-id.html" type="content"/>
+      <mapping elementName="back" path="back.html" type="content"/>
+      <mapping elementName="bio" path="bio.html" type="content"/>
+      <mapping elementName="body" path="body.html" type="content"/>
+      <mapping elementName="bold" path="bold.html" type="content"/>
+      <mapping elementName="boxed-text" path="boxed-text.html" type="content"/>
+      <mapping elementName="break" path="break.html" type="content"/>
+      <mapping elementName="caption" path="caption.html" type="content"/>
+      <mapping elementName="chapter-title"
+               path="chapter-title.html"
+               type="content"/>
+      <mapping elementName="chem-struct" path="chem-struct.html" type="content"/>
+      <mapping elementName="chem-struct-wrap"
+               path="chem-struct-wrap.html"
+               type="content"/>
+      <mapping elementName="citation-alternatives"
+               path="citation-alternatives.html"
+               type="content"/>
+      <mapping elementName="city" path="city.html" type="content"/>
+      <mapping elementName="code" path="code.html" type="content"/>
+      <mapping elementName="col" path="col.html" type="content"/>
+      <mapping elementName="colgroup" path="colgroup.html" type="content"/>
+      <mapping elementName="collab" path="collab.html" type="content"/>
+      <mapping elementName="collab-alternatives"
+               path="collab-alternatives.html"
+               type="content"/>
+      <mapping elementName="comment" path="comment.html" type="content"/>
+      <mapping elementName="compound-kwd" path="compound-kwd.html" type="content"/>
+      <mapping elementName="compound-kwd-part"
+               path="compound-kwd-part.html"
+               type="content"/>
+      <mapping elementName="compound-subject"
+               path="compound-subject.html"
+               type="content"/>
+      <mapping elementName="compound-subject-part"
+               path="compound-subject-part.html"
+               type="content"/>
+      <mapping elementName="conf-acronym" path="conf-acronym.html" type="content"/>
+      <mapping elementName="conf-date" path="conf-date.html" type="content"/>
+      <mapping elementName="conf-loc" path="conf-loc.html" type="content"/>
+      <mapping elementName="conf-name" path="conf-name.html" type="content"/>
+      <mapping elementName="conf-num" path="conf-num.html" type="content"/>
+      <mapping elementName="conf-sponsor" path="conf-sponsor.html" type="content"/>
+      <mapping elementName="conf-theme" path="conf-theme.html" type="content"/>
+      <mapping elementName="conference" path="conference.html" type="content"/>
+      <mapping elementName="contrib" path="contrib.html" type="content"/>
+      <mapping elementName="contrib-group"
+               path="contrib-group.html"
+               type="content"/>
+      <mapping elementName="contrib-id" path="contrib-id.html" type="content"/>
+      <mapping elementName="copyright-holder"
+               path="copyright-holder.html"
+               type="content"/>
+      <mapping elementName="copyright-statement"
+               path="copyright-statement.html"
+               type="content"/>
+      <mapping elementName="copyright-year"
+               path="copyright-year.html"
+               type="content"/>
+      <mapping elementName="corresp" path="corresp.html" type="content"/>
+      <mapping elementName="count" path="count.html" type="content"/>
+      <mapping elementName="country" path="country.html" type="content"/>
+      <mapping elementName="counts" path="counts.html" type="content"/>
+      <mapping elementName="custom-meta" path="custom-meta.html" type="content"/>
+      <mapping elementName="custom-meta-group"
+               path="custom-meta-group.html"
+               type="content"/>
+      <mapping elementName="data-title" path="data-title.html" type="content"/>
+      <mapping elementName="date" path="date.html" type="content"/>
+      <mapping elementName="date-in-citation"
+               path="date-in-citation.html"
+               type="content"/>
+      <mapping elementName="day" path="day.html" type="content"/>
+      <mapping elementName="def" path="def.html" type="content"/>
+      <mapping elementName="def-head" path="def-head.html" type="content"/>
+      <mapping elementName="def-item" path="def-item.html" type="content"/>
+      <mapping elementName="def-list" path="def-list.html" type="content"/>
+      <mapping elementName="degrees" path="degrees.html" type="content"/>
+      <mapping elementName="disp-formula" path="disp-formula.html" type="content"/>
+      <mapping elementName="disp-formula-group"
+               path="disp-formula-group.html"
+               type="content"/>
+      <mapping elementName="disp-quote" path="disp-quote.html" type="content"/>
+      <mapping elementName="edition" path="edition.html" type="content"/>
+      <mapping elementName="element-citation"
+               path="element-citation.html"
+               type="content"/>
+      <mapping elementName="elocation-id" path="elocation-id.html" type="content"/>
+      <mapping elementName="email" path="email.html" type="content"/>
+      <mapping elementName="equation-count"
+               path="equation-count.html"
+               type="content"/>
+      <mapping elementName="era" path="era.html" type="content"/>
+      <mapping elementName="etal" path="etal.html" type="content"/>
+      <mapping elementName="ext-link" path="ext-link.html" type="content"/>
+      <mapping elementName="fax" path="fax.html" type="content"/>
+      <mapping elementName="fig" path="fig.html" type="content"/>
+      <mapping elementName="fig-count" path="fig-count.html" type="content"/>
+      <mapping elementName="fig-group" path="fig-group.html" type="content"/>
+      <mapping elementName="fixed-case" path="fixed-case.html" type="content"/>
+      <mapping elementName="floats-group" path="floats-group.html" type="content"/>
+      <mapping elementName="fn" path="fn.html" type="content"/>
+      <mapping elementName="fn-group" path="fn-group.html" type="content"/>
+      <mapping elementName="fpage" path="fpage.html" type="content"/>
+      <mapping elementName="front" path="front.html" type="content"/>
+      <mapping elementName="front-stub" path="front-stub.html" type="content"/>
+      <mapping elementName="funding-group"
+               path="funding-group.html"
+               type="content"/>
+      <mapping elementName="funding-source"
+               path="funding-source.html"
+               type="content"/>
+      <mapping elementName="funding-statement"
+               path="funding-statement.html"
+               type="content"/>
+      <mapping elementName="given-names" path="given-names.html" type="content"/>
+      <mapping elementName="glossary" path="glossary.html" type="content"/>
+      <mapping elementName="glyph-data" path="glyph-data.html" type="content"/>
+      <mapping elementName="glyph-ref" path="glyph-ref.html" type="content"/>
+      <mapping elementName="gov" path="gov.html" type="content"/>
+      <mapping elementName="graphic" path="graphic.html" type="content"/>
+      <mapping elementName="history" path="history.html" type="content"/>
+      <mapping elementName="hr" path="hr.html" type="content"/>
+      <mapping elementName="inline-formula"
+               path="inline-formula.html"
+               type="content"/>
+      <mapping elementName="inline-graphic"
+               path="inline-graphic.html"
+               type="content"/>
+      <mapping elementName="inline-supplementary-material"
+               path="inline-supplementary-material.html"
+               type="content"/>
+      <mapping elementName="institution" path="institution.html" type="content"/>
+      <mapping elementName="institution-id"
+               path="institution-id.html"
+               type="content"/>
+      <mapping elementName="institution-wrap"
+               path="institution-wrap.html"
+               type="content"/>
+      <mapping elementName="isbn" path="isbn.html" type="content"/>
+      <mapping elementName="issn" path="issn.html" type="content"/>
+      <mapping elementName="issn-l" path="issn-l.html" type="content"/>
+      <mapping elementName="issue" path="issue.html" type="content"/>
+      <mapping elementName="issue-id" path="issue-id.html" type="content"/>
+      <mapping elementName="issue-part" path="issue-part.html" type="content"/>
+      <mapping elementName="issue-sponsor"
+               path="issue-sponsor.html"
+               type="content"/>
+      <mapping elementName="issue-title" path="issue-title.html" type="content"/>
+      <mapping elementName="italic" path="italic.html" type="content"/>
+      <mapping elementName="journal-id" path="journal-id.html" type="content"/>
+      <mapping elementName="journal-meta" path="journal-meta.html" type="content"/>
+      <mapping elementName="journal-subtitle"
+               path="journal-subtitle.html"
+               type="content"/>
+      <mapping elementName="journal-title"
+               path="journal-title.html"
+               type="content"/>
+      <mapping elementName="journal-title-group"
+               path="journal-title-group.html"
+               type="content"/>
+      <mapping elementName="kwd" path="kwd.html" type="content"/>
+      <mapping elementName="kwd-group" path="kwd-group.html" type="content"/>
+      <mapping elementName="label" path="label.html" type="content"/>
+      <mapping elementName="license" path="license.html" type="content"/>
+      <mapping elementName="license-p" path="license-p.html" type="content"/>
+      <mapping elementName="list" path="list.html" type="content"/>
+      <mapping elementName="list-item" path="list-item.html" type="content"/>
+      <mapping elementName="long-desc" path="long-desc.html" type="content"/>
+      <mapping elementName="lpage" path="lpage.html" type="content"/>
+      <mapping elementName="media" path="media.html" type="content"/>
+      <mapping elementName="meta-name" path="meta-name.html" type="content"/>
+      <mapping elementName="meta-value" path="meta-value.html" type="content"/>
+      <mapping elementName="milestone-end"
+               path="milestone-end.html"
+               type="content"/>
+      <mapping elementName="milestone-start"
+               path="milestone-start.html"
+               type="content"/>
+      <mapping elementName="mixed-citation"
+               path="mixed-citation.html"
+               type="content"/>
+      <mapping elementName="mml:math" path="mml_math.html" type="content"/>
+      <mapping elementName="monospace" path="monospace.html" type="content"/>
+      <mapping elementName="month" path="month.html" type="content"/>
+      <mapping elementName="name" path="name.html" type="content"/>
+      <mapping elementName="name-alternatives"
+               path="name-alternatives.html"
+               type="content"/>
+      <mapping elementName="named-content"
+               path="named-content.html"
+               type="content"/>
+      <mapping elementName="nested-kwd" path="nested-kwd.html" type="content"/>
+      <mapping elementName="nlm-citation" path="nlm-citation.html" type="content"/>
+      <mapping elementName="note" path="note.html" type="content"/>
+      <mapping elementName="notes" path="notes.html" type="content"/>
+      <mapping elementName="object-id" path="object-id.html" type="content"/>
+      <mapping elementName="on-behalf-of" path="on-behalf-of.html" type="content"/>
+      <mapping elementName="open-access" path="open-access.html" type="content"/>
+      <mapping elementName="overline" path="overline.html" type="content"/>
+      <mapping elementName="overline-end" path="overline-end.html" type="content"/>
+      <mapping elementName="overline-start"
+               path="overline-start.html"
+               type="content"/>
+      <mapping elementName="p" path="p.html" type="content"/>
+      <mapping elementName="page-count" path="page-count.html" type="content"/>
+      <mapping elementName="page-range" path="page-range.html" type="content"/>
+      <mapping elementName="part-title" path="part-title.html" type="content"/>
+      <mapping elementName="patent" path="patent.html" type="content"/>
+      <mapping elementName="permissions" path="permissions.html" type="content"/>
+      <mapping elementName="person-group" path="person-group.html" type="content"/>
+      <mapping elementName="phone" path="phone.html" type="content"/>
+      <mapping elementName="postal-code" path="postal-code.html" type="content"/>
+      <mapping elementName="prefix" path="prefix.html" type="content"/>
+      <mapping elementName="preformat" path="preformat.html" type="content"/>
+      <mapping elementName="price" path="price.html" type="content"/>
+      <mapping elementName="principal-award-recipient"
+               path="principal-award-recipient.html"
+               type="content"/>
+      <mapping elementName="principal-investigator"
+               path="principal-investigator.html"
+               type="content"/>
+      <mapping elementName="private-char" path="private-char.html" type="content"/>
+      <mapping elementName="product" path="product.html" type="content"/>
+      <mapping elementName="pub-date" path="pub-date.html" type="content"/>
+      <mapping elementName="pub-id" path="pub-id.html" type="content"/>
+      <mapping elementName="publisher" path="publisher.html" type="content"/>
+      <mapping elementName="publisher-loc"
+               path="publisher-loc.html"
+               type="content"/>
+      <mapping elementName="publisher-name"
+               path="publisher-name.html"
+               type="content"/>
+      <mapping elementName="rb" path="rb.html" type="content"/>
+      <mapping elementName="ref" path="ref.html" type="content"/>
+      <mapping elementName="ref-count" path="ref-count.html" type="content"/>
+      <mapping elementName="ref-list" path="ref-list.html" type="content"/>
+      <mapping elementName="related-article"
+               path="related-article.html"
+               type="content"/>
+      <mapping elementName="related-object"
+               path="related-object.html"
+               type="content"/>
+      <mapping elementName="response" path="response.html" type="content"/>
+      <mapping elementName="role" path="role.html" type="content"/>
+      <mapping elementName="roman" path="roman.html" type="content"/>
+      <mapping elementName="rp" path="rp.html" type="content"/>
+      <mapping elementName="rt" path="rt.html" type="content"/>
+      <mapping elementName="ruby" path="ruby.html" type="content"/>
+      <mapping elementName="sans-serif" path="sans-serif.html" type="content"/>
+      <mapping elementName="sc" path="sc.html" type="content"/>
+      <mapping elementName="season" path="season.html" type="content"/>
+      <mapping elementName="sec" path="sec.html" type="content"/>
+      <mapping elementName="sec-meta" path="sec-meta.html" type="content"/>
+      <mapping elementName="self-uri" path="self-uri.html" type="content"/>
+      <mapping elementName="series" path="series.html" type="content"/>
+      <mapping elementName="series-text" path="series-text.html" type="content"/>
+      <mapping elementName="series-title" path="series-title.html" type="content"/>
+      <mapping elementName="sig" path="sig.html" type="content"/>
+      <mapping elementName="sig-block" path="sig-block.html" type="content"/>
+      <mapping elementName="size" path="size.html" type="content"/>
+      <mapping elementName="source" path="source.html" type="content"/>
+      <mapping elementName="speaker" path="speaker.html" type="content"/>
+      <mapping elementName="speech" path="speech.html" type="content"/>
+      <mapping elementName="state" path="state.html" type="content"/>
+      <mapping elementName="statement" path="statement.html" type="content"/>
+      <mapping elementName="std" path="std.html" type="content"/>
+      <mapping elementName="std-organization"
+               path="std-organization.html"
+               type="content"/>
+      <mapping elementName="strike" path="strike.html" type="content"/>
+      <mapping elementName="string-conf" path="string-conf.html" type="content"/>
+      <mapping elementName="string-date" path="string-date.html" type="content"/>
+      <mapping elementName="string-name" path="string-name.html" type="content"/>
+      <mapping elementName="styled-content"
+               path="styled-content.html"
+               type="content"/>
+      <mapping elementName="sub" path="sub.html" type="content"/>
+      <mapping elementName="sub-article" path="sub-article.html" type="content"/>
+      <mapping elementName="subj-group" path="subj-group.html" type="content"/>
+      <mapping elementName="subject" path="subject.html" type="content"/>
+      <mapping elementName="subtitle" path="subtitle.html" type="content"/>
+      <mapping elementName="suffix" path="suffix.html" type="content"/>
+      <mapping elementName="sup" path="sup.html" type="content"/>
+      <mapping elementName="supplement" path="supplement.html" type="content"/>
+      <mapping elementName="supplementary-material"
+               path="supplementary-material.html"
+               type="content"/>
+      <mapping elementName="surname" path="surname.html" type="content"/>
+      <mapping elementName="table" path="table.html" type="content"/>
+      <mapping elementName="table-count" path="table-count.html" type="content"/>
+      <mapping elementName="table-wrap" path="table-wrap.html" type="content"/>
+      <mapping elementName="table-wrap-foot"
+               path="table-wrap-foot.html"
+               type="content"/>
+      <mapping elementName="table-wrap-group"
+               path="table-wrap-group.html"
+               type="content"/>
+      <mapping elementName="target" path="target.html" type="content"/>
+      <mapping elementName="tbody" path="tbody.html" type="content"/>
+      <mapping elementName="td" path="td.html" type="content"/>
+      <mapping elementName="term" path="term.html" type="content"/>
+      <mapping elementName="term-head" path="term-head.html" type="content"/>
+      <mapping elementName="tex-math" path="tex-math.html" type="content"/>
+      <mapping elementName="textual-form" path="textual-form.html" type="content"/>
+      <mapping elementName="tfoot" path="tfoot.html" type="content"/>
+      <mapping elementName="th" path="th.html" type="content"/>
+      <mapping elementName="thead" path="thead.html" type="content"/>
+      <mapping elementName="time-stamp" path="time-stamp.html" type="content"/>
+      <mapping elementName="title" path="title.html" type="content"/>
+      <mapping elementName="title-group" path="title-group.html" type="content"/>
+      <mapping elementName="tr" path="tr.html" type="content"/>
+      <mapping elementName="trans-abstract"
+               path="trans-abstract.html"
+               type="content"/>
+      <mapping elementName="trans-source" path="trans-source.html" type="content"/>
+      <mapping elementName="trans-subtitle"
+               path="trans-subtitle.html"
+               type="content"/>
+      <mapping elementName="trans-title" path="trans-title.html" type="content"/>
+      <mapping elementName="trans-title-group"
+               path="trans-title-group.html"
+               type="content"/>
+      <mapping elementName="underline" path="underline.html" type="content"/>
+      <mapping elementName="underline-end"
+               path="underline-end.html"
+               type="content"/>
+      <mapping elementName="underline-start"
+               path="underline-start.html"
+               type="content"/>
+      <mapping elementName="unstructured-kwd-group"
+               path="unstructured-kwd-group.html"
+               type="content"/>
+      <mapping elementName="uri" path="uri.html" type="content"/>
+      <mapping elementName="verse-group" path="verse-group.html" type="content"/>
+      <mapping elementName="verse-line" path="verse-line.html" type="content"/>
+      <mapping elementName="version" path="version.html" type="content"/>
+      <mapping elementName="volume" path="volume.html" type="content"/>
+      <mapping elementName="volume-id" path="volume-id.html" type="content"/>
+      <mapping elementName="volume-issue-group"
+               path="volume-issue-group.html"
+               type="content"/>
+      <mapping elementName="volume-series"
+               path="volume-series.html"
+               type="content"/>
+      <mapping elementName="word-count" path="word-count.html" type="content"/>
+      <mapping elementName="x" path="x.html" type="content"/>
+      <mapping elementName="xref" path="xref.html" type="content"/>
+      <mapping elementName="year" path="year.html" type="content"/>
+   </mappingGroup>
+</contentCompletionElementsMap>
