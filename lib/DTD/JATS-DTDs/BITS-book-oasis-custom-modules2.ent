@@ -1,0 +1,336 @@
+<!-- ============================================================= -->
+<!--  MODULE:    Book Interchange DTD-Specific Modules with        -->
+<!--             OASIS and XHTML Tables                            -->
+<!--  VERSION:   BITS 2.0                                          -->
+<!--  DATE:      June 2015                                         -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                     DOCUMENT TYPE DEFINITION                  -->
+<!--                        TYPICAL INVOCATION                     -->
+<!--
+"-//NLM//DTD BITS Book Interchange DTD-Specific Modules with OASIS and XHTML Tables v2.0 20151225//EN"
+Delivered as file "BITS-book-oasis-custom-modules2.ent"            -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Book Interchange Tag Suite                        -->
+<!--                                                               -->
+<!-- PURPOSE:    To name any modules created explicitly for this   -->
+<!--             DTD, that is, not present as part of the BITS DTD -->
+<!--             fragments or the NISO JATS DTD fragments.         -->
+<!--                                                               -->
+<!-- CONTAINS:   Full external Parameter Entity declarations       -->
+<!--             for all the BITS Book Interchange DTD-Specific    -->
+<!--             modules used by this DTD. (Note: the modules are  -->
+<!--             DECLARED in this module, but referenced [invoked] -->
+<!--             in the BITS Book Interchange DTD with OASIS and   -->
+<!--             XMTHL Tables.)                                    -->
+<!--                                                               -->
+<!-- TAG SET SPONSOR                                               -->
+<!--             National Center for Biotechnology                 -->
+<!--                Information (NCBI)                             -->
+<!--             National Library of Medicine (NLM)                -->
+<!--                                                               -->
+<!-- CREATED FOR:                                                  -->
+<!--             This DTD was created as a superset customization  -->
+<!--             of the ANSI/NISO JATS Z39.96-2012 Version 1.0     -->
+<!--             Journal Article Tag Set.                          -->
+<!--                                                               -->
+<!--             Digital archives and publishers may use the       -->
+<!--             DTD as is for markup of books or book-like        -->
+<!--             material for archiving and transferring           -->
+<!--             such material between archives or they may create -->
+<!--             a custom XML DTD from the BITS Suite for          -->
+<!--             these purposes.                                   -->
+<!--                                                               -->
+<!--             This DTD is in the  domain. An organization -->
+<!--             that wishes to create its own DTD from the suite  -->
+<!--             may do so without permission from NLM.            -->
+<!--                                                               -->
+<!--             The suite has been set up to be extended using a  -->
+<!--             new DTD file and new DTD-specific customization   -->
+<!--             modules to redefine the many Parameter Entities.  -->
+<!--             Do not modify the suite directly or redistribute  -->
+<!--             modified versions of the suite.                   -->
+<!--                                                               -->
+<!--             In the interest of maintaining consistency and    -->
+<!--             clarity for potential users, NLM requests:        -->
+<!--                                                               -->
+<!--             1. If you create a DTD from the BITS DTD Suite    -->
+<!--                and intend to stay compatible with the suite,  -->
+<!--                then please include the following statement    -->
+<!--                as a comment in all of your DTD modules:       -->
+<!--                   "Created from, and fully compatible with,   -->
+<!--                    the Book Interchange Tag Suite (BITS).     -->
+<!--                                                               -->
+<!--             2. If you alter one or more modules of the suite, -->
+<!--                then please rename your version and all its    -->
+<!--                modules to avoid any confusion with the        -->
+<!--                original suite. Also, please include the       -->
+<!--                following statement as a comment in all your   -->
+<!--                DTD modules:                                   -->
+<!--                   "Based in part on, but not fully compatible -->
+<!--                    with, the Book Interchange Tag Suite       -->
+<!--                    (BITS)."                                   -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             April 2012                                        -->
+<!--                                                               -->
+<!-- CREATED BY: Mulberry Technologies, Inc. for the National      -->
+<!--             National Center for Biotechnology Information     -->
+<!--             (NCBI), a center of the US National Library of    -->
+<!--             Medicine (NLM).                                   -->
+<!--                                                               -->
+<!--             The BITS Book Interchange DTD is built from the   -->
+<!--             Journal Archiving and Interchange DTD of the      -->
+<!--             ANSI/NISO Journal Article Tag Suite (JATS)        -->
+<!--             Version 1.1d1 (Z39.96-2015).                      -->
+<!--                                                               -->
+<!--             Suggestions for refinements and enhancements to   -->
+<!--             this DTD should be sent in email to:              -->
+<!--                 bits@ncbi.nlm.nih.gov                         -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DTD VERSION/CHANGE HISTORY                 -->
+<!-- ============================================================= -->
+<!--
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+    =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-12-25)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-12-15)
+
+     JATS is a continuing maintenance NISO Standard, which
+     requires voting by the ANSI and NISO memberships to be changed. 
+     JATS 1.1 was approved in late 2015, and BITS modified to use
+     the most recent version. No other changes to BITS were made.
+ 
+  5. BITS remained version "2.0" but became "v2.0 20151225"
+     JATS became version "1.1" and "v1.1 20151215"
+
+   =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-03-15)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-03-01)
+
+     BITS was modified, based on user feedback collected in 2014 
+     and January/February 2015, according to the decisions
+     made by the BITS Working Group. This DTD represents current 
+     BITS and an interim version of the non-normative JATS DTD 
+     Suite (version 1.1), as an indication to JATS users of 
+     the decisions that have been made by the JATS Standing
+     Committee. 
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+  4. NEW MODULE - Called in the new module bits-common2.ent.
+
+  3. BITS became version "2.0" and   "v2.0 20150630"
+     JATS became version "1.1" and "v1.1 20150301"
+
+     =============================================================
+     BITS Version 1.1                (DAL/BTU) v1.1    (2014-09-30)
+     JATS Version 1.1d2              (DAL/BTU) v1.1d2  (2014-09-30)
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1d2 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+     This catalog represents an interim version of the
+     non-normative JATS DTD Suite, as an indication to JATS users
+     the decisions that have been made by the JATS Standing
+     Committee.
+
+  2. BITS became version "1.1" and   "v1.1 20140930//EN"
+     JATS became version "1.1d2" and "v1.1d2 20140930//EN"
+
+     =============================================================
+     BITS OASIS Version 1.0             (DAL/BTU) v1.0 (2012-12-25)
+
+     Constructed a version of the BITS DTD that models both
+     OASIS-Exchange CALS tables and XHTML tables (the BITS default).
+
+  1. OASIS TABLE NAMESPACE MODIFICATIONS - Added a new module
+     that sets up the namespace URI and namespace prefix for
+     the OASIS tables models.
+
+     ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    SET UP OASIS NAMESPACE AND PREFIX          -->
+<!-- ============================================================= -->
+
+
+<!--                    OASIS-TABLE-SPECIFIC NAMESPACE AND PREFIX  -->
+<!--                    Set up the Parameter Entities used to control
+                        the namespace URI and prefix for the OASIS
+                        CALS Exchange table Model (JATS version).  -->
+<!ENTITY % JATS-oasis-namespace.ent
+                        PUBLIC
+"-//NLM//DTD JATS OASIS Table Namespace Module v1.1 20151215//EN"
+"JATS-oasis-namespace1.ent"                                         >
+
+<!-- ============================================================= -->
+<!--                    SET UP XINCLUDE PROCESSING                 -->
+<!-- ============================================================= -->
+
+
+<!--                    XINCLUDE MODULE                            -->
+<!--                    Set up the namespace and elements for using
+                        <xi:include> to manage books and book parts.
+                                                                   -->
+<!ENTITY % xinclude.ent
+                        PUBLIC
+"-//NLM//DTD BITS XInclude Setup Module v2.0 20151225//EN"
+"BITS-xinclude2.ent"                                                 >
+
+
+<!-- ============================================================= -->
+<!--                    CUSTOMIZATION MODULES DECLARED             -->
+<!-- ============================================================= -->
+
+
+<!--                    DTD-SPECIFIC CLASS CUSTOMIZATIONS MODULE   -->
+<!--                    Set up the Parameter Entities and element
+                        class definitions that will be used to
+                        over-ride some element classes in the
+                        DTD Suite.                                 -->
+<!ENTITY % book-oasis-custom-classes.ent
+                        PUBLIC
+"-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables Customize Classes Module v2.0 20151225//EN"
+"BITS-book-oasis-custom-classes2.ent"                                       >
+
+
+<!--                    DTD-SPECIFIC MIX CUSTOMIZATIONS MODULE     -->
+<!--                    Set up the Parameter Entities and element
+                        mix definitions that will be used to
+                        over-ride some element mixes in the DTD
+                        Suite.                                     -->
+<!ENTITY % bookcustom-mixes.ent
+                        PUBLIC
+"-//NLM//DTD BITS Book Interchange DTD Customize Mixes Module v2.0 20151225//EN"
+"BITS-bookcustom-mixes2.ent"                                         >
+
+
+<!--                    DTD-SPECIFIC MODELS/ATTRIBUTES CUSTOMIZATIONS
+                        MODULE                                     -->
+<!--                    Set up the Parameter Entities for element-
+                        specific element groups, complete content
+                        models, and attribute list and value over-
+                        rides. These PEs will over-ride selected
+                        content models and attribute lists for the
+                        Journal JATS DTD Suite-->
+<!ENTITY % bookcustom-models.ent
+                        PUBLIC
+"-//NLM//DTD BITS Book Interchange DTD Customize Content and Attributes Module v2.0 20151225//EN"
+"BITS-bookcustom-models2.ent"                                        >
+
+
+<!-- ============================================================= -->
+<!--                    BITS MODULES                               -->
+<!-- ============================================================= -->
+
+
+<!--                    BITS COMMON (SHARED) ELEMENT MODULE        -->
+<!--                    Element declarations for BITS metadata
+                        elements for books and book parts.         -->
+<!ENTITY % bits-common.ent PUBLIC
+"-//NLM//DTD BITS Book Interchange DTD Common Module v2.0 20151225//EN"
+"BITS-common2.ent"                                                 >
+
+
+<!--                    BITS BOOK METADATA ELEMENTS MODULE         -->
+<!--                    Element declarations for BITS metadata
+                        elements for books and book parts.         -->
+<!ENTITY % bookmeta.ent PUBLIC
+"-//NLM//DTD BITS Book Metadata Elements Module v2.0 20151225//EN"
+"BITS-bookmeta2.ent"                                                 >
+
+
+<!--                    BITS BOOK COMPONENT (BOOK-PART) ELEMENTS   -->
+<!--                    Element declarations for <book-part>
+                        element.                                   -->
+<!ENTITY % book-part.ent
+                        PUBLIC
+"-//NLM//DTD BITS Book Component Elements v2.0 20151225//EN"
+"BITS-book-part2.ent"                                                >
+
+
+<!--                    BITS TOP-LEVEL BOOK-PART-WRAPPER           -->
+<!--                    Element declarations for BITS top-level
+                        <book-part-wrapper> element.               -->
+<!ENTITY % book-part-oasis-wrap.ent
+                        PUBLIC
+"-//NLM//DTD BITS Book Part OASIS and XTHML Tables Wrapper v2.0 20151225//EN"
+"BITS-book-part-oasis-wrap2.ent"                                     >
+
+
+<!--                    BITS STRUCTURAL INDEX ELEMENTS MODULE      -->
+<!--                    Element declarations for BITS structural
+                        index model (<index>).                     -->
+<!ENTITY % index.ent    PUBLIC
+"-//NLM//DTD BITS Structural Index Elements Module v2.0 20151225//EN"
+"BITS-index2.ent"                                                    >
+
+
+<!--                    BITS EMBEDDED INDEX ELEMENTS MODULE        -->
+<!--                    Element declarations the index elements
+                        which are embedded in the document
+                        narrative.                                 -->
+<!ENTITY % index-term.ent
+                        PUBLIC
+"-//NLM//DTD BITS Embedded Index Element Module v2.0 20151225//EN"
+"BITS-embedded-index2.ent"                                           >
+
+
+<!--                    BITS STRUCTURAL NAVIGATION MODULE          -->
+<!--                    Element declarations for BITS structural
+                        Table of Contents model.                   -->
+<!ENTITY % toc.ent      PUBLIC
+"-//NLM//DTD BITS Structural Table of Contents Module v2.0 20151225//EN"
+"BITS-toc2.ent"                                                      >
+
+
+<!--                    BITS STRUCTURAL TABLE OF CONTENTS MODULE   -->
+<!--                    Element declarations for BITS navigation
+                        and pointing mechanism for structural
+                        Indexes and tables of Contents.            -->
+<!ENTITY % toc-nav.ent  PUBLIC
+"-//NLM//DTD BITS Table of Contents and Index Navigation Module v2.0 20151225//EN"
+"BITS-toc-index-nav2.ent"                                            >
+
+
+<!--                    BITS QUESTION AND ANSWER MODULE            -->
+<!--                    Element declarations for BITS questions
+                        and answers (not complete tests, but used
+                        to put build quizzes and tests.            -->
+<!ENTITY % question-answer.ent
+                        PUBLIC
+"-//NLM//DTD BITS Question and Answer Module v2.0 20151225//EN"
+"BITS-question-answer2.ent"                                          >
+
+<!-- ============================================================= -->
+<!--                    NLM CITATION(DEPRECATED; FOR COMPATIBILITY)-->
+<!-- ============================================================= -->
+
+
+<!--                    NLM CITATION MODULE                        -->
+<!--                    The only new element created for the
+                        Publishing DTD, the highly structured NLM
+                        citation, to enforce a slightly loose version
+                        of an NLM-structured bibliographic reference.
+                        Sequence is enforced and interior punctuation
+                        is expected to be generated.               -->
+<!ENTITY % nlmcitation.ent
+                        PUBLIC
+"-//NLM//DTD JATS (Z39.96) NLM Citation v1.1 20151215//EN"
+"JATS-nlmcitation1.ent"                                              >
+
+
+<!-- =================== End BITS Book DTD Module of Modules ===== -->

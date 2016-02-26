@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book-part PUBLIC
+"-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
+ "../BITS-book-oasis2.dtd">
+<!-- SYSTEM:  Book Interchange Tag Suite -->
+<!-- Updated  May 2013 for testing     -->
+
+<book-part
+  book-part-type="introduction"
+  indexed="no"
+  seq="1"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0/" >
+
+<book-part-meta>
+<book-part-id>Chapter-swsw-1</book-part-id>
+
+<subj-group>
+<subject>Large Poodles</subject>
+</subj-group>
+
+<title-group>
+<label>Chapter 1.</label>
+<title>BITS Book Chapter for DTD Testing</title>
+<subtitle>(Still a very small one for parsing)</subtitle>
+<alt-title>Bits chapter the first alternate title</alt-title>
+</title-group>
+
+<contrib-group>
+<contrib  id="pt1-Prime-jjb" rid="pt1-aff-1">
+<name-alternatives>
+<name><surname>Jones</surname>
+<given-names>John Browning</given-names>
+<prefix>The Honorable</prefix><suffix>III</suffix>
+</name>
+<name  specific-use="Indexing"><surname>Jones</surname>
+<given-names>JBB</given-names>
+</name>
+<name name-style="eastern" xml:lang="ja-Jpan"  specific-use="Honorary">
+<surname>flower-characters here</surname>
+<given-names>flower-characters here</given-names>
+</name>
+</name-alternatives>
+</contrib>
+<contrib>
+<name><surname>Jones</surname>
+<given-names>John Browning</given-names>
+<prefix>The Honorable</prefix><suffix>III</suffix>
+</name>
+</contrib>
+<aff-alternatives  id="pt1-aff-1" >
+<aff><institution xmlns:xlink="http://www.w3.org/1999/xlink"
+xlink:type="simple">County Jail</institution> down Aberdeen way
+</aff>
+<aff>
+<institution xmlns:xlink="http://www.w3.org/1999/xlink"
+xlink:type="simple">Montgomery County Jail</institution>
+<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+ xlink:href="http://www.archiemcphee.com">Archie McPhee</uri>
+</aff>
+</aff-alternatives>
+</contrib-group>
+
+
+<author-notes>
+<p>All is well, dear child!</p>
+</author-notes>
+<pub-date><year>2012</year></pub-date>
+<issn>000-222-444</issn>
+<isbn>xxx-1</isbn>
+<isbn>1-234 567890-123</isbn>
+<publisher>
+<publisher-name>Mulberry Technologies, Inc.</publisher-name>
+</publisher>
+
+<pub-history>
+<date date-type="manuscript-received">
+<day>29</day>
+<month>01</month>
+<year>1999</year></date>
+<event>
+<event-desc>43rd printing special gold bindings edition</event-desc>
+<date iso-8601-date="20120401">
+<day>April Fool's Day</day>
+<month>04</month>
+<year>2012</year></date>
+<notes><p>Published as a giveaway for our 16th birthday
+party</p>
+</notes>
+</event>
+</pub-history>
+
+<permissions>
+<copyright-statement>Copyright &#x00A9; 2012, Mulberry
+Technologies, Inc.</copyright-statement>
+<copyright-year content-type="domestic">2012</copyright-year>
+<copyright-holder>Mulberry
+Technologies, Inc.</copyright-holder>
+</permissions>
+
+<abstract><p>All the good stuff</p>
+<sec>
+<title>Introduction</title>
+<p>And not for something completely different</p>
+</sec>
+<sec>
+<title>Discussion</title>
+<p>Or maybe not</p>
+</sec>
+<sec>
+<title>Conclusion</title>
+<p>All&rsquor;s well that ends well.</p>
+</sec>
+</abstract>
+
+<kwd-group kwd-group-type="author">
+<kwd>DNA analysis</kwd>
+<kwd>gene expression</kwd>
+
+<kwd>parallel cloning</kwd>
+<kwd>fluid microarray</kwd>
+</kwd-group>
+
+<funding-group>
+<award-group id="pt1-nih-509">
+<funding-source country="US">NIH</funding-source>
+<award-id>NIH GM61374</award-id>
+<principal-award-recipient>Stanford</principal-award-recipient>
+</award-group>
+</funding-group>
+<funding-group>
+<award-group id="pt1-nsf-510">
+<funding-source country="US">NSF</funding-source>
+<award-id>NSF DBI-0317510</award-id>
+<principal-award-recipient>Berkeley</principal-award-recipient>
+</award-group>
+<award-group id="pt1-arda-511"  award-type="contract">
+<funding-source country="US">ARDA ACQUAINT</funding-source>
+<principal-award-recipient>Berkeley</principal-award-recipient>
+</award-group>
+<award-group id="pt1-geneentech-512" award-type="gift">
+<funding-source country="US">Genentech Corp.</funding-source>
+<principal-award-recipient>Berkeley</principal-award-recipient>
+</award-group>
+</funding-group>
+
+<counts>
+<book-fig-count count="5"/>
+<book-table-count count="3"/>
+<book-equation-count count="10"/>
+<book-ref-count count="26"/>
+<book-page-count count="6"/>
+<book-word-count count="2847"/>
+</counts>
+
+<notes>
+<p>Always more to say</p>
+</notes>
+
+</book-part-meta>
+
+<body>
+<p>This following is an XHTML table, inside a
+Table Wrapper %lt;table-wrap&gt; wrapper, or prehaps
+a lettuce leaf, inside an enigma.</p>
+<p>Multiple paragrpahs are almost always a good idea
+to test
+<list list-type="bullet">
+<list-item><p>robustness, and</p></list-item>
+<list-item><p>fortitude.</p></list-item>
+</list></p>
+<p>The last paragraph had a bulleted list embedded within it,
+imagine that! How clever of it.</p>
+
+<!-- =============== An HTML Table =========== -->
+<table-wrap id="pt1-table-wrap-XHTML" position="anchor">
+<label>Table 1</label>
+<caption><title>A Titled XHTML Table</title>
+<p>Additional caption &rsquo;material, which may spread to one or
+more paragraphs</p>
+</caption>
+<table>
+<tbody>
+<tr>
+<td>A cell!</td>
+<td>Another</td>
+<td>Still a third&gt;</td>
+</tr>
+<tr>
+<td>2 A cell!</td>
+<td>An xref: <xref ref-type="statement" rid="pt1-statement16">See the
+statement</xref></td>
+<td>2 Still a third&gt;</td>
+</tr>
+</tbody>
+</table>
+</table-wrap>
+<!-- =============== A Display Formula ======= -->
+<disp-formula>
+<tex-math id="pt1-M1"><![CDATA[\documentclass[12pt]{minimal}
+\usepackage{wasysym}
+\usepackage[substack]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage[mathscr]{eucal}
+\usepackage{mathrsfs}
+\DeclareFontFamily{T1}{linotext}{}
+\DeclareFontShape{T1}{linotext}{m}{n} { &#x003C;-&#x003E; linotext }{}
+\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}
+\DeclareSymbolFontAlphabet{\mathLINOTEXT}{linotext}
+\begin{document}
+$$
+{\mathrm{Acc/Acc:\hspace{.5em}}}\frac{{\mathit{ade2-202}}}{{\mathit{ADE2}}}\
+hspace{.5em}\frac{{\mathit{ura3-59}}}{{\mathit{ura3-59}}}\hspace{.5em}\frac{{\
+mathit{ADE1}}}{{\mathit{adel-201}}}\hspace{.5em}\frac{{\mathit{ter1-Acc}}}{{\
+mathit{ter1-Acc}}}\hspace{.5em}\frac{{\mathit{MATa}}}{{\mathit{MAT{\alpha}}}}
+$$
+\end{document}]]>
+</tex-math>
+</disp-formula>
+<!-- =============== A Section ======= -->
+<sec>
+<title>An OASIS Table for testing. Uses a nameswpace with prefrix "oasis"</title>
+<table-wrap id="pt1-table-wrap-OASIS" position="anchor">
+<label>Table 1</label>
+<caption><title>An OASIS Table</title>
+<p>Additional caption material</p>
+</caption>
+<oasis:table
+   xmlns:oasis="http://www.niso.org/standards/z39-96/ns/oasis-exchange/table" >
+<oasis:tgroup cols="3">
+<oasis:colspec colnum="1" colname="col1" colwidth="2*" colsep="1" rowsep="1" align="left"/>
+<oasis:colspec colnum="2" colname="col2" colwidth="4*" colsep="1" rowsep="1" align="left"/>
+<oasis:colspec colnum="3" colname="col3" colwidth="*" colsep="1" rowsep="1" align="right"/>
+<oasis:tbody>
+<oasis:row>
+<oasis:entry>A cell!</oasis:entry>
+<oasis:entry>Another</oasis:entry>
+<oasis:entry>Still a third&gt;</oasis:entry>
+</oasis:row>
+<oasis:row>
+<oasis:entry>A cell! <bold>the very first cell</bold></oasis:entry>
+<oasis:entry>Another cell with a
+<list list-type="ordered">
+<list-item><p>List item the first</p></list-item>
+<list-item><p>List item the second</p></list-item>
+<list-item><p>List item the third</p></list-item>
+</list></oasis:entry>
+<oasis:entry>Still a third&gt;</oasis:entry>
+</oasis:row>
+<oasis:row>
+<oasis:entry>2 A cell!</oasis:entry>
+<oasis:entry namest="col2" nameend="col3">An xref: <xref ref-type="statement" rid="pt1-statement16">See the
+statement</xref></oasis:entry>
+<oasis:entry>2 Still a third&gt;</oasis:entry>
+</oasis:row>
+</oasis:tbody>
+</oasis:tgroup>
+</oasis:table>
+</table-wrap>
+<p>Blah bljaissnmr0w s[8wy 89r wpeu.</p>
+</sec>
+<sec sec-type="methods">
+<title>There be statements here.</title>
+<statement id="pt1-statement11">
+<p>The IDREFs need to point to something</p>
+</statement>
+<statement id="pt1-statement15">
+<p>No Matter How Wise You Get, Wet Birds Don't
+Fly at Night</p>
+</statement>
+<statement id="pt1-statement16">
+<p>Post Hoc Propter Ergo Hoc</p>
+<p>EM4 cells, stably transfected with Flag-HA-DAT, Myc-His-DAT,
+or both, were reacted with cross-linker and solubilized in Triton X-100
+as above. There is no reason to have this formula,<inline-formula>
+<mml:math><mml:semantics><mml:mrow><mml:msub><mml:mi>Q</mml:mi>
+<mml:mrow><mml:mn>10</mml:mn></mml:mrow></mml:msub><mml:mo>=
+</mml:mo><mml:msup><mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mrow>
+<mml:mfrac><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub>
+</mml:mrow><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn>
+</mml:msub></mml:mrow></mml:mfrac></mml:mrow><mml:mo>)</mml:mo></mml:mrow>
+</mml:mrow><mml:mrow><mml:mn>10</mml:mn><mml:mo>/</mml:mo><mml:msub><mml:mi>T
+</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>-</mml:mo><mml:msub><mml:mi>
+T</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:msup></mml:mrow>
+<mml:annotation>Required: content unknown</mml:annotation>
+</mml:semantics></mml:math></inline-formula> here. Five microliters of
+anti-Myc 9E10 (Santa Cruz Biotechnology) was added to 1.0 ml of Triton
+X-100 extracts, and the mixture was incubated for 1 h at 4&#x00B0;C.
+Twenty microliters of rec-protein G Sepharose (Zymed) was added, and the
+mixture was incubated for 1 h at 4&#x00B0;C, washed three times in 0.5
+ml of lysis buffer, and eluted in 45 &#x03BC;l of 2&#x00D7; Laemmli
+sample buffer without reducing agent.</p>
+
+</statement>
+</sec>
+<sec sec-type="quiz">
+<question-wrap  id="Qw1">
+<question  question-response-type="multiple-choice" id="Q1">
+<label>1</label>
+<p>The diagnosis of vasculitis rests upon which of the following?</p>
+<option id="Q1-A" correct="no" content-type="multiple-choice">
+<label>A</label>
+<p>A positive ANCA, PR3, or MPO antibody</p>
+</option>
+<option id="Q1-B" correct="no" content-type="multiple-choice">
+<label>B</label>
+<p>The presence of pulmonary nodules, cavities, and/or infiltrates</p>
+</option>
+<option id="Q1-C" correct="no" content-type="multiple-choice">
+<label>C</label>
+<p>The presence of glomerulonephritis</p>
+</option>
+<option id="Q1-D" correct="yes" content-type="multiple-choice">
+<label>D</label>
+<p>The clinician integrating clinical, laboratory, radiographic, and pathologic data and making a determination that the preponderance of the evidence collectively supports a diagnosis of vasculitis</p>
+</option>
+<option id="Q1-E" correct="no" content-type="multiple-choice">
+<label>E</label>
+<p>Fulfilling the correct number of elements required by specific published vasculitis classification criteria</p>
+</option>
+</question>
+</question-wrap>
+
+<question-wrap id="Qw2">
+<question question-response-type="multiple-choice" id="Q2">
+<label>2</label>
+<p>The diagnosis of vasculitis rests upon which of the following?</p>
+<option id="Q2-A" correct="no" content-type="multiple-choice">
+<label>A</label>
+<p>A positive ANCA, PR3, or MPO antibody</p>
+</option>
+<option id="Q2-B" correct="no" content-type="multiple-choice">
+<label>B</label>
+<p>The presence of pulmonary nodules, cavities, and/or infiltrates</p>
+</option>
+<option id="Q2-C" correct="no" content-type="multiple-choice">
+<label>C</label>
+<p>The presence of glomerulonephritis</p>
+</option>
+<option id="Q2-D" correct="yes" content-type="multiple-choice">
+<label>D</label>
+<p>The clinician integrating clinical, laboratory, radiographic, and pathologic data and making a determination that the preponderance of the evidence collectively supports a diagnosis of vasculitis</p>
+</option>
+<option id="Q2-E" correct="no" content-type="multiple-choice">
+<label>E</label>
+<p>Fulfilling the correct number of elements required by specific published vasculitis classification criteria</p>
+</option>
+</question>
+</question-wrap>
+
+<question-wrap id="Qw3">
+<question question-response-type="multiple-choice" id="Q3">
+<label>3</label>
+<p>The diagnosis of vasculitis rests upon which of the following?</p>
+<option id="Q3-A" correct="no" content-type="multiple-choice">
+<label>A</label>
+<p>A positive ANCA, PR3, or MPO antibody</p>
+</option>
+<option id="Q3-B" correct="no" content-type="multiple-choice">
+<label>B</label>
+<p>The presence of pulmonary nodules, cavities, and/or infiltrates</p>
+</option>
+<option id="Q3-C" correct="no" content-type="multiple-choice">
+<label>C</label>
+<p>The presence of glomerulonephritis</p>
+</option>
+<option id="Q3-D" correct="yes" content-type="multiple-choice">
+<label>D</label>
+<p>The clinician integrating clinical, laboratory, radiographic, and pathologic data and making a determination that the preponderance of the evidence collectively supports a diagnosis of vasculitis</p>
+</option>
+<option id="Q3-E" correct="no" content-type="multiple-choice">
+<label>E</label>
+<p>Fulfilling the correct number of elements required by specific published vasculitis classification criteria</p>
+</option>
+</question>
+</question-wrap>
+
+</sec>
+
+</body>
+</book-part>

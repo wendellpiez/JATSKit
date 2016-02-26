@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!DOCTYPE dedication PUBLIC 
+"-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
+ "../BITS-book-oasis2.dtd">
+<!-- SYSTEM:  Book Interchange Tag Suite -->
+<!-- Updated  May 2013 for testing     -->
+
+<dedication>
+<book-part-meta>
+<book-part-id>a real DOI</book-part-id>
+<title-group>
+<title>Introduction to the 13th Edition</title>
+<subtitle>the best parts version</subtitle>
+</title-group>
+</book-part-meta>
+<named-book-part-body>
+<p>Multiple paragraphs are almost always a good idea
+inside a test. (&rsquor;&rsquor;&rsquor;&rsquor;)</p>
+<p>This following is couple of lists:
+<list list-type="bullet">
+<list-item><p>integrity,</p></list-item>
+<list-item><p>robustness, and</p></list-item>
+<list-item><p>fortitude.</p></list-item>
+</list></p>
+<p>That last paragraph had a bulleted list embedded within it,
+imagine that! How clever of it.</p>
+<sec><title>And additional thanks...</title>
+<p>More here.</p>
+</sec>
+<sec><title>Inloving memory...</title>
+<p>More here.</p>
+</sec>
+</named-book-part-body>
+</dedication>

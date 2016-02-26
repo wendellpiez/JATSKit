@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book
-  PUBLIC "-//NLM//DTD BITS Book Interchange DTD v0.2 20121015//EN"
-  "BITS-book0.dtd">
-<book dtd-version="0.2" xmlns:xlink="http://www.w3.org/1999/xlink"
+  PUBLIC "-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
+  "BITS-book2.dtd">
+<book dtd-version="2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:mml="http://www.w3.org/1998/Math/MathML"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <book-meta>

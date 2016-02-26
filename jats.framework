@@ -847,7 +847,7 @@
 					</field>
 					<field name="xmlCatalogs">
 						<String-array>
-							<String>${framework}/lib/DTD/BITS-Book-1.0-DTD/catalog-jats-v1-1d1-no-base.xml</String>
+							<String>${framework}/lib/DTD/JATS-DTDs/catalog-jats-v1-1-no-base.xml</String>
 						</String-array>
 					</field>
 					<field name="description">
@@ -971,6 +971,200 @@
 									<String-array/>
 								</field>
 							</scenario>
+							<scenario>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>JATS/BITS single HTML page preview (refresh)</String>
+								</field>
+								<field name="baseURL">
+									<String></String>
+								</field>
+								<field name="footerURL">
+									<String></String>
+								</field>
+								<field name="fOPMethod">
+									<String>pdf</String>
+								</field>
+								<field name="fOProcessorName">
+									<String>Apache FOP</String>
+								</field>
+								<field name="headerURL">
+									<String></String>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xslt/jatskit-html.xsl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String>${currentFileURL}</String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="type">
+									<String>XSL</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="outputFile">
+									<File>${cfn}.html</File>
+								</field>
+								<field name="outputResource">
+									<String>${cfn}.html</String>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list/>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Saxon-EE</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</scenario>
+							<scenario>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>JATS/BITS single HTML page preview, with warnings (open results)</String>
+								</field>
+								<field name="baseURL">
+									<String></String>
+								</field>
+								<field name="footerURL">
+									<String></String>
+								</field>
+								<field name="fOPMethod">
+									<String>pdf</String>
+								</field>
+								<field name="fOProcessorName">
+									<String>Apache FOP</String>
+								</field>
+								<field name="headerURL">
+									<String></String>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xslt/jatskit-html.xsl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String>${currentFileURL}</String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="type">
+									<String>XSL</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="outputFile">
+									<File>${cfn}.html</File>
+								</field>
+								<field name="outputResource">
+									<String>${cfn}.html</String>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list>
+										<transformationParameter>
+											<field name="paramDescription">
+												<paramDescriptor>
+													<field name="localName">
+														<String>report-warnings</String>
+													</field>
+													<field name="prefix">
+														<null/>
+													</field>
+													<field name="namespace">
+														<null/>
+													</field>
+												</paramDescriptor>
+											</field>
+											<field name="value">
+												<String>'yes'</String>
+											</field>
+											<field name="hasXPathValue">
+												<Boolean>true</Boolean>
+											</field>
+										</transformationParameter>
+									</list>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Saxon-EE</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</scenario>
 							<xprocScenario>
 								<field name="inputPorts">
 									<xprocInputPort-array>
@@ -1008,7 +1202,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>BITS to EPUB</String>
+									<String>BITS/JATS to e-book mockup (HTML site)</String>
 								</field>
 								<field name="baseURL">
 									<null/>
@@ -1026,7 +1220,7 @@
 									<null/>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/lib/xproc/jatskit-epub-produce.xpl</String>
+									<String>${framework}/lib/xproc/jatskit-ebook-produce.xpl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String></String>
@@ -1053,10 +1247,10 @@
 									<null/>
 								</field>
 								<field name="openOtherLocationInBrowser">
-									<Boolean>false</Boolean>
+									<Boolean>true</Boolean>
 								</field>
 								<field name="locationToOpenInBrowserURL">
-									<null/>
+									<String>${cfdu}/${cfn}</String>
 								</field>
 								<field name="openInEditor">
 									<Boolean>false</Boolean>
@@ -1126,7 +1320,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>BITS to e-book mockup (HTML site)</String>
+									<String>BITS/JATS to e-book mockup (refresh)</String>
 								</field>
 								<field name="baseURL">
 									<null/>
@@ -1171,10 +1365,128 @@
 									<null/>
 								</field>
 								<field name="openOtherLocationInBrowser">
-									<Boolean>true</Boolean>
+									<Boolean>false</Boolean>
 								</field>
 								<field name="locationToOpenInBrowserURL">
 									<String>${cfdu}/${cfn}</String>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list/>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Calabash XProc</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</xprocScenario>
+							<xprocScenario>
+								<field name="inputPorts">
+									<xprocInputPort-array>
+										<xprocInputPort>
+											<field name="portName">
+												<String>source</String>
+											</field>
+											<field name="urls">
+												<String-array>
+													<String>${currentFileURL}</String>
+												</String-array>
+											</field>
+										</xprocInputPort>
+									</xprocInputPort-array>
+								</field>
+								<field name="outputPorts">
+									<xprocOutputPort-array/>
+								</field>
+								<field name="xprocOptions">
+									<xprocOption-array/>
+								</field>
+								<field name="xprocParameters">
+									<xprocParameterPort-array>
+										<xprocParameterPort>
+											<field name="portName">
+												<String>*</String>
+											</field>
+											<field name="parameters">
+												<xprocParameter-array/>
+											</field>
+										</xprocParameterPort>
+									</xprocParameterPort-array>
+								</field>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>BITS/JATS to EPUB</String>
+								</field>
+								<field name="baseURL">
+									<null/>
+								</field>
+								<field name="footerURL">
+									<null/>
+								</field>
+								<field name="fOPMethod">
+									<null/>
+								</field>
+								<field name="fOProcessorName">
+									<null/>
+								</field>
+								<field name="headerURL">
+									<null/>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xproc/jatskit-epub-produce.xpl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String></String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="type">
+									<String>XPROC</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="outputFile">
+									<null/>
+								</field>
+								<field name="outputResource">
+									<null/>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
 								</field>
 								<field name="openInEditor">
 									<Boolean>false</Boolean>
