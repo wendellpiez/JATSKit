@@ -116,6 +116,40 @@
 											<String>doctypeRules</String>
 										</field>
 										<field name="index">
+											<Integer>2</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>doctypeRules</String>
+										</field>
+										<field name="index">
+											<Integer>1</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>doctypeRules</String>
+										</field>
+										<field name="index">
 											<Integer>0</Integer>
 										</field>
 										<field name="value">
@@ -147,7 +181,49 @@
 													<String>*</String>
 												</field>
 												<field name="publicID">
-													<String>-//NLM//DTD BITS Book Interchange DTD*</String>
+													<String>-//NLM//DTD BITS Book Interchange DTD v2.0 20151225//EN</String>
+												</field>
+												<field name="javaRuleClass">
+													<String></String>
+												</field>
+												<field name="attributeLocalName">
+													<String>*</String>
+												</field>
+												<field name="attributeNamespace">
+													<String>*</String>
+												</field>
+												<field name="attributeValue">
+													<String>*</String>
+												</field>
+											</documentTypeRule>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>doctypeRules</String>
+										</field>
+										<field name="index">
+											<Integer>1</Integer>
+										</field>
+										<field name="value">
+											<documentTypeRule>
+												<field name="namespace">
+													<String>*</String>
+												</field>
+												<field name="rootElem">
+													<String>*</String>
+												</field>
+												<field name="fileName">
+													<String>*</String>
+												</field>
+												<field name="publicID">
+													<String>-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN</String>
 												</field>
 												<field name="javaRuleClass">
 													<String></String>
@@ -1454,7 +1530,59 @@
 									<String>*</String>
 								</field>
 								<field name="publicID">
-									<String>-//NLM//DTD*</String>
+									<String>-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with MathML3 v1.1 20151215//EN</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>*</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>*</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>*</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>-//NLM//DTD JATS (Z39.96) Article Authoring DTD with MathML3 v1.1 20151215//EN</String>
+								</field>
+								<field name="javaRuleClass">
+									<String></String>
+								</field>
+								<field name="attributeLocalName">
+									<String>*</String>
+								</field>
+								<field name="attributeNamespace">
+									<String>*</String>
+								</field>
+								<field name="attributeValue">
+									<String>*</String>
+								</field>
+							</documentTypeRule>
+							<documentTypeRule>
+								<field name="namespace">
+									<String>*</String>
+								</field>
+								<field name="rootElem">
+									<String>*</String>
+								</field>
+								<field name="fileName">
+									<String>*</String>
+								</field>
+								<field name="publicID">
+									<String>-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with OASIS Tables with MathML3 v1.1 20151215//EN</String>
 								</field>
 								<field name="javaRuleClass">
 									<String></String>
