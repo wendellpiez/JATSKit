@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>JATSKit - NISO/NLM-NCBI JATS</String>
+						<String>JATSKit - NISO JATS 1.1 Article Publishing (Blue)</String>
 					</field>
 					<field name="schemaDescriptor">
 						<null/>
@@ -46,17 +46,6 @@
 										</field>
 										<field name="title">
 											<String>JATS - Labels</String>
-										</field>
-										<field name="alternate">
-											<Boolean>false</Boolean>
-										</field>
-									</cssFile>
-									<cssFile>
-										<field name="href">
-											<String>${framework}/lib/author-css/bits-authoring.css</String>
-										</field>
-										<field name="title">
-											<String>BITS - Clean</String>
 										</field>
 										<field name="alternate">
 											<Boolean>false</Boolean>
@@ -867,32 +856,6 @@
 								</field>
 								<field name="publicID">
 									<String>-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with MathML3 v1.1 20151215//EN</String>
-								</field>
-								<field name="javaRuleClass">
-									<String></String>
-								</field>
-								<field name="attributeLocalName">
-									<String>*</String>
-								</field>
-								<field name="attributeNamespace">
-									<String>*</String>
-								</field>
-								<field name="attributeValue">
-									<String>*</String>
-								</field>
-							</documentTypeRule>
-							<documentTypeRule>
-								<field name="namespace">
-									<String>*</String>
-								</field>
-								<field name="rootElem">
-									<String>*</String>
-								</field>
-								<field name="fileName">
-									<String>*</String>
-								</field>
-								<field name="publicID">
-									<String>-//NLM//DTD JATS (Z39.96) Article Authoring DTD with MathML3 v1.1 20151215//EN</String>
 								</field>
 								<field name="javaRuleClass">
 									<String></String>

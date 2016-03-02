@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serialized version="17.1" xml:space="preserve">
-	<map>
+	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
@@ -62,6 +62,50 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>authorExtensionDescriptor/cssDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>2</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<String>${baseFramework}/lib/author-css/jatskit-authoring.css</String>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/cssDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>2</Integer>
+										</field>
+										<field name="value">
+											<cssFile>
+												<field name="href">
+													<String>${framework}/lib/author-css/jatskit-book-authoring.css</String>
+												</field>
+												<field name="title">
+													<String>BITS - ready for EPUB</String>
+												</field>
+												<field name="alternate">
+													<Boolean>true</Boolean>
+												</field>
+											</cssFile>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>templatesLocations</String>
 										</field>
 										<field name="index">
@@ -106,23 +150,6 @@
 										</field>
 										<field name="patchHandling">
 											<String>set</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>doctypeRules</String>
-										</field>
-										<field name="index">
-											<Integer>2</Integer>
-										</field>
-										<field name="value">
-											<null/>
-										</field>
-										<field name="patchHandling">
-											<String>removeIndex</String>
 										</field>
 										<field name="anchor">
 											<null/>
@@ -668,12 +695,12 @@
 								</list>
 							</field>
 							<field name="extendedPersistentObjectKey">
-								<String>JATSKit - NISO/NLM-NCBI JATS</String>
+								<String>JATSKit - NISO JATS 1.1 Article Publishing (Blue)</String>
 							</field>
 						</documentTypeDescriptorPatch>
 					</field>
 					<field name="name">
-						<String>JATSKit - NISO/NLM-NCBI JATS</String>
+						<String>JATSKit - NISO JATS 1.1 Article Publishing (Blue)</String>
 					</field>
 					<field name="schemaDescriptor">
 						<null/>
@@ -710,17 +737,6 @@
 										</field>
 										<field name="title">
 											<String>JATS - Labels</String>
-										</field>
-										<field name="alternate">
-											<Boolean>false</Boolean>
-										</field>
-									</cssFile>
-									<cssFile>
-										<field name="href">
-											<String>${framework}/lib/author-css/bits-authoring.css</String>
-										</field>
-										<field name="title">
-											<String>BITS - Clean</String>
 										</field>
 										<field name="alternate">
 											<Boolean>false</Boolean>
@@ -1556,32 +1572,6 @@
 									<String>*</String>
 								</field>
 								<field name="publicID">
-									<String>-//NLM//DTD JATS (Z39.96) Article Authoring DTD with MathML3 v1.1 20151215//EN</String>
-								</field>
-								<field name="javaRuleClass">
-									<String></String>
-								</field>
-								<field name="attributeLocalName">
-									<String>*</String>
-								</field>
-								<field name="attributeNamespace">
-									<String>*</String>
-								</field>
-								<field name="attributeValue">
-									<String>*</String>
-								</field>
-							</documentTypeRule>
-							<documentTypeRule>
-								<field name="namespace">
-									<String>*</String>
-								</field>
-								<field name="rootElem">
-									<String>*</String>
-								</field>
-								<field name="fileName">
-									<String>*</String>
-								</field>
-								<field name="publicID">
 									<String>-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with OASIS Tables with MathML3 v1.1 20151215//EN</String>
 								</field>
 								<field name="javaRuleClass">
@@ -2039,5 +2029,5 @@
 				</documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
-	</map>
+	</serializableOrderedMap>
 </serialized>
