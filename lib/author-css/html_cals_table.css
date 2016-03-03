@@ -1,7 +1,8 @@
 /*
-=================================
-    HTML and Docbook CALLS tables
-=================================
+==============================================
+ 		   HTML and Docbook CALS tables 
+   [the master copy is in the DITA framework]
+==============================================
 */
 
 /*
@@ -13,13 +14,20 @@ table > title{
     display: table-caption;
     font-weight:bold;
     font-style: italic;
-    color: #663300;
+    color: #001133;
     background-color:inherit;
     text-align: left;
-    margin-left: 1em;
-    margin-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
+}
+
+@media oxygen AND (platform:"eclipse") {
+  table > caption,
+  table > info > title,
+  table > title{ 
+    font-style: normal;
+  }
 }
 
 /* 
@@ -30,7 +38,7 @@ informaltable{
   display: table;
   margin: 1.5ex 0.5ex;
   /*overriden in cals_table.css*/
-  border-color: #EFEFEF;
+  border-color: #EEEEEE;
   border-style:solid;
   border-width:1px;
 }
@@ -44,9 +52,9 @@ informaltable{
 */
 table[border],
 informaltable[border]{
-    border-width:attr(border,px);
+    border-width:attr(border,length);
     border-style:solid;
-    border-color:#777777;
+    border-color:#333333;
 }
 
 /*
@@ -59,7 +67,7 @@ informaltable[border]{
 table[frame],
 informaltable[frame]{
     border-style:none;
-    border-color:#777777;
+    border-color:black;
 }
 
 table[frame='above'],
@@ -111,28 +119,7 @@ informaltable[frame='all']{
   border-style:solid;
 }
 
-/*
-  Specifies the presence or absence of the row separator.
-  Docbook.
- */
-*[rowsep='0'] entry,
-*[rowsep='0'] td,
-*[rowsep='0'] th{
-  border-top-style:none;
-  border-bottom-style:none;
-}
-
-/*
-  Specifies the presence or absence of the column separator.
-  Docbook.
-*/
-*[colsep='0'] entry, 
-*[colsep='0'] td, 
-*[colsep='0'] th{
-  border-left-style:none;
-  border-right-style:none;
-}
-
+/* Alignment. */
 
 *[align='left']{
    text-align:left;
@@ -142,6 +129,30 @@ informaltable[frame='all']{
 }
 *[align='center']{
    text-align:center;
+}
+
+
+table[align='center'],
+table[align='right'],
+informaltable[align='center'],
+informaltable[align='right']{
+	margin-left:auto;
+	text-align:inherit;
+}
+
+table[align='center'],
+table[align='left'],
+informaltable[align='center'],
+informaltable[align='left']{
+	margin-right:auto;
+	text-align:inherit;
+}
+
+
+/*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
+it's silly to align the colspec element*/
+colspec[align], col[align]{
+   text-align:left;
 }
 /*
   A wrapper for the main content of a table, or part of a table
@@ -159,9 +170,14 @@ tbody {
     A table header consisting of one or more rows 
 */
 thead {
-  display: table-header-group;
-  background-color: #CCEEFF;
-  color:#000066;
+  display: table-header-group;  
+}
+
+th, thead {
+  background-color: #DDEEFF;
+/*  color:#000066;*/
+  color:black;
+  font-weight:bold;
 }
 
 /* 
@@ -174,14 +190,7 @@ tfoot {
   color:navy;
 }
 
-thead row > entry,
-tfoot row > entry,
-thead row > td,
-tfoot row > td,
-thead row > th,
-tfoot row > th{
-    border-color:black;
-}
+
 
 /*
     Table row.
@@ -195,15 +204,27 @@ tr{
     Table cell.
 */
 entry,
-td,
-th{
+td{
     display:table-cell;     
     border-color: #EEEEEE;
     border-style:solid;
     border-width:1px;
-    padding:1px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:5px;
+    padding-right:5px;
 }
 
+th {
+  display:table-cell;     
+  border-style:solid;
+  border-width:1px;
+  border-color:black;
+  padding-top:1px;
+  padding-bottom:1px;
+  padding-left:5px;
+  padding-right:5px;
+}
 
 /* 
     entrytbl - A subtable appearing in place of an Entry in a table 
@@ -213,9 +234,6 @@ entrytbl {
 }
 
 
-th {
-    font-weight:bold;    
-}
 
 table[bgcolor],
 informaltable[bgcolor],
@@ -237,8 +255,8 @@ table[border][rules=cols] > thead > tr > td,
 table[border][rules=cols] > thead > tr > th,
 table[border][rules=cols] > tfoot > tr > td,
 table[border][rules=cols] > tfoot > tr > th{
-    border-left:1px solid #777777;
-    border-right:1px solid #777777;
+    border-left:1px solid black;
+    border-right:1px solid black;
 }
 
 /*
@@ -252,8 +270,8 @@ table[border][rules=rows] > thead > tr > td,
 table[border][rules=rows] > thead > tr > th,
 table[border][rules=rows] > tfoot > tr > td,
 table[border][rules=rows] > tfoot > tr > th{
-    border-top:1px solid #777777;
-    border-bottom:1px solid #777777;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
 }
 
 /*
@@ -267,7 +285,7 @@ table[border][rules=all] > thead > tr > td,
 table[border][rules=all] > thead > tr > th,
 table[border][rules=all] > tfoot > tr > td,
 table[border][rules=all] > tfoot > tr > th{
-    border:1px solid #777777;
+    border:1px solid black;
 }
 
 /*
@@ -314,8 +332,7 @@ thead[valign=bottom] > tr > th,
 /*TFOOT*/
 tfoot[valign=bottom] > tr > td,
 /*TH*/
-tfoot[valign=bottom] > tr > th
-{
+tfoot[valign=bottom] > tr > th{
     vertical-align:bottom;
 }
 
@@ -337,8 +354,7 @@ tfoot[valign] > tr[valign=bottom] > td,
 tfoot         > tr[valign=bottom] > td,
 /*TH*/
 tfoot[valign] > tr[valign=bottom] > th,
-tfoot         > tr[valign=bottom] > th
-{
+tfoot         > tr[valign=bottom] > th{
     vertical-align:bottom;
 }
 
@@ -371,8 +387,7 @@ tfoot         > tr         > td[valign=bottom],
 tfoot[valign] > tr[valign] > th[valign=bottom],
 tfoot         > tr[valign] > th[valign=bottom],
 tfoot[valign] > tr         > th[valign=bottom],
-tfoot         > tr         > th[valign=bottom]
-{
+tfoot         > tr         > th[valign=bottom]{
     vertical-align:bottom;
 }
 
@@ -394,8 +409,7 @@ thead[valign=top] > tr > th,
 /*TFOOT*/
 tfoot[valign=top] > tr > td,
 /*TH*/
-tfoot[valign=top] > tr > th
-{
+tfoot[valign=top] > tr > th{
     vertical-align:top;
 }
 
@@ -417,8 +431,7 @@ tfoot[valign] > tr[valign=top] > td,
 tfoot         > tr[valign=top] > td,
 /*TH*/
 tfoot[valign] > tr[valign=top] > th,
-tfoot         > tr[valign=top] > th
-{
+tfoot         > tr[valign=top] > th{
     vertical-align:top;
 }
 
@@ -451,8 +464,7 @@ tfoot         > tr         > td[valign=top],
 tfoot[valign] > tr[valign] > th[valign=top],
 tfoot         > tr[valign] > th[valign=top],
 tfoot[valign] > tr         > th[valign=top],
-tfoot         > tr         > th[valign=top]
-{
+tfoot         > tr         > th[valign=top]{
     vertical-align:top;
 }
 
@@ -474,8 +486,7 @@ thead[valign=middle] > tr > th,
 /*TFOOT*/
 tfoot[valign=middle] > tr > td,
 /*TH*/
-tfoot[valign=middle] > tr > th
-{
+tfoot[valign=middle] > tr > th{
     vertical-align:middle;
 }
 
@@ -497,8 +508,7 @@ tfoot[valign] > tr[valign=middle] > td,
 tfoot         > tr[valign=middle] > td,
 /*TH*/
 tfoot[valign] > tr[valign=middle] > th,
-tfoot         > tr[valign=middle] > th
-{
+tfoot         > tr[valign=middle] > th{
     vertical-align:middle;
 }
 
@@ -531,8 +541,7 @@ tfoot         > tr         > td[valign=middle],
 tfoot[valign] > tr[valign] > th[valign=middle],
 tfoot         > tr[valign] > th[valign=middle],
 tfoot[valign] > tr         > th[valign=middle],
-tfoot         > tr         > th[valign=middle]
-{
+tfoot         > tr         > th[valign=middle]{
     vertical-align:middle;
 }
 
@@ -553,8 +562,7 @@ thead[valign=baseline] > tr > th,
 /*TFOOT*/
 tfoot[valign=baseline] > tr > td,
 /*TH*/
-tfoot[valign=baseline] > tr > th
-{
+tfoot[valign=baseline] > tr > th{
     vertical-align:baseline;
 }
 
@@ -576,8 +584,7 @@ tfoot[valign] > tr[valign=baseline] > td,
 tfoot         > tr[valign=baseline] > td,
 /*TH*/
 tfoot[valign] > tr[valign=baseline] > th,
-tfoot         > tr[valign=baseline] > th
-{
+tfoot         > tr[valign=baseline] > th{
     vertical-align:baseline;
 }
 
@@ -610,8 +617,7 @@ tfoot         > tr         > td[valign=baseline],
 tfoot[valign] > tr[valign] > th[valign=baseline],
 tfoot         > tr[valign] > th[valign=baseline],
 tfoot[valign] > tr         > th[valign=baseline],
-tfoot         > tr         > th[valign=baseline]
-{
+tfoot         > tr         > th[valign=baseline]{
     vertical-align:baseline;
 }
 
@@ -628,22 +634,36 @@ tfoot         > tr         > th[valign=baseline]
 */
 
 /*Least specific*/
-tbody[valign=bottom] > row > entry{
+tbody[valign=bottom] > row > entry,
+thead[valign=bottom] > row > entry,
+tfoot[valign=bottom] > row > entry{
     vertical-align:bottom;
 }
 
 
 /*More specific*/
 tbody[valign] > row[valign=bottom] > entry,
-tbody         > row[valign=bottom] > entry{
+thead[valign] > row[valign=bottom] > entry,
+tfoot[valign] > row[valign=bottom] > entry,
+tbody         > row[valign=bottom] > entry,
+thead         > row[valign=bottom] > entry,
+tfoot         > row[valign=bottom] > entry{
     vertical-align:bottom;
 }
 
 /*Even more specific*/
 tbody[valign] > row[valign] > entry[valign=bottom],
+thead[valign] > row[valign] > entry[valign=bottom],
+tfoot[valign] > row[valign] > entry[valign=bottom],
 tbody         > row[valign] > entry[valign=bottom],
+thead         > row[valign] > entry[valign=bottom],
+tfoot         > row[valign] > entry[valign=bottom],
 tbody[valign] > row         > entry[valign=bottom],
-tbody         > row         > entry[valign=bottom]{
+thead[valign] > row         > entry[valign=bottom],
+tfoot[valign] > row         > entry[valign=bottom],
+tbody         > row         > entry[valign=bottom],
+thead         > row         > entry[valign=bottom],
+tfoot         > row         > entry[valign=bottom]{
     vertical-align:bottom;
 }
 
@@ -655,22 +675,36 @@ tbody         > row         > entry[valign=bottom]{
 */
 
 /*Least specific*/
-tbody[valign=top] > row > entry{
+tbody[valign=top] > row > entry,
+thead[valign=top] > row > entry,
+tfoot[valign=top] > row > entry{
     vertical-align:top;
 }
 
 
 /*More specific*/
 tbody[valign] > row[valign=top] > entry,
-tbody         > row[valign=top] > entry{
+thead[valign] > row[valign=top] > entry,
+tfoot[valign] > row[valign=top] > entry,
+tbody         > row[valign=top] > entry,
+thead         > row[valign=top] > entry,
+tfoot         > row[valign=top] > entry{
     vertical-align:top;
 }
 
 /*Even more specific*/
 tbody[valign] > row[valign] > entry[valign=top],
+thead[valign] > row[valign] > entry[valign=top],
+tfoot[valign] > row[valign] > entry[valign=top],
 tbody         > row[valign] > entry[valign=top],
+thead         > row[valign] > entry[valign=top],
+tfoot         > row[valign] > entry[valign=top],
 tbody[valign] > row         > entry[valign=top],
-tbody         > row         > entry[valign=top]{
+thead[valign] > row         > entry[valign=top],
+tfoot[valign] > row         > entry[valign=top],
+tbody         > row         > entry[valign=top],
+thead         > row         > entry[valign=top],
+tfoot         > row         > entry[valign=top]{
     vertical-align:top;
 }
 
@@ -682,22 +716,36 @@ tbody         > row         > entry[valign=top]{
 */
 
 /*Least specific*/
-tbody[valign=middle] > row > entry{
+tbody[valign=middle] > row > entry,
+thead[valign=middle] > row > entry,
+tfoot[valign=middle] > row > entry{
     vertical-align:middle;
 }
 
 
 /*More specific*/
 tbody[valign] > row[valign=middle] > entry,
-tbody         > row[valign=middle] > entry{
+thead[valign] > row[valign=middle] > entry,
+tfoot[valign] > row[valign=middle] > entry,
+tbody         > row[valign=middle] > entry,
+thead         > row[valign=middle] > entry,
+tfoot         > row[valign=middle] > entry{
     vertical-align:middle;
 }
 
 /*Even more specific*/
 tbody[valign] > row[valign] > entry[valign=middle],
+thead[valign] > row[valign] > entry[valign=middle],
+tfoot[valign] > row[valign] > entry[valign=middle],
 tbody         > row[valign] > entry[valign=middle],
+thead         > row[valign] > entry[valign=middle],
+tfoot         > row[valign] > entry[valign=middle],
 tbody[valign] > row         > entry[valign=middle],
-tbody         > row         > entry[valign=middle]{
+thead[valign] > row         > entry[valign=middle],
+tfoot[valign] > row         > entry[valign=middle],
+tbody         > row         > entry[valign=middle],
+thead         > row         > entry[valign=middle],
+tfoot         > row         > entry[valign=middle]{
     vertical-align:middle;
 }
 
@@ -708,55 +756,85 @@ tbody         > row         > entry[valign=middle]{
 */
 
 /*Least specific*/
-tbody[valign=baseline] > row > entry{
+tbody[valign=baseline] > row > entry,
+thead[valign=baseline] > row > entry,
+tfoot[valign=baseline] > row > entry{
     vertical-align:baseline;
 }
 
 
 /*More specific*/
 tbody[valign] > row[valign=baseline] > entry,
-tbody         > row[valign=baseline] > entry{
+thead[valign] > row[valign=baseline] > entry,
+tfoot[valign] > row[valign=baseline] > entry,
+tbody         > row[valign=baseline] > entry,
+thead         > row[valign=baseline] > entry,
+tfoot         > row[valign=baseline] > entry{
     vertical-align:baseline;
 }
 
 /*Even more specific*/
 tbody[valign] > row[valign] > entry[valign=baseline],
+thead[valign] > row[valign] > entry[valign=baseline],
+tfoot[valign] > row[valign] > entry[valign=baseline],
 tbody         > row[valign] > entry[valign=baseline],
+thead         > row[valign] > entry[valign=baseline],
+tfoot         > row[valign] > entry[valign=baseline],
 tbody[valign] > row         > entry[valign=baseline],
-tbody         > row         > entry[valign=baseline]{
+thead[valign] > row         > entry[valign=baseline],
+tfoot[valign] > row         > entry[valign=baseline],
+tbody         > row         > entry[valign=baseline],
+thead         > row         > entry[valign=baseline],
+tfoot         > row         > entry[valign=baseline]{
     vertical-align:baseline;
 }
 
 
-colgroup {
-    display:block;    
-}
 
-colspec, col{
+
+colspec, col, spanspec{
     text-align:left;
-    display:block;
-    color:#444444;
     background-color:inherit;
-    margin:0.2em;
-    padding:2px;
-    font-family:monospace;
-    font-size:small;    
+    font-family:sansserif, verdana, helvetica;
+	font-size:0.75em;
 }
 
 colspec:before{
-    content:"colspec";    
+    content: "column ";
 }
-
 colspec:after{
-    content:"[colname: " attr(colname) ", column: " attr(colnum) ", colwidth: " attr(colwidth) "]";    
+    content:
+    		"  name " oxy_textfield(edit, "@colname", columns, 7) 
+    		"  number " oxy_textfield(edit, "@colnum", columns, 7)
+    		"  width " oxy_textfield(edit, "@colwidth", columns, 7)
+    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10)
+    		"  "    		
+    		oxy_checkbox(edit, "@colsep", values, "1", uncheckedValues, "0", labels, "colsep", fontInherit, true) 
+    		oxy_checkbox(edit, "@rowsep", values, "1", uncheckedValues, "0", labels, "rowsep", fontInherit, true);
+	white-space: pre;
+	padding-bottom: 5px;
 }
-
-
 
 col:before{
-    content:"col";
+    content:"column ";
 }
 col:after{
-    content:"[title: " attr(title) ", span: " attr(span) ", style: " attr(style) "]";    
+    content:
+    		"  title " oxy_textfield(edit, "@title", columns, 7)   
+    		"  span " oxy_textfield(edit, "@span", columns, 7) 
+    		"  width " oxy_textfield(edit, "@width", columns, 7)
+    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10);
+    white-space: pre;
+    padding-bottom: 5px;
 }
 
+spanspec:before{
+    content:"before";
+}
+spanspec:after{
+    content:
+    		"name " oxy_textfield(edit, "@spanname", columns, 7) 
+    		" start column " oxy_textfield(edit, "@namest", columns, 7) 
+    		" end column " oxy_textfield(edit, "@nameend", columns, 7);    
+	white-space: pre;
+}
