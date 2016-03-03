@@ -4,6 +4,8 @@
 
 /*named-content[@content-type=('quoted','quote','quoted-title','called')]*/
 
+book { font-family:  'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif; }
+
 book-part {
     -oxy-foldable:true;
     -oxy-not-foldable-child: book-part-meta }
