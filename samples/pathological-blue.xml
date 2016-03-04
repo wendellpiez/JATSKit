@@ -31,7 +31,19 @@
     </article-meta>
   </front>
   <body>
-    <p> Paragraph content, lorem ipsum etc etc.</p>
+    <p> Paragraph content, <code>lorem ipsum 
+hey this is 'preformatted'</code>
+      <monospace>etc</monospace> etc. Inline markup such as <bold>bold</bold> and
+        <italic>italic</italic> can be tagged as such. As always there can be boxes even in the
+      middle of paragraphs. Even inline MathML? Such as <mml:math>
+        <mml:pi/>
+      </mml:math><verse-group>
+        <verse-line>Lines of verse</verse-line>
+        <verse-line>Can be quite terse.</verse-line>
+      </verse-group><boxed-text id="box1">
+        <p>(Paragraphs may appear inside boxed-text inside paragraphs.)</p>
+      </boxed-text>
+    </p>
     <table-wrap>
       <caption>
         <title>HTML table example</title>

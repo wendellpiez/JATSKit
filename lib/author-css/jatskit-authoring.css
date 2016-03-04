@@ -13,16 +13,6 @@ book-part {
 sec {
     -oxy-foldable:true;
     -oxy-not-foldable-child: title }
- 
-sec[id]:before {
-    font-family: sans-serif; font-size: 80%;
-    content: "section id: "
-        oxy_textfield(           
-            edit, "@id",
-            columns, 10);
-}
-
-
 
 xref:after {
   content:  oxy_combobox(           
@@ -38,6 +28,10 @@ ext-link:after { font-family: sans-serif; font-size: 80%;
         edit, "@xlink:href",
         columns 40);
 }
+
+code { font-family: monospace; white-space: pre }
+
+boxed-text { padding: 0.5em; border: thin solid black }
 
 graphic:after {
     font-family: sans-serif; font-size: 80%; color: #228B22; /*forestgreen*/

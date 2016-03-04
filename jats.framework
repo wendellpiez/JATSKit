@@ -62,6 +62,17 @@
 											<Boolean>true</Boolean>
 										</field>
 									</cssFile>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/lib/author-css/jatskit-noisy-authoring.css</String>
+										</field>
+										<field name="title">
+											<String>JATSKit 'noisy' Authoring</String>
+										</field>
+										<field name="alternate">
+											<Boolean>true</Boolean>
+										</field>
+									</cssFile>
 								</cssFile-array>
 							</field>
 							<field name="mergeCSSsFromDocument">
@@ -531,6 +542,231 @@
 											<Boolean>false</Boolean>
 										</field>
 									</action>
+									<action>
+										<field name="id">
+											<String>insert.code</String>
+										</field>
+										<field name="name">
+											<String>Code (preformatted)</String>
+										</field>
+										<field name="description">
+											<String>Insert 'code' element, wrapping selection</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>c</String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>element</String>
+																<String>&lt;code/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>Monospace</String>
+										</field>
+										<field name="name">
+											<String>Monospace</String>
+										</field>
+										<field name="description">
+											<String>Insert monospace</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl M</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>element</String>
+																<String>&lt;monospace/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.boxedtext</String>
+										</field>
+										<field name="name">
+											<String>Boxed Text</String>
+										</field>
+										<field name="description">
+											<String>Insert or wrap as 'boxed-text'</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift B</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;boxed-text>&lt;p/>&lt;/boxed-text></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.mathml</String>
+										</field>
+										<field name="name">
+											<String>MathML</String>
+										</field>
+										<field name="description">
+											<String>Insert MathML</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift M</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap/>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertEquationOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.disp-quote</String>
+										</field>
+										<field name="name">
+											<String>Display Quote</String>
+										</field>
+										<field name="description">
+											<String>Insert or wrap as 'disp-quote'</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;disp-quote>&lt;p/>&lt;/disp-quote></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -560,6 +796,26 @@
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
+																<String>insert.boxedtext</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.code</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.disp-quote</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.mathml</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
 																<String>Paragraph</String>
 															</field>
 														</menuItem>
@@ -583,6 +839,11 @@
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>Monospace</String>
+															</field>
+														</menuItem>
 														<menuItem>
 															<field name="actionID">
 																<String>Bold</String>
@@ -687,6 +948,11 @@
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
+																<String>Monospace</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
 																<String>Bold</String>
 															</field>
 														</menuItem>
@@ -733,6 +999,11 @@
 													</menuEntry-array>
 												</field>
 											</menu>
+											<menuItem>
+												<field name="actionID">
+													<String>insert.code</String>
+												</field>
+											</menuItem>
 										</menuEntry-array>
 									</field>
 								</menu>
@@ -768,6 +1039,11 @@
 													<String>Underline</String>
 												</field>
 											</toolbarItem>
+											<toolbarItem>
+												<field name="actionID">
+													<String>Monospace</String>
+												</field>
+											</toolbarItem>
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
@@ -782,6 +1058,16 @@
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
+													<String>insert.boxedtext</String>
+												</field>
+											</toolbarItem>
+											<toolbarItem>
+												<field name="actionID">
+													<String>insert.disp-quote</String>
+												</field>
+											</toolbarItem>
+											<toolbarItem>
+												<field name="actionID">
 													<String>listitem</String>
 												</field>
 											</toolbarItem>
@@ -793,6 +1079,17 @@
 											<toolbarItem>
 												<field name="actionID">
 													<String>orderedList</String>
+												</field>
+											</toolbarItem>
+											<toolbarItem>
+												<field name="actionID">
+													<String>insert.code</String>
+												</field>
+											</toolbarItem>
+											<toolbarSeparator/>
+											<toolbarItem>
+												<field name="actionID">
+													<String>insert.mathml</String>
 												</field>
 											</toolbarItem>
 										</toolbarEntry-array>

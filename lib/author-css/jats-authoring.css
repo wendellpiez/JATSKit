@@ -498,6 +498,7 @@ disp-formula,
 disp-quote {
   display: block;
   margin-left:2em;
+  margin-top:0.25em;
   margin-bottom:0.25em;
 }
 
