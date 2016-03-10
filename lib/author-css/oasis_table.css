@@ -71,7 +71,7 @@ oasis|table[frame] {
 /* 
    If no frame attribute value is set, use a 1px border. This is similar to the PDF output.
 */
-oasis|table[frame] > tgroup {
+oasis|table[frame] > oasis|tgroup {
     border-style:none;
 }
 

@@ -316,7 +316,7 @@ hey this is 'preformatted'</code>
           <oasis:entry>cell</oasis:entry>
           <oasis:entry>cell</oasis:entry>
           <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
+              <oasis:entry/>
         </oasis:row>
         <oasis:row>
           <oasis:entry>cell</oasis:entry>

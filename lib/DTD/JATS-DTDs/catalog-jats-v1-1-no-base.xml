@@ -751,14 +751,14 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 <!--                    MATHML MODULES                              -->
 <!-- .............................................................. -->
 
-  <public publicId="-//W3C//DTD MathML 2.0//EN"
+  <!--<public publicId="-//W3C//DTD MathML 2.0//EN"
                uri="mathml2.dtd"/>
   <public publicId="-//W3C//ENTITIES MathML 2.0 Qualified Names 1.0//EN"
                uri="mathml2-qname-1.mod"/>
   <public publicId="-//W3C//ENTITIES Extra for MathML 2.0//EN"
                uri="mathml/mmlextra.ent"/>
   <public publicId="-//W3C//ENTITIES Aliases for MathML 2.0//EN"
-               uri="mathml/mmlalias.ent"/>
+               uri="mathml/mmlalias.ent"/>-->
 
 
   <public publicId="-//W3C//DTD MathML 3.0//EN"

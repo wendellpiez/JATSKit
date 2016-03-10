@@ -21,7 +21,6 @@ xref:after {
             columns, 12 );
 }
 
-
 ext-link:after { font-family: sans-serif; font-size: 80%;
     content:
         oxy_urlChooser(        
