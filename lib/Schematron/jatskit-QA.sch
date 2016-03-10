@@ -15,7 +15,7 @@
         </sqf:description>
         <sqf:user-entry name="user-id">
           <sqf:description>
-            <sqf:title>ID (unique within document scope)</sqf:title>
+            <sqf:title>ID</sqf:title>
           </sqf:description>
         </sqf:user-entry>
         
