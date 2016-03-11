@@ -7,7 +7,10 @@
 
   <sch:pattern>
     <sch:rule context="book-part">
-      <sch:assert test="matches(@id,'\S')" role="warning">Missing @id on a book-part</sch:assert>
+      
+      <!-- @id is constrained by jatskit-QA.sch; we do not have to constrain it here since for EPUB generation,
+           a fallback can be provided. -->
+      
       <sch:assert role="warning" test="exists(book-part-meta/title-group/title)" sqf:fix="add-bookpart-title">Book part has no title; it will appear as "Untitled" in a
       table of contents.</sch:assert>
       <sqf:fix id="add-bookpart-title">

@@ -8,40 +8,22 @@
 
   <sch:pattern>
     <sch:rule context="book-part | sec | fig | table-wrap | boxed-text | disp-formula | statement">
-      <sch:assert test="matches(@id,'\S')" role="warning">Missing @id</sch:assert>
+      <sch:assert test="matches(@id,'\S')" role="warning" sqf:fix="add-id">Missing @id</sch:assert>
       <sqf:fix id="add-id">
         <sqf:description>
           <sqf:title>Add ID</sqf:title>
         </sqf:description>
-        <sqf:user-entry name="user-id">
+        <sch:let name="name" value="name()"/>
+        <sch:let name="element-id" value="concat($name,'-',count(.|preceding::*[name()=$name]))"/>
+        <!--<sqf:user-entry name="user-id">
           <sqf:description>
             <sqf:title>ID</sqf:title>
           </sqf:description>
-        </sqf:user-entry>
-        
-        <!--<sqf:user-entry name="newName">
-          <sqf:description>
-            <sqf:title>Enter the new name.</sqf:title>
-          </sqf:description>
         </sqf:user-entry>-->
-        <!--<sqf:replace target="{$newName}" node-type="pi">
-        	<value-of select="."/>
-       </sqf:replace>-->
-        
-        <!--<sqf:replace use-when="exists(@id)" node-type="attribute"  match="id" target="id">
-          <sch:value-of select="$id"/>
-        </sqf:replace>-->
-        <!--<sqf:add use-when="empty(@id)" node-type="attribute" match="id" target="id">
-          <sch:value-of select="$id"/>
-        </sqf:add>-->
-        <sqf:add node-type="attribute" target="id" select="@id">
-          <sch:value-of select="$user-id"/>
-        </sqf:add>
-        
+        <sqf:add node-type="attribute" target="id" select="$element-id"/>
       </sqf:fix>
     </sch:rule>
   </sch:pattern>
-  
   
   <sch:pattern>
   <!--    <sch:rule context="xref">
