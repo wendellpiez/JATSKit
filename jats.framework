@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>JATSKit - NISO JATS 1.1 Article Publishing (Blue)</String>
+						<String>JATSKit - NISO JATS / NLM DTD</String>
 					</field>
 					<field name="schemaDescriptor">
 						<null/>
@@ -1137,63 +1137,10 @@
 						</String-array>
 					</field>
 					<field name="description">
-						<String>NISO/NLM Journal Article Tag Suite, including Publishing and Authoring tag sets</String>
+						<String>NISO/NLM Journal Article Tag Suite and related tag sets</String>
 					</field>
 					<field name="doctypeRules">
-						<documentTypeRule-array>
-							<documentTypeRule>
-								<field name="namespace">
-									<String>*</String>
-								</field>
-								<field name="rootElem">
-									<String>*</String>
-								</field>
-								<field name="fileName">
-									<String>*</String>
-								</field>
-								<field name="publicID">
-									<String>-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with MathML3 v1.1 20151215//EN</String>
-								</field>
-								<field name="javaRuleClass">
-									<String></String>
-								</field>
-								<field name="attributeLocalName">
-									<String>*</String>
-								</field>
-								<field name="attributeNamespace">
-									<String>*</String>
-								</field>
-								<field name="attributeValue">
-									<String>*</String>
-								</field>
-							</documentTypeRule>
-							<documentTypeRule>
-								<field name="namespace">
-									<String>*</String>
-								</field>
-								<field name="rootElem">
-									<String>*</String>
-								</field>
-								<field name="fileName">
-									<String>*</String>
-								</field>
-								<field name="publicID">
-									<String>-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with OASIS Tables with MathML3 v1.1 20151215//EN</String>
-								</field>
-								<field name="javaRuleClass">
-									<String></String>
-								</field>
-								<field name="attributeLocalName">
-									<String>*</String>
-								</field>
-								<field name="attributeNamespace">
-									<String>*</String>
-								</field>
-								<field name="attributeValue">
-									<String>*</String>
-								</field>
-							</documentTypeRule>
-						</documentTypeRule-array>
+						<documentTypeRule-array/>
 					</field>
 					<field name="scenarios">
 						<scenario-array>
@@ -1733,7 +1680,7 @@
 						<null/>
 					</field>
 					<field name="priority">
-						<Integer>3</Integer>
+						<Integer>2</Integer>
 					</field>
 					<field name="xmlNodeCustomizerExtension">
 						<null/>

@@ -33,7 +33,7 @@
   <body>
     <p> Paragraph content, <code>lorem ipsum 
 hey this is 'preformatted'</code>
-      <monospace>etc</monospace> etc. Inline markup such as <bold>bold</bold> and
+      <monospace>etc</monospace> etc. Inline phenomena such as <bold>bold</bold> and
         <italic>italic</italic> can be tagged as such. As always there can be boxes even in the
       middle of paragraphs. Even inline MathML? Such as <mml:math>
         <mml:pi/>
@@ -44,7 +44,7 @@ hey this is 'preformatted'</code>
         <p>(Paragraphs may appear inside boxed-text inside paragraphs.)</p>
       </boxed-text>
     </p>
-    <table-wrap>
+    <table-wrap id="table-wrap-1">
       <caption>
         <title>HTML table example</title>
       </caption>
@@ -69,7 +69,7 @@ hey this is 'preformatted'</code>
         </tr>
       </table>
     </table-wrap>
-    <table-wrap>
+    <table-wrap id="table-wrap-2">
       <caption>
         <title>Complex HTML table example</title>
       </caption>
@@ -163,7 +163,7 @@ hey this is 'preformatted'</code>
         </tr>
       </table>
     </table-wrap>
-    <table-wrap>
+    <table-wrap id="table-wrap-3">
       <caption>
         <title>Controlled complex HTML table example</title>
         <p>This time the 'col' elements indicate widths.</p>
@@ -176,7 +176,6 @@ hey this is 'preformatted'</code>
         <col width="10%"/>
         <col width="20%"/>
         <col width="10%"/>
-        
         <tr>
           <td>One</td>
           <td>Two</td>
@@ -266,7 +265,7 @@ hey this is 'preformatted'</code>
         </tr>
       </table>
     </table-wrap>
-    <table-wrap>
+    <table-wrap id="table-wrap-4">
       <caption>
         <title>OASIS table example</title>
         <p>In JATS, so-called "OASIS" tables have the same model as OASIS (CALS) tables, except in a
@@ -282,93 +281,93 @@ hey this is 'preformatted'</code>
           <oasis:colspec colwidth="20%" colname="vi"/>
           <oasis:colspec colwidth="10%"/>
           <oasis:tbody>
-        <oasis:row>
-          <oasis:entry>One</oasis:entry>
-          <oasis:entry>Two</oasis:entry>
-          <oasis:entry>Three</oasis:entry>
-          <oasis:entry>Four</oasis:entry>
-          <oasis:entry>Five</oasis:entry>
-          <oasis:entry>Six</oasis:entry>
-          <oasis:entry>Seven</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>Ichi</oasis:entry>
-          <oasis:entry>Ni</oasis:entry>
-          <oasis:entry>San</oasis:entry>
-          <oasis:entry>Shi</oasis:entry>
-          <oasis:entry>Go</oasis:entry>
-          <oasis:entry>Roku</oasis:entry>
-          <oasis:entry>Shichi</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry morerows="1">cell morerows=1</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
+            <oasis:row>
+              <oasis:entry>One</oasis:entry>
+              <oasis:entry>Two</oasis:entry>
+              <oasis:entry>Three</oasis:entry>
+              <oasis:entry>Four</oasis:entry>
+              <oasis:entry>Five</oasis:entry>
+              <oasis:entry>Six</oasis:entry>
+              <oasis:entry>Seven</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>Ichi</oasis:entry>
+              <oasis:entry>Ni</oasis:entry>
+              <oasis:entry>San</oasis:entry>
+              <oasis:entry>Shi</oasis:entry>
+              <oasis:entry>Go</oasis:entry>
+              <oasis:entry>Roku</oasis:entry>
+              <oasis:entry>Shichi</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry morerows="1">cell morerows=1</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
               <oasis:entry/>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry namest="iv" nameend="vi">cell from col iv to col vi</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-          <oasis:entry>cell</oasis:entry>
-        </oasis:row>
-        <oasis:row>
-          <oasis:entry>Eins</oasis:entry>
-          <oasis:entry>Zwei</oasis:entry>
-          <oasis:entry>Drei</oasis:entry>
-          <oasis:entry>Vier</oasis:entry>
-          <oasis:entry>Fuenf</oasis:entry>
-          <oasis:entry>Sechs</oasis:entry>
-          <oasis:entry>Sieben</oasis:entry>
-        </oasis:row>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry namest="iv" nameend="vi">cell from col iv to col vi</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>Eins</oasis:entry>
+              <oasis:entry>Zwei</oasis:entry>
+              <oasis:entry>Drei</oasis:entry>
+              <oasis:entry>Vier</oasis:entry>
+              <oasis:entry>Fuenf</oasis:entry>
+              <oasis:entry>Sechs</oasis:entry>
+              <oasis:entry>Sieben</oasis:entry>
+            </oasis:row>
           </oasis:tbody>
         </oasis:tgroup>
       </oasis:table>

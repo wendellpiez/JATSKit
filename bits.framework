@@ -695,7 +695,7 @@
 								</list>
 							</field>
 							<field name="extendedPersistentObjectKey">
-								<String>JATSKit - NISO JATS 1.1 Article Publishing (Blue)</String>
+								<String>JATSKit - NISO JATS / NLM DTD</String>
 							</field>
 						</documentTypeDescriptorPatch>
 					</field>
