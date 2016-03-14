@@ -60,7 +60,9 @@ import ro.sync.ecss.extensions.api.ArgumentsMap;
 import ro.sync.ecss.extensions.api.AuthorAccess;
 import ro.sync.ecss.extensions.api.AuthorOperation;
 import ro.sync.ecss.extensions.api.AuthorOperationException;
+import ro.sync.ecss.extensions.api.AuthorSchemaManager;
 import ro.sync.ecss.extensions.api.node.AttrValue;
+import ro.sync.ecss.extensions.api.node.AuthorDocumentFragment;
 import ro.sync.ecss.extensions.api.node.AuthorElement;
 import ro.sync.ecss.extensions.api.node.AuthorNode;
 import ro.sync.ecss.extensions.api.schemaaware.SchemaAwareHandlerResult;
@@ -83,6 +85,8 @@ public class InsertGraphicOperation implements AuthorOperation {
   }
 
   /**
+   * Insert an image reference.
+   * 
    * @param authorAccess Author access
    * @param ref The image reference
    * @return The insertion result
@@ -90,10 +94,10 @@ public class InsertGraphicOperation implements AuthorOperation {
    */
   public static SchemaAwareHandlerResult insertImageRef(AuthorAccess authorAccess, String ref) throws AuthorOperationException {
     SchemaAwareHandlerResult result = null;
-    try {
-      boolean insertImageRef = true;
+    int caretOffset = authorAccess.getEditorAccess().getCaretOffset();
+    boolean insertImageRef = true;
       try {
-        AuthorNode nodeAtOffset = authorAccess.getDocumentController().getNodeAtOffset(authorAccess.getEditorAccess().getCaretOffset());
+        AuthorNode nodeAtOffset = authorAccess.getDocumentController().getNodeAtOffset(caretOffset);
         if(nodeAtOffset.getType() == AuthorNode.NODE_TYPE_ELEMENT){
           AuthorElement elementAtOffset = (AuthorElement) nodeAtOffset;
           if("graphic".equals(elementAtOffset.getLocalName())
@@ -108,34 +112,39 @@ public class InsertGraphicOperation implements AuthorOperation {
     	  e.printStackTrace();
       }
       if(insertImageRef){
-    	  StringBuffer fragment = new StringBuffer();
-    	  boolean inInlineContext = authorAccess.getDocumentController().inInlineContext(
-    			  authorAccess.getEditorAccess().getCaretOffset());
-    	  if (inInlineContext) {
-    		  fragment.append("<inline-graphic ");
+    	  //First try to insert an inline-graphic
+    	  String inlineGraphFrag = createFragmentToInsert(ref, "inline-graphic");
+    	  AuthorDocumentFragment frag = authorAccess.getDocumentController().createNewDocumentFragmentInContext(inlineGraphFrag,  caretOffset);
+    	  if(frag != null && authorAccess.getDocumentController().getAuthorSchemaManager().canInsertDocumentFragment(frag, caretOffset, AuthorSchemaManager.VALIDATION_MODE_LAX)){
+    		 //Insert inline-graphic 
+        	  result = authorAccess.getDocumentController().insertFragmentSchemaAware(
+        			  caretOffset, frag);
     	  } else {
-    		  fragment.append("<graphic ");
+    		  String graphicFrag = createFragmentToInsert(ref, "graphic");
+    		  // Insert the graphic
+    		  result = authorAccess.getDocumentController().insertXMLFragmentSchemaAware(
+    				  graphicFrag,
+    				  caretOffset);
     	  }
-    	  fragment.append("xmlns:xlink=\"http://www.w3.org/1999/xlink\" ");
-    	  fragment.append("xlink:href=\"");
-    	  fragment.append(ref);
-    	  fragment.append("\">");
-    	  if (inInlineContext) {
-    		  fragment.append("</inline-graphic>");
-    	  } else {
-    		  fragment.append("</graphic>");
-    	  }
-
-    	  // Insert the graphic
-    	  result = authorAccess.getDocumentController().insertXMLFragmentSchemaAware(
-    			  fragment.toString(),
-    			  authorAccess.getEditorAccess().getCaretOffset());
       }
-    } catch (BadLocationException e) {
-      throw new AuthorOperationException(
-          "The operation cannot be performed due to: " + e.getMessage(), e);
-    }
     return result;
+  }
+
+  /**
+   * Create a fragment to insert.
+   * 
+   * @param ref The href value.
+   * @param elemName The element name.
+   */
+  private static String createFragmentToInsert(String ref, String elemName) {
+	  StringBuffer fragment = new StringBuffer();
+	  fragment.append("<" + elemName + " ");
+	  fragment.append("xmlns:xlink=\"http://www.w3.org/1999/xlink\" ");
+	  fragment.append("xlink:href=\"");
+	  fragment.append(ref);
+	  fragment.append("\">");
+	  fragment.append("</" + elemName + ">");
+	  return fragment.toString();
   }
 
   /**
