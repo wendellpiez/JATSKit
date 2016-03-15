@@ -304,10 +304,10 @@
 											<String>${i18n(unorderedList_description)}</String>
 										</field>
 										<field name="largeIconPath">
-											<String>/images/UnorderedList20.png</String>
+											<String>${framework}/img/UnorderedList24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/UnorderedList16.gif</String>
+											<String>${framework}/img/UnorderedList16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -350,10 +350,10 @@
 											<String>${i18n(orderedList_description)}</String>
 										</field>
 										<field name="largeIconPath">
-											<String>/images/OrderedList20.gif</String>
+											<String>${framework}/img/OrderedList24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/OrderedList16.gif</String>
+											<String>${framework}/img/OrderedList16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -396,10 +396,10 @@
 											<String>${i18n(listitem_description)}</String>
 										</field>
 										<field name="largeIconPath">
-											<String>/images/ListItem20.gif</String>
+											<String>${framework}/img/ListItem24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/ListItem16.gif</String>
+											<String>${framework}/img/ListItem16.gif</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
