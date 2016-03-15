@@ -870,7 +870,7 @@
 													<String></String>
 												</field>
 												<field name="iconPath">
-													<String>/images/UnorderedList16.gif</String>
+													<String>${framework}/img/UnorderedList16.png</String>
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
@@ -977,7 +977,7 @@
 													<String></String>
 												</field>
 												<field name="iconPath">
-													<String>/images/UnorderedList16.gif</String>
+													<String>${framework}/img/UnorderedList16.png</String>
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
