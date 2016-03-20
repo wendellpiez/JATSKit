@@ -1,7 +1,11 @@
 @import url("jatskit-authoring.css");
 
 @namespace xlink "http://www.w3.org/1999/xlink";
- 
+
+/* Specifically for supporting requirements having to do with production of EPUB-ready BITS. */
+
+/* A similar rule in the 'noisy' CSS applies to other elements with IDs; but this should work
+   even when that CSS isn't active. */
 book-part:before {
     font-family: sans-serif; font-size: 80%;
     content: "book-part id: "

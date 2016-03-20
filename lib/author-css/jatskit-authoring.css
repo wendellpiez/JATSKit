@@ -1,8 +1,16 @@
-@import url("jats-authoring.css");
+/*Intended as supplementary to jatskit-authoring.css*/
+/*@import url("jats-authoring.css");*/
 
 @namespace xlink "http://www.w3.org/1999/xlink";
 
 /*named-content[@content-type=('quoted','quote','quoted-title','called')]*/
+
+/*
+article! > front > journal-meta { background-color: skyblue;
+  -oxy-tags-color:white;
+  -oxy-tags-background-color:blue; } */
+
+article, book { counter-reset: footnote }
 
 book { font-family:  'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif; }
 
@@ -28,9 +36,18 @@ ext-link:after { font-family: sans-serif; font-size: 80%;
         columns 40);
 }
 
+
+fn { -oxy-foldable:true; display: inline }
+fn:before { font-family: sans-serif; font-size: 80%;
+color: #440000; counter-increment: footnote; content: "Note " counter(footnote);
+    }
+
 code { font-family: monospace; white-space: pre }
 
 boxed-text { padding: 0.5em; border: thin solid black }
+
+/* Can't match def-item for these as it's a table-row */
+def-item >  * { padding-top: 0.5em; padding-bottom: 0.5em; border-top: thin solid black }
 
 graphic:after {
     font-family: sans-serif; font-size: 80%; color: #228B22; /*forestgreen*/
@@ -39,6 +56,7 @@ graphic:after {
           edit, '@xlink:href',
           columns 25 )
 }
+
 named-content { background-color: #fff8dc /*cornsilk*/ }
 
 named-content:not([content-type]):after,

@@ -360,7 +360,7 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
   <xsl:attribute name="line-height">12pt</xsl:attribute>
 </xsl:attribute-set>
 
-<xsl:attribute-set name="coverpage-heading" use-attribute-sets="panel">
+<xsl:attribute-set name="coverpage-heading">
   <xsl:attribute name="font-size">10pt</xsl:attribute>
   <xsl:attribute name="line-height">18pt</xsl:attribute>
 </xsl:attribute-set>
@@ -632,7 +632,7 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
 
 <xsl:attribute-set name="float">
   <xsl:attribute name="float">before</xsl:attribute>
-  <xsl:attribute name="margin-bottom">4pt</xsl:attribute>
+  <!--<xsl:attribute name="margin-bottom">4pt</xsl:attribute>-->
 </xsl:attribute-set>
 
 
@@ -861,8 +861,8 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
   <!-- the two metadata tables -->
   <fo:table space-after="24pt" border-style="none">
     <fo:table-body>
-      <fo:table-row width="2.75in">
-        <fo:table-cell>
+      <fo:table-row>
+        <fo:table-cell width="2.75in">
           <xsl:call-template name="make-journal-metadata-table"/>
         </fo:table-cell>
         <fo:table-cell width="0.5in">
@@ -934,7 +934,7 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
        Don't be confused: this entire table fits into a table
        cell on the cover page -->
   <xsl:for-each select="/article/front/article-meta">
-    <fo:table border-style="none" width="2.75in">
+    <fo:table border-style="none" width="2.75in" xsl:use-attribute-sets="panel">
       <fo:table-body>
         <xsl:call-template name="make-metadata-cell">
           <xsl:with-param name="contents">
@@ -2094,17 +2094,19 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
 
 <xsl:template name="set-copyright-note">
   <!-- This note is set as a first-page footnote, 
-       and has no number or other device.
-       The context node is /article/front/article-meta -->
-  <xsl:call-template name="make-footnote">
-    <xsl:with-param name="contents">
-      <!-- v2.3 has copyright-statement, copyright-year, license -->
-      <xsl:if test="copyright-statement | copyright-year | license ">
-        <xsl:call-template name="permissions"/>
-      </xsl:if>
-      <xsl:apply-templates select="permissions"/>
-    </xsl:with-param>
-  </xsl:call-template>   
+     and has no number or other device.
+     The context node is /article/front/article-meta -->
+  <xsl:if test="copyright-statement | copyright-year | license | permissions">
+    <xsl:call-template name="make-footnote">
+      <xsl:with-param name="contents">
+        <!-- v2.3 has copyright-statement, copyright-year, license -->
+        <xsl:if test="copyright-statement | copyright-year | license">
+          <xsl:call-template name="permissions"/>
+        </xsl:if>
+        <xsl:apply-templates select="permissions"/>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:if>
 </xsl:template>
 
 
@@ -2954,7 +2956,6 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
     </xsl:with-param>
   </xsl:call-template>
 </xsl:template>
-
 
 <xsl:template match="alt-text">
   <!-- not handled with graphic or inline-graphic -->
@@ -4074,6 +4075,7 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
   <xsl:param name="contents">
     <xsl:apply-templates/>
   </xsl:param>
+  <xsl:if test="normalize-space($contents)">
   <fo:footnote>
     <fo:inline xsl:use-attribute-sets="footnote-ref">
       <xsl:apply-templates mode="fn-ref-punctuate"
@@ -4084,6 +4086,7 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
       <xsl:copy-of select="$contents"/>
     </fo:footnote-body>
   </fo:footnote>
+  </xsl:if>
 </xsl:template>
 
 
@@ -4832,10 +4835,18 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
       </xsl:otherwise>
     </xsl:choose>
   </xsl:param>
-  <fo:basic-link external-destination="{normalize-space(string($href))}"
-    show-destination="new" xsl:use-attribute-sets="link">
-    <xsl:copy-of select="$contents"/>
-  </fo:basic-link>
+  <!-- Link throws an error in at least one processor when there is no target. -->
+  <xsl:choose>
+    <xsl:when test="normalize-space($href)">
+      <fo:basic-link external-destination="{normalize-space(string($href))}"
+        show-destination="new" xsl:use-attribute-sets="link">
+        <xsl:copy-of select="$contents"/>
+      </fo:basic-link>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:copy-of select="$contents"/>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 

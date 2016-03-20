@@ -24,6 +24,8 @@ dedication, foreword, preface, front-matter-part, index { display: block }
 
 book-part { border-top: thin solid black; margin-top: 1em; padding-top: 0.5em }
 
+body { padding-top: 1em }
+
 journal-meta, article-meta, collection-meta, book-meta, book-part-meta, sec-meta {
   display: block;
 }
@@ -397,6 +399,7 @@ table-wrap {
 
 list {
   display: block;
+  margin-top: 1em; margin-bottom: 1em;
 }
 
 list list-item {
@@ -698,6 +701,7 @@ ext-link {
 }
 
 ext-link:after {
+  font-size: 80%; font-family: sans-serif;
   content: attr(xlink\:href) }
 
 underline {
