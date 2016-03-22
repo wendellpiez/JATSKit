@@ -3,8 +3,20 @@
 "-//OASIS//DTD Entity Resolution XML Catalog V3.0//EN"
 "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
 
+<!-- This is a modified version of the catalog distributed for NISO JATS / NLM BITS
+     for JATSKit.
+
+Modifications:
+  - With the catalog placed up a level, we have xml:base="JATS-DTDs/" at the top
+  - Modules not given in the JATSKit distribution are commented out to prevent
+    failures in the resolver.
+  - One small error fixed (and reported).
+
+-->
+
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
-         prefer="public">
+         prefer="public"
+         xml:base="JATS-DTDs/">
 
 <!-- ============================================================= -->
 <!--  MODULE:    An OASIS XML Catalog (not a DTD Suite module)     -->
@@ -488,35 +500,35 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 <!-\-                    The following modules are used for ALL of   -\->
 <!-\-                    the Archiving and Interchange DTDs (Green)  -\->
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Mixes Module v1.1 20151215//EN"
-               uri="JATS-archivecustom-mixes1.ent"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Mixes Module v1.1 20151215//EN"
+               uri="JATS-archivecustom-mixes1.ent"/>
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Content and Attributes Module v1.1 20151215//EN"
-               uri="JATS-archivecustom-models1.ent"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Content and Attributes Module v1.1 20151215//EN"
+               uri="JATS-archivecustom-models1.ent"/>
  
 <!-\-                    The following modules are used for all of   -\->
 <!-\-                    the Archiving and Interchange DTDs (Green)  -\->
 <!-\-                    that use ONLY the XHTML-based Table Model   -\->
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Classes Module v1.1 20151215//EN" 
-               uri="JATS-archivecustom-classes1.ent"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD Customize Classes Module v1.1 20151215//EN" 
+               uri="JATS-archivecustom-classes1.ent"/>
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD-Specific Modules v1.1 20151215//EN" 
-               uri="JATS-archivecustom-modules1.ent"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving DTD-Specific Modules v1.1 20151215//EN" 
+               uri="JATS-archivecustom-modules1.ent"/>
 
 <!-\-                    The following modules are used ONLY for the -\->
 <!-\-                    Archiving and Interchange DTDs (Green), that-\->
 <!-\-                    uses XHTML tables with MathML 2.0           -\->
 
- <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" 
-               uri="JATS-archivearticle1.dtd"/>-\->
+ <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" 
+               uri="JATS-archivearticle1.dtd"/>
 
 <!-\-                    The following modules are used ONLY for the -\->
 <!-\-                    Archiving and Interchange DTDs (Green), that-\->
 <!-\-                    uses XHTML tables with MathML 3.0           -\->
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.1 20151215//EN"
-               uri="JATS-archivearticle1-mathml3.dtd"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.1 20151215//EN"
+               uri="JATS-archivearticle1-mathml3.dtd"/>
 
 
 <!-\-                    The following modules are used only for all -\->
@@ -524,11 +536,11 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 <!-\-                    use the OASIS table model (namespace prefix -\->
 <!-\-                    "oasis") and the XHTML table model.         -\->
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables Customize Classes Module v1.1 20151215//EN"
-               uri="JATS-archive-oasis-custom-classes1.ent"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables Customize Classes Module v1.1 20151215//EN"
+               uri="JATS-archive-oasis-custom-classes1.ent"/>
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables DTD-Specific Modules v1.1 20151215//EN"
-               uri="JATS-archive-oasis-custom-modules1.ent"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables DTD-Specific Modules v1.1 20151215//EN"
+               uri="JATS-archive-oasis-custom-modules1.ent"/>
 
 
 <!-\-                    The following modules are used ONLY for the -\->
@@ -537,8 +549,8 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 <!-\-                    "oasis") and the XHTML table model with     -\->
 <!-\-                    MathML 2.0                                  -\->
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables v1.1 20151215//EN"
-               uri="JATS-archive-oasis-article1.dtd"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables v1.1 20151215//EN"
+               uri="JATS-archive-oasis-article1.dtd"/>
 
 <!-\-                    The following modules are used ONLY for the -\->
 <!-\-                    Archiving and Interchange DTDs (Green) that -\->
@@ -546,8 +558,8 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 <!-\-                    "oasis") and the XHTML table model with     -\->
 <!-\-                    MathML 3.0                                  -\->
 
-  <!-\-<public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables with MathML3 v1.1 20151215//EN"
-               uri="JATS-archive-oasis-article1-mathml3.dtd"/>-\->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with OASIS Tables with MathML3 v1.1 20151215//EN"
+               uri="JATS-archive-oasis-article1-mathml3.dtd"/>
               
 </group>
 -->

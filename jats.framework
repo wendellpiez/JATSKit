@@ -1245,7 +1245,7 @@
 					</field>
 					<field name="xmlCatalogs">
 						<String-array>
-							<String>${framework}/lib/DTD/JATS-DTDs/catalog-jats-v1-1-no-base.xml</String>
+							<String>${framework}/lib/DTD/jatskit-catalog.xml</String>
 						</String-array>
 					</field>
 					<field name="description">
