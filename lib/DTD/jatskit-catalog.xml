@@ -2,22 +2,37 @@
 <!DOCTYPE catalog PUBLIC
 "-//OASIS//DTD Entity Resolution XML Catalog V3.0//EN"
 "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
-
-<!-- This is a modified version of the catalog distributed for NISO JATS / NLM BITS
-     for JATSKit.
-
-Modifications:
-  - With the catalog placed up a level, we have xml:base="JATS-DTDs/" at the top
-  - Modules not given in the JATSKit distribution are commented out to prevent
-    failures in the resolver.
-  - One small error fixed (and reported).
-
--->
-
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
          prefer="public"
          xml:base="JATS-DTDs/">
+  
+<!-- + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + -->
+<!--
+    
+This is a modified version of a catalog distributed for NISO JATS /
+NLM BITS for JATSKit. It maps formal public identifiers (FPIs)
+for modules in JATS to locations on the local system.
+     
+Modifications:
+  - With the catalog placed up a level, we have xml:base="JATS-DTDs/"
+    at the top. This subdirectory is presumed to contain all the files
+    together.
+    
+  - Modules not given in the JATSKit distribution are commented out to prevent
+    failures in the resolver.
+    
+  - One small error fixed (and reported).
+  
+In extensions to JATSKit, include your own catalog with your own FPIs
+to supersede this one.
 
+The comments following herefrom (in Mulberry format) are from the original
+file. The first group starts way down on line 438.
+
+                                                  (wap) 2016-03-22 -->
+
+<!-- + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + -->
+  
 <!-- ============================================================= -->
 <!--  MODULE:    An OASIS XML Catalog (not a DTD Suite module)     -->
 <!--             Version of the catalog without @xml:base          -->
