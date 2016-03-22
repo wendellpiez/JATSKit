@@ -5,10 +5,11 @@
   
   <sch:ns uri="http://www.w3.org/1999/xlink"       prefix="xlink"/>
   <sch:ns uri="http://www.w3.org/1998/Math/MathML" prefix="mml"/>
-
+  <sch:ns uri="http://www.niso.org/standards/z39-96/ns/oasis-exchange/table" prefix="oasis"/>
+  
   <sch:pattern>
     <sch:rule context="book-part | sec | fig | table-wrap | boxed-text | disp-formula | statement">
-      <sch:assert test="matches(@id,'\S')" role="warning" sqf:fix="add-id">Missing @id</sch:assert>
+      <sch:assert test="matches(@id,'\S')" role="warning" sqf:fix="add-id">Missing @id on <sch:name/></sch:assert>
       <sqf:fix id="add-id">
         <sqf:description>
           <sqf:title>Add ID</sqf:title>
@@ -24,6 +25,67 @@
       </sqf:fix>
     </sch:rule>
   </sch:pattern>
+  
+  <sch:pattern>
+    <!--(book-count*, book-fig-count?, book-table-count?, book-equation-count?, book-ref-count?, book-page-count?, book-word-count?)
+    (count*, fig-count?, table-count?, equation-count?, ref-count?, page-count?, word-count?)-->
+<!-- book-equation-count, equation-count - disp-formula | inline-formula?
+       book-count and count -->
+    <sch:rule context="book-fig-count | fig-count">
+      <sch:let name="owner" value="ancestor::*[self::book | self::book-part | self::article][1]"/>
+      <sch:let name="counted" value="count($owner//fig)"/>
+      <sch:let name="is-a-number" value="@count castable as xs:integer and (@count/number(.) ge 0)"/>
+      <sch:assert sqf:fix="correct-fig-count" test="$is-a-number">Count should be a whole number (non-negative integer).</sch:assert>
+      <sch:assert sqf:fix="correct-fig-count" test="not($is-a-number) or @count = $counted" role="warning">A figure count is given as
+        <sch:value-of select="@count"/>; we count <sch:value-of select="$counted"/> 'fig'
+        element<sch:value-of select="if ($counted eq 1) then '' else 's'"/> in this <sch:value-of select="$owner/name()"/>.</sch:assert>
+      <sqf:fix id="correct-fig-count">
+        <sqf:description>
+          <sqf:title>Set count to '<sch:value-of select="$counted"/>'</sqf:title>
+        </sqf:description>
+        <sqf:call-fix ref="correct-count">
+          <sqf:with-param name="correction" select="$counted"/>
+        </sqf:call-fix>
+      </sqf:fix>
+    </sch:rule>
+
+    <sch:rule context="book-table-count | table-count">
+      <sch:let name="owner" value="(ancestor::book | ancestor::book-part | ancestor::article)[1]"/>
+      <sch:let name="counted" value="count($owner//table | $owner//oasis:table)"/>
+      <sch:let name="is-a-number" value="@count castable as xs:integer and (@count/number(.) ge 0)"/>
+      <sch:assert sqf:fix="correct-table-count" test="$is-a-number">Count should be a whole number (non-negative integer).</sch:assert>
+      <sch:assert sqf:fix="correct-table-count" test="not($is-a-number) or @count = $counted" role="warning">A figure count is given as
+        <sch:value-of select="@count"/>; we count <sch:value-of select="$counted"/> 'table' (or 'oasis:table')
+        element<sch:value-of select="if ($counted eq 1) then '' else 's'"/> in this <sch:value-of select="$owner/name()"/>.</sch:assert>
+      <sqf:fix id="correct-table-count">
+        <sqf:description>
+          <sqf:title>Set count to '<sch:value-of select="$counted"/>'</sqf:title>
+        </sqf:description>
+        <sqf:call-fix ref="correct-count">
+          <sqf:with-param name="correction" select="$counted"/>
+        </sqf:call-fix>
+      </sqf:fix>
+    </sch:rule>
+    
+    <sch:rule context="book-ref-count | ref-count">
+      <sch:let name="owner" value="(ancestor::book | ancestor::book-part | ancestor::article)[1]"/>
+      <sch:let name="counted" value="count($owner//ref)"/>
+      <sch:let name="is-a-number" value="@count castable as xs:integer and (@count/number(.) ge 0)"/>
+      <sch:assert sqf:fix="correct-ref-count" test="$is-a-number">Count should be a whole number (non-negative integer).</sch:assert>
+      <sch:assert sqf:fix="correct-ref-count" test="not($is-a-number) or @count = $counted" role="warning">A figure count is given as
+        <sch:value-of select="@count"/>; we count <sch:value-of select="$counted"/> 'ref'
+        element<sch:value-of select="if ($counted eq 1) then '' else 's'"/> in this <sch:value-of select="$owner/name()"/>.</sch:assert>
+      <sqf:fix id="correct-ref-count">
+        <sqf:description>
+          <sqf:title>Set count to '<sch:value-of select="$counted"/>'</sqf:title>
+        </sqf:description>
+        <sqf:call-fix ref="correct-count">
+          <sqf:with-param name="correction" select="$counted"/>
+        </sqf:call-fix>
+      </sqf:fix>
+    </sch:rule>
+    
+  </sch:pattern> 
   
   <sch:pattern>
   <!--    <sch:rule context="xref">
@@ -59,4 +121,15 @@
     </sch:rule>
     
   </sch:pattern>
+  
+  <sqf:fixes>
+    <sqf:fix id="correct-count">
+      <sqf:param name="correction"/>  
+      <sqf:description>
+        <sqf:title>Set count to '<sch:value-of select="$correction"/>'</sqf:title>
+      </sqf:description>
+      <sqf:add node-type="attribute" target="count" select="$correction"/>
+    </sqf:fix>
+    
+  </sqf:fixes>
 </sch:schema>

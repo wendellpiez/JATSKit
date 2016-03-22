@@ -1,5 +1,5 @@
-/*Intended as supplementary to jatskit-authoring.css*/
-/*@import url("jats-authoring.css");*/
+/*Intended as supplementary to jats-authoring.css*/
+/*@import url("jats-authoring.css;*/
 
 @namespace xlink "http://www.w3.org/1999/xlink";
 
@@ -31,11 +31,18 @@ xref:after {
 
 ext-link:after { font-family: sans-serif; font-size: 80%;
     content:
-        oxy_urlChooser(        
+      oxy_urlChooser(        
         edit, "@xlink:href",
         columns 40);
 }
 
+list:before { font-family: sans-serif; font-size: 80%;
+   content: "List type: " 
+      oxy_combobox(           
+        edit, "@list-type",
+        editable, true,
+        values, "order, bullet, simple");
+}
 
 fn { -oxy-foldable:true; display: inline }
 fn:before { font-family: sans-serif; font-size: 80%;

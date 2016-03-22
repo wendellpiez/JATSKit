@@ -3525,12 +3525,10 @@ or pipeline) parameterized.
       <xsl:with-param name="warning" select="$warning"/>
     </xsl:call-template>
   </xsl:template>
-  
  
   <xsl:template match="label" mode="label-text">
     <xsl:apply-templates mode="inline-label-text"/>
   </xsl:template>
-  
   
   <xsl:template match="text()" mode="inline-label-text">
     <!-- when displaying labels, space characters become non-breaking spaces -->

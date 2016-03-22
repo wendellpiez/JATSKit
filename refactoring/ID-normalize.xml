@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refactoringOperationDescriptor 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.oxygenxml.com/ns/xmlRefactoring" 
+    id="IDnormalize" 
+    name="Normalize IDs">
+	<description>Any assigned ID is normalized. IDs are assigned to some elements that do not have them.</description>    
+	<script type="XSLT" href="ID-normalize.xsl"/>
+	<category>JATSKit</category>
+</refactoringOperationDescriptor>

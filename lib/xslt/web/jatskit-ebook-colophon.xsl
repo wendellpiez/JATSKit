@@ -37,29 +37,22 @@
             </xsl:call-template>
           </ul>
           <div class="boxed-text panel">
-          <p>
-            <xsl:sequence select="$rendered-title"/>
-            <xsl:text>, at least as here rendered, is a production, most probably if you are reading this, from
-              XML source data encoded in NISO/NLM JATS or BITS format, using (at least in part) stylesheets and tools distributed
+          <p>This presentation of <xsl:sequence select="$rendered-title"/>
+            <xsl:text> is a production from XML source data encoded in NISO/NLM JATS 
+              or BITS format, using (at least in part) stylesheets and tools distributed
               as </xsl:text><tt>JATSKit</tt><xsl:text>.</xsl:text>
           </p>
             <p><a href="https://github.com/wendellpiez/JATSKit"><tt>JATSKit</tt> (see its Github page)</a> is a
-            project of Wendell Piez, 2015-. It builds on earlier work distributed as
-              <tt>oXygenJATSframework</tt>. <tt>JATSKit</tt> is built to be open and extensible, so much of what you see
-            might be due to alterations and extensions for local use. This is part of the idea: its system
+            project of Wendell Piez, 2015-. <tt>JATSKit</tt> is built to be open and extensible, so much of what 
+            you see might be due to alterations and extensions for local use. This is part of the idea: its system
             components, defined using publicly-specified open technologies such as XSLT and XProc, are made to
             be hacked. Developers who make improvements and extensions to <tt>JATSKit</tt>, or reuse or adapt
-              parts of it, should give themselves credit, here and elsewhere.</p>
-            <p>(If you build on <tt>JATSKit</tt>, accordingly please feel free to extend or rework credits given in the stylesheet
-              that is generating this copy — only don't remove any.
-              Such a practice is consistent with the Apache 2.0 License with which <tt>JATSKit</tt> is distributed. Of course, your code should
-              be similarly commented and credited before you share it too.)</p>
+              parts of it, are invited to edit the XSLT that generates this text to give themselves notice.</p>
             <p>Acknowledgement for contributions to <tt>JATSKit</tt> in present or earlier versions is owed
             (at least!) to <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (including for <a
               href="https://github.com/ncbi/JATSPreviewStylesheets">JATS Preview XSLTs)</a>, to
-            <a href="http://www.mulberrytech.com">Mulberry Technologies, Inc.</a>, to the 
-            <a href="http://www.oxygenxml.com">oXygen XML Editor</a> team, especially George Bina and Radu
-            Coravu, and to anyone and everyone indicated on the Github page as a contributor (you know who you are). </p>
+            <a href="http://www.mulberrytech.com">Mulberry Technologies, Inc.</a>, and to the 
+            <a href="http://www.oxygenxml.com">oXygen XML Editor</a> team.</p>
           </div>
           <ul class="pagelinks">
             <xsl:call-template name="toc-component-links">
