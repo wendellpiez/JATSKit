@@ -2,11 +2,18 @@
 <xsl:stylesheet version="2.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:jatskit="https://github.com/wendellpiez/JATSKit/ns"
   exclude-result-prefixes="#all">
   
 <!-- Assigns (and rewrites) IDs on certain elements in JATS/BITS, according to a certain logic.
-     Please extend or replace to meet local requirements! -->
+     Please extend or replace to meet local requirements! You could:
+     
+     Change where IDs are assigned (to a different set of elements or not overriding @id values
+       already present, for example)
+     
+     Change how ID strings are generated
+     
+     
+  -->
   
   <xsl:template match="node() | @*">
     <xsl:copy>
@@ -16,8 +23,8 @@
 
   <!-- Any IDREFS attributes must also mapped. -->
   <xsl:template match="@rid | @headers | @glyph-data">
-    <xsl:attribute name="rid">
-      <xsl:value-of separator=" " select="key('element-by-id',tokenize(.,'\s+'))/jatskit:id(.)"/>
+    <xsl:attribute name="rid" separator=" ">
+      <xsl:apply-templates mode="id" select="key('element-by-id',tokenize(.,'\s+'))"/>
     </xsl:attribute>
   </xsl:template>
   
@@ -29,20 +36,23 @@
        Existing IDs are overwritten. -->
   <xsl:template match="*[exists(@id)] |
     book-part | sec | fig | table-wrap | boxed-text | chem-struct-wrap | fig | disp-formula">
+    <!-- No op inside 'refactoring' <xsl:message>
+      <xsl:value-of select="name()"/>
+      <xsl:for-each select="@id">[@id='<xsl:value-of select="."/>']</xsl:for-each>
+      <xsl:text> now has @id '</xsl:text>
+      <xsl:value-of select="jatskit:id(.)"/>
+      <xsl:text>'</xsl:text>
+    </xsl:message>-->
     <xsl:copy>
       <xsl:apply-templates select="@* except @id"/>
-      <xsl:attribute name="id" select="jatskit:id(.)"/>
+      <xsl:attribute name="id">
+        <xsl:apply-templates mode="id" select="."/>
+      </xsl:attribute>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>
   
-<!-- A wrapper. -->
-  <xsl:function name="jatskit:id" as="xs:string">
-    <xsl:param name="e" as="element()"/>
-    <xsl:apply-templates select="$e" mode="id"/>
-  </xsl:function>
-
-<!-- Mode 'id' is where IDs are generated. -->
+  <!-- Mode 'id' is where IDs are generated. Templates here should return strings. -->
 
   <!-- Default rule: construct an ID for an element numbering it among elements of the same type,
        within the same article or book-part. (Or book if we are outside a book-part entirely, which
@@ -71,7 +81,7 @@
       <xsl:apply-templates select="ancestor::*[self::book-part | self::book | self::article][1]" mode="id"/>
       <xsl:value-of>
         <xsl:text>sec</xsl:text>
-        <xsl:number level="multiple" from="article | book | book-part" format="1.1"/>
+        <xsl:number level="multiple" from="article | book | book-part" format="1-1"/>
       </xsl:value-of>
     </xsl:value-of>
   </xsl:template>
@@ -94,8 +104,8 @@
       <xsl:value-of>
         <!-- First the ancestor book-part whose number is assigned in document scope -->
         <xsl:apply-templates select="ancestor::book-part[last()]" mode="id"/>
-        <xsl:text>.</xsl:text>
-        <xsl:number level="multiple" count="book-part//book-part" from="book-part[empty(ancestor::book-part)]" format="1.1"/>
+        <xsl:text>-</xsl:text>
+        <xsl:number level="multiple" count="book-part//book-part" from="book-part[empty(ancestor::book-part)]" format="1-1"/>
       </xsl:value-of>
     </xsl:value-of>
   </xsl:template>

@@ -1162,6 +1162,7 @@
 													<String>insert.boxedtext</String>
 												</field>
 											</toolbarItem>
+											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
 													<String>insert.disp-quote</String>

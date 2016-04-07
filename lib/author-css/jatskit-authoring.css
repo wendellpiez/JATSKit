@@ -17,8 +17,11 @@ book { font-family:  'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT
 book-part {
     -oxy-foldable:true;
     -oxy-not-foldable-child: book-part-meta }
- 
-sec {
+
+addr-line { display: block }
+attrib    { display: block }
+
+sec { border-top: thin dotted black;
     -oxy-foldable:true;
     -oxy-not-foldable-child: title }
 
