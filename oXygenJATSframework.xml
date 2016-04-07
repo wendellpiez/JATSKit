@@ -6,7 +6,7 @@
     <!-- Change this when 'develop' branch is merged into 'master' -->
     <xt:location href="https://github.com/wendellpiez/JATSKit/archive/develop.zip"/>
     <xt:version>1.1.0</xt:version>
-    <xt:oxy_version>17.1+</xt:oxy_version>
+    <xt:oxy_version>17.0+</xt:oxy_version>
     <xt:type>framework</xt:type>
     <xt:author>Wendell Piez</xt:author>
     <xt:name>JATS (v1.1.0)</xt:name><!--oXygenJATSFramework-->
