@@ -2,7 +2,7 @@
 <xt:extensions xmlns:xt="http://www.oxygenxml.com/ns/extension"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
-  <xt:extension id="v0.0.2">
+  <xt:extension id="v1.1.0">
     <!-- Change this when 'develop' branch is merged into 'master' -->
     <xt:location href="https://github.com/wendellpiez/JATSKit/archive/develop.zip"/>
     <xt:version>1.1.0</xt:version>
@@ -11,7 +11,7 @@
     <xt:author>Wendell Piez</xt:author>
     <xt:name>JATS (v1.1.0)</xt:name><!--oXygenJATSFramework-->
     <xt:description xmlns="http://www.w3.org/1999/xhtml">
-      <h2>oXygen XML Editor framework for NISO JATS 1.0 / NLM BITS</h2>
+      <h2>oXygen XML Editor framework for NISO JATS 1.1 / NLM BITS 2.0</h2>
       <p>NISO JATS Z39.96-2012 defines an XML-based format for the authoring,
         publication and archiving of journal articles and related information.
         Its design is based on the NLM Journal Archiving and Publishing DTDs
