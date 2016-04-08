@@ -33,7 +33,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="article/@version">
+  <xsl:template match="article/@dtd-version">
     <xsl:attribute name="version">1.1</xsl:attribute>
   </xsl:template>
   

@@ -897,6 +897,16 @@
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
+																<String>insert.figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.graphic-figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
 																<String>insert.boxedtext</String>
 															</field>
 														</menuItem>
@@ -1010,6 +1020,11 @@
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array>
+											<menuItem>
+												<field name="actionID">
+													<String>insert.boxedtext</String>
+												</field>
+											</menuItem>
 											<menu>
 												<field name="label">
 													<String>${i18n(insert)}</String>
@@ -1022,6 +1037,26 @@
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.boxedtext</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.graphic-figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.disp-quote</String>
+															</field>
+														</menuItem>
 														<menuItem>
 															<field name="actionID">
 																<String>Paragraph</String>
@@ -1125,6 +1160,64 @@
 									</field>
 									<field name="toolbarEntriesDescriptorList">
 										<toolbarEntry-array>
+											<toolbar>
+												<field name="id">
+													<String>Paragraph level</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>Paragraph</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>unorderedList</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>orderedList</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.boxedtext</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.code</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.disp-quote</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.figure</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.graphic-figure</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
 											<toolbarItem>
 												<field name="actionID">
 													<String>Bold</String>
@@ -1148,26 +1241,10 @@
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
-													<String>Paragraph</String>
-												</field>
-											</toolbarItem>
-											<toolbarItem>
-												<field name="actionID">
 													<String>insert.image</String>
 												</field>
 											</toolbarItem>
 											<toolbarSeparator/>
-											<toolbarItem>
-												<field name="actionID">
-													<String>insert.boxedtext</String>
-												</field>
-											</toolbarItem>
-											<toolbarSeparator/>
-											<toolbarItem>
-												<field name="actionID">
-													<String>insert.disp-quote</String>
-												</field>
-											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
 													<String>listitem</String>
@@ -1175,34 +1252,7 @@
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>unorderedList</String>
-												</field>
-											</toolbarItem>
-											<toolbarItem>
-												<field name="actionID">
-													<String>orderedList</String>
-												</field>
-											</toolbarItem>
-											<toolbarItem>
-												<field name="actionID">
-													<String>insert.code</String>
-												</field>
-											</toolbarItem>
-											<toolbarSeparator/>
-											<toolbarItem>
-												<field name="actionID">
 													<String>insert.mathml</String>
-												</field>
-											</toolbarItem>
-											<toolbarSeparator/>
-											<toolbarItem>
-												<field name="actionID">
-													<String>insert.figure</String>
-												</field>
-											</toolbarItem>
-											<toolbarItem>
-												<field name="actionID">
-													<String>insert.graphic-figure</String>
 												</field>
 											</toolbarItem>
 										</toolbarEntry-array>
@@ -1554,7 +1604,7 @@
 									<String>pdf</String>
 								</field>
 								<field name="fOProcessorName">
-									<String>Apache FOP</String>
+									<String>Antenna House</String>
 								</field>
 								<field name="headerURL">
 									<String></String>
@@ -1874,10 +1924,10 @@
 						<null/>
 					</field>
 					<field name="useImposedInitialPage">
-						<Boolean>false</Boolean>
+						<Boolean>true</Boolean>
 					</field>
 					<field name="imposedInitialPage">
-						<String>Text</String>
+						<String>Author</String>
 					</field>
 					<field name="elementLocatorExtension">
 						<null/>

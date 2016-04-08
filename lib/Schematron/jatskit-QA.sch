@@ -122,6 +122,16 @@
     
   </sch:pattern>
   
+  <sch:pattern>
+    <sch:let name="alert" value="true()"/>
+    <sch:rule context="abstract//p//p">
+      <sch:report role="warning" test="$alert">Paragraph structures nested inside paragraph structures inside abstract ... is a bad idea ...</sch:report>
+    </sch:rule>
+    <sch:rule context="fn//fn">
+      <sch:report role="warning" test="$alert">Footnote nested inside footnote (fn) ...</sch:report>
+    </sch:rule>
+  </sch:pattern>
+  
   <sqf:fixes>
     <sqf:fix id="correct-count">
       <sqf:param name="correction"/>  

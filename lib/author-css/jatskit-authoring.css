@@ -5,10 +5,10 @@
 
 /*named-content[@content-type=('quoted','quote','quoted-title','called')]*/
 
-/*
+
 article! > front > journal-meta { background-color: skyblue;
   -oxy-tags-color:white;
-  -oxy-tags-background-color:blue; } */
+  -oxy-tags-background-color:blue; }
 
 article, book { counter-reset: footnote }
 
@@ -54,7 +54,7 @@ color: #440000; counter-increment: footnote; content: "Note " counter(footnote);
 
 code { font-family: monospace; white-space: pre }
 
-boxed-text { padding: 0.5em; border: thin solid black }
+fig, boxed-text { padding: 0.5em; border: thin solid black; margin-top: 0.5em; margin-bottom: 0.5em }
 
 /* Can't match def-item for these as it's a table-row */
 def-item >  * { padding-top: 0.5em; padding-bottom: 0.5em; border-top: thin solid black }

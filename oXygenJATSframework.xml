@@ -38,7 +38,9 @@ with the following language:
 otherwise used without the permission of the National Library of Medicine (NLM).
   
 We request only that the NLM is cited as the source of the work."
-  
+
+Thanks to NLM and to all other contributors and supporters on whose work this is built.
+
 ]]></xt:license>
   </xt:extension><xt:extension id="v0.0.2">
     <xt:location href="https://github.com/wendellpiez/JATSKit/archive/6227420b173caf9dd0b5df7a1f869822ad17940e.zip"/>

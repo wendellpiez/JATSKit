@@ -25,7 +25,7 @@
   </xsl:template>
       
       
-  <xsl:template match="book/@version">
+  <xsl:template match="book/@dtd-version">
     <xsl:attribute name="version">2.0</xsl:attribute>
   </xsl:template>
   
