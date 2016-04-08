@@ -805,6 +805,10 @@
   &lt;/caption>
 &lt;/fig></String>
 															</entry>
+															<entry>
+																<String>schemaAware</String>
+																<String>true</String>
+															</entry>
 														</serializableOrderedMap>
 													</field>
 													<field name="operationID">
@@ -1147,7 +1151,7 @@
 							<field name="toolbarDescriptor">
 								<toolbar>
 									<field name="id">
-										<String>JATS</String>
+										<String>JATSKit</String>
 									</field>
 									<field name="type">
 										<Integer>2</Integer>

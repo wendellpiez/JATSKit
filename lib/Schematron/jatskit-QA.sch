@@ -9,19 +9,27 @@
   
   <sch:pattern>
     <sch:rule context="book-part | sec | fig | table-wrap | boxed-text | disp-formula | statement">
-      <sch:assert test="matches(@id,'\S')" role="warning" sqf:fix="add-id">Missing @id on <sch:name/></sch:assert>
-      <sqf:fix id="add-id">
-        <sqf:description>
-          <sqf:title>Add ID</sqf:title>
-        </sqf:description>
+      <sch:assert test="matches(@id,'\S')" role="warning" sqf:fix="add-composed-id add-named-id">Missing @id on <sch:name/></sch:assert>
+      <sqf:fix id="add-composed-id">
         <sch:let name="name" value="name()"/>
         <sch:let name="element-id" value="concat($name,'-',count(.|preceding::*[name()=$name]))"/>
+        <sqf:description>
+          <sqf:title>Add @id '<sch:value-of select="$element-id"/>'</sqf:title>
+        </sqf:description>
+        <sqf:add node-type="attribute" target="id" select="$element-id"/>
+      </sqf:fix>
+      <sch:let name="title" value="(title | book-part-meta/title-group/title | caption/title)[1]/normalize-space(.)"/>
+      <sqf:fix id="add-named-id" use-when="matches($title,'\S')">
+        <sch:let name="named-id" value="replace($title,'\s','_')"/>
+        <sqf:description>
+          <sqf:title>Add @id '<sch:value-of select="$named-id"/>'</sqf:title>
+        </sqf:description>
         <!--<sqf:user-entry name="user-id">
           <sqf:description>
             <sqf:title>ID</sqf:title>
           </sqf:description>
         </sqf:user-entry>-->
-        <sqf:add node-type="attribute" target="id" select="$element-id"/>
+        <sqf:add node-type="attribute" target="id" select="$named-id"/>
       </sqf:fix>
     </sch:rule>
   </sch:pattern>

@@ -6,13 +6,27 @@
 /*named-content[@content-type=('quoted','quote','quoted-title','called')]*/
 
 
-article! > front > journal-meta { background-color: skyblue;
+/*article > front > journal-meta { background-color: skyblue;
   -oxy-tags-color:white;
-  -oxy-tags-background-color:blue; }
+  -oxy-tags-background-color:blue; }*/
 
+* {  -oxy-tags-color:            darkgrey;
+     -oxy-tags-background-color: gainsboro;} 
+
+article, article * {  -oxy-tags-color:            saddlebrown;
+                      -oxy-tags-background-color: lemonchiffon;} 
+
+/* Blue is detected by the presence of a front/journal-meta */
+article:has( front > journal-meta ), 
+article:has( front > journal-meta ) * 
+{ -oxy-tags-color:            midnightblue;
+  -oxy-tags-background-color: lightsteelblue; }
+  
 article, book { counter-reset: footnote }
 
 book { font-family:  'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif; }
+
+book-title, book-part-title, article-title, title, subtitle, alt-title, trans-title { font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; }
 
 book-part {
     -oxy-foldable:true;

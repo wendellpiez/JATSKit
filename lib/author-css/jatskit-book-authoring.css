@@ -4,6 +4,12 @@
 
 /* Specifically for supporting requirements having to do with production of EPUB-ready BITS. */
 
+/* But also providing random other sorts of support specific to books / BITS. */
+book, book * { 
+  -oxy-tags-color: #59241E;
+  -oxy-tags-background-color: #C8B0AC; }
+
+
 /* A similar rule in the 'noisy' CSS applies to other elements with IDs; but this should work
    even when that CSS isn't active. */
 book-part:before {
