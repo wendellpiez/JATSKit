@@ -50,12 +50,12 @@
     </sch:rule>
 
     <sch:rule context="book-table-count | table-count">
-      <sch:let name="owner" value="(ancestor::book | ancestor::book-part | ancestor::article)[1]"/>
-      <sch:let name="counted" value="count($owner//table | $owner//oasis:table)"/>
+      <sch:let name="owner" value="ancestor::*[self::book | self::book-part | self::article][1]"/>
+      <sch:let name="counted" value="count($owner//table-wrap)"/>
       <sch:let name="is-a-number" value="@count castable as xs:integer and (@count/number(.) ge 0)"/>
       <sch:assert sqf:fix="correct-table-count" test="$is-a-number">Count should be a whole number (non-negative integer).</sch:assert>
-      <sch:assert sqf:fix="correct-table-count" test="not($is-a-number) or @count = $counted" role="warning">A figure count is given as
-        <sch:value-of select="@count"/>; we count <sch:value-of select="$counted"/> 'table' (or 'oasis:table')
+      <sch:assert sqf:fix="correct-table-count" test="not($is-a-number) or @count = $counted" role="warning">A table count is given as
+        <sch:value-of select="@count"/>; we count <sch:value-of select="$counted"/> 'table-wrap'
         element<sch:value-of select="if ($counted eq 1) then '' else 's'"/> in this <sch:value-of select="$owner/name()"/>.</sch:assert>
       <sqf:fix id="correct-table-count">
         <sqf:description>
@@ -68,11 +68,11 @@
     </sch:rule>
     
     <sch:rule context="book-ref-count | ref-count">
-      <sch:let name="owner" value="(ancestor::book | ancestor::book-part | ancestor::article)[1]"/>
+      <sch:let name="owner" value="ancestor::*[self::book | self::book-part | self::article][1]"/>
       <sch:let name="counted" value="count($owner//ref)"/>
       <sch:let name="is-a-number" value="@count castable as xs:integer and (@count/number(.) ge 0)"/>
       <sch:assert sqf:fix="correct-ref-count" test="$is-a-number">Count should be a whole number (non-negative integer).</sch:assert>
-      <sch:assert sqf:fix="correct-ref-count" test="not($is-a-number) or @count = $counted" role="warning">A figure count is given as
+      <sch:assert sqf:fix="correct-ref-count" test="not($is-a-number) or @count = $counted" role="warning">A reference count is given as
         <sch:value-of select="@count"/>; we count <sch:value-of select="$counted"/> 'ref'
         element<sch:value-of select="if ($counted eq 1) then '' else 's'"/> in this <sch:value-of select="$owner/name()"/>.</sch:assert>
       <sqf:fix id="correct-ref-count">

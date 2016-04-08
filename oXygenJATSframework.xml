@@ -26,15 +26,19 @@
         <li>Updated and improved inline documentation of elements and attributes</li>
         <li>Improved extra-DTD validation (Schematron)</li>
         <li>EPUB3 and "mock ebook" (web site) production for BITS</li>
+        <li>Added document-level refactoring operations</li>
       </ol>             
     </xt:description>
-    <xt:license><![CDATA[This work is published under an Apache 2.0 license. It includes artifacts published by the National
-Library of Medicine (NLM) with the following language:
+    <xt:license><![CDATA[This work is published under an Apache 2.0 license.
+      
+It includes artifacts and resources published by the National Library of Medicine (NLM)
+with the following language:
 
 "This work is in the public domain and may be reproduced, published or 
 otherwise used without the permission of the National Library of Medicine (NLM).
   
 We request only that the NLM is cited as the source of the work."
+  
 ]]></xt:license>
   </xt:extension><xt:extension id="v0.0.2">
     <xt:location href="https://github.com/wendellpiez/JATSKit/archive/6227420b173caf9dd0b5df7a1f869822ad17940e.zip"/>
@@ -58,13 +62,16 @@ We request only that the NLM is cited as the source of the work."
         <li>Insert list item</li>
       </ol>             
     </xt:description>
-    <xt:license><![CDATA[This work is published under an Apache 2.0 license. It includes artifacts published by the National
-Library of Medicine (NLM) with the following language:
+    <xt:license><![CDATA[This work is published under an Apache 2.0 license.
+      
+It includes artifacts and resources published by the National Library of Medicine (NLM)
+with the following language:
 
 "This work is in the public domain and may be reproduced, published or 
 otherwise used without the permission of the National Library of Medicine (NLM).
   
 We request only that the NLM is cited as the source of the work."
+  
 ]]></xt:license>
   </xt:extension>
   

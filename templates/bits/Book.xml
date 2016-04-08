@@ -3,8 +3,7 @@
   PUBLIC "-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
   "BITS-book2.dtd">
 <book dtd-version="2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:mml="http://www.w3.org/1998/Math/MathML"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  xmlns:mml="http://www.w3.org/1998/Math/MathML">
   <book-meta>
     <book-title-group>
       <book-title/>
