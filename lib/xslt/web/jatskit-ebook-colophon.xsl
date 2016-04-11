@@ -49,7 +49,7 @@
             be hacked. Developers who make improvements and extensions to <tt>JATSKit</tt>, or reuse or adapt
               parts of it, are invited to edit the XSLT that generates this text to give themselves notice.</p>
             <p>Acknowledgement for contributions to <tt>JATSKit</tt> in present or earlier versions is owed
-            (at least!) to <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (including for <a
+            (among others) to <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (including for <a
               href="https://github.com/ncbi/JATSPreviewStylesheets">JATS Preview XSLTs)</a>, to
             <a href="http://www.mulberrytech.com">Mulberry Technologies, Inc.</a>, and to the 
             <a href="http://www.oxygenxml.com">oXygen XML Editor</a> team.</p>
