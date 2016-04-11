@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>JATSKit - NISO JATS / NLM DTD</String>
+						<String>JATSKit - NISO JATS / NLM BITS</String>
 					</field>
 					<field name="schemaDescriptor">
 						<null/>
@@ -1304,7 +1304,7 @@
 						</String-array>
 					</field>
 					<field name="description">
-						<String>NISO/NLM Journal Article Tag Suite and related tag sets</String>
+						<String>Journal articles and books according to the NISO/NLM Journal Article Tag Suite (ANSI/NISO Z39.96-2015) v1.1</String>
 					</field>
 					<field name="doctypeRules">
 						<documentTypeRule-array/>
