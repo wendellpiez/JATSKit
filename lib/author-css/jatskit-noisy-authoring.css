@@ -1,0 +1,55 @@
+/*Intended as supplementary to jatskit-authoring.css*/
+/*@import url("jats-authoring.css");*/
+
+@namespace xlink "http://www.w3.org/1999/xlink";
+
+/* book-equation-count?, book-ref-count?, book-page-count?, book-word-count?)
+    ( ?, ref-count?, page-count?, word-count?)-->
+*/    
+
+count:before, book-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Count " attr(count-type) }
+
+fig-count:before, book-fig-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Figure count: " }
+
+table-count:before, book-table-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Table count: " }
+
+equation-count:before, book-equation-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Equation count: " }
+
+ref-count:before, book-ref-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Reference count: " }
+
+page-count:before, book-page-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Page count: " }
+
+word-count:before, book-word-count:before { font-family: sans-serif; font-size: 80%;
+  content: "Word count: " }
+
+counts > *:after { font-family: sans-serif; font-size: 80%;
+    content:
+        oxy_textfield(        
+        edit, "@count",
+        columns 5 )
+}
+
+date:after, access-date:after, conf-date:after,
+pub-date:after, string-date:after { font-family: sans-serif; font-size: 80%;
+    content:
+        oxy_datePicker(
+            columns, 10, 
+            edit, "@iso-8601-date",
+            format, "yyyy-MM-dd");
+}
+
+*[id]:before {
+    font-family: sans-serif; font-size: 80%;
+    content: "id: "
+        oxy_textfield(           
+            edit, "@id",
+            columns, 28);
+}
+
+

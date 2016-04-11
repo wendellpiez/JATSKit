@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="16.1" xml:space="preserve">
+<serialized version="17.1" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>JATS</String>
+						<String>JATSKit - NISO JATS / NLM BITS</String>
 					</field>
 					<field name="schemaDescriptor">
 						<null/>
@@ -31,10 +31,10 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/css/jats-authoring.css</String>
+											<String>${framework}/lib/author-css/jats-authoring.css</String>
 										</field>
 										<field name="title">
-											<String>Clean</String>
+											<String>JATS - Clean</String>
 										</field>
 										<field name="alternate">
 											<Boolean>false</Boolean>
@@ -42,10 +42,32 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
-											<String>${framework}/css/jats-authoring-labelled.css</String>
+											<String>${framework}/lib/author-css/jats-authoring-labelled.css</String>
 										</field>
 										<field name="title">
-											<String>Labels</String>
+											<String>JATS - Labels</String>
+										</field>
+										<field name="alternate">
+											<Boolean>false</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/lib/author-css/jatskit-authoring.css</String>
+										</field>
+										<field name="title">
+											<String>JATSKit - enhanced</String>
+										</field>
+										<field name="alternate">
+											<Boolean>true</Boolean>
+										</field>
+									</cssFile>
+									<cssFile>
+										<field name="href">
+											<String>${framework}/lib/author-css/jatskit-noisy-authoring.css</String>
+										</field>
+										<field name="title">
+											<String>JATSKit 'noisy' Authoring</String>
 										</field>
 										<field name="alternate">
 											<Boolean>true</Boolean>
@@ -54,7 +76,10 @@
 								</cssFile-array>
 							</field>
 							<field name="mergeCSSsFromDocument">
-								<Boolean>false</Boolean>
+								<Boolean>true</Boolean>
+							</field>
+							<field name="multipleAlternateSelectionEnabled">
+								<Boolean>true</Boolean>
 							</field>
 							<field name="actionDescriptors">
 								<action-array>
@@ -100,6 +125,9 @@
 												</actionMode>
 											</actionMode-array>
 										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
 									</action>
 									<action>
 										<field name="id">
@@ -142,6 +170,9 @@
 													</field>
 												</actionMode>
 											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
 										</field>
 									</action>
 									<action>
@@ -258,6 +289,9 @@
 												</actionMode>
 											</actionMode-array>
 										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
 									</action>
 									<action>
 										<field name="id">
@@ -270,10 +304,10 @@
 											<String>${i18n(unorderedList_description)}</String>
 										</field>
 										<field name="largeIconPath">
-											<String>/images/UnorderedList20.png</String>
+											<String>${framework}/img/UnorderedList24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/UnorderedList16.gif</String>
+											<String>${framework}/img/UnorderedList16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -301,6 +335,9 @@
 												</actionMode>
 											</actionMode-array>
 										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
 									</action>
 									<action>
 										<field name="id">
@@ -313,10 +350,10 @@
 											<String>${i18n(orderedList_description)}</String>
 										</field>
 										<field name="largeIconPath">
-											<String>/images/OrderedList20.gif</String>
+											<String>${framework}/img/OrderedList24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/OrderedList16.gif</String>
+											<String>${framework}/img/OrderedList16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -344,6 +381,9 @@
 												</actionMode>
 											</actionMode-array>
 										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
 									</action>
 									<action>
 										<field name="id">
@@ -356,10 +396,10 @@
 											<String>${i18n(listitem_description)}</String>
 										</field>
 										<field name="largeIconPath">
-											<String>/images/ListItem20.gif</String>
+											<String>${framework}/img/ListItem24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>/images/ListItem16.gif</String>
+											<String>${framework}/img/ListItem16.gif</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -411,6 +451,9 @@
 												</actionMode>
 											</actionMode-array>
 										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
 									</action>
 									<action>
 										<field name="id">
@@ -448,6 +491,9 @@
 													</field>
 												</actionMode>
 											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
 										</field>
 									</action>
 									<action>
@@ -492,6 +538,339 @@
 												</actionMode>
 											</actionMode-array>
 										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.code</String>
+										</field>
+										<field name="name">
+											<String>Code (preformatted)</String>
+										</field>
+										<field name="description">
+											<String>Insert 'code' element, wrapping selection</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String>c</String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>element</String>
+																<String>&lt;code/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>Monospace</String>
+										</field>
+										<field name="name">
+											<String>Monospace</String>
+										</field>
+										<field name="description">
+											<String>Insert monospace</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl M</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>element</String>
+																<String>&lt;monospace/></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.ToggleSurroundWithElementOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.boxedtext</String>
+										</field>
+										<field name="name">
+											<String>Boxed Text</String>
+										</field>
+										<field name="description">
+											<String>Insert or wrap as 'boxed-text'</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift B</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;boxed-text>&lt;p/>&lt;/boxed-text></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.mathml</String>
+										</field>
+										<field name="name">
+											<String>MathML</String>
+										</field>
+										<field name="description">
+											<String>Insert MathML</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<String>ctrl shift M</String>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap/>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertEquationOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.disp-quote</String>
+										</field>
+										<field name="name">
+											<String>Display Quote</String>
+										</field>
+										<field name="description">
+											<String>Insert or wrap as 'disp-quote'</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;disp-quote>&lt;p/>&lt;/disp-quote></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SurroundWithFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.figure</String>
+										</field>
+										<field name="name">
+											<String>Figure</String>
+										</field>
+										<field name="description">
+											<String>Insert figure with caption</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;fig>
+   &lt;caption>
+     &lt;title>${ask('Figure title:', string, 'Figure Title')}&lt;/title>
+  &lt;/caption>
+&lt;/fig></String>
+															</entry>
+															<entry>
+																<String>schemaAware</String>
+																<String>true</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>insert.graphic-figure</String>
+										</field>
+										<field name="name">
+											<String>Graphic figure</String>
+										</field>
+										<field name="description">
+											<String>Insert figure with title and graphic</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String></String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String></String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>fragment</String>
+																<String>&lt;fig>
+   &lt;caption>
+     &lt;title>${ask('Figure title:', string, 'Figure Title')}&lt;/title>
+  &lt;/caption>
+  &lt;graphic xlink:href="${ask('graphic:', url, '')}"/>
+&lt;/fig></String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>false</Boolean>
+										</field>
 									</action>
 								</action-array>
 							</field>
@@ -522,6 +901,36 @@
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
+																<String>insert.figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.graphic-figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.boxedtext</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.code</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.disp-quote</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.mathml</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
 																<String>Paragraph</String>
 															</field>
 														</menuItem>
@@ -545,6 +954,11 @@
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>Monospace</String>
+															</field>
+														</menuItem>
 														<menuItem>
 															<field name="actionID">
 																<String>Bold</String>
@@ -571,7 +985,7 @@
 													<String></String>
 												</field>
 												<field name="iconPath">
-													<String>/images/UnorderedList16.gif</String>
+													<String>${framework}/img/UnorderedList16.png</String>
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
@@ -610,6 +1024,11 @@
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array>
+											<menuItem>
+												<field name="actionID">
+													<String>insert.boxedtext</String>
+												</field>
+											</menuItem>
 											<menu>
 												<field name="label">
 													<String>${i18n(insert)}</String>
@@ -622,6 +1041,26 @@
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.boxedtext</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.graphic-figure</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
+																<String>insert.disp-quote</String>
+															</field>
+														</menuItem>
 														<menuItem>
 															<field name="actionID">
 																<String>Paragraph</String>
@@ -649,6 +1088,11 @@
 													<menuEntry-array>
 														<menuItem>
 															<field name="actionID">
+																<String>Monospace</String>
+															</field>
+														</menuItem>
+														<menuItem>
+															<field name="actionID">
 																<String>Bold</String>
 															</field>
 														</menuItem>
@@ -673,7 +1117,7 @@
 													<String></String>
 												</field>
 												<field name="iconPath">
-													<String>/images/UnorderedList16.gif</String>
+													<String>${framework}/img/UnorderedList16.png</String>
 												</field>
 												<field name="menuEntriesDescriptorList">
 													<menuEntry-array>
@@ -695,6 +1139,11 @@
 													</menuEntry-array>
 												</field>
 											</menu>
+											<menuItem>
+												<field name="actionID">
+													<String>insert.code</String>
+												</field>
+											</menuItem>
 										</menuEntry-array>
 									</field>
 								</menu>
@@ -702,7 +1151,7 @@
 							<field name="toolbarDescriptor">
 								<toolbar>
 									<field name="id">
-										<String>JATS</String>
+										<String>JATSKit</String>
 									</field>
 									<field name="type">
 										<Integer>2</Integer>
@@ -715,6 +1164,64 @@
 									</field>
 									<field name="toolbarEntriesDescriptorList">
 										<toolbarEntry-array>
+											<toolbar>
+												<field name="id">
+													<String>Paragraph level</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>Paragraph</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>unorderedList</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>orderedList</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.boxedtext</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.code</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.disp-quote</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.figure</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert.graphic-figure</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
 											<toolbarItem>
 												<field name="actionID">
 													<String>Bold</String>
@@ -730,12 +1237,12 @@
 													<String>Underline</String>
 												</field>
 											</toolbarItem>
-											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
-													<String>Paragraph</String>
+													<String>Monospace</String>
 												</field>
 											</toolbarItem>
+											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
 													<String>insert.image</String>
@@ -749,12 +1256,7 @@
 											</toolbarItem>
 											<toolbarItem>
 												<field name="actionID">
-													<String>unorderedList</String>
-												</field>
-											</toolbarItem>
-											<toolbarItem>
-												<field name="actionID">
-													<String>orderedList</String>
+													<String>insert.mathml</String>
 												</field>
 											</toolbarItem>
 										</toolbarEntry-array>
@@ -798,41 +1300,14 @@
 					</field>
 					<field name="xmlCatalogs">
 						<String-array>
-							<String>${framework}/O2-DTD/JATS-catalog-O2.xml</String>
+							<String>${framework}/lib/DTD/jatskit-catalog.xml</String>
 						</String-array>
 					</field>
 					<field name="description">
-						<String>NISO/NLM Journal Article Tag Suite, including Archiving, Publishing and Authoring tag sets (models), along with BITS 0.2, the draft model for encoding books.</String>
+						<String>Journal articles and books according to the NISO/NLM Journal Article Tag Suite (ANSI/NISO Z39.96-2015) v1.1</String>
 					</field>
 					<field name="doctypeRules">
-						<documentTypeRule-array>
-							<documentTypeRule>
-								<field name="namespace">
-									<String>*</String>
-								</field>
-								<field name="rootElem">
-									<String>*</String>
-								</field>
-								<field name="fileName">
-									<String>*</String>
-								</field>
-								<field name="publicID">
-									<String>-//NLM//DTD*</String>
-								</field>
-								<field name="javaRuleClass">
-									<String></String>
-								</field>
-								<field name="attributeLocalName">
-									<String>*</String>
-								</field>
-								<field name="attributeNamespace">
-									<String>*</String>
-								</field>
-								<field name="attributeValue">
-									<String>*</String>
-								</field>
-							</documentTypeRule>
-						</documentTypeRule-array>
+						<documentTypeRule-array/>
 					</field>
 					<field name="scenarios">
 						<scenario-array>
@@ -841,7 +1316,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>JATS Preview (simple HTML)</String>
+									<String>JATS/BITS single HTML page preview (open results)</String>
 								</field>
 								<field name="baseURL">
 									<String></String>
@@ -859,7 +1334,179 @@
 									<String></String>
 								</field>
 								<field name="inputXSLURL">
-									<String>${framework}/jats-preview-xslt/xslt/main/jats-html.xsl</String>
+									<String>${framework}/lib/xslt/jatskit-html.xsl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String>${currentFileURL}</String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="type">
+									<String>XSL</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="outputFile">
+									<File>${cfn}.html</File>
+								</field>
+								<field name="outputResource">
+									<String>${cfn}.html</String>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list/>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Saxon-EE</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</scenario>
+							<scenario>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>JATS/BITS single HTML page preview (refresh)</String>
+								</field>
+								<field name="baseURL">
+									<String></String>
+								</field>
+								<field name="footerURL">
+									<String></String>
+								</field>
+								<field name="fOPMethod">
+									<String>pdf</String>
+								</field>
+								<field name="fOProcessorName">
+									<String>Apache FOP</String>
+								</field>
+								<field name="headerURL">
+									<String></String>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xslt/jatskit-html.xsl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String>${currentFileURL}</String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="type">
+									<String>XSL</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="outputFile">
+									<File>${cfn}.html</File>
+								</field>
+								<field name="outputResource">
+									<String>${cfn}.html</String>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list/>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Saxon-EE</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</scenario>
+							<scenario>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>JATS/BITS single HTML page preview, with warnings (open results)</String>
+								</field>
+								<field name="baseURL">
+									<String></String>
+								</field>
+								<field name="footerURL">
+									<String></String>
+								</field>
+								<field name="fOPMethod">
+									<String>pdf</String>
+								</field>
+								<field name="fOProcessorName">
+									<String>Apache FOP</String>
+								</field>
+								<field name="headerURL">
+									<String></String>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xslt/jatskit-html.xsl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String>${currentFileURL}</String>
@@ -915,7 +1562,7 @@
 											<field name="paramDescription">
 												<paramDescriptor>
 													<field name="localName">
-														<String>css</String>
+														<String>report-warnings</String>
 													</field>
 													<field name="prefix">
 														<null/>
@@ -926,10 +1573,10 @@
 												</paramDescriptor>
 											</field>
 											<field name="value">
-												<String>${framework}/jats-preview-xslt/jats-preview.css</String>
+												<String>'yes'</String>
 											</field>
 											<field name="hasXPathValue">
-												<Boolean>false</Boolean>
+												<Boolean>true</Boolean>
 											</field>
 										</transformationParameter>
 									</list>
@@ -944,27 +1591,347 @@
 									<String-array/>
 								</field>
 							</scenario>
+							<scenario>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>JATS/BITS PDF preview (XSL-FO)</String>
+								</field>
+								<field name="baseURL">
+									<String></String>
+								</field>
+								<field name="footerURL">
+									<String></String>
+								</field>
+								<field name="fOPMethod">
+									<String>pdf</String>
+								</field>
+								<field name="fOProcessorName">
+									<String>Antenna House</String>
+								</field>
+								<field name="headerURL">
+									<String></String>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/lib/xslt/jats-preview-xslt/xslt/main/jats-xslfo.xsl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String>${currentFileURL}</String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="type">
+									<String>XSL</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="outputFile">
+									<File>${cfn}.pdf</File>
+								</field>
+								<field name="outputResource">
+									<String>${cfn}.pdf</String>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list>
+										<transformationParameter>
+											<field name="paramDescription">
+												<paramDescriptor>
+													<field name="localName">
+														<String>no-floats</String>
+													</field>
+													<field name="prefix">
+														<null/>
+													</field>
+													<field name="namespace">
+														<null/>
+													</field>
+												</paramDescriptor>
+											</field>
+											<field name="value">
+												<String>true()</String>
+											</field>
+											<field name="hasXPathValue">
+												<Boolean>true</Boolean>
+											</field>
+										</transformationParameter>
+									</list>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Saxon-PE</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</scenario>
 						</scenario-array>
 					</field>
 					<field name="validationScenarios">
-						<validationScenario-array/>
+						<validationScenario-array>
+							<validationScenario>
+								<field name="pairs">
+									<list>
+										<validationUnit>
+											<field name="validationType">
+												<validationUnitType>
+													<field name="validationInputType">
+														<String>text/any</String>
+													</field>
+												</validationUnitType>
+											</field>
+											<field name="url">
+												<String>${currentFileURL}</String>
+											</field>
+											<field name="validationEngine">
+												<validationEngine>
+													<field name="engineType">
+														<String>&lt;Default engine></String>
+													</field>
+													<field name="allowsAutomaticValidation">
+														<Boolean>true</Boolean>
+													</field>
+												</validationEngine>
+											</field>
+											<field name="allowAutomaticValidation">
+												<Boolean>true</Boolean>
+											</field>
+											<field name="extensions">
+												<null/>
+											</field>
+											<field name="validationSchema">
+												<null/>
+											</field>
+										</validationUnit>
+									</list>
+								</field>
+								<field name="type">
+									<String>Validation_scenario</String>
+								</field>
+								<field name="name">
+									<String>Detected DTD</String>
+								</field>
+							</validationScenario>
+							<validationScenario>
+								<field name="pairs">
+									<list>
+										<validationUnit>
+											<field name="validationType">
+												<validationUnitType>
+													<field name="validationInputType">
+														<String>text/xml</String>
+													</field>
+												</validationUnitType>
+											</field>
+											<field name="url">
+												<String>${currentFileURL}</String>
+											</field>
+											<field name="validationEngine">
+												<validationEngine>
+													<field name="engineType">
+														<String>&lt;Default engine></String>
+													</field>
+													<field name="allowsAutomaticValidation">
+														<Boolean>true</Boolean>
+													</field>
+												</validationEngine>
+											</field>
+											<field name="allowAutomaticValidation">
+												<Boolean>true</Boolean>
+											</field>
+											<field name="extensions">
+												<null/>
+											</field>
+											<field name="validationSchema">
+												<validationUnitSchema>
+													<field name="dtdSchemaPublicID">
+														<null/>
+													</field>
+													<field name="schematronPhase">
+														<null/>
+													</field>
+													<field name="type">
+														<Integer>7</Integer>
+													</field>
+													<field name="uri">
+														<String>${framework}/lib/Schematron/jatskit-epub.sch</String>
+													</field>
+												</validationUnitSchema>
+											</field>
+										</validationUnit>
+									</list>
+								</field>
+								<field name="type">
+									<String>Validation_scenario</String>
+								</field>
+								<field name="name">
+									<String>JATSKit EPUB-ready Schematron</String>
+								</field>
+							</validationScenario>
+							<validationScenario>
+								<field name="pairs">
+									<list>
+										<validationUnit>
+											<field name="validationType">
+												<validationUnitType>
+													<field name="validationInputType">
+														<String>text/xml</String>
+													</field>
+												</validationUnitType>
+											</field>
+											<field name="url">
+												<String>${currentFileURL}</String>
+											</field>
+											<field name="validationEngine">
+												<validationEngine>
+													<field name="engineType">
+														<String>&lt;Default engine></String>
+													</field>
+													<field name="allowsAutomaticValidation">
+														<Boolean>true</Boolean>
+													</field>
+												</validationEngine>
+											</field>
+											<field name="allowAutomaticValidation">
+												<Boolean>true</Boolean>
+											</field>
+											<field name="extensions">
+												<null/>
+											</field>
+											<field name="validationSchema">
+												<validationUnitSchema>
+													<field name="dtdSchemaPublicID">
+														<null/>
+													</field>
+													<field name="schematronPhase">
+														<null/>
+													</field>
+													<field name="type">
+														<Integer>7</Integer>
+													</field>
+													<field name="uri">
+														<String>${framework}/lib/xslt/jats-preview-xslt/Schematron/oasis-table.sch</String>
+													</field>
+												</validationUnitSchema>
+											</field>
+										</validationUnit>
+									</list>
+								</field>
+								<field name="type">
+									<String>Validation_scenario</String>
+								</field>
+								<field name="name">
+									<String>JATSKit OASIS table checking Schematron</String>
+								</field>
+							</validationScenario>
+							<validationScenario>
+								<field name="pairs">
+									<list>
+										<validationUnit>
+											<field name="validationType">
+												<validationUnitType>
+													<field name="validationInputType">
+														<String>text/xml</String>
+													</field>
+												</validationUnitType>
+											</field>
+											<field name="url">
+												<String>${currentFileURL}</String>
+											</field>
+											<field name="validationEngine">
+												<validationEngine>
+													<field name="engineType">
+														<String>&lt;Default engine></String>
+													</field>
+													<field name="allowsAutomaticValidation">
+														<Boolean>true</Boolean>
+													</field>
+												</validationEngine>
+											</field>
+											<field name="allowAutomaticValidation">
+												<Boolean>true</Boolean>
+											</field>
+											<field name="extensions">
+												<null/>
+											</field>
+											<field name="validationSchema">
+												<validationUnitSchema>
+													<field name="dtdSchemaPublicID">
+														<null/>
+													</field>
+													<field name="schematronPhase">
+														<null/>
+													</field>
+													<field name="type">
+														<Integer>7</Integer>
+													</field>
+													<field name="uri">
+														<String>${framework}/lib/Schematron/jatskit-QA.sch</String>
+													</field>
+												</validationUnitSchema>
+											</field>
+										</validationUnit>
+									</list>
+								</field>
+								<field name="type">
+									<String>Validation_scenario</String>
+								</field>
+								<field name="name">
+									<String>JATSKit QA Schematron</String>
+								</field>
+							</validationScenario>
+						</validationScenario-array>
 					</field>
 					<field name="defaultValidationScenarios">
-						<null/>
+						<list>
+							<String>Detected DTD</String>
+						</list>
 					</field>
 					<field name="defaultTransformationScenarios">
-						<list>
-							<String>JATS Preview (simple HTML)</String>
-						</list>
+						<null/>
 					</field>
 					<field name="extensionsBundleClassName">
 						<null/>
 					</field>
 					<field name="useImposedInitialPage">
-						<Boolean>false</Boolean>
+						<Boolean>true</Boolean>
 					</field>
 					<field name="imposedInitialPage">
-						<String>Text</String>
+						<String>Author</String>
 					</field>
 					<field name="elementLocatorExtension">
 						<null/>
@@ -988,7 +1955,7 @@
 						<null/>
 					</field>
 					<field name="priority">
-						<Integer>3</Integer>
+						<Integer>2</Integer>
 					</field>
 					<field name="xmlNodeCustomizerExtension">
 						<null/>

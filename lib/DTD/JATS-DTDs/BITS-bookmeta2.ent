@@ -1,0 +1,770 @@
+<!-- ============================================================= -->
+<!--  MODULE:    BITS Book Metadata Elements Module                -->
+<!--  VERSION:   BITS 2.0                                          -->
+<!--  DATE:      June 2015                                         -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                        TYPICAL INVOCATION                     -->
+<!--
+"-//NLM//DTD BITS Book Metadata Elements Module v2.0 20151225//EN"
+Delivered as file "BITS-bookmeta2.ent"                             -->
+<!-- ============================================================= -->
+
+
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Book Interchange Tag Suite                        -->
+<!--                                                               -->
+<!-- PURPOSE:    Defines the metadata elements, attributes, and    -->
+<!--             parameter entities that are shared among all BITS -->
+<!--             DTDs but not among JATS DTDs.                     -->
+<!--                                                               -->
+<!-- TAG SET SPONSOR                                               -->
+<!--             National Center for Biotechnology                 -->
+<!--                Information (NCBI)                             -->
+<!--             National Library of Medicine (NLM)                -->
+<!--                                                               -->
+<!-- CREATED FOR:                                                  -->
+<!--             This DTD was created as a superset customization  -->
+<!--             of the ANSI/NISO JATS Z39.96-2012 Version 1.0     -->
+<!--             Journal Article Tag Set.                          -->
+<!--                                                               -->
+<!--             Digital archives and publishers may use the       -->
+<!--             DTD as is for markup of books or book-like        -->
+<!--             material for archiving and transferring           -->
+<!--             such material between archives or they may create -->
+<!--             a custom XML DTD from the BITS Suite for          -->
+<!--             these purposes.                                   -->
+<!--                                                               -->
+<!--             This DTD is in the public domain. An organization -->
+<!--             that wishes to create its own DTD from the suite  -->
+<!--             may do so without permission from NLM.            -->
+<!--                                                               -->
+<!--             The suite has been set up to be extended using a  -->
+<!--             new DTD file and new DTD-specific customization   -->
+<!--             modules to redefine the many Parameter Entities.  -->
+<!--             Do not modify the suite directly or redistribute  -->
+<!--             modified versions of the suite.                   -->
+<!--                                                               -->
+<!--             In the interest of maintaining consistency and    -->
+<!--             clarity for potential users, NLM requests:        -->
+<!--                                                               -->
+<!--             1. If you create a DTD from the BITS DTD Suite    -->
+<!--                and intend to stay compatible with the suite,  -->
+<!--                then please include the following statement    -->
+<!--                as a comment in all of your DTD modules:       -->
+<!--                   "Created from, and fully compatible with,   -->
+<!--                    the Book Interchange Tag Suite (BITS).     -->
+<!--                                                               -->
+<!--             2. If you alter one or more modules of the suite, -->
+<!--                then please rename your version and all its    -->
+<!--                modules to avoid any confusion with the        -->
+<!--                original suite. Also, please include the       -->
+<!--                following statement as a comment in all your   -->
+<!--                DTD modules:                                   -->
+<!--                   "Based in part on, but not fully compatible -->
+<!--                    with, the Book Interchange Tag Suite       -->
+<!--                    (BITS)."                                   -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             April 2012                                        -->
+<!--                                                               -->
+<!-- CREATED BY: Mulberry Technologies, Inc. for the National      -->
+<!--             National Center for Biotechnology Information     -->
+<!--             (NCBI), a center of the US National Library of    -->
+<!--             Medicine (NLM).                                   -->
+<!--                                                               -->
+<!--             The BITS Book Interchange DTD is built from the   -->
+<!--             Journal Archiving and Interchange DTD of the      -->
+<!--             ANSI/NISO Journal Article Tag Suite (JATS)        -->
+<!--             Version 1.1d1 (Z39.96-2015).                      -->
+<!--                                                               -->
+<!--             Suggestions for refinements and enhancements to   -->
+<!--             this DTD should be sent in email to:              -->
+<!--                 bits@ncbi.nlm.nih.gov                         -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DTD VERSION/CHANGE HISTORY                 -->
+<!-- ============================================================= -->
+<!--
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+   =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-12-25)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-12-15)
+
+     JATS is a continuing maintenance NISO Standard, which
+     requires voting by the ANSI and NISO memberships to be changed. 
+     JATS 1.1 was approved in late 2015, and BITS modified to use
+     the most recent version. No other changes to BITS were made.
+ 
+  4. BITS remained version "2.0" but became "v2.0 20151225"
+     JATS became version "1.1" and "v1.1 20151215"
+
+   =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-03-15)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-03-01)
+
+     BITS was modified, based on user feedback collected in 2014 
+     and January/February 2015, according to the decisions
+     made by the BITS Working Group. This DTD represents current 
+     BITS and an interim version of the non-normative JATS DTD 
+     Suite (version 1.1), as an indication to JATS users of 
+     the decisions that have been made by the JATS Standing
+     Committee. 
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+  3. BOOK IDENTIFIER ATTRIBUTES - Added new attribute
+     @assigning-authority to hold name of authority that
+     assigned the identifier.
+
+  2. BITS became version "2.0" and   "v2.0 20150630"
+     JATS became version "1.1" and "v1.1 20150301"
+
+     =============================================================
+     BITS Version 1.1                (DAL/BTU) v1.1    (2014-09-30)
+     JATS Version 1.1d2              (DAL/BTU) v1.1d2  (2014-09-30)
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1d2 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+     This catalog represents an interim version of the
+     non-normative JATS DTD Suite, as an indication to JATS users
+     the decisions that have been made by the JATS Standing
+     Committee.
+
+  1. BITS became version "1.1" and   "v1.1 20140930//EN"
+     JATS became version "1.1d2" and "v1.1d2 20140930//EN"
+
+     =============================================================
+                                                                   -->
+
+
+<!-- ============================================================= -->
+<!--                    PARAMETER ENTITIES FOR LINKING ATTRIBUTES  -->
+<!--                    THE FOLLOWING FEW ARE SHARED ATTRIBUTES    -->
+<!-- ============================================================= -->
+
+
+<!--                    XLINK LINK ATTRIBUTES                      -->
+<!--                    Used for elements that are a link by
+                        definition, such as the <xref> element.    -->
+<!ENTITY % link-atts
+            "xmlns:xlink CDATA                            #IMPLIED
+             xlink:type  (simple)                         #IMPLIED
+             xlink:href  CDATA                            #REQUIRED
+             xlink:role  CDATA                            #IMPLIED
+             xlink:title CDATA                            #IMPLIED
+             xlink:show  (embed | new | none | other | replace)
+                                                          #IMPLIED
+             xlink:actuate
+                         (none | onLoad | onRequest | other)
+                                                          #IMPLIED"  >
+
+
+<!--                    MIGHT LINK XLINK ATTRIBUTES                -->
+<!--                    Used for elements which may need to link to
+                        external sources or other objects within
+                        the document, but may not necessarily act
+                        as a link at all.  The attribute
+                        "xlink:href" identifies the object to which
+                        the link points.                           -->
+<!ENTITY % might-link-atts
+            "xmlns:xlink CDATA                            #IMPLIED
+             xlink:type  (simple)                         #IMPLIED
+             xlink:href  CDATA                            #IMPLIED
+             xlink:role  CDATA                            #IMPLIED
+             xlink:title CDATA                            #IMPLIED
+             xlink:show  (embed | new | none | other | replace)
+                                                          #IMPLIED
+             xlink:actuate
+                         (none | onLoad | onRequest | other)
+                                                          #IMPLIED"  >
+
+<!-- ============================================================= -->
+<!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK IDENTIFIER ATTRIBUTES                 -->
+<!--                    Attributes for the <book-id> element       -->
+<!ENTITY % book-id-atts
+           "%jats-common-atts;
+             book-id-type
+                        CDATA                             #IMPLIED
+             assigning-authority
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    BOOK TITLE ATTRIBUTES                      -->
+<!--                    Attributes for the <book-title> element    -->
+<!ENTITY % book-title-atts
+           "%jats-common-atts;"                                      >
+
+
+<!--                    BOOK TITLE GROUP ATTRIBUTES                -->
+<!--                    Attributes for the <book-title-group> element
+                                                                   -->
+<!ENTITY % book-title-group-atts
+           "%jats-common-atts;"                                      >
+
+<!--                    BOOK VOLUME NUMBER ATTRIBUTES              -->
+<!--                    Attributes for the <book-volume-number>    -->
+<!ENTITY % book-volume-number-atts
+           "%jats-common-atts;
+            specific-use
+                        CDATA                             #IMPLIED"  >
+
+
+<!--                    BOOK VOLUME IDENTIFIER ATTRIBUTES          -->
+<!--                    Attributes for the <book-volume-id> element-->
+<!ENTITY % book-volume-id-atts
+           "%jats-common-atts;
+            specific-use
+                        CDATA                             #IMPLIED"  >
+
+
+<!--                    PUBLICATION EVENT ATTRIBUTES               -->
+<!--                    Attributes for the <event> element         -->
+<!ENTITY % event-atts
+           "%jats-common-atts;
+             event-type CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    EVENT DESCRIPTION ATTRIBUTES               -->
+<!--                    Attributes used with the <event-desc>
+                        element.                                   -->
+<!ENTITY % event-desc-atts
+           "%jats-common-atts;
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    PUBLICATION HISTORY ATTRIBUTES             -->
+<!--                    Attributes for the <pub-history> element   -->
+<!ENTITY % pub-history-atts
+           "%jats-common-atts;"                                      >
+
+
+<!--                    VOLUME IN COLLECTION ATTRIBUTES            -->
+<!--                    Attributes for the <volume-in-collection>
+                        element                                    -->
+<!ENTITY % volume-in-collection-atts
+           "%jats-common-atts;
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    VOLUME NUMBER ATTRIBUTES                   -->
+<!--                    Attributes for the <volume-number> element -->
+<!ENTITY % volume-number-atts
+           "%jats-common-atts;"                                      >
+
+
+<!--                    VOLUME TITLE ATTRIBUTES                    -->
+<!--                    Attributes for the <volume-title> element  -->
+<!ENTITY % volume-title-atts
+           "%jats-common-atts;"                                      >
+
+
+<!-- ============================================================= -->
+<!--                    COUNT ATTRIBUTES                           -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK COUNT ATTRIBUTES                      -->
+<!--                    Attributes for the <book-count> element    -->
+<!ENTITY % book-count-atts
+            "%jats-common-atts;                                       
+             count-type CDATA                             #REQUIRED 
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!--                    BOOK EQUATION COUNT ATTRIBUTES             -->
+<!--                    Attributes for the <book-equation-count> 
+                                                         ≠   element-->
+<!ENTITY % book-equation-count-atts
+            "%jats-common-atts;                                       
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!--                    BOOK FIGURE COUNT ATTRIBUTES               -->
+<!--                    Attributes for the <book-fig-count> element-->
+<!ENTITY % book-fig-count-atts
+            "%jats-common-atts;                                       
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!--                    BOOK PAGE COUNT ATTRIBUTES                 -->
+<!--                    Attributes for the <book-page-count> element
+                                                                   -->
+<!ENTITY % book-page-count-atts
+            "%jats-common-atts;                                       
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!--                    BOOK REFERENCE (CITATION) COUNT ATTRIBUTES -->
+<!--                    Attributes for the <book-ref-count> element-->
+<!ENTITY % book-ref-count-atts
+            "%jats-common-atts;                                       
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!--                    BOOK TABLE COUNT ATTRIBUTES                -->
+<!--                    Attributes for the <book-table-count> element
+                                                                   -->
+<!ENTITY % book-table-count-atts
+            "%jats-common-atts;                                       
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!--                    BOOK WORD COUNT ATTRIBUTES                 -->
+<!--                    Attributes for the <book-word-count> element
+                                                                   -->
+<!ENTITY % book-word-count-atts
+            "%jats-common-atts;                                       
+             count      NMTOKEN                           #REQUIRED" >
+
+
+<!-- ============================================================= -->
+<!--                    METADATA ELEMENTS                          -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK IDENTIFIER                            -->
+<!--                    An identifier, such as a DOI or archive
+                        control number, for a <book> or <book-part>.
+                        Remarks: The @book-id-type attribute
+                        should be used to name the type of
+                        identifier, such as "DOI".
+                           There is a separate element for the
+                        ISBNs <isbn> related to a book.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-id
+                                                                   -->
+<!ELEMENT  book-id      (#PCDATA)                                    >
+<!ATTLIST  book-id
+             %book-id-atts;                                          >
+
+
+<!--                    BOOK TITLE ELEMENTS                        -->
+<!--                    Those elements that may mix with the data
+                        characters inside a Book Title
+                        <book-title>.                              -->
+<!ENTITY % book-title-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    BOOK TITLE                                 -->
+<!--                    The major title of a work, excluding label
+                        and any subtitles.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-title
+                                                                   -->
+<!ELEMENT  book-title   (#PCDATA %book-title-elements;)*             >
+<!ATTLIST  book-title
+             %book-title-atts;                                       >
+
+
+<!--                    BOOK TITLE GROUP MODEL                     -->
+<!--                    Content model for the <book-title-group>
+                        element, which differs from NISO JATS
+                        article <title-group> both by including a
+                        label and by using the privileged
+                        <book-title> instead of the privileged
+                        <article-title>.                           -->
+<!ENTITY % book-title-group-model
+                        "(label?, book-title?, subtitle*,
+                          trans-title-group*, alt-title*,
+                          fn-group?)"                                >
+
+
+<!--                    BOOK TITLE GROUP                           -->
+<!--                    A container element for the various title
+                        elements that might be used for the book.
+                        This model differs from NISO JATS article
+                        <title-group> in not starting with
+                        the privileged <article-title>.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-title-group
+                                                                   -->
+<!ELEMENT  book-title-group
+                        %book-title-group-model;                     >
+<!ATTLIST  book-title-group
+             %book-title-group-atts;                                 >
+
+
+<!--                    EVENT DESCRIPTION ELEMENTS                 -->
+<!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        <event-desc> element.                      -->
+<!ENTITY % event-desc-elements
+                        "| book-id | edition | %date.class; |
+                         issn | issn-l | isbn | pub-date "           >
+
+
+<!--                    EVENT DESCRIPTION                          -->
+<!--                    This is a description of an event in the
+                        publishing history of a book, for example,
+                        reprinting or publication of the revised online
+                        edition. This text field may be as
+                        simple a few words or as complex as a
+                        narrative with embedded markup.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=event-desc
+                                                                   -->
+<!ELEMENT  event-desc   (#PCDATA %event-desc-elements;)*             >
+<!ATTLIST  event-desc
+             %event-desc-atts;                                       >
+
+
+<!--                    EVENT MODEL                                -->
+<!--                    The content model for the <event> element. -->
+<!ENTITY % event-model  "(event-desc?, book-id*, edition*,
+                          pub-date*, (%date.class;)*,
+                          issn*, issn-l?, isbn*, permissions?,
+                          notes*, self-uri*)"                        >
+
+
+<!--                    EVENT IN PUBLISHING HISTORY                -->
+<!--                    This is a description of an event in the
+                        publishing history of a book, for example,
+                        reprinting or publication of the revised online
+                        edition. This text field may be as
+                        simple a few words or as complex as a
+                        narrative with embedded markup.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=event
+                                                                   -->
+<!ELEMENT  event        %event-model;                                >
+<!ATTLIST  event
+             %event-atts;                                            >
+
+
+<!--                    PUBLICATION HISTORY MODEL                  -->
+<!--                    The content model for the <pub-history>
+                        element.                                   -->
+<!ENTITY % pub-history-model
+                        "((%date.class;)*, (%event.class;)* )"       >
+
+
+<!--                    PUBLICATION HISTORY                        -->
+<!--                    Used as a container for events related to the
+                        processing history of the document, such as
+                        online publication date or reprint date.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=pub-history
+                                                                   -->
+<!ELEMENT  pub-history  %pub-history-model;                          >
+<!ATTLIST  pub-history
+             %pub-history-atts;                                      >
+
+
+<!-- ============================================================= -->
+<!--                    VOLUME ELEMENTS                            -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK VOLUME NUMBER ELEMENTS                -->
+<!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        <book-volume-number> element.              -->
+<!ENTITY % book-volume-number-elements
+                        "%just-rendition;"                           >
+
+
+<!--                    BOOK VOLUME NUMBER                         -->
+<!--                    The volume number of the book.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-volume-number
+                                                                   -->
+<!ELEMENT  book-volume-number
+                        (#PCDATA %book-volume-number-elements;)*     >
+<!ATTLIST  book-volume-number
+             %book-volume-number-atts;                               >
+
+
+<!--                    BOOK VOLUME IDENTIFIER ELEMENTS            -->
+<!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        <book-volume-id> element.                  -->
+<!ENTITY % book-volume-id-elements
+                        "%just-rendition;"                           >
+
+
+<!--                    BOOK VOLUME NUMBER                         -->
+<!--                    The volume number of the book.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-volume-id
+                                                                   -->
+<!ELEMENT  book-volume-id
+                        (#PCDATA %book-volume-id-elements;)*         >
+<!ATTLIST  book-volume-id
+             %book-volume-id-atts;                                   >
+
+
+<!--                    VOLUME IN COLLECTION MODEL                 -->
+<!--                    Content model for the <volume-in-collection>
+                        element.                                   -->
+<!ENTITY % volume-in-collection-model
+                        "(volume-number?, volume-title?)"            >
+
+
+<!--                    VOLUME IN COLLECTION                       -->
+<!--                    A container element for the volume metadata
+                        for a book in a collection, for example, to
+                        hold the <volume-number>.
+                        Remarks: This element may repeat, with a
+                        different language for each set of volume
+                        data or a different usage.
+                        Remarks: Volume information for books,
+                        encyclopedias, and book series is not the same
+                        kind of "volume" as the <volume> that is part
+                        of the NISO JATS journal metadata. Large works
+                        such as an encyclopedia may be divided into
+                        physical, logical, or semantic volumes. A book
+                        may be published as a monograph as well
+                        as part of one or more collections or
+                        monographic series. So volume information is
+                        needed at the series (collection) level. In
+                        addition, books of articles are published that
+                        are similar to the <volume> in a journal
+                        article and such volume metadata needs to be
+                        specified at the book level.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=volume-in-collection
+                                                                   -->
+<!ELEMENT  volume-in-collection
+                        %volume-in-collection-model;                 >
+<!ATTLIST  volume-in-collection
+             %volume-in-collection-atts;                             >
+
+
+<!--                    VOLUME NUMBER ELEMENTS                     -->
+<!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        <volume-number> element.                   -->
+<!ENTITY % volume-number-elements
+                        "| %subsup.class;"                           >
+
+
+<!--                    VOLUME NUMBER                              -->
+<!--                    The volume number of this book within the
+                        collection.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=volume-number
+                                                                   -->
+<!ELEMENT  volume-number
+                        (#PCDATA %volume-number-elements;)*          >
+<!ATTLIST  volume-number
+             %volume-number-atts;                                    >
+
+
+<!--                    VOLUME TITLE ELEMENTS                      -->
+<!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        <volume-title> element.                    -->
+<!ENTITY % volume-title-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    VOLUME TITLE                               -->
+<!--                    The volume title of this book within the
+                        collection. This need not be the same title
+                        as the book has when published as a
+                        standalone monograph.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=volume-title
+                                                                   -->
+<!ELEMENT  volume-title (#PCDATA %volume-title-elements;)*           >
+<!ATTLIST  volume-title
+             %volume-title-atts;                                     >
+
+
+<!-- ============================================================= -->
+<!--                    COUNTS ELEMENTS                            -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK GENERIC COUNT MODEL                   -->
+<!--                    Model for the <book-count> element.        -->
+<!ENTITY % book-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK GENERIC COUNT                         -->
+<!--                    Generic <book-count> element to count anything  
+                        a publisher or archive may wish to count in a 
+                        document. The @count-type attribute will name 
+                        what is being counted (such as figures, 
+                        tables, sections, contributors, images,
+                        etc.) The @count attribute will state how 
+                        many of the objects are in the document. 
+     
+                        Although a publisher or archive could choose 
+                        to label all the counted objects in a document
+                        using this element, the specific count 
+                        elements (fig-count, equation-count,
+                        word-count, etc.) will be retained for 
+                        backwards compatibility, and may still be
+                        used.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-count
+                                                                   -->
+<!ELEMENT  book-count   %book-count-model;                           >
+<!ATTLIST  book-count
+             %book-count-atts;                                       >
+
+
+<!--                    BOOK EQUATION COUNT MODEL                  -->
+<!--                    Model for the <book-equation-count> element.
+                                                                   -->
+<!ENTITY % book-equation-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK EQUATION COUNT                        -->
+<!--                    Number of display equations <disp-formula>
+                        that appear in the article. Inline-equations
+                        <inline-formula> are not counted. No
+                        distinction is made between numbered and
+                        unnumbered equations, both are counted.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-equation-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-equation-count
+                                                                   -->
+<!ELEMENT  book-equation-count
+                        %book-equation-count-model;                  >
+<!ATTLIST  book-equation-count
+             %book-equation-count-atts;                              >
+
+
+<!--                    BOOK FIGURE COUNT MODEL                    -->
+<!--                    Model for the <book-fig-count> element.    -->
+<!ENTITY % book-fig-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK FIGURE COUNT                          -->
+<!--                    Number of Figures <fig> that appear in the
+                        article. Loose <graphic>s that appear
+                        outside figures are not counted.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-fig-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-fig-count
+                                                                   -->
+<!ELEMENT  book-fig-count    
+                        %book-fig-count-model;                       >
+<!ATTLIST  book-fig-count
+             %book-fig-count-atts;                                   >
+
+
+
+<!--                    BOOK PAGE COUNT MODEL                      -->
+<!--                    Model for the <book-page-count> element.   -->
+<!ENTITY % book-page-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK PAGE COUNT                            -->
+<!--                    Number of pages in a print article, counting
+                        each page or partial page as one. Electronic
+                        articles do not have page counts.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-page-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-page-count
+                        http://jats.nlm.nih.gov/articleauthoring/tag-library/1.1/index.html?elem=book-page-count
+                                                                   -->
+<!ELEMENT  book-page-count   
+                        %book-page-count-model;                      >
+<!ATTLIST  book-page-count
+             %book-page-count-atts;                                  >
+
+
+<!--                    BOOK REFERENCE COUNT MODEL                 -->
+<!--                    Model for the <book-ref-count> element.    -->
+<!ENTITY % book-ref-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK REFERENCE COUNT                       -->
+<!--                    Number of reference citations (whether
+                        <mixed-citation>s, <element-citation>s, or
+                        <nlm-citation>s) that appear in the
+                        bibliographic reference list <ref-list>
+                        in the article
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-ref-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-ref-count
+                                                                   -->
+<!ELEMENT  book-ref-count   
+                        %book-ref-count-model;                       >
+<!ATTLIST  book-ref-count
+             %book-ref-count-atts;                                   >
+
+
+
+<!--                    BOOK TABLE COUNT MODEL                     -->
+<!--                    Model for the <book-table-count> element.  -->
+<!ENTITY % book-table-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK TABLE COUNT                           -->
+<!--                    Number of tables (Table Wrapper <table-wrap>
+                        elements that appear in the article. Arrays
+                        are not counted as tables.
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-table-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-table-count
+                                                                   -->
+<!ELEMENT  book-table-count  
+                        %book-table-count-model;                     >
+<!ATTLIST  book-table-count
+             %book-table-count-atts;                                 >
+
+
+
+<!--                    BOOK WORD COUNT MODEL                      -->
+<!--                    Model for the <book-word-count> element.   -->
+<!ENTITY % book-word-count-model  
+                        "(#PCDATA)"                                  >
+
+
+<!--                    BOOK WORD COUNT                            -->
+<!--                    Approximate number of words that appear in
+                        the textual portion of an
+                        article (not including the words in the
+                        metadata or header information)
+                        Details at:
+                        http://jats.nlm.nih.gov/archiving/tag-library/1.1/index.html?elem=book-word-count
+                        http://jats.nlm.nih.gov/publishing/tag-library/1.1/index.html?elem=book-word-count
+                                                                   -->
+<!ELEMENT  book-word-count   
+                        %book-word-count-model;                      >
+<!ATTLIST  book-word-count
+             %book-word-count-atts;                                  >
+
+<!-- ================== BITS Book Metadata Elements ============== -->
+

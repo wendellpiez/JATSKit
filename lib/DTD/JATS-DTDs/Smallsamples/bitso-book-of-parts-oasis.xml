@@ -1,0 +1,256 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC 
+"-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
+ "../BITS-book-oasis2.dtd">
+<!-- SYSTEM:  Book Interchange Tag Suite -->
+<!-- Updated  May 2013 for testing     -->
+<book 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0/"
+  xmlns:oasis="http://www.niso.org/standards/z39-96/ns/oasis-exchange/table" 
+ dtd-version="2.0"
+ xml:lang="en">
+
+<!-- =============== Front Matter (Metadata) ========== -->
+<book-meta>
+<book-id>Lapdeb-1</book-id>
+<book-id book-id-type="publisher-id">BITS-Test1</book-id>
+
+<book-title-group>
+<book-title>BITS DTD Test book</book-title>
+<subtitle>(Just a small one for parsing)</subtitle>
+<alt-title>Still Just a BITS test</alt-title>
+</book-title-group>
+
+<contrib-group>
+<contrib  id="Prime-jjb" rid="aff-1">
+<name-alternatives>
+<name><surname>Jones</surname>
+<given-names>John Browning</given-names>
+<prefix>The Honorable</prefix><suffix>III</suffix>
+</name>
+<name  specific-use="Indexing"><surname>Jones</surname>
+<given-names>JBB</given-names>
+</name>
+<name name-style="eastern" xml:lang="ja-Jpan"  specific-use="Honorary">
+<surname>flower-characters here</surname>
+<given-names>flower-characters here</given-names>
+</name>
+</name-alternatives>
+</contrib>
+<contrib>
+<name><surname>Jones</surname>
+<given-names>John Browning</given-names>
+<prefix>The Honorable</prefix><suffix>III</suffix>
+</name>
+</contrib>
+<aff-alternatives  id="aff-1" >
+<aff><institution xmlns:xlink="http://www.w3.org/1999/xlink" 
+xlink:type="simple">County Jail</institution> down Aberdeen way
+</aff>
+<aff>
+<institution xmlns:xlink="http://www.w3.org/1999/xlink" 
+xlink:type="simple">Montgomery County Jail</institution>
+<uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+ xlink:href="http://www.archiemcphee.com">Archie McPhee</uri>
+</aff>
+</aff-alternatives>
+</contrib-group>
+
+<author-notes>
+<p>All is well, dear child!</p>
+</author-notes>
+<pub-date><year>2004</year></pub-date>
+<issn>000-222-444</issn>
+<isbn>xxx-1</isbn>
+<isbn>1-234 567890-123</isbn>
+<publisher>
+<publisher-name>Mulberry Technologies, Inc.</publisher-name>
+</publisher>
+<edition designator="13">Thirteenth</edition>
+
+<pub-history>
+<date date-type="manuscript-received">
+<day>29</day>
+<month>01</month>
+<year>1999</year></date>
+<event>
+<event-desc>43rd printing special gold bindings edition</event-desc>
+<date iso-8601-date="20120401">
+<day>April Fool's Day</day>
+<month>04</month>
+<year>2012</year></date>
+<notes><p>Published as a giveaway for our 16th birthday
+party</p>
+</notes>
+</event>
+</pub-history>
+
+<permissions>
+<copyright-statement>Copyright &#x00A9; 2012, Mulberry
+Technologies, Inc.</copyright-statement>
+<copyright-year content-type="domestic">2012</copyright-year>
+<copyright-holder>Mulberry
+Technologies, Inc.</copyright-holder>
+<ali:free_to_read start_date="2016-01-01" end_date="2016-01-31"/>
+</permissions>
+
+<abstract><p>All the good stuff</p>
+<sec>
+<title>Introduction</title>
+<p>And not for something completely different</p>
+</sec>
+<sec>
+<title>Discussion</title>
+<p>Or maybe not</p>
+</sec>
+<sec>
+<title>Conclusion</title>
+<p>All&rsquor;s well that ends well.</p>
+</sec>
+</abstract>
+
+<kwd-group kwd-group-type="author">
+<kwd>DNA analysis</kwd>
+<kwd>gene expression</kwd>
+
+<kwd>parallel cloning</kwd>
+<kwd>fluid microarray</kwd>
+</kwd-group>
+
+<funding-group>
+<award-group id="nih-509">
+<funding-source country="US">NIH</funding-source>
+<award-id>NIH GM61374</award-id>
+<principal-award-recipient>Stanford</principal-award-recipient>
+</award-group>
+</funding-group>
+<funding-group>
+<award-group id="nsf-510">
+<funding-source country="US">NSF</funding-source>
+<award-id>NSF DBI-0317510</award-id>
+<principal-award-recipient>Berkeley</principal-award-recipient>
+</award-group>
+<award-group id="arda-511"  award-type="contract">
+<funding-source country="US">ARDA ACQUAINT</funding-source>
+<principal-award-recipient>Berkeley</principal-award-recipient>
+</award-group>
+<award-group id="geneentech-512" award-type="gift">
+<funding-source country="US">Genentech Corp.</funding-source>
+<principal-award-recipient>Berkeley</principal-award-recipient>
+</award-group>
+</funding-group>
+
+<counts>
+<book-fig-count count="5"/>
+<book-table-count count="3"/>
+<book-equation-count count="10"/>
+<book-ref-count count="26"/>
+<book-page-count count="6"/>
+<book-word-count count="2847"/>
+</counts>
+<notes>
+<p>Always more to say</p>
+</notes>
+
+</book-meta>
+
+<!-- ===== Front Matter (Narrative Content) ===== -->
+<front-matter>
+<xi:include  href="bitso-book-part4-oasis.xml"
+  xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<dedication>
+<book-part-meta>
+<book-part-id>a real DOI</book-part-id>
+<title-group>
+<title>Introduction to the 13th Edition</title>
+<subtitle>the best parts version</subtitle>
+</title-group>
+</book-part-meta>
+<named-book-part-body>
+<p>Multiple paragraphs are almost always a good idea
+inside a test.</p>
+<p>This following is couple of lists:
+<list list-type="bullet">
+<list-item><p>robustness, and</p></list-item> 
+<list-item><p>fortitude.</p></list-item>
+</list></p>
+<p>That last paragraph had a bulleted list embedded within it,
+imagine that! How clever of it.</p>
+<sec><title>And additional thanks...</title>
+<p>More here.</p>
+</sec>
+<sec><title>Inloving memory...</title>
+<p>More here.</p>
+</sec>
+</named-book-part-body>
+</dedication>
+
+<front-matter-part>
+<book-part-meta>
+<book-part-id>123-123-123</book-part-id>
+<title-group>
+<title>List of Acronyms</title>
+<alt-title>The Grand Acronynm List</alt-title>
+</title-group>
+</book-part-meta>
+<named-book-part-body>
+<p>Multiple paragraphs are almost always a good idea
+inside a test.</p>
+<p>This following is couple of lists:
+<list list-type="order">
+<list-item><p>robustness, and</p></list-item> 
+<list-item><p>fortitude.</p></list-item>
+</list></p>
+<p>That last paragraph had a bulleted list embedded within it,
+imagine that! How clever of it.</p>
+</named-book-part-body>
+</front-matter-part>
+</front-matter>
+
+<!-- =============== Body Matter (Content) =========== -->
+<book-body>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bitso-book-part1-oasis.xml"><!--  If this
+bookpart is not here, forget it!--></xi:include>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bitso-book-part2-oasis.xml"/>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bitso-book-part3-oasis.xml"/>
+</book-body>
+
+<!-- =============== Back Matter (Ancillary) ======= -->
+<book-back>
+<ack><p>We thank all of them as well .</p></ack>
+<notes></notes>
+
+<!-- =============== Bibliographic References ======= -->
+<ref-list>
+<title>Bibliography</title>
+<p>Just a reference or two for testing:</p>
+<ref>
+<!-- ========== -->
+<mixed-citation>A citation ain't nothing but a 
+sandwich &mdash; personal communication 
+</mixed-citation>
+</ref>
+<!-- ========== -->
+<ref>
+<mixed-citation>
+<name>
+<surname>Piggy</surname> 
+<prefix>Ms.</prefix></name>
+<article-title>Can't Help Lovin&rsquo; That 
+Frog of Mine</article-title>;
+<source>Swine Review</source>, <issue>145</issue>:
+<fpage>12</fpage>&ndash;<lpage>24</lpage>; 
+<year>2003</year>. 
+<trans-title xml:lang="en">Ant-cay Elp-hay 
+Ovin&rsquo;-lay At-thay Og-fray of-ay Ine-may</trans-title>
+</mixed-citation>
+</ref>
+</ref-list>
+
+</book-back>
+
+</book>

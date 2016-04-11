@@ -1,0 +1,1342 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book-part PUBLIC 
+"-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
+ "../BITS-book-oasis2.dtd">
+<!-- SYSTEM:  Book Interchange Tag Suite -->
+<!-- Updated  May 2013 for testing     -->
+
+<book-part 
+  seq="2" 
+  book-part-type="chapter"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ali="http://www.niso.org/schemas/ali/1.0/" 
+  xmlns:mml="http://www.w3.org/1998/Math/MathML">
+
+<!-- =============== Front Matter (Metadata) ========== -->
+<book-part-meta>
+<book-part-id>Lapdeb-1</book-part-id>
+<book-part-id book-part-id-type="publisher-id">BITS-Book-Test-chap2</book-part-id>
+<subj-group>
+<subject>Large Dogs</subject>
+</subj-group>
+<title-group>
+<title>BITS Book DTD Test Book for DTD Testing</title>
+<subtitle>(Just a small one for parsing)</subtitle>
+<alt-title>Bits alternate title</alt-title>
+</title-group>
+<pub-date><year>2004</year></pub-date>
+<publisher>
+<publisher-name>Mulberry Technologies, Inc.</publisher-name>
+</publisher>
+<permissions>
+<copyright-year>2004</copyright-year>
+</permissions>
+
+<abstract><p>All the good stuff</p>
+<sec>
+<title>Introduction</title>
+<p>And not for something completely different</p>
+</sec>
+<sec>
+<title>Discussion</title>
+<p>Or maybe not</p>
+</sec>
+<sec>
+<title>Conclusion</title>
+<p>All&rsquor;s well that ends well.</p>
+</sec>
+</abstract>
+</book-part-meta>
+
+
+<!-- =============== Body Matter (Content) =========== -->
+<body>
+<p>A Body, a book part body!</p>
+<sec sec-type="intro">
+<title>Introduction</title>
+<p>Geriatric day hospitals developed rapidly in the United Kingdom
+in the 1960s as an important component of care provision. The model
+has since been widely applied in several Western countries. Day
+hospitals provide multidisciplinary assessment and rehabilitation
+in an outpatient setting and have a pivotal position between hospital
+and home based services .... We therefore undertook a systematic
+review of the randomized trials of day hospital care.</p>
+</sec>
+<sec>
+      <title>Background</title>
+      <p>In the last two to three decades, the concept of mindfulness has received increasing
+        attention, particularly in the health sciences. Mindfulness is about being aware of actual
+        experiences from one moment to the next with gentle acceptance. This concept has been proposed
+        to contribute to the coping and recovery process in many health conditions.</p>
+      <p>Both clinical as well as basic science researchers have devoted a significant amount of
+        study to this topic. Moreover, with rapidly
+        mounting evidence regarding the therapeutic capacities of mindfulness practice, medical
+        professionals are increasingly incorporating such techniques into their clinical repertoire.
+        Probably the best known and evaluated mindfulness-based treatment is the Mindfulness-Based
+        Stress Reduction (MBSR) that is used in many clinical settings in the US and Canada and
+        evermore, in Europe </p>
+      <p>Yet, integrating mindfulness into existing therapeutic concepts may challenge medical
+        professionals' usual practices for number of reasons. First and foremost, mindfulness
+        approaches do not aim at symptom reduction. Fundamentally, mindfulness is not intended to
+        explicitly eradicate pain, distress, or unwanted emotions. However, philosophically and
+        practically, medical professionals endeavor to reduce suffering. If mindfulness does not aim
+        at reducing symptoms, then how can it be helpful? In this essay, we argue that while
+        mindfulness is not meant to actively reduce symptoms, it may passively modify their impact
+        by changing an individual's perceptions and mindset. Mindfulness is a set of practices, if
+        not a "way of being" that may incur salutogenic (i.e., health-promoting) effects. This may
+        lead to a misconception of what mindfulness is, and how it works. We believe that some of
+        the apparently contradictory aspects of mindfulness can be best understood by taking a
+        dialectical approach. It is not a new idea to explain psychological health-related processes
+        through the use of paradoxical or dialectical approaches. Indeed, we propose that the dialectical structure of mindfulness hallmarks its
+        essence, which may easily be misunderstood in clinical practice.</p>
+      <p>The dialectical approach is quite different from the conventional approach of symptom
+        evaluation. The conventional approach uses the current logic: a symptom is either good or
+        bad; present or absent; relevant or not. The dialectical approach stresses that each thesis
+        also has to be considered in the light of its opposite (the antithesis), and only both
+        facets together (the synthesis) yield a full picture. In this light, depression might be a
+        sign of a disorder that should be mitigated. But at the same time, it must be acknowledged
+        that there are inner experiences that cannot be controlled or altered "at will". Hence,
+        although the phenomenal quality of going through depression may not be altered, a patient's
+          <italic>relation </italic>towards relevant inner states relevant to depression may be
+        changed due to mindfulness or other forms of spiritual exercise [<xref ref-type="bibr"
+          rid="B6">6</xref>,<xref ref-type="bibr" rid="B7">7</xref>].</p>
+      <p>Herein, we first elaborate on the dialectical structure of mindfulness by providing an
+        overview of 1) the theoretical foundation of the construct, 2) evidence of the clinical
+        effectiveness, and 3) putative neurobiological correlates of mindfulness. We then introduce
+        five dialectical positions that we believe are useful for resolving the apparent paradox
+        associated with mindfulness and its relevant mechanisms of action. Finally, on the basis of
+        this discussion, we derive the utility and implications of mindfulness for medicine, and
+        address potential caveats.</p>
+      <sec>
+        <title>Roots of the concept of mindfulness</title>
+        <p>Mindfulness is an old concept; its theoretical roots were formulated by the Buddha, who
+          characterized himself as a physician. He stated that his primary work was to identify the
+          maladies afflicting humankind, and to establish a way through which every individual could
+          attain lasting absence from suffering rather than complete well-being [<xref
+            ref-type="bibr" rid="B8">8</xref>]. He claimed that mere belief and rational reasoning
+          were not sufficient to mitigate suffering. He proposed mindfulness as a "direct way" to
+          confront suffering by transcending it. Interestingly, the Buddha did not aim to establish
+          an institutionalized form for disseminating his insights, such as a sect or a religion.
+          His devotion to the self-reliance and self-dependence of each individual also demonstrates
+          the very essence of mindfulness: "Do not believe in anything because it is rumored and
+          spoken by many" [[<xref ref-type="bibr" rid="B9">9</xref>] p. 137]. He called for
+          accepting only what one has analyzed by direct and immediate experience. On this basis,
+          mindfulness can be described by its two inter-related facets: (1) the capacity to
+          dispassionately observe the present moment, through (2) a stance of non-judgmental and
+          accepting openness [<xref ref-type="bibr" rid="B10">10</xref>,<xref ref-type="bibr"
+            rid="B11">11</xref>].</p>
+        <p>Unlike the contemporary practice of medicine that can be seen as "objective" and a
+          mediated "third person perspective", mindfulness is experienced in the subjective and
+          immediate "first person perspective", or by means of direct and unbiased introspection.
+          Historically, this epistemological approach has also been part of the work of the
+          psychologists Franz Brentano, William James, (and to some extent) Wilhelm Wundt and his
+          disciple Edward Titchener, as well as by the phenomenologist Edmund Husserl [<xref
+            ref-type="bibr" rid="B6">6</xref>,<xref ref-type="bibr" rid="B12">12</xref>]. The
+          dialogical <italic>I-Thou </italic>philosophy of Martin Buber also evidences similarities
+          to the concept of mindfulness [<xref ref-type="bibr" rid="B13">13</xref>].</p>
+        <p>Some scholars claim that the methodology of the science of inner experiences is not well
+          developed [<xref ref-type="bibr" rid="B14">14</xref>,<xref ref-type="bibr" rid="B15"
+            >15</xref>] and that the phenomenological properties of inner experiences of
+          consciousness cannot be shared. By contrast, the epistemological grounding of mindfulness
+          - particularly to the Buddhist tradition - holds that great insight can be derived from
+          first person approaches that are also valid from an intersubjective point of view [<xref
+            ref-type="bibr" rid="B16">16</xref>]. For example, prolonged practice of mindfulness may
+          develop the ability to dissect experiences into more subtle parts thereby revealing the
+          transient nature of perceptions [<xref ref-type="bibr" rid="B17">17</xref>].</p>
+      </sec>
+      <sec>
+        <title>Clinical effectiveness and neurobiological correlates of mindfulness</title>
+        <p>A body of research suggests that the facilitation of mindfulness has a positive impact on
+          a variety of mental health symptoms, such as stress, anxiety, some personality disorders,
+          chronic pain, and substance abuse. To date, several meta-analyses substantiate such
+          clinical effects [<xref ref-type="bibr" rid="B1">1</xref>,<xref ref-type="bibr" rid="B18"
+            >18</xref>,<xref ref-type="bibr" rid="B19">19</xref>]. Additionally, there is evidence
+          that mindfulness has an impact on endocrinological and neurophysiological function. For
+          example, Davidson and colleagues found a greater increase in antibody titers after
+          vaccination in individuals practicing mindfulness on a regular basis as compared to
+          non-practitioners [<xref ref-type="bibr" rid="B20">20</xref>]. More recently, in a
+          randomized trial, Tang et al. [<xref ref-type="bibr" rid="B21">21</xref>] found that
+          mindfulness practitioners showed more regional cerebral blood flow in the right anterior
+          cingulate cortex (ACC), including the subgenual ACC (Brodmann area (BA) 25), and adjacent
+          ventral ACC (BA 32), the left insula, occipital lobule, right posterior cingulate cortex,
+          right precuneus, and subcortical structures of the putamen and caudate. These brain areas
+          have been related to emotional regulation [<xref ref-type="bibr" rid="B22">22</xref>].
+          Also, both Lazar et al. [<xref ref-type="bibr" rid="B23">23</xref>] and H&#246;lzel et al.
+            [<xref ref-type="bibr" rid="B24">24</xref>] demonstrated that mindfulness may be
+          associated with an increase of gray matter which persists longitudinally in certain brain
+          areas. These researchers found that gray matter concentration in the left inferior
+          temporal gyrus was correlated with meditative proficiency, corroborating the assumption of
+          a positive impact of meditation training on gray matter concentration in this region
+            [<xref ref-type="bibr" rid="B25">25</xref>,<xref ref-type="bibr" rid="B26">26</xref>].
+          These results suggest that the ability of mindfulness to influence emotional state has not
+          only a neurological base, but that mindfulness training - according to neuroplasticity
+          paradigm - may actually influence the structural composition of the brain.</p>
+      </sec>
+      <sec>
+        <title>Resolving the Paradox: The Dialectics of Mindfulness</title>
+        <p>In the following sections we discuss five aspects of mindfulness that are all related to
+          the underlying dialectical principle. In our view, these five dialectical aspects are a
+          valuable way to address the apparent paradoxical structure of the construct.</p>
+      </sec>
+      <sec>
+        <title>Dialectics of Activity vs. Passivity</title>
+        <p>Mindfulness can be considered as a provokingly passive method. Mindfulness teachers
+          explain the practice of mindfulness as "one simply examines every phenomenon" [[<xref
+            ref-type="bibr" rid="B17">17</xref>] p. 95]. And, more illuminatingly, "the entire
+          effort is to learn how not to react" [[<xref ref-type="bibr" rid="B17">17</xref>] p. 97].
+          Mindfulness implies calmly observing unwanted inner or outer experiences. Psychologically,
+          this means that the drives related to appetitive or aversive stimuli must be voluntarily
+          suspended to the most possible extent. The first drive has been termed "approach
+          motivation" and the latter "avoidance motivation" [<xref ref-type="bibr" rid="B27"
+            >27</xref>]. Probably the most obvious difference to other treatments commonly employed,
+          is that mindfulness advocates suspending cognitive, emotional or behavioral actions when
+          facing negative experiences. In devising the antithesis, mindfulness seeks to engage a
+          mechanism known as "apperception" a mental process that is responsible for perceiving,
+          gauging, adopting and transforming an individual's experiences in order to create a new
+          conscious concept based upon former experiences as well as inner states of the mind.
+          Mindfulness involves meticulous and continuous observation of the prevalent sensory and
+          mental processes by means of being fully present: Every moment and detail of a given
+          experience is to be observed scrupulously, without cognitive and emotional evaluation of
+          the respective event. This process involves a high degree of alertness and activity [<xref
+            ref-type="bibr" rid="B28">28</xref>]. Hence, we claim that mindfulness is at the same
+          time a way of being passive (with regard to gauging and reacting towards external stimuli)
+          and of being active (with regard to observing the present moment and the accompanying
+          inner states of mind). By means of reconfiguring the cognitively active and passive
+          components, the thesis and antithesis of seemingly contradicting processes are resolved,
+          and mindfulness can be regarded as a synthesis.</p>
+      </sec>
+      <sec>
+        <title>Dialectics of Wanting vs. Non-wanting</title>
+        <p>Some authors argue that mindfulness is a "non-striving" state of being, thereby
+          precluding goal-oriented behavior [<xref ref-type="bibr" rid="B29">29</xref>]. In other
+          words, it is held that being mindful contradicts wanting, aspiring, or desiring something.
+          These authors state that during a deep state of mindfulness, a person has no goals and
+          does not want for anything during the time of practice. Although this concept may be
+          appealing, we doubt that an individual can be in a state in which she does not want
+          anything at all, at least in situations that entail active behavior. How could a person be
+          motivated to begin and stay within a mindful state? The fact that an individual starts or
+          continues a mindfulness exercise from one moment to the next explicitly shows that she
+            <italic>does </italic>aspire to be mindful. Additionally, why should one engage
+          mindfulness meditation at all? Would she not aspire to achieve a certain goal implicitly
+          or explicitly associated with this technique? Hence, upholding mindfulness practice cannot
+          be simply equated with "non-wanting", but rather implies wanting to achieve something such
+          as reducing suffering and distress or gaining essential insights to phenomenological
+          experience. At the same time, we admit that the mindfulness antithesis is at odds with a
+          certain understanding of what "wanting" comprises. To be more precise, "unconditional
+          wanting" is the opposite of mindfulness as it refers to a mental state where something is
+          sought after to such a degree that not achieving the desired state would lead to
+          dissatisfaction. It has been argued that unconditional wanting leads to breakdown of inner
+          balance if the desired state is not achieved [<xref ref-type="bibr" rid="B17">17</xref>].
+          In fact, even if a person reaches the intended goal, the mind cannot be balanced,
+          according to the theory of mindfulness, if the wanting is too strong. Both unconditional
+          wanting or craving ("I must have this!") and aversion ("This must go away!") are forms of
+          non-mindful states. Hence, the synthesis of the wanting-non-wanting dialectics reveals
+          that a "gentle" form of wanting reflects the volitional processes underlying mindfulness,
+          whereas "unconditional" wanting (both craving and aversion) cannot conform to the
+          philosophy of mindfulness.</p>
+      </sec>
+      <sec>
+        <title>Dialectics of Therapeutic Change vs. Non-Change</title>
+        <p>Medical professionals strive to alleviate suffering. Many medical professionals have used
+          mindfulness techniques in order to lessen the suffering of the patients they treat [<xref
+            ref-type="bibr" rid="B30">30</xref>]. Yet, mindfulness theory claims that pain and
+          related symptoms must be accepted by embracing them with an attitude of equanimity.
+          Accordingly, if this aspect of mindfulness is cultivated, there is no longer any real
+          argument for changing inferior and negative sensations, emotions, or symptoms. This is a
+          critical but often misunderstood aspect of mindfulness that rests upon the fact that
+          changing one's relation to the symptom has been mistaken for changing the symptom.
+          Empirical research indicates that mindfulness training leads to a reduction of pain and
+          anxiety [<xref ref-type="bibr" rid="B31">31</xref>], not by directly lessening symptoms,
+          but by changing patients' attitudes toward them. Hayes et al. [<xref ref-type="bibr"
+            rid="B32">32</xref>] describe that mindfulness aims at establishing a psychological
+          stance of preparedness in which formerly unwanted feelings can be accepted. To give an
+          example, anxiety is not necessarily a problem, if anxiety is embraced with the right state
+          of mind. Simply, if one is able to accept anxiety, anxiety gradually loses its effect,
+          simply because it can be contained; finally, the degree of fear will decrease as a result
+          of reduced emotional impact. Thus, mindfulness is about being aware of experience, and
+          gently accepting it. The finding that mindfulness reduces psychosomatic symptoms may be
+          explained by two mechanisms. First, if a symptom of distress, such as anxiety, is
+          subjectively accepted and embraced rather than resisted, it becomes less threatening. This
+          is likely the reason why decreased levels of distress, anxiety, and depression are
+          reported after mindfulness interventions. Second, as such symptoms become less important,
+          behavioral changes associated with decline of symptoms become more probable [<xref
+            ref-type="bibr" rid="B33">33</xref>].</p>
+        <p>Recent research has shed light upon the possible mechanisms of mindfulness. Kohls, Sauer,
+          and Walach described two main aspects of mindfulness, i.e., "presence" (attending to the
+          present moment) and "acceptance" (non-judgmental attitude) [<xref ref-type="bibr"
+            rid="B10">10</xref>]. Their work suggested that presence is a way to instill an attitude
+          of acceptance, which is in turn responsible for buffering distress. It appears that
+          presence itself does not buffer distress but allows one to build the non-judgmental
+          attitude that seems to be responsible for health-relevant effects.</p>
+        <p>Taken together, the synthesis of change and no-change distinguishes between what is
+          changed through the practice of mindfulness - an emotional connection with the symptom -
+          and what is (primarily) unchanged - the symptom itself. As changes in the symptom itself
+          are not intended, mindfulness may be understood as a transformation of the
+            <italic>relationship </italic>between self and symptom.</p>
+      </sec>
+      <sec>
+        <title>Dialectics of Non-judging vs. Non-Reacting</title>
+        <p>A facet of the definition of mindfulness is "non-judging", which has been advocated by
+          Kabat-Zinn [<xref ref-type="bibr" rid="B34">34</xref>,<xref ref-type="bibr" rid="B35"
+            >35</xref>] and subsequently more widely accepted [<xref ref-type="bibr" rid="B29"
+            >29</xref>,<xref ref-type="bibr" rid="B36">36</xref>,<xref ref-type="bibr" rid="B37"
+            >37</xref>]. However, we suggest a word of caution here. Let us start by posing a
+          question. Is it possible to cognitively perceive something and concomitantly to abstain
+          from all judgments? To answer this question, it is necessary to understand judging.
+          Literature on perception and cognitive psychology suggests that judging primarily entails
+          identifying a perception as representative of a certain mental category (e.g., sparrow as
+          a bird) [<xref ref-type="bibr" rid="B38">38</xref>]. The relevant category has different
+          attributes including a valence continuum (from "I like it" to "I don't like it") with
+          various degrees of intensity. It is unlikely that a well-learned category attribute
+          ("weapons - not good") can be easily abandoned, if at all. We suggest that mindfulness in
+          the first instance should not be equated with the <italic>cognitive </italic>aspect of
+          non-judging.</p>
+        <p>Rather, we propose that mindfulness is primarily concerned with the
+            <italic>emotional-motivational </italic>component of non-judging. Consider the following
+          thought experiment. Imagine the possibility that you will not be eating your favorite food
+          in the next months. This is not something agreeable; yet, although one would not want this
+          to happen (i.e., cognitive judging occurs), it is possible to stay emotionally calm, and
+          to remain contented despite this unwanted imagination (i.e., no emotional reaction). This
+          emotionally calm state has been termed "balanced mind" - the fact that one does not react
+          emotionally when facing an unfavorable experience [<xref ref-type="bibr" rid="B17"
+            >17</xref>]. The opposite behavior would imply generation of emotions of dislike or
+          craving. As a result, an urge - a specific emotional-motivational tendency - to
+          behaviorally react may arise. This reaction may entail either behavior to strengthen the
+          favored experience, or weaken it, if it is disliked. Together, the emotional and
+          motivational reactions become mutually reinforcing in a positive feedback loop. This may
+          explain how such urges gain strength. Associated cognitions will likely accompany this
+          process.</p>
+        <p>This is why a so-called unbalanced mind - primarily an emotional-motivational process -
+          may lead to cognitions that are judging ("I hate this!"). This rationale provides some
+          explanation why judging is incongruent with mindfulness, although judging is a secondary
+          reaction or an epiphenomenon to mindfulness. Mindfulness is characterized by not showing
+          reactive behavior or not indulging in emotions of craving and aversion. We do not argue
+          for causal orders of evaluative cognitions and emotions. It may well be the case that
+          specific cognitions exhibit associated emotions or vice versa [<xref ref-type="bibr"
+            rid="B39">39</xref>-<xref ref-type="bibr" rid="B41">41</xref>]. Rather, our point is
+          that a mindful state depends primarily on emotional calm, and only secondarily on the
+          absence of evaluative cognitions. That means that one may calmly think "I don't like this
+          at all" and still be mindful. Indeed, one cannot be upset and mindful at the same
+          time.</p>
+      </sec>
+      <sec>
+        <title>Dialectics of Active Acceptance vs. Passive Acceptance</title>
+        <p>Most authors in the field of mindfulness research consider "acceptance" as one of the
+          major aspects of mindfulness, together with a form of directing the attention to the
+          present moment. In this light, some, such as Kabat-Zinn, hold that mindfulness "includes
+          an affectionate, compassionate quality" [[<xref ref-type="bibr" rid="B34">34</xref>] p.
+          145]. This conception may be interpreted as "active approval" of what is being
+          experienced. This describes a stance of "the present experience is good" which includes
+          emotional, motivational and evaluative aspects. But how can one approve <italic>all
+          </italic>situations or experiences? This is seemingly illogical. In contrast to this
+          assumption, we believe that mindfulness does not involve such "active" acceptance. We
+          opine that the concept of "passive acceptance" is consistent with the essential idea of
+          mindfulness, and simply suggests that one suspends or weakens evaluative cognitions and
+          emotional reactions in a given situation. There is a subtle but crucial difference between
+          the two concepts. The former assumes that one should actively strive to see the proverbial
+          silver lining in all situations, although this may be contradictory to an individual's
+          ethical or philosophical grounding. The latter view, in contrast, assumes that although we
+          may not be able to escape a given situation, we may withhold our emotional or evaluative
+          reactions, thereby possibly reducing the aversive character of a given situation. In other
+          words, not accepting something does not necessarily imply rejecting it.</p>
+        <p>Thus, the difference between active and passive acceptance can be formalized by the
+          concept(s) of passive and active negation [<xref ref-type="bibr" rid="B42">42</xref>]. To
+          give an example, the active negation of "I love you" is "I hate you", whereas the passive
+          negation is "I don't love you". In more formal terms, the active statement "A is p" may be
+          negated by the active negation "A is (not p)" as well as by its passive negation "Not (A
+          is p)". In sum, the synthesis suggests that mindfulness is the absence of reacting towards
+          a given experience, but not the unconditional and active, rather na&#239;ve acceptance of
+          a given experience.</p>
+      </sec>
+    </sec>
+</body>
+
+<!-- =============== Back Matter (Ancillary) ======= -->
+<back>
+
+<ack><p>We thank all of them as well .</p></ack>
+<notes></notes>
+
+<!-- =============== Bibliographic References ======= -->
+<ref-list>
+      <ref id="B1">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Baer</surname>
+            <given-names>RA</given-names>
+          </name>
+          <article-title>Mindfulness Training as a Clinical Intervention: A Conceptual and Empirical
+            Review</article-title>
+          <source>Clinical Psychology: Science &amp; Practice</source>
+          <year>2003</year>
+          <volume>10</volume>
+          <fpage>125</fpage>
+          <lpage>143</lpage>
+          <pub-id pub-id-type="doi">10.1093/clipsy.bpg015</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B2">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Baer</surname>
+            <given-names>RA</given-names>
+          </name>
+          <source>Mindfulness-Based Treatment Approaches: Clinician's Guide to Evidence Base and
+            Applications</source>
+          <year>2005</year>
+          <publisher-name>New York: Academic Press</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B3">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Sauer</surname>
+            <given-names>S</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Walach</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Kohls</surname>
+            <given-names>N</given-names>
+          </name>
+          <article-title>Gray's Behavioural Inhibition System as a mediator of mindfulness towards
+            well-being</article-title>
+          <source>Personality and Individual Differences</source>
+          <year>2011</year>
+          <volume>50</volume>
+          <fpage>506</fpage>
+          <lpage>51</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.paid.2010.11.019</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B4">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Didonna</surname>
+            <given-names>F</given-names>
+          </name>
+          <source>Clinical Handbook of Mindfulness</source>
+          <year>2008</year>
+          <publisher-name>Springer, Berlin</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B5">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Bishop</surname>
+            <given-names>SR</given-names>
+          </name>
+          <article-title>What do we really know about mindfulness-based stress
+            reduction?</article-title>
+          <source>Psychosomatic Medicine</source>
+          <year>2002</year>
+          <volume>64</volume>
+          <fpage>71</fpage>
+          <lpage>83</lpage>
+          <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/pubmed/11818588"
+            xlink:type="simple">http://www.ncbi.nlm.nih.gov/pubmed/11818588</ext-link>
+          <pub-id pub-id-type="pmid">11818588</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B6">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kohls</surname>
+            <given-names>N</given-names>
+          </name>
+          <source>Aussergew&#246;hnliche Erfahrungen - blinder Fleck der Psychologie?&#8239;: eine
+            Auseinandersetzung mit aussergew&#246;hnlichen Erfahrungen und ihrem Zusammenhang mit
+            geistiger Gesundheit</source>
+          <year>2004</year>
+          <edition>1</edition>
+          <publisher-name>M&#252;nster: Lit Verlag</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B7">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kohls</surname>
+            <given-names>N</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Walach</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Lewith</surname>
+            <given-names>G</given-names>
+          </name>
+          <article-title>The Impact of Positive and Negative Spiritual Experiences on Distress and
+            the Moderating Role of Mindfulness</article-title>
+          <source>Archive for the Psychology of Religion/Archiv f&#252;r
+            Religionspychologie</source>
+          <year>2009</year>
+          <volume>31</volume>
+          <fpage>357</fpage>
+          <lpage>374</lpage>
+          <pub-id pub-id-type="doi">10.1163/008467209X12524724282032</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B8">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Khantipalo</surname>
+            <given-names>P</given-names>
+          </name>
+          <source>Buddhism explained</source>
+          <year>1989</year>
+          <publisher-name>Chiang Mai, Thailand: Silkworm Productions</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B9">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <collab xlink:type="simple">Vipassana Research Institute</collab>
+          <source>Sayagyi U Ba Khin Journal</source>
+          <year>1998</year>
+          <publisher-name>Igatpuri, India: Vipassana Research Institute</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B10">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kohls</surname>
+            <given-names>N</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Sauer</surname>
+            <given-names>S</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Walach</surname>
+            <given-names>H</given-names>
+          </name>
+          <article-title>Facets of mindfulness-Results of an online study investigating the Freiburg
+            mindfulness inventory</article-title>
+          <source>Personality and Individual Differences</source>
+          <year>2009</year>
+          <volume>46</volume>
+          <fpage>224</fpage>
+          <lpage>230</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.paid.2008.10.009</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B11">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Wallace</surname>
+            <given-names>BA</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Shapiro</surname>
+            <given-names>SL</given-names>
+          </name>
+          <article-title>Mental Balance and Well-Being: Building Bridges Between Buddhism and
+            Western Psychology</article-title>
+          <source>American Psychologist</source>
+          <year>2006</year>
+          <volume>61</volume>
+          <fpage>690</fpage>
+          <lpage>701</lpage>
+          <pub-id pub-id-type="pmid">17032069</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B12">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Atmanspacher</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Fach</surname>
+            <given-names>W</given-names>
+          </name>
+          <article-title>Acategoriality as mental instability</article-title>
+          <source>Journal of Mind and Behavior</source>
+          <year>2005</year>
+          <volume>26</volume>
+          <fpage>181</fpage>
+          <lpage>206</lpage>
+        </mixed-citation>
+      </ref>
+      <ref id="B13">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Scott</surname>
+            <given-names>J</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Scott</surname>
+            <given-names>R</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Miller</surname>
+            <given-names>W</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Stange</surname>
+            <given-names>K</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Crabtree</surname>
+            <given-names>B</given-names>
+          </name>
+          <article-title>Healing relationships and the existential philosophy of Martin
+            Buber</article-title>
+          <source>Philosophy, Ethics, and Humanities in Medicine</source>
+          <year>2009</year>
+          <volume>4</volume>
+          <fpage>11</fpage>
+          <ext-link ext-link-type="uri" xlink:href="http://www.peh-med.com/content/4/1/11"
+            xlink:type="simple">http://www.peh-med.com/content/4/1/11</ext-link>
+          <pub-id pub-id-type="doi">10.1186/1747-5341-4-11</pub-id>
+          <pub-id pub-id-type="pmid">19678950</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B14">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Chalmers</surname>
+            <given-names>DJ</given-names>
+          </name>
+          <source>Philosophy of mind: classical and contemporary readings</source>
+          <year>2002</year>
+          <publisher-name>Oxford University Press</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B15">
+        <mixed-citation publication-type="other" xlink:type="simple">
+          <name name-style="western">
+            <surname>Chalmers</surname>
+            <given-names>DJ</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Gazzaniga</surname>
+            <given-names>M</given-names>
+          </name>
+          <article-title>How can we construct a science of consciousness</article-title>
+          <source>The cognitive neurosciences III</source>
+          <year>2004</year>
+          <fpage>1111</fpage>
+          <lpage>1119</lpage>
+        </mixed-citation>
+      </ref>
+      <ref id="B16">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Walach</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Runehov</surname>
+            <given-names>A</given-names>
+          </name>
+          <article-title>The Epistemological Status of Transpersonal Psychology: The Data-Base
+            Argument Revisited</article-title>
+          <source>Journal of Consciousness Studies</source>
+          <year>2010</year>
+          <volume>17</volume>
+          <fpage>145</fpage>
+          <lpage>165</lpage>
+        </mixed-citation>
+      </ref>
+      <ref id="B17">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Hart</surname>
+            <given-names>W</given-names>
+          </name>
+          <source>The Art of Living. Vipassana Meditation</source>
+          <year>1991</year>
+          <publisher-name>Igatpuri, India: Vipassana Research Institute</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B18">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Grossman</surname>
+            <given-names>P</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Niemann</surname>
+            <given-names>L</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Schmidt</surname>
+            <given-names>S</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Walach</surname>
+            <given-names>H</given-names>
+          </name>
+          <article-title>Mindfulness-based stress reduction and health benefits. A
+            meta-analysis</article-title>
+          <source>Journal of Psychosomatic Research</source>
+          <year>2004</year>
+          <volume>57</volume>
+          <fpage>35</fpage>
+          <lpage>43</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0022-3999(03)00573-7</pub-id>
+          <pub-id pub-id-type="pmid">15256293</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B19">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Chiesa</surname>
+            <given-names>A</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Serretti</surname>
+            <given-names>A</given-names>
+          </name>
+          <article-title>Mindfulness-based stress reduction for stress management in healthy people:
+            A review and meta-analysis</article-title>
+          <source>The journal of alternative and complementary medicine</source>
+          <year>2009</year>
+          <volume>15</volume>
+          <fpage>593</fpage>
+          <lpage>600</lpage>
+          <pub-id pub-id-type="doi">10.1089/acm.2008.0495</pub-id>
+          <pub-id pub-id-type="pmid">19432513</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B20">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Davidson</surname>
+            <given-names>RJ</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Kabat-Zinn</surname>
+            <given-names>J</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Schumacher</surname>
+            <given-names>J</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Rosenkranz</surname>
+            <given-names>M</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Muller</surname>
+            <given-names>D</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Santorelli</surname>
+            <given-names>SF</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Urbanowski</surname>
+            <given-names>F</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Harrington</surname>
+            <given-names>A</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Bonus</surname>
+            <given-names>K</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Sheridan</surname>
+            <given-names>JF</given-names>
+          </name>
+          <article-title>Alterations in brain and immune function produced by mindfulness
+            meditation</article-title>
+          <source>Psychosomatic Medicine</source>
+          <year>2003</year>
+          <volume>65</volume>
+          <fpage>564</fpage>
+          <lpage>570</lpage>
+          <pub-id pub-id-type="doi">10.1097/01.PSY.0000077505.67574.E3</pub-id>
+          <pub-id pub-id-type="pmid">12883106</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B21">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Tang</surname>
+            <given-names>YY</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Posner</surname>
+            <given-names>MI</given-names>
+          </name>
+          <article-title>Attention training and attention state training</article-title>
+          <source>Trends in Cognitive Sciences</source>
+          <year>2009</year>
+          <volume>13</volume>
+          <fpage>222</fpage>
+          <lpage>227</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.tics.2009.01.009</pub-id>
+          <pub-id pub-id-type="pmid">19375975</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B22">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Bush</surname>
+            <given-names>G</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Luu</surname>
+            <given-names>P</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Posner</surname>
+            <given-names>MI</given-names>
+          </name>
+          <article-title>Cognitive and emotional influences in anterior cingulate
+            cortex</article-title>
+          <source>Trends in Cognitive Sciences</source>
+          <year>2000</year>
+          <volume>4</volume>
+          <fpage>215</fpage>
+          <lpage>222</lpage>
+          <pub-id pub-id-type="doi">10.1016/S1364-6613(00)01483-2</pub-id>
+          <pub-id pub-id-type="pmid">10827444</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B23">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Lazar</surname>
+            <given-names>S</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Kerr</surname>
+            <given-names>CE</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Wasserman</surname>
+            <given-names>RH</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Gray</surname>
+            <given-names>JR</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Greve</surname>
+            <given-names>DN</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Treadway</surname>
+            <given-names>MT</given-names>
+          </name>
+          <name name-style="western">
+            <surname>McGarvey</surname>
+            <given-names>M</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Quinn</surname>
+            <given-names>BT</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Dusek</surname>
+            <given-names>JA</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Benson</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Rauch</surname>
+            <given-names>SL</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Moore</surname>
+            <given-names>CI</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Fischl</surname>
+            <given-names>B</given-names>
+          </name>
+          <article-title>Meditation experience is associated with increased cortical
+            thickness</article-title>
+          <source>Neuroreport</source>
+          <year>2005</year>
+          <volume>16</volume>
+          <fpage>1893</fpage>
+          <lpage>1897</lpage>
+          <pub-id pub-id-type="doi">10.1097/01.wnr.0000186598.66243.19</pub-id>
+          <pub-id pub-id-type="pmid">16272874</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B24">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>H&#246;lzel</surname>
+            <given-names>B</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Ott</surname>
+            <given-names>U</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Gard</surname>
+            <given-names>T</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Hempel</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Weygandt</surname>
+            <given-names>M</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Morgen</surname>
+            <given-names>K</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Vaitl</surname>
+            <given-names>D</given-names>
+          </name>
+          <article-title>Investigation of mindfulness meditation practitioners with voxel-based
+            morphometry</article-title>
+          <source>Social Cognitive and Affective Neuroscience</source>
+          <year>2008</year>
+          <volume>3</volume>
+          <fpage>55</fpage>
+          <lpage>61</lpage>
+          <pub-id pub-id-type="pmid">19015095</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B25">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Lutz</surname>
+            <given-names>A</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Slagter</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Dunne</surname>
+            <given-names>JD</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Davidson</surname>
+            <given-names>RJ</given-names>
+          </name>
+          <article-title>Attention regulation and monitoring in meditation</article-title>
+          <source>Trends in Cognitive Sciences</source>
+          <year>2008</year>
+          <volume>12</volume>
+          <fpage>163</fpage>
+          <lpage>169</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.tics.2008.01.005</pub-id>
+          <pub-id pub-id-type="pmid">18329323</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B26">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Farb</surname>
+            <given-names>NAS</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Segal</surname>
+            <given-names>ZV</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Mayberg</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Bean</surname>
+            <given-names>J</given-names>
+          </name>
+          <name name-style="western">
+            <surname>McKeon</surname>
+            <given-names>D</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Fatima</surname>
+            <given-names>Z</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Anderson</surname>
+            <given-names>AK</given-names>
+          </name>
+          <article-title>Attending to the present: mindfulness meditation reveals distinct neural
+            modes of self-reference</article-title>
+          <source>Social Cognitive and Affective Neuroscience</source>
+          <year>2007</year>
+          <volume>2</volume>
+          <fpage>313</fpage>
+          <lpage>322</lpage>
+          <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/pubmed/18985137"
+            xlink:type="simple">http://www.ncbi.nlm.nih.gov/pubmed/18985137</ext-link>
+          <pub-id pub-id-type="doi">10.1093/scan/nsm030</pub-id>
+          <pub-id pub-id-type="pmid">18985137</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B27">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Gray</surname>
+            <given-names>JA</given-names>
+          </name>
+          <article-title>Three fundamental emotion systems</article-title>
+          <source>The nature of emotion: Fundamental questions</source>
+          <year>1994</year>
+          <publisher-name>New York: Oxford University Press</publisher-name>
+          <fpage>243</fpage>
+          <lpage>247</lpage>
+        </mixed-citation>
+      </ref>
+      <ref id="B28">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <collab xlink:type="simple">Vipassana Research Institute</collab>
+          <source>Realising Change. Vipassana Meditation in Action</source>
+          <year>2003</year>
+          <publisher-name>Igatpuri, India</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B29">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Roemer</surname>
+            <given-names>L</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Orsillo</surname>
+            <given-names>SM</given-names>
+          </name>
+          <article-title>Mindfulness: A promising intervention strategy in need of further
+            study</article-title>
+          <source>Clinical Psychology Science and Practice</source>
+          <year>2003</year>
+          <volume>10</volume>
+          <fpage>172</fpage>
+          <lpage>178</lpage>
+          <pub-id pub-id-type="doi">10.1093/clipsy.bpg020</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B30">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Germer</surname>
+            <given-names>CK</given-names>
+          </name>
+          <article-title>Mindfulness: What is it? What does it matter</article-title>
+          <source>Mindfulness and psychotherapy</source>
+          <year>2005</year>
+          <publisher-name>New York: Guilford Press</publisher-name>
+          <fpage>3</fpage>
+          <lpage>27</lpage>
+        </mixed-citation>
+      </ref>
+      <ref id="B31">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Michalsen</surname>
+            <given-names>A</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Grossman</surname>
+            <given-names>P</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Lehmann</surname>
+            <given-names>N</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Knoblauch</surname>
+            <given-names>NTM</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Paul</surname>
+            <given-names>A</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Moebus</surname>
+            <given-names>S</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Budde</surname>
+            <given-names>T</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Dobos</surname>
+            <given-names>GJ</given-names>
+          </name>
+          <article-title>Psychological and quality-of-life outcomes from a comprehensive stress
+            reduction and lifestyle program in patients with coronary artery disease: results of a
+            randomized trial</article-title>
+          <source>Psychother Psychosom</source>
+          <year>2005</year>
+          <volume>74</volume>
+          <fpage>344</fpage>
+          <lpage>352</lpage>
+          <pub-id pub-id-type="doi">10.1159/000087781</pub-id>
+          <pub-id pub-id-type="pmid">16244510</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B32">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Hayes</surname>
+            <given-names>SC</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Strosahl</surname>
+            <given-names>K</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Wilson</surname>
+            <given-names>KG</given-names>
+          </name>
+          <source>Acceptance and commitment therapy</source>
+          <year>1999</year>
+          <publisher-name>Springer</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B33">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Arch</surname>
+            <given-names>JJ</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Craske</surname>
+            <given-names>MG</given-names>
+          </name>
+          <article-title>Mechanisms of mindfulness: Emotion regulation following a focused breathing
+            induction</article-title>
+          <source>Behaviour Research and Therapy</source>
+          <year>2006</year>
+          <volume>44</volume>
+          <fpage>1849</fpage>
+          <lpage>1858</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.brat.2005.12.007</pub-id>
+          <pub-id pub-id-type="pmid">16460668</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B34">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kabat-Zinn</surname>
+            <given-names>J</given-names>
+          </name>
+          <article-title>Mindfulness-Based Interventions in Context: Past, Present, and
+            Future</article-title>
+          <source>Clinical Psychology: Science &amp; Practice</source>
+          <year>2003</year>
+          <volume>10</volume>
+          <fpage>144</fpage>
+          <lpage>156</lpage>
+          <pub-id pub-id-type="doi">10.1093/clipsy.bpg016</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B35">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Kabat-Zinn</surname>
+            <given-names>J</given-names>
+          </name>
+          <source>Wherever You Go, There You Are: Mindfulness Meditation in Everyday Life</source>
+          <year>2005</year>
+          <publisher-name>New York: Hyperion %@ 1401307787</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B36">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Baer</surname>
+            <given-names>RA</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Smith</surname>
+            <given-names>GT</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Lykins</surname>
+            <given-names>E</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Button</surname>
+            <given-names>D</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Krietemeyer</surname>
+            <given-names>J</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Sauer</surname>
+            <given-names>S</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Walsh</surname>
+            <given-names>E</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Duggan</surname>
+            <given-names>D</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Williams</surname>
+            <given-names>JMG</given-names>
+          </name>
+          <article-title>Construct Validity of the Five Facet Mindfulness Questionnaire in
+            Meditating and Nonmeditating Samples</article-title>
+          <source>Assessment</source>
+          <year>2008</year>
+          <volume>15</volume>
+          <fpage>329</fpage>
+          <lpage>342</lpage>
+          <ext-link ext-link-type="uri"
+            xlink:href="http://asm.sagepub.com/content/15/3/329.abstract" xlink:type="simple"
+            >http://asm.sagepub.com/content/15/3/329.abstract</ext-link>
+          <pub-id pub-id-type="doi">10.1177/1073191107313003</pub-id>
+          <pub-id pub-id-type="pmid">18310597</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B37">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Lykins</surname>
+            <given-names>E</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Baer</surname>
+            <given-names>RA</given-names>
+          </name>
+          <article-title>Psychological Functioning in a Sample of Long-Term Practitioners of
+            Mindfulness Meditation</article-title>
+          <source>Journal of Cognitive Psychotherapy</source>
+          <year>2009</year>
+          <volume>23</volume>
+          <fpage>226</fpage>
+          <lpage>241</lpage>
+          <pub-id pub-id-type="doi">10.1891/0889-8391.23.3.226</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B38">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Rosch</surname>
+            <given-names>E</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Lloyd</surname>
+            <given-names>BB</given-names>
+          </name>
+          <source>Cognition and categorization</source>
+          <year>1978</year>
+          <publisher-name>Hoboken, NJ: John Wiley &amp; Sons Inc</publisher-name>
+        </mixed-citation>
+      </ref>
+      <ref id="B39">
+        <mixed-citation publication-type="other" xlink:type="simple">
+          <name name-style="western">
+            <surname>Adolphs</surname>
+            <given-names>R</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Damasio</surname>
+            <given-names>AR</given-names>
+          </name>
+          <article-title>The interaction of affect and cognition: A neurobiological
+            perspective</article-title>
+          <source>Handbook of affect and social cognition</source>
+          <year>2001</year>
+          <fpage>27</fpage>
+          <lpage>49</lpage>
+        </mixed-citation>
+      </ref>
+      <ref id="B40">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Bechara</surname>
+            <given-names>A</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Damasio</surname>
+            <given-names>H</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Damasio</surname>
+            <given-names>AR</given-names>
+          </name>
+          <article-title>Emotion, decision making and the orbitofrontal cortex</article-title>
+          <source>Cerebral cortex</source>
+          <year>2000</year>
+          <volume>10</volume>
+          <fpage>295</fpage>
+          <pub-id pub-id-type="doi">10.1093/cercor/10.3.295</pub-id>
+          <pub-id pub-id-type="pmid">10731224</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B41">
+        <mixed-citation publication-type="journal" xlink:type="simple">
+          <name name-style="western">
+            <surname>Ochsner</surname>
+            <given-names>KN</given-names>
+          </name>
+          <name name-style="western">
+            <surname>Gross</surname>
+            <given-names>J</given-names>
+          </name>
+          <article-title>The cognitive control of emotion</article-title>
+          <source>Trends in Cognitive Sciences</source>
+          <year>2005</year>
+          <volume>9</volume>
+          <fpage>242</fpage>
+          <lpage>249</lpage>
+          <ext-link ext-link-type="uri"
+            xlink:href="http://www.sciencedirect.com/science/article/B6VH9-4FW7R4J-1/2/30b953f69284d226783302a0b8dc70e9"
+            xlink:type="simple"
+            >http://www.sciencedirect.com/science/article/B6VH9-4FW7R4J-1/2/30b953f69284d226783302a0b8dc70e9</ext-link>
+          <pub-id pub-id-type="doi">10.1016/j.tics.2005.03.010</pub-id>
+          <pub-id pub-id-type="pmid">15866151</pub-id>
+        </mixed-citation>
+      </ref>
+      <ref id="B42">
+        <mixed-citation publication-type="book" xlink:type="simple">
+          <name name-style="western">
+            <surname>Watzlawick</surname>
+            <given-names>P</given-names>
+          </name>
+          <source>The Invented reality: how do we know what we believe we know?: contributions to
+            constructivism</source>
+          <year>1984</year>
+          <edition>1</edition>
+          <publisher-name>New York: Norton</publisher-name>
+        </mixed-citation>
+      </ref>
+    </ref-list>
+
+<ref-list>
+<title>Additional Reading</title>
+<p>Just a reference or two for testing:</p>
+<ref>
+<!-- ========== -->
+<mixed-citation>A citation ain't nothing but a 
+sandwich &mdash; personal communication 
+</mixed-citation>
+</ref>
+<!-- ========== -->
+<ref>
+<mixed-citation>
+<name>
+<surname>Piggy</surname> 
+<prefix>Ms.</prefix></name>
+<article-title>Can't Help Lovin&rsquo; That 
+Frog of Mine</article-title>;
+<source>Swine Review</source>, <issue>145</issue>:
+<fpage>12</fpage>&ndash;<lpage>24</lpage>; 
+<year>2003</year>. 
+<trans-title xml:lang="en">Ant-cay Elp-hay 
+Ovin&rsquo;-lay At-thay Og-fray of-ay Ine-may</trans-title>
+</mixed-citation>
+</ref>
+</ref-list>
+</back>
+
+</book-part>

@@ -1,0 +1,1455 @@
+<!-- ============================================================= -->
+<!--  MODULE:    Book Interchange DTD Customize Content and        -->
+<!--             Attributes Module                                 -->
+<!--  VERSION:   BITS 2.0                                          -->
+<!--  DATE:      June 2015                                         -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                        TYPICAL INVOCATION                     -->
+<!--
+"-//NLM//DTD BITS Book Interchange DTD Customize Content and Attributes Module v2.0 20151225//EN"
+Delivered as file "BITS-bookcustom-models2.ent"                    -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Book Interchange Tag Suite                        -->
+<!--                                                               -->
+<!-- PURPOSE:    To declare the Parameter Entities (PEs) used to   -->
+<!--             over-ride the content models, parts of content    -->
+<!--             models, or attribute lists of the JATS DTD Suite  -->
+<!--                                                               -->
+<!--             Or-groups within models should use mixes or       -->
+<!--             classes rather than name elements directly.       -->
+<!--                                                               -->
+<!--             Note: Since PEs must be declared before they      -->
+<!--             are used, this module must be called before the   -->
+<!--             content modules that declare elements.            -->
+<!--                                                               -->
+<!-- TAG SET SPONSOR                                               -->
+<!--             National Center for Biotechnology                 -->
+<!--                Information (NCBI)                             -->
+<!--             National Library of Medicine (NLM)                -->
+<!--                                                               -->
+<!-- CREATED FOR:                                                  -->
+<!--             This DTD was created as a superset customization  -->
+<!--             of the ANSI/NISO JATS Z39.96-2012 Version 1.0     -->
+<!--             Journal Article Tag Set.                          -->
+<!--                                                               -->
+<!--             Digital archives and publishers may use the       -->
+<!--             DTD as is for markup of books or book-like        -->
+<!--             material for archiving and transferring           -->
+<!--             such material between archives or they may create -->
+<!--             a custom XML DTD from the BITS Suite for          -->
+<!--             these purposes.                                   -->
+<!--                                                               -->
+<!--             This DTD is in the public domain. An organization -->
+<!--             that wishes to create its own DTD from the suite  -->
+<!--             may do so without permission from NLM.            -->
+<!--                                                               -->
+<!--             The suite has been set up to be extended using a  -->
+<!--             new DTD file and new DTD-specific customization   -->
+<!--             modules to redefine the many Parameter Entities.  -->
+<!--             Do not modify the suite directly or redistribute  -->
+<!--             modified versions of the suite.                   -->
+<!--                                                               -->
+<!--             In the interest of maintaining consistency and    -->
+<!--             clarity for potential users, NLM requests:        -->
+<!--                                                               -->
+<!--             1. If you create a DTD from the BITS DTD Suite    -->
+<!--                and intend to stay compatible with the suite,  -->
+<!--                then please include the following statement    -->
+<!--                as a comment in all of your DTD modules:       -->
+<!--                   "Created from, and fully compatible with,   -->
+<!--                    the Book Interchange Tag Suite (BITS).     -->
+<!--                                                               -->
+<!--             2. If you alter one or more modules of the suite, -->
+<!--                then please rename your version and all its    -->
+<!--                modules to avoid any confusion with the        -->
+<!--                original suite. Also, please include the       -->
+<!--                following statement as a comment in all your   -->
+<!--                DTD modules:                                   -->
+<!--                   "Based in part on, but not fully compatible -->
+<!--                    with, the Book Interchange Tag Suite       -->
+<!--                    (BITS)."                                   -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             April 2012                                        -->
+<!--                                                               -->
+<!-- CREATED BY: Mulberry Technologies, Inc. for the National      -->
+<!--             National Center for Biotechnology Information     -->
+<!--             (NCBI), a center of the US National Library of    -->
+<!--             Medicine (NLM).                                   -->
+<!--                                                               -->
+<!--             The BITS Book Interchange DTD is built from the   -->
+<!--             Journal Archiving and Interchange DTD of the      -->
+<!--             ANSI/NISO Journal Article Tag Suite (JATS)        -->
+<!--             Version 1.1d1 (Z39.96-2015).                      -->
+<!--                                                               -->
+<!--             Suggestions for refinements and enhancements to   -->
+<!--             this DTD should be sent in email to:              -->
+<!--                 bits@ncbi.nlm.nih.gov                         -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DTD VERSION/CHANGE HISTORY                 -->
+<!-- ============================================================= -->
+<!--
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+    =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-12-25)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-12-15)
+
+     JATS is a continuing maintenance NISO Standard, which
+     requires voting by the ANSI and NISO memberships to be changed. 
+     JATS 1.1 was approved in late 2015, and BITS modified to use
+     the most recent version. No other changes to BITS were made.
+ 
+ 16. BITS remained version "2.0" but became "v2.0 20151225"
+     JATS became version "1.1" and "v1.1 20151215"
+
+    =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-03-15)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-03-01)
+
+     BITS was modified, based on user feedback collected in 2014 
+     and January/February 2015, according to the decisions
+     made by the BITS Working Group. This DTD represents current 
+     BITS and an interim version of the non-normative JATS DTD 
+     Suite (version 1.1), as an indication to JATS users of 
+     the decisions that have been made by the JATS Standing
+     Committee. 
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+ 15. COUNTING ELEMENTS - The counting elements (word-count>,
+     <page-count>, etc. have all been replaced by book-level,
+     book-specific counting elements <book-word-count>, 
+     <book-page-count>, etc. which have #PCDATA models instead
+     of EMPTY models.
+
+ 14. RUBY BASE MODEL - Changed Ruby Base model to include 
+     all-phase.
+
+ 13. SECTION METADATA- Added <related-article> and 
+     <related-object> to model of <sec-meta>.
+
+ 12. FIG-GROUP- Added <attrib> and <permissions> to the end of
+     the <fig-group> model, as they are on <fig>.
+
+ 11. ATTRIB- Added the following elements to the model of
+     <attrib>:
+      - collab
+      - element-citation
+      - mixed-citation
+      - name
+      - string-name
+
+ 10. VERSE-LINE- Added <label> to the elements allowed within
+     <verse-line> to hold the number for numbered verses.
+
+  9. DISP QUOTE NOW LARGER - Added optional section-level material
+     to <disp-quote>, as larger quotes have been found, bigger
+     than just paragraphs.
+
+  8. GLOSSARY - Added optional <fn-group> to the end of
+     <glossary>
+
+  7. ATTRIB - The following elements will be allowed inside
+     the mixed model of <attrib>:
+      - collab
+      - element-citation
+      - mixed-citation
+      - name
+      - string-name
+
+  6. CONTRIBUTORS - Added <contrib-group> to the beginning of:
+       - <fig>
+       - <fig-group>
+       - <table-wrap>
+       - <table-wrap-group>
+
+  5. BITS became version "2.0" and   "v2.0 20150630"
+     JATS became version "1.1" and "v1.1 20150301"
+
+     =============================================================
+     BITS Version 1.1                (DAL/BTU) v1.1    (2014-09-30)
+     JATS Version 1.1d2              (DAL/BTU) v1.1d2  (2014-09-30)
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1d2 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+     This catalog represents an interim version of the
+     non-normative JATS DTD Suite, as an indication to JATS users
+     the decisions that have been made by the JATS Standing
+     Committee.
+
+ 4 . RUBY MODEL CHANGED TO MATCH HTML5
+     Changed the Ruby content model to allow only a single
+     Ruby annotation on a single Ruby base:
+       (rb, (rt | (rp, rt, rp)) )
+     The Ruby textual annotation may take a pair of
+     Ruby parentheses, but these are optional.
+     Changed Ruby Base model to include all-phase
+
+ 3 . NEW ATTRIBUTES FOR PUB-ID
+      - Added the CDATA attribute @assigning-authority to
+        record the authority (such as CrossRef) that created the
+        identifier 
+      - Added the linking attributes (optional version), 
+        so that a <pub-id> that is, for example, a DOI, can 
+        carry the linking attributes and be made into a live link.
+        In this use of <pub-id>, the element is acting as both an 
+        identifier and a link.
+
+  2. STATEMENT - Added new statement.class inside the model
+     for <statement>, so that statements can be recursive.
+
+  1. BITS became version "1.1" and   "v1.1 20140930//EN"
+     JATS became version "1.1d2" and "v1.1d2 20140930//EN"
+
+     =============================================================
+                                                                   -->
+
+
+<!-- ============================================================= -->
+<!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     -->
+<!-- ============================================================= -->
+
+
+<!--                    DTD VERSION                                -->
+<!--                    What version of this DTD was used to make
+                        the document instance under consideration.
+                        Note that this is a fixed value that should
+                        change every time the DTD changes versions or
+                        revisions.                                 -->
+<!ENTITY % dtd-version
+            "dtd-version
+                        CDATA                          #FIXED '2.0'" >
+
+
+<!-- ============================================================= -->
+<!--                    INLINE MIXES TO OVER-RIDE CONTENT MODELS   -->
+<!--                    (ELEMENTS TO BE ADDED TO #PCDATA IN MODELS)-->
+<!-- ============================================================= -->
+
+
+<!--                    ABBREVIATION ELEMENTS                      -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <abbrev> element                       -->
+<!ENTITY % abbrev-elements
+                        "| %all-phrase; | %def.class;"               >
+
+
+<!--                    AFFILIATION ELEMENTS                       -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <aff> element                          -->
+<!ENTITY % aff-elements "| %address.class; | %all-phrase; |
+                           %break.class; | %label.class;"            >
+
+
+<!--                    ALTERNATE TITLE ELEMENTS                   -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a paragraph <alt-title>.
+                        Note that for alternate titles, unlike
+                        other titles, the <label> element must be
+                        built in and is not outside the title.      -->
+<!ENTITY % alt-title-elements
+                        "| %all-phrase; | %break.class; |
+                         %label.class;"                              >
+
+
+<!--                    ANONYMOUS ELEMENTS                         -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an <anonymous> element                     -->
+<!ENTITY % anonymous-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    ARTICLE TITLE ELEMENTS                     -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <article-title> element.               -->
+<!ENTITY % article-title-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    ATTRIBUTION ELEMENTS                       -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an attribution
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-phrase; is an
+                        inline mix, the OR bar is already there.   -->
+<!ENTITY % attrib-elements
+                        "%emphasized-text; | %attrib.class;"         >
+
+
+<!--                    CHEMICAL STRUCTURE ELEMENTS                -->
+<!--                    Those elements that may mix with the data
+                        characters inside a Chemical Structure
+                        <chem-struct>                              -->
+<!ENTITY % chem-struct-elements
+                        "| %access.class; |  %all-phrase; |
+                         %break.class; | %id.class; |
+                         %label.class; | %list.class; |
+                         %simple-display-noalt.class;"               >
+
+
+<!--                    CITATION ELEMENTS                          -->
+<!--                    Content for both types of citation. These
+                        elements may be mixed with #PCDATA in the
+                        <mixed-citation> element (in which all
+                        punctuation and spacing are left intact), and
+                        they also constitute the choices that can be
+                        used to form the all-element-content of the
+                        <element-citation> element (in which
+                        punctuation and spacing are removed).
+                        Design Note: All inline mixes begin with an
+                        OR bar.                                    -->
+<!ENTITY % citation-elements
+                        "%article-link.class; | %appearance.class; |
+                         %citation-additions.class; |
+                         %emphasis.class;  | %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %math.class; |  %phrase.class; |
+                         %references.class; | %simple-link.class; |
+                         %subsup.class; |  %x.class;"                >
+
+
+<!--                    COLLABORATIVE (GROUP) AUTHOR ELEMENTS      -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <collab> element. This is essentially
+                        %all-phrase; plus contrib-info and break.
+                        All-phase is not used because of
+                        duplication clashes with the
+                        -contrib-info.class;                       -->
+<!ENTITY % collab-elements
+                        "| %article-link.class; | %address.class; |
+                         %appearance.class; | %break.class; |
+                         %contrib-group.class; |
+                         %contrib-info.class; |
+                         %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %math.class; |
+                         %phrase.class; | %subsup.class; | %x.class;">
+
+
+<!--                    COMPOUND KEYWORD PART ELEMENTS             -->
+<!--                    Elements to be mixed with data characters
+                        inside the <compound-kwd-part> element     -->
+<!ENTITY % compound-kwd-part-elements
+                        "| %break.class; | %all-phrase;"             >
+
+
+<!--                    CONFERENCE DATE ELEMENTS                   -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <conf-date> element                    -->
+<!ENTITY % conf-date-elements
+                        "| %date-parts.class; | %x.class;"           >
+
+
+<!--                    COMMENT ELEMENTS                           -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Comment in a Citation <comment> element.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-phrase; is an
+                        inline mix, the OR bar is already there.   -->
+<!ENTITY % comment-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    COPYRIGHT HOLDER ELEMENTS                  -->
+<!--                    Elements to be mixed with data characters
+                        inside the content model for the
+                        <copyright-holder> element.                -->
+<!ENTITY % copyright-holder-elements
+                        "| %institution-wrap.class; | %subsup.class; |
+                         %x.class;"                                  >
+
+
+<!--                    COPYRIGHT STATEMENT ELEMENTS               -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <copyright-statement>                  -->
+<!ENTITY % copyright-statement-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    CORRESPONDENCE INFORMATION ELEMENTS        -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the correspondence information.            -->
+<!ENTITY % corresp-elements
+                        "| %address.class; | %all-phrase; |
+                           %break.class; | %label.class;"            >
+
+
+<!--                    COUNTS MODEL                               -->
+<!--                    Content model for the <counts> element.    -->
+<!ENTITY % counts-model "(book-count*, book-fig-count?, 
+                          book-table-count?,  book-equation-count?, 
+                          book-ref-count?, book-page-count?, 
+                          book-word-count?)"                         >
+
+
+<!--                    COUNTRY ELEMENTS                           -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the country element.                       -->
+<!ENTITY % country-elements
+                        "| %x.class;"                                >
+
+
+<!--                    DATE IN CITATION ELEMENTS                  -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the Date Inside Citation <date-in-citation>
+                        element                                    -->
+<!ENTITY % date-in-citation-elements
+                        "| %date-parts.class; | %emphasis.class; |
+                           %x.class;"                                >
+
+
+<!--                    FORMULA, DISPLAY ELEMENTS                  -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <disp-formula>                         -->
+<!ENTITY % disp-formula-elements
+                        "| %all-phrase; | %abstract.class; |
+                         %access.class; | %break.class; |
+                         %display-back-matter.class; |
+                         %kwd-group.class; | %label.class; |
+                         %simple-display-noalt.class;"               >
+
+
+<!--                    EMAIL ADDRESS ELEMENTS                     -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <email> element                        -->
+<!ENTITY % email-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    ET AL ELEMENTS                             -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an <etal> element                          -->
+<!ENTITY % etal-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    EXTERNAL LINK ELEMENTS                     -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        an <ext-link>                              -->
+<!ENTITY % ext-link-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    FUNDING STATEMENT ELEMENTS                 -->
+<!--                    Model for the <funding-statement> element  -->
+<!ENTITY % funding-statement-elements
+                        "| %all-phrase; | %funding.class;"           >
+
+
+<!--                    FORMULA, INLINE ELEMENTS                   -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <inline-formula> element.              -->
+<!ENTITY % inline-formula-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    INLINE SUPPLEMENTARY MATERIAL ELEMENTS     -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <inline-supplementary-material> element-->
+<!ENTITY % inline-supplementary-material-elements
+                        "| %access.class; | %all-phrase;"            >
+
+
+<!--                    INSTITUTION NAME ELEMENTS                  -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <institution> element                  -->
+<!ENTITY % institution-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    ISBN ELEMENTS                              -->
+<!--                    Elements for use with data characters inside
+                        the model for the <isbn> element           -->
+<!ENTITY % isbn-elements
+                        "| %x.class;"                                >
+
+
+<!--                    ISSN ELEMENTS                              -->
+<!--                    Elements for use with data characters inside
+                        the model for the <issn> element           -->
+<!ENTITY % issn-elements
+                        "| %x.class;"                                >
+
+
+<!--                    ISSN-L ELEMENTS                            -->
+<!--                    Elements for use with data characters inside
+                        the model for the <issn-l> element         -->
+<!ENTITY % issn-l-elements
+                        "| %x.class;"                                >
+
+
+<!--                    ISSUE TITLE ELEMENTS                       -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <issue-title> element                  -->
+<!ENTITY % issue-title-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    KEYWORD CONTENT ELEMENTS                   -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a keyword.                                 -->
+<!ENTITY % kwd-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    LABEL ELEMENTS                             -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <label> element                        -->
+<!ENTITY % label-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    LINK ELEMENTS                              -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        linking element such as <xref>, <target>,
+                        and <ext-link>                             -->
+<!ENTITY % link-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    LONG DESCRIPTION ELEMENTS                  -->
+<!--                    Elements to be mixed with data characters
+                        inside the <long-desc> element             -->
+<!ENTITY % long-desc-elements
+                        "| %x.class;"                                >
+
+
+<!--                    METADATA DATA NAME ELEMENTS                -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <meta-name> element                    -->
+<!ENTITY % meta-name-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    METADATA DATA VALUE ELEMENTS               -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <meta-value> element                   -->
+<!ENTITY % meta-value-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    NAMED CONTENT ELEMENTS                     -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <named-content> element                -->
+<!ENTITY % named-content-elements
+                        "| %all-phrase; |
+                         %block-display-noalt.class; |
+                         %block-math.class; | %list.class; |
+                         %rest-of-para.class;"                       >
+
+
+<!--                    PARAGRAPH ELEMENTS                         -->
+<!--                    Elements that may be used within a paragraph
+                        in a mixed content model with #PCDATA.
+                        Design Note: There is a major overlap between
+                        this parameter entity and the mix for elements
+                        that are at the same level as a paragraph.
+                        Inline elements appear only inside a
+                        paragraph, but block elements such as quotes
+                        and lists may appear either within a
+                        paragraph or at the same level as a
+                        paragraph. This serves a requirement in a
+                        repository DTD, since some incoming material
+                        will have restricted such elements to only
+                        inside a paragraph, some incoming material
+                        will have restricted them to only outside a
+                        paragraph and some may allow them in both
+                        places. Thus the DTD must allow for them to
+                        be in either or both.                      -->
+<!ENTITY % p-elements   "| %all-phrase; |
+                         %block-display-noalt.class; |
+                         %block-math.class; | %citation.class; |
+                         %funding.class; | %list.class; |
+                         %rest-of-para.class;"                       >
+
+
+<!--                    PERSON GROUP ELEMENTS                      -->
+<!--                    Elements to be mixed with #PCDATA characters
+                        within the Person Group element
+                        (name class include <string-name> in this
+                        tag set.-->
+<!ENTITY % person-group-elements
+                        "| %name.class; | %person-group-info.class; |
+                          %x.class;"                                 >
+
+
+<!--                    PREFORMATTED TEXT ELEMENTS                 -->
+<!--                    Elements that may be used, along with data
+                        characters, inside the content model for the
+                        <preformat> element, in which whitespace,
+                        such as tabs, line feeds, and spaces will
+                        be preserved.                              -->
+<!ENTITY % preformat-elements
+                        "| %access.class; | %all-phrase; |
+                         %display-back-matter.class; "               >
+
+
+<!--                    PRODUCT ELEMENTS                           -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <product> element
+                        (Note: all-phrase was replicated and not
+                        used directly because the article-link.class
+                        elements are repeated in -references.class
+                        and therefore cause duplication.           -->
+<!ENTITY % product-elements
+                        "| %article-link.class; |
+                         %appearance.class; | %break.class; |
+                         %citation-additions.class; |
+                         %emphasis.class;  |
+                         %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %math.class; | %phrase.class; |
+                         %price.class; | %references.class; |
+                         %simple-link.class; |
+                         %subsup.class; | %x.class;"                 >
+
+
+<!--                    PUBLISHER'S LOCATION ELEMENTS              -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <publisher-loc> element                -->
+<!ENTITY % publisher-loc-elements
+                        "| %address.class; | %all-phrase; |
+                         %break.class;"                              >
+
+
+<!--                    RELATED ARTICLE ELEMENTS                   -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <related-article> element.
+                        (Note: all-phrase was replicated and not
+                        used directly because the article-link.class
+                        elements are repeated in -references.class
+                        and therefore cause duplication.)          -->
+<!ENTITY % related-article-elements
+                        " | %article-link.class; |
+                         %appearance.class; | %break.class; |
+                         %citation-additions.class; |
+                         %emphasis.class; | %inline-display.class; |
+                         %inline-math.class; | %journal-id.class; |
+                         %label.class; | %math.class; |
+                         %phrase.class; | %references.class; |
+                         %simple-link.class; |
+                         %subsup.class; | %x.class;"                 >
+
+
+<!--                    RELATED OBJECT ELEMENTS                    -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <related-object> element.
+                        (Note: all-phrase was replicated and not
+                        used directly because the article-link.class
+                        elements are repeated in -references.class
+                        and therefore cause duplication.)          -->
+<!ENTITY % related-object-elements
+                        "| %article-link.class; |
+                         %appearance.class; | %break.class; |
+                         %citation-additions.class; |
+                         %emphasis.class;  |
+                         %inline-display.class; |
+                         %inline-math.class; | %label.class; |
+                         %math.class; | %phrase.class; |
+                         %references.class; |
+                         %simple-link.class; |
+                         %subsup.class; | %x.class;"                 >
+
+
+<!--                    ROLE ELEMENTS                              -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a <role>
+                        Design Note: All inline mixes begin with an
+                        OR bar; since %rendition-plus; is an
+                        inline mix, the OR bar is already there.   -->
+<!ENTITY % role-elements
+                        "| %all-phrase;"                             >
+
+
+<!--                    SELF-URI ELEMENTS                          -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <self-uri> element                     -->
+<!ENTITY % self-uri-elements
+                        "| %all-phrase;"                             >
+
+
+
+<!--                    SIGNATURE BLOCK ELEMENTS                   -->
+<!--                    Elements to be mixed with data characters
+                        inside the content model for the
+                        <sig-block> element.                       -->
+<!ENTITY % sig-block-elements
+                        "| %all-phrase; | %break.class; |
+                         %contrib.class; |
+                         %just-base-display-noalt.class; |
+                         %person-group-info.class; | %sig.class;"    >
+
+
+<!--                    SIGNATURE ELEMENTS                         -->
+<!--                    Elements to be mixed with data characters
+                        inside the content model for the
+                        <sig> element.                             -->
+<!ENTITY % sig-elements "| %all-phrase; | %break.class; |
+                         %just-base-display-noalt.class;"            >
+
+
+<!--                    SIZE ELEMENTS                              -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the size element.                          -->
+<!ENTITY % size-elements
+                        "| %x.class;"                                >
+
+
+<!--                    SOURCE ELEMENTS                            -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <source> element                       -->
+<!ENTITY % source-elements
+                        "| %all-phrase; | %break.class;"             >
+
+<!--                    SPEAKER ELEMENTS                           -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a speaker.                                 -->
+<!ENTITY % speaker-elements
+                        "| %all-phrase; | %person-name.class;"       >
+
+
+<!--                    STANDARDS ORGANIZATION ELEMENTS            -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        <std-organization>.                        -->
+<!ENTITY % std-organization-elements
+                        "| %all-phrase; | %institution-wrap.class; |
+                         %break.class;"                              >
+
+
+<!--                    STRING DATE ELEMENTS                       -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <string-date> element                  -->
+<!ENTITY % string-date-elements
+                        "| %all-phrase; | %date-parts.class;"        >
+
+
+<!--                    STRING NAME ELEMENTS                       -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <string-name> element                  -->
+<!ENTITY % string-name-elements
+                        "| %all-phrase; | %person-name.class;"       >
+
+
+<!--                    STRUCTURAL TITLE ELEMENTS                  -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <title> element                        -->
+<!ENTITY % struct-title-elements
+                        "| %all-phrase; | %break.class; |
+                         %citation.class;"                           >
+
+
+<!--                    STYLED CONTENT ELEMENTS                    -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        the <styled-content> element               -->
+<!ENTITY % styled-content-elements
+                        "| %all-phrase; |
+                         %block-display-noalt.class;|
+                         %block-math.class; | %list.class; |
+                         %rest-of-para.class;"                       >
+
+
+<!--                    SUBJECT GROUPING NAME ELEMENTS             -->
+<!--                    Elements that may be used, along with data
+                        characters inside the content model of the
+                        <subject> element                          -->
+<!ENTITY % subject-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    SUPPLEMENT ELEMENTS                        -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a <supplement>
+                        JATS Chg: Added <label>, because there is
+                        a title and all title may take labels.
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an inline
+                        mix, the OR bar is already there.          -->
+<!ENTITY % supplement-elements
+                        "%simple-text; | %contrib-group.class; |
+                         %label.class; | %title.class;"              >
+
+<!--                    DEFINITION LIST: TERM ELEMENTS             -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a <term>.                                  -->
+<!ENTITY % term-elements
+                        "| %all-phrase; | %block-math.class; |
+                         %chem-struct-wrap.class; |
+                         %simple-display-noalt.class;"               >
+
+
+<!--                    TEXTUAL FORM ELEMENTS                      -->
+<!--                    Model for the <textual-form> element.
+                        Added <label>                              -->
+<!ENTITY % textual-form-elements
+                        "| %emphasis.class; |
+                         %inline-display-noalt.class; |
+                         %label.class; | %math.class; |
+                         %phrase-content.class; | %subsup.class;"    >
+
+
+<!--                    TITLE ELEMENTS                             -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        title elements such as <title>, <subtitle>,
+                        <trans-title>, etc.                        -->
+<!ENTITY % title-elements
+                        "| %all-phrase; | %break.class;"             >
+
+
+<!--                    USER SPECIFIC AD-HOC METADATA ELEMENTS     -->
+<!--                    An empty parameter entity to hold
+                        user-specified ad-hoc metadata. This is
+                        an escape hatch to allow any other metadata
+                        elements inside a BITS document.
+                        Design Note: All inline mixes begin with an
+                        OR bar.                                    -->
+<!ENTITY % user-specific-meta-elements
+                        ""                                           >
+
+
+<!--                    VERSE-LINE ELEMENTS                        -->
+<!--                    The elements that can be included along with
+                        data characters inside the content model of
+                        a <verse-line>
+                        Design Note: All inline mixes begin with an
+                        OR bar, but since %simple-text; is an inline
+                        mix, the OR bar is already there.          -->
+<!ENTITY % verse-line-elements
+                        "%simple-text; | %label.class;"              >
+
+
+<!--                    X ELEMENTS                                 -->
+<!--                    Elements for use inside the <x> element    -->
+<!ENTITY % x-elements   "| %emphasis.class; | %phrase-content.class; |
+                         %subsup.class; | %x.class;"                 >
+
+<!-- ============================================================= -->
+<!--                    RUBY MARKUP                                -->
+<!-- ============================================================= -->
+
+
+<!--                    RUBY BASE ELEMENTS                         -->
+<!--                    Those elements that may mix with the data
+                        characters inside a Ruby Base <rb> 
+                        element.                                   -->
+<!ENTITY % rb-elements  "| %all-phrase;"                             >
+
+
+<!-- ============================================================= -->
+<!--                    DUPLICATES NEEDED FOR OVER-RIDES           -->
+<!--                    (models unchanged from common.ent but      -->
+<!--                     needed below)                             -->
+<!-- ============================================================= -->
+
+
+<!--                    CONTENT MODEL FOR AN UNTITLED SECTION      -->
+<!--                    The model for a section-like structure that
+                        may or may not have an initial title       -->
+<!ENTITY % sec-opt-title-model
+                        "(sec-meta?,
+                          label?, title?, subtitle*, alt-title*,
+                          (%para-level;)*, (%sec-level;)*,
+                          (%sec-back-matter-mix;)* )"                >
+
+<!-- ============================================================= -->
+<!--                    OVER-RIDES OF CONTENT MODELS (FULL MODELS) -->
+<!-- ============================================================= -->
+
+
+<!--                    ACKNOWLEDGMENTS MODEL                      -->
+<!--                    Content model for the <ack> element        -->
+<!ENTITY % ack-model    "((%id.class;)*, %sec-opt-title-model;)"     >
+
+
+<!--                    ADDRESS MODEL                              -->
+<!--                    Content model for the <address> element    -->
+<!ENTITY % address-model
+                        "(%address.class; | %address-link.class; |
+                          %label.class; | %x.class;)*"               >
+
+
+<!--                    APPENDIX MODEL                             -->
+<!--                    Content model for the <app> element. The
+                        section model already contains parentheses.
+                        Made initial <title> optional.             -->
+<!ENTITY % app-model    "((%id.class;)*, %sec-opt-title-model;,
+                           permissions?)"                            >
+
+
+<!--                    APPENDIX GROUP MODEL                       -->
+<!--                    Content model for the <app-group> element  -->
+<!ENTITY % app-group-model
+                        "(label?, title?, subtitle*, alt-title*,
+                          (%abstract.class;)*, (%kwd-group.class;)*,
+                          (%para-level;)*,
+                          (%app.class; | %ref-list.class;)*)"        >
+
+
+<!--                    AUTHOR COMMENT MODEL                       -->
+<!--                    Content model for the <author-comment>
+                        element.
+                        JATS Chg: Added <label>.                   -->
+<!ENTITY % author-comment-model
+                        "(label?, title?, (%just-para.class;)+ )"    >
+
+
+<!--                    AUTHOR NOTES MODEL                         -->
+<!--                    Content model for an <author-notes> element.
+                                                                   -->
+<!ENTITY % author-notes-model
+                        "(label?, title?,
+                          (%corresp.class; | %fn-link.class; |
+                           %just-para.class; | %x.class;)+ )"        >
+
+
+<!--                    BIOGRAPHY MODEL                            -->
+<!--                    Content model for the <bio> element        -->
+<!ENTITY % bio-model    "((%id.class;)*, %sec-opt-title-model;)"     >
+
+
+<!--                    CONFERENCE MODEL                           -->
+<!--                    Content model for the <conference> element -->
+<!ENTITY % conference-model
+                        "(%conference.class; | %x.class;)*"          >
+
+
+<!--                    CONTRIBUTOR GROUP MODEL                    -->
+<!--                    Content model for the <title-group> element-->
+<!ENTITY % contrib-group-model
+                        "(%contrib.class; | %contrib-info.class; |
+                          %x.class;)+"                               >
+
+
+<!--                    CONTRIBUTOR MODEL                          -->
+<!--                    Content model for the <contrib> element    -->
+<!ENTITY % contrib-model
+                        "(%contrib-id.class; | %name.class; |
+                          %degree.class; | %contrib-info.class; |
+                          %x.class;)* "                              >
+
+
+<!--                    CUSTOM METADATA GROUP MODEL                -->
+<!--                    Content model for the <custom-meta-group>
+                        element.
+                        JATS Chg: Added the parameter entity
+                        user-specific-meta-elements.               -->
+<!ENTITY % custom-meta-group-model
+                        "(custom-meta
+                          %user-specific-meta-elements;)+"           >
+
+
+<!--                    DEFINITION LIST: DEFINITION ITEM MODEL     -->
+<!--                    Content model of a <def-item>              -->
+<!ENTITY % def-item-model
+                        "(label?, term*, (%def.class; | %x.class;)* )"
+                                                                     >
+
+<!--                    DEFINITION LIST MODEL                      -->
+<!--                    Content model for the <def-list> element   -->
+<!ENTITY % def-list-model
+                        "(label?, title?, term-head?, def-head?,
+                          (%def-item.class; | %x.class;)*,
+                          (%def-list.class;)* )"                     >
+
+
+<!--                    QUOTE, DISPLAYED MODEL                     -->
+<!--                    Content model for the Display Quote element-->
+<!ENTITY % disp-quote-model
+                        "(label?, title?, 
+                          (%para-level;)*, (%sec-level;)*,
+                          (%display-back-matter.class;)* )"          >
+
+
+<!--                    FIGURE-LIKE CONTENT MODEL                  -->
+<!--                    Content model for the Figure element and any
+                        similarly structured elements              -->
+<!ENTITY % fig-model    "((%id.class;)*, label?, (%caption.class;)*,
+                          (%contrib-group.class;)*, 
+                          (%abstract.class;)*, (%kwd-group.class;)*,
+                          (%access.class; | %address-link.class;)*,
+                          (%block-math.class; |
+                           %chem-struct-wrap.class; |
+                           %intable-para.class; |
+                           %just-table.class; | %just-para.class; |
+                           %list.class; | %simple-display.class;)*,
+                          (%display-back-matter.class;)* )"          >
+
+
+<!--                    FIGURE GROUP MODEL                         -->
+<!--                    Content model for a Figure Group element   -->
+<!ENTITY % fig-group-model
+                        "((%id.class;)*, label?, (%caption.class;)?,
+                          (%contrib-group.class;)*, 
+                          (%abstract.class;)*, (%kwd-group.class;)*, 
+                          (%access.class; | %address-link.class;)*,
+                          (%fig-display.class; |
+                           %just-base-display.class;)*,
+                          (%display-back-matter.class;)* )"          >
+
+
+<!--                    FOOTNOTE GROUP MODEL                       -->
+<!--                    Content model for the <fn-group> element
+                        Added an <x> as alternative to <fn>.       -->
+<!ENTITY % fn-group-model
+                        "(label?, title?,
+                          (%fn-link.class; | %x.class;)+ )"          >
+
+
+<!--                    GLOSSARY MODEL                             -->
+<!--                    Content model for the <glossary> element   -->
+<!ENTITY % glossary-model
+                        "(label?, title?, (%para-level;)*, glossary*,
+                          fn-group?)"                                >
+
+
+<!--                    KEYWORD GROUP MODEL                        -->
+<!--                    Content model for a <kwd-group> element    -->
+<!ENTITY % kwd-group-model
+                        "(label?, title?,
+                          ((%kwd.class; | %x.class;)+ |
+                            %unstructured-kwd-group.class; ) )"      >
+
+
+<!--                    LIST MODEL                                 -->
+<!--                    Content model for the <list> element       -->
+<!ENTITY % list-model   "(label?, title?,
+                          (%list-item.class; | %x.class;)+ )"        >
+
+
+<!--                    NOTES MODEL                                -->
+<!--                    Content model for the <notes> element      -->
+<!ENTITY % notes-model  "((%id.class;)*, %sec-opt-title-model;)"     >
+
+
+<!--                    PUBLICATION DATE MODEL                     -->
+<!--                    Content model for the element <pub-date>   -->
+<!ENTITY % pub-date-model
+                        "(%date-parts.class; | %string-date.class; |
+                          %x.class;)+"                               >
+
+
+<!--                    RUBY WRAPPER Model                         -->
+<!--                    Content model for the <ruby> element       -->
+<!ENTITY % ruby-model   "(rb, (rt | (rp, rt, rp)) )"                 >
+
+
+<!--                    REFERENCE ITEM MODEL                       -->
+<!--                    Content model for the <ref> element        -->
+<!ENTITY % ref-model    "(label?, (%citation.class; | %note.class; |
+                          %x.class;)+ )"                             >
+
+
+<!--                    REFERENCE LIST MODEL                       -->
+<!--                    Content model for the <ref-list> element   -->
+<!ENTITY % ref-list-model
+                        "((%id.class;)*, label?, title?,
+                          (%para-level; | %ref.class;)*,
+                          (%ref-list.class;)* )"                     >
+
+
+<!--                    CONTENT MODEL FOR A STRUCTURAL SECTION     -->
+<!--                    The model for a section that requires that a
+                        either <title> or a <label> (which in some
+                        journals takes the place of a title) must be
+                        present. One or the other must be present
+                        for autogeneration of a Table of Contents or
+                        other navigation.
+                        Chg from Archiving: added <subtitle> and
+                        <alt-title> for, for example, ToC title.   -->
+<!ENTITY % sec-model    "((%id.class;)*, sec-meta?,
+                          label?, title?, subtitle*, alt-title*,
+                          (%para-level;)*, (%sec-level;)*,
+                          (%sec-back-matter-mix;)* )"                >
+
+
+<!--                    CONTENT MODEL FOR A SECTION METADATA       -->
+<!--                    Content model for the <sec-meta> element   -->
+<!ENTITY % sec-meta-model
+                        "((%contrib-group.class;)*, 
+                          (%abstract.class;)*, (%kwd-group.class;)*,
+                          (%related-article.class;)*,
+                          permissions?)"                             >
+
+
+<!--                    STATEMENT, FORMAL MODEL                    -->
+<!--                    Content model for the <statement> element  -->
+<!ENTITY % statement-model
+                        "((%id.class;)*, label?, title?,
+                          (%just-para.class; |%statement.class;)+,
+                          (%display-back-matter.class;)*)"           >
+
+
+<!--                    TABLE WRAPPER CONTENT MODEL                -->
+<!--                    Content model for the container element that
+                        surrounds the standard table models for row
+                        and columns.                               -->
+<!ENTITY % table-wrap-model
+                        "((%id.class;)*, label?, (%caption.class;)?,
+                          (%contrib-group.class;)*, 
+                          (%abstract.class;)*, (%kwd-group.class;)*,
+                          (%access.class; | %address-link.class;)*,
+                          (%inside-table-wrap;)*,
+                          (%table-foot.class; |
+                           %display-back-matter.class;)* )"          >
+
+
+<!--                    TABLE WRAPPER GROUP MODEL                  -->
+<!--                    Content model for the <table-wrap-group>
+                        element                                    -->
+<!ENTITY % table-wrap-group-model
+                        "((%id.class;)*, label?, caption?,
+                          (%contrib-group.class;)*, 
+                          (%abstract.class;)*, (%kwd-group.class;)*,
+                          (%access.class; | %address-link.class;)*,
+                          (%just-table.class;)+ )"                   >
+
+
+<!--                    TABLE WRAP FOOTER MODEL                    -->
+<!--                    Content model for the <table-wrap-foot>
+                        element                                    -->
+<!ENTITY % table-wrap-foot-model
+                        "(label?, title?,
+                          (%just-para.class; |  %fn-group.class; |
+                           %fn-link.class; |
+                           %display-back-matter.class; |
+                           %x.class;)+ )"                            >
+
+
+<!--                    TITLE GROUP MODEL                          -->
+<!--                    Content model for the <title-group> element,
+                        which is used for collections, book parts,
+                        and structural models such as Index and Table
+                        of Contents.                               -->
+<!ENTITY % title-group-model
+                        "(label?, title?, subtitle*,
+                          trans-title-group*, alt-title*,
+                          fn-group?)"                                >
+
+
+<!--                    TRANSLATED ABSTRACT MODEL                  -->
+<!--                    Content model for an <trans-abstract> element.
+                                                                   -->
+<!ENTITY % trans-abstract-model
+                        "((%id.class;)*, %sec-opt-title-model;)"     >
+
+
+<!--                    TRANSLATED TITLE GROUP MODEL               -->
+<!--                    Content model for the element
+                        <trans-title-group>
+                        JATS Chg: Added optional <label>.          -->
+<!ENTITY % trans-title-group-model
+                        "(label?, trans-title, trans-subtitle*)"     >
+
+
+<!-- ============================================================= -->
+<!--                    DUPLICATE ATTRIBUTE DECLARATIONS           -->
+<!--                    (These are unchanged from the base Suite,  -->
+<!--                    but are used in attribute over-rides below)-->
+<!-- ============================================================= -->
+
+
+<!--                    COMMON ATTRIBUTES                          -->
+<!--                    These lists of attributes will be added to
+                        nearly every element, in both the document
+                        metadata and the document body, of the entire
+                        Tag Set:
+                          - including table elements for both the
+                              XHTML-inspired and OASIS-inspired
+                              table model elements
+                          - excluding only <mml:math> and
+                              <xi:include> (whose namespaces JATS
+                              does not control).
+                           Great care should be taken to use these
+                        attributes judiciously, not as a shortcut to
+                        thinking through where an attribute should be
+                        used. Potential use cases include adding
+                        @xml:lang or some RDFa attribute to every
+                        elements.                                  -->
+
+
+<!--                    JATS BASE ATTRIBUTES                       -->
+<!--                    Holds all the common attributes except @id.
+                        Used to keep the two common attribute lists
+                        in sync. To add a global attribute, modify
+                        this list.                                 -->
+<!ENTITY % jats-base-atts
+            "xml:base   CDATA                             #IMPLIED"  >
+
+
+<!--                    JATS COMMON ATTRIBUTES                     -->
+<!--                    Holds all the common attributes, as defined in
+                        the base attribute parameter entity, plus an
+                        optional @id.                              -->
+<!ENTITY % jats-common-atts
+            "id         ID                                #IMPLIED
+             %jats-base-atts;"                                       >
+
+
+<!--                    JATS COMMON ATTRIBUTES (ID REQUIRED)       -->
+<!--                    Holds all the common attributes, as defined in
+                        the base attribute parameter entity, plus a
+                        required @id.                              -->
+<!ENTITY % jats-common-atts-id-required
+            "id         ID                                #REQUIRED
+             %jats-base-atts;"                                       >
+
+
+<!--                    DISPLAY ATTRIBUTES                         -->
+<!--                    Attributes used for several of the block
+                        display elements                           -->
+<!ENTITY % display-atts
+            "position   (anchor | background | float | margin)
+                                                          'float'
+             orientation
+                        (portrait | landscape)            'portrait'
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    XLINK LINK ATTRIBUTES                      -->
+<!--                    Attributes for any element that must be a
+                        link                                       -->
+<!ENTITY % link-atts
+            "xmlns:xlink CDATA                            #IMPLIED
+             xlink:type  (simple)                         #IMPLIED
+             xlink:href  CDATA                            #REQUIRED
+             xlink:role  CDATA                            #IMPLIED
+             xlink:title CDATA                            #IMPLIED
+             xlink:show  (embed | new | none | other | replace)
+                                                          #IMPLIED
+             xlink:actuate
+                         (none | onLoad | onRequest | other)
+                                                          #IMPLIED"  >
+
+
+<!--                    MIGHT LINK XLINK ATTRIBUTES                -->
+<!--                    Attributes for any element that may be a link
+                        but need not be one                        -->
+<!ENTITY % might-link-atts
+            "xmlns:xlink CDATA                            #IMPLIED
+             xlink:type  (simple)                         #IMPLIED
+             xlink:href  CDATA                            #IMPLIED
+             xlink:role  CDATA                            #IMPLIED
+             xlink:title CDATA                            #IMPLIED
+             xlink:show  (embed | new | none | other | replace)
+                                                          #IMPLIED
+             xlink:actuate
+                         (none | onLoad | onRequest | other)
+                                                          #IMPLIED"  >
+
+
+<!-- ============================================================= -->
+<!--                    OVER-RIDES OF ATTRIBUTE LISTS              -->
+<!-- ============================================================= -->
+
+
+<!--                    AWARD IDENTIFIER ATTRIBUTES                -->
+<!--                    Attributes for the <award-group> element   -->
+<!ENTITY % award-id-atts
+           "%jats-common-atts;
+             rid        IDREFS                            #IMPLIED
+             award-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      >
+
+
+<!--                    DATE (HISTORICAL) ATTRIBUTES               -->
+<!ENTITY % date-atts
+           "%jats-common-atts;
+             date-type  CDATA                             #IMPLIED
+             publication-format
+                        CDATA                             #IMPLIED
+             iso-8601-date
+                        CDATA                             #IMPLIED
+             calendar   CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  >
+
+<!--                    FUNDING STATEMENT ATTRIBUTES               -->
+<!--                    Attributes for the <funding-source> element-->
+<!ENTITY % funding-statement-atts
+           "%jats-common-atts;
+             rid        IDREFS                            #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %might-link-atts;"                                      >
+
+
+<!--                    INLINE GRAPHIC ATTRIBUTES                  -->
+<!--                    Attributes for Inline Graphic
+                        <inline-graphic>
+                        From Publishing.                           -->
+<!ENTITY % inline-graphic-atts
+           "%jats-common-atts;
+             content-type
+                       CDATA                              #IMPLIED
+             baseline-shift
+                       CDATA                              #IMPLIED
+             mimetype  CDATA                              #IMPLIED
+             mime-subtype
+                       CDATA                              #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %link-atts;"                                            >
+
+
+<!--                    ISBN ATTRIBUTES                            -->
+<!--                    Attributes for the <isbn> element          -->
+<!ENTITY % isbn-atts
+           "%jats-common-atts;
+             publication-format
+                        CDATA                             #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  >
+
+
+<!--                    ISSN ATTRIBUTES                            -->
+<!--                    Attribute list for the <issn> element      -->
+<!ENTITY % issn-atts
+            "%jats-common-atts;
+              publication-format
+                        CDATA                             #IMPLIED
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED"  >
+
+
+<!--                    PUBLICATION DATE ATTRIBUTES                -->
+<!--                    Attributes for the <pub-date> element      -->
+<!ENTITY % pub-date-atts
+            "%jats-common-atts;
+             publication-format
+                        CDATA                             #IMPLIED
+             date-type  CDATA                             #IMPLIED
+             iso-8601-date
+                        CDATA                             #IMPLIED
+             calendar   CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    PUBLICATION IDENTIFIER ATTRIBUTES          -->
+<!--                    Attributes for the <pub-id> element        -->
+<!ENTITY % pub-id-atts
+           "%jats-common-atts;
+             pub-id-type
+                        CDATA                             #IMPLIED
+             assigning-authority                
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             %might-link-atts;"                                      >
+
+
+<!--                    TITLE ATTRIBUTES                           -->
+<!--                    Attributes for the <title> element.
+                        JATS Chg:
+                        1) Added @suppress: suppress this title
+                        for print or display.
+                        2) Added "display-as" used to skip title
+                        levels.
+                        3) Show in ToC                            -->
+<!ENTITY % title-atts
+           "%jats-common-atts;
+             show-in-toc
+                       (yes | no)                         #IMPLIED
+             suppress  (yes | no)                         #IMPLIED
+             display-as
+                       CDATA                              #IMPLIED
+             content-type
+                       CDATA                              #IMPLIED
+             specific-use
+                       CDATA                              #IMPLIED"  >
+
+
+<!--                    TRANSLATED TITLE GROUP ATTRIBUTES          -->
+<!--                    Attribute list for the <trans-title-group>
+                        Made xml:lang optional.                    -->
+<!ENTITY % trans-title-group-atts
+           "%jats-common-atts;
+             content-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    X(CROSS) REFERENCE ATTRIBUTES              -->
+<!--                    Attribute list for cross references        -->
+<!ENTITY % xref-atts
+           "%jats-common-atts;
+             ref-type   CDATA                             #IMPLIED
+             alt        CDATA                             #IMPLIED
+             rid        IDREFS                            #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!-- ================== End BITS Book Content/ATT Over-rides ===== -->

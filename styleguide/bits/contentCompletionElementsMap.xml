@@ -1,0 +1,2671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contentCompletionElementsMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                              xmlns="http://www.oxygenxml.com/ns/ccfilter/annotations"
+                              xsi:schemaLocation="http://www.oxygenxml.com/ns/ccfilter/annotations http://www.oxygenxml.com/ns/ccfilter/annotations/ccAnnotationsSchemaFilter.xsd">
+   <mappingGroup xml:base="../descriptions/">
+      <mapping elementName="abbrev" path="abbrev.html" type="content"/>
+      <mapping elementName="abstract" path="abstract.html" type="content"/>
+      <mapping elementName="ack" path="ack.html" type="content"/>
+      <mapping elementName="addr-line" path="addr-line.html" type="content"/>
+      <mapping elementName="address" path="address.html" type="content"/>
+      <mapping elementName="aff" path="aff.html" type="content"/>
+      <mapping elementName="aff-alternatives"
+               path="aff-alternatives.html"
+               type="content"/>
+      <mapping elementName="ali:free_to_read"
+               path="ali_free_to_read.html"
+               type="content"/>
+      <mapping elementName="ali:license_ref"
+               path="ali_license_ref.html"
+               type="content"/>
+      <mapping elementName="alt-text" path="alt-text.html" type="content"/>
+      <mapping elementName="alt-title" path="alt-title.html" type="content"/>
+      <mapping elementName="alternatives" path="alternatives.html" type="content"/>
+      <mapping elementName="annotation" path="annotation.html" type="content"/>
+      <mapping elementName="anonymous" path="anonymous.html" type="content"/>
+      <mapping elementName="answer" path="answer.html" type="content"/>
+      <mapping elementName="answer-set" path="answer-set.html" type="content"/>
+      <mapping elementName="app" path="app.html" type="content"/>
+      <mapping elementName="app-group" path="app-group.html" type="content"/>
+      <mapping elementName="array" path="array.html" type="content"/>
+      <mapping elementName="article-title"
+               path="article-title.html"
+               type="content"/>
+      <mapping elementName="attrib" path="attrib.html" type="content"/>
+      <mapping elementName="author-comment"
+               path="author-comment.html"
+               type="content"/>
+      <mapping elementName="author-notes" path="author-notes.html" type="content"/>
+      <mapping elementName="award-group" path="award-group.html" type="content"/>
+      <mapping elementName="award-id" path="award-id.html" type="content"/>
+      <mapping elementName="back" path="back.html" type="content"/>
+      <mapping elementName="bio" path="bio.html" type="content"/>
+      <mapping elementName="body" path="body.html" type="content"/>
+      <mapping elementName="bold" path="bold.html" type="content"/>
+      <mapping elementName="book" path="book.html" type="content"/>
+      <mapping elementName="book-app" path="book-app.html" type="content"/>
+      <mapping elementName="book-app-group"
+               path="book-app-group.html"
+               type="content"/>
+      <mapping elementName="book-back" path="book-back.html" type="content"/>
+      <mapping elementName="book-body" path="book-body.html" type="content"/>
+      <mapping elementName="book-count" path="book-count.html" type="content"/>
+      <mapping elementName="book-equation-count"
+               path="book-equation-count.html"
+               type="content"/>
+      <mapping elementName="book-fig-count"
+               path="book-fig-count.html"
+               type="content"/>
+      <mapping elementName="book-id" path="book-id.html" type="content"/>
+      <mapping elementName="book-meta" path="book-meta.html" type="content"/>
+      <mapping elementName="book-page-count"
+               path="book-page-count.html"
+               type="content"/>
+      <mapping elementName="book-part" path="book-part.html" type="content"/>
+      <mapping elementName="book-part-id" path="book-part-id.html" type="content"/>
+      <mapping elementName="book-part-meta"
+               path="book-part-meta.html"
+               type="content"/>
+      <mapping elementName="book-part-wrapper"
+               path="book-part-wrapper.html"
+               type="content"/>
+      <mapping elementName="book-ref-count"
+               path="book-ref-count.html"
+               type="content"/>
+      <mapping elementName="book-table-count"
+               path="book-table-count.html"
+               type="content"/>
+      <mapping elementName="book-title" path="book-title.html" type="content"/>
+      <mapping elementName="book-title-group"
+               path="book-title-group.html"
+               type="content"/>
+      <mapping elementName="book-volume-id"
+               path="book-volume-id.html"
+               type="content"/>
+      <mapping elementName="book-volume-number"
+               path="book-volume-number.html"
+               type="content"/>
+      <mapping elementName="book-word-count"
+               path="book-word-count.html"
+               type="content"/>
+      <mapping elementName="boxed-text" path="boxed-text.html" type="content"/>
+      <mapping elementName="break" path="break.html" type="content"/>
+      <mapping elementName="caption" path="caption.html" type="content"/>
+      <mapping elementName="chapter-title"
+               path="chapter-title.html"
+               type="content"/>
+      <mapping elementName="chem-struct" path="chem-struct.html" type="content"/>
+      <mapping elementName="chem-struct-wrap"
+               path="chem-struct-wrap.html"
+               type="content"/>
+      <mapping elementName="citation-alternatives"
+               path="citation-alternatives.html"
+               type="content"/>
+      <mapping elementName="city" path="city.html" type="content"/>
+      <mapping elementName="code" path="code.html" type="content"/>
+      <mapping elementName="col" path="col.html" type="content"/>
+      <mapping elementName="colgroup" path="colgroup.html" type="content"/>
+      <mapping elementName="collab" path="collab.html" type="content"/>
+      <mapping elementName="collab-alternatives"
+               path="collab-alternatives.html"
+               type="content"/>
+      <mapping elementName="collection-id"
+               path="collection-id.html"
+               type="content"/>
+      <mapping elementName="collection-meta"
+               path="collection-meta.html"
+               type="content"/>
+      <mapping elementName="comment" path="comment.html" type="content"/>
+      <mapping elementName="compound-kwd" path="compound-kwd.html" type="content"/>
+      <mapping elementName="compound-kwd-part"
+               path="compound-kwd-part.html"
+               type="content"/>
+      <mapping elementName="compound-subject"
+               path="compound-subject.html"
+               type="content"/>
+      <mapping elementName="compound-subject-part"
+               path="compound-subject-part.html"
+               type="content"/>
+      <mapping elementName="conf-acronym" path="conf-acronym.html" type="content"/>
+      <mapping elementName="conf-date" path="conf-date.html" type="content"/>
+      <mapping elementName="conf-loc" path="conf-loc.html" type="content"/>
+      <mapping elementName="conf-name" path="conf-name.html" type="content"/>
+      <mapping elementName="conf-num" path="conf-num.html" type="content"/>
+      <mapping elementName="conf-sponsor" path="conf-sponsor.html" type="content"/>
+      <mapping elementName="conf-theme" path="conf-theme.html" type="content"/>
+      <mapping elementName="conference" path="conference.html" type="content"/>
+      <mapping elementName="contrib" path="contrib.html" type="content"/>
+      <mapping elementName="contrib-group"
+               path="contrib-group.html"
+               type="content"/>
+      <mapping elementName="contrib-id" path="contrib-id.html" type="content"/>
+      <mapping elementName="copyright-holder"
+               path="copyright-holder.html"
+               type="content"/>
+      <mapping elementName="copyright-statement"
+               path="copyright-statement.html"
+               type="content"/>
+      <mapping elementName="copyright-year"
+               path="copyright-year.html"
+               type="content"/>
+      <mapping elementName="corresp" path="corresp.html" type="content"/>
+      <mapping elementName="country" path="country.html" type="content"/>
+      <mapping elementName="counts" path="counts.html" type="content"/>
+      <mapping elementName="custom-meta" path="custom-meta.html" type="content"/>
+      <mapping elementName="custom-meta-group"
+               path="custom-meta-group.html"
+               type="content"/>
+      <mapping elementName="data-title" path="data-title.html" type="content"/>
+      <mapping elementName="date" path="date.html" type="content"/>
+      <mapping elementName="date-in-citation"
+               path="date-in-citation.html"
+               type="content"/>
+      <mapping elementName="day" path="day.html" type="content"/>
+      <mapping elementName="dedication" path="dedication.html" type="content"/>
+      <mapping elementName="def" path="def.html" type="content"/>
+      <mapping elementName="def-head" path="def-head.html" type="content"/>
+      <mapping elementName="def-item" path="def-item.html" type="content"/>
+      <mapping elementName="def-list" path="def-list.html" type="content"/>
+      <mapping elementName="degrees" path="degrees.html" type="content"/>
+      <mapping elementName="disp-formula" path="disp-formula.html" type="content"/>
+      <mapping elementName="disp-formula-group"
+               path="disp-formula-group.html"
+               type="content"/>
+      <mapping elementName="disp-quote" path="disp-quote.html" type="content"/>
+      <mapping elementName="edition" path="edition.html" type="content"/>
+      <mapping elementName="element-citation"
+               path="element-citation.html"
+               type="content"/>
+      <mapping elementName="elocation-id" path="elocation-id.html" type="content"/>
+      <mapping elementName="email" path="email.html" type="content"/>
+      <mapping elementName="era" path="era.html" type="content"/>
+      <mapping elementName="etal" path="etal.html" type="content"/>
+      <mapping elementName="event" path="event.html" type="content"/>
+      <mapping elementName="event-desc" path="event-desc.html" type="content"/>
+      <mapping elementName="explanation" path="explanation.html" type="content"/>
+      <mapping elementName="ext-link" path="ext-link.html" type="content"/>
+      <mapping elementName="fax" path="fax.html" type="content"/>
+      <mapping elementName="fig" path="fig.html" type="content"/>
+      <mapping elementName="fig-group" path="fig-group.html" type="content"/>
+      <mapping elementName="fixed-case" path="fixed-case.html" type="content"/>
+      <mapping elementName="floats-group" path="floats-group.html" type="content"/>
+      <mapping elementName="fn" path="fn.html" type="content"/>
+      <mapping elementName="fn-group" path="fn-group.html" type="content"/>
+      <mapping elementName="foreword" path="foreword.html" type="content"/>
+      <mapping elementName="fpage" path="fpage.html" type="content"/>
+      <mapping elementName="front-matter" path="front-matter.html" type="content"/>
+      <mapping elementName="front-matter-part"
+               path="front-matter-part.html"
+               type="content"/>
+      <mapping elementName="funding-group"
+               path="funding-group.html"
+               type="content"/>
+      <mapping elementName="funding-source"
+               path="funding-source.html"
+               type="content"/>
+      <mapping elementName="funding-statement"
+               path="funding-statement.html"
+               type="content"/>
+      <mapping elementName="given-names" path="given-names.html" type="content"/>
+      <mapping elementName="glossary" path="glossary.html" type="content"/>
+      <mapping elementName="glyph-data" path="glyph-data.html" type="content"/>
+      <mapping elementName="glyph-ref" path="glyph-ref.html" type="content"/>
+      <mapping elementName="gov" path="gov.html" type="content"/>
+      <mapping elementName="graphic" path="graphic.html" type="content"/>
+      <mapping elementName="hr" path="hr.html" type="content"/>
+      <mapping elementName="index" path="index.html" type="content"/>
+      <mapping elementName="index-div" path="index-div.html" type="content"/>
+      <mapping elementName="index-entry" path="index-entry.html" type="content"/>
+      <mapping elementName="index-group" path="index-group.html" type="content"/>
+      <mapping elementName="index-term" path="index-term.html" type="content"/>
+      <mapping elementName="index-term-range-end"
+               path="index-term-range-end.html"
+               type="content"/>
+      <mapping elementName="index-title-group"
+               path="index-title-group.html"
+               type="content"/>
+      <mapping elementName="inline-formula"
+               path="inline-formula.html"
+               type="content"/>
+      <mapping elementName="inline-graphic"
+               path="inline-graphic.html"
+               type="content"/>
+      <mapping elementName="inline-supplementary-material"
+               path="inline-supplementary-material.html"
+               type="content"/>
+      <mapping elementName="institution" path="institution.html" type="content"/>
+      <mapping elementName="institution-id"
+               path="institution-id.html"
+               type="content"/>
+      <mapping elementName="institution-wrap"
+               path="institution-wrap.html"
+               type="content"/>
+      <mapping elementName="isbn" path="isbn.html" type="content"/>
+      <mapping elementName="issn" path="issn.html" type="content"/>
+      <mapping elementName="issn-l" path="issn-l.html" type="content"/>
+      <mapping elementName="issue" path="issue.html" type="content"/>
+      <mapping elementName="issue-id" path="issue-id.html" type="content"/>
+      <mapping elementName="issue-part" path="issue-part.html" type="content"/>
+      <mapping elementName="issue-title" path="issue-title.html" type="content"/>
+      <mapping elementName="italic" path="italic.html" type="content"/>
+      <mapping elementName="journal-id" path="journal-id.html" type="content"/>
+      <mapping elementName="kwd" path="kwd.html" type="content"/>
+      <mapping elementName="kwd-group" path="kwd-group.html" type="content"/>
+      <mapping elementName="label" path="label.html" type="content"/>
+      <mapping elementName="license" path="license.html" type="content"/>
+      <mapping elementName="license-p" path="license-p.html" type="content"/>
+      <mapping elementName="list" path="list.html" type="content"/>
+      <mapping elementName="list-item" path="list-item.html" type="content"/>
+      <mapping elementName="long-desc" path="long-desc.html" type="content"/>
+      <mapping elementName="lpage" path="lpage.html" type="content"/>
+      <mapping elementName="media" path="media.html" type="content"/>
+      <mapping elementName="meta-name" path="meta-name.html" type="content"/>
+      <mapping elementName="meta-value" path="meta-value.html" type="content"/>
+      <mapping elementName="milestone-end"
+               path="milestone-end.html"
+               type="content"/>
+      <mapping elementName="milestone-start"
+               path="milestone-start.html"
+               type="content"/>
+      <mapping elementName="mixed-citation"
+               path="mixed-citation.html"
+               type="content"/>
+      <mapping elementName="mml:math" path="mml_math.html" type="content"/>
+      <mapping elementName="monospace" path="monospace.html" type="content"/>
+      <mapping elementName="month" path="month.html" type="content"/>
+      <mapping elementName="name" path="name.html" type="content"/>
+      <mapping elementName="name-address-wrap"
+               path="name-address-wrap.html"
+               type="content"/>
+      <mapping elementName="name-alternatives"
+               path="name-alternatives.html"
+               type="content"/>
+      <mapping elementName="named-book-part-body"
+               path="named-book-part-body.html"
+               type="content"/>
+      <mapping elementName="named-content"
+               path="named-content.html"
+               type="content"/>
+      <mapping elementName="nav-pointer" path="nav-pointer.html" type="content"/>
+      <mapping elementName="nav-pointer-group"
+               path="nav-pointer-group.html"
+               type="content"/>
+      <mapping elementName="nested-kwd" path="nested-kwd.html" type="content"/>
+      <mapping elementName="note" path="note.html" type="content"/>
+      <mapping elementName="notes" path="notes.html" type="content"/>
+      <mapping elementName="object-id" path="object-id.html" type="content"/>
+      <mapping elementName="on-behalf-of" path="on-behalf-of.html" type="content"/>
+      <mapping elementName="open-access" path="open-access.html" type="content"/>
+      <mapping elementName="option" path="option.html" type="content"/>
+      <mapping elementName="overline" path="overline.html" type="content"/>
+      <mapping elementName="overline-end" path="overline-end.html" type="content"/>
+      <mapping elementName="overline-start"
+               path="overline-start.html"
+               type="content"/>
+      <mapping elementName="p" path="p.html" type="content"/>
+      <mapping elementName="page-range" path="page-range.html" type="content"/>
+      <mapping elementName="part-title" path="part-title.html" type="content"/>
+      <mapping elementName="patent" path="patent.html" type="content"/>
+      <mapping elementName="permissions" path="permissions.html" type="content"/>
+      <mapping elementName="person-group" path="person-group.html" type="content"/>
+      <mapping elementName="phone" path="phone.html" type="content"/>
+      <mapping elementName="postal-code" path="postal-code.html" type="content"/>
+      <mapping elementName="preface" path="preface.html" type="content"/>
+      <mapping elementName="prefix" path="prefix.html" type="content"/>
+      <mapping elementName="preformat" path="preformat.html" type="content"/>
+      <mapping elementName="price" path="price.html" type="content"/>
+      <mapping elementName="principal-award-recipient"
+               path="principal-award-recipient.html"
+               type="content"/>
+      <mapping elementName="principal-investigator"
+               path="principal-investigator.html"
+               type="content"/>
+      <mapping elementName="private-char" path="private-char.html" type="content"/>
+      <mapping elementName="product" path="product.html" type="content"/>
+      <mapping elementName="pub-date" path="pub-date.html" type="content"/>
+      <mapping elementName="pub-history" path="pub-history.html" type="content"/>
+      <mapping elementName="pub-id" path="pub-id.html" type="content"/>
+      <mapping elementName="publisher" path="publisher.html" type="content"/>
+      <mapping elementName="publisher-loc"
+               path="publisher-loc.html"
+               type="content"/>
+      <mapping elementName="publisher-name"
+               path="publisher-name.html"
+               type="content"/>
+      <mapping elementName="question" path="question.html" type="content"/>
+      <mapping elementName="question-preamble"
+               path="question-preamble.html"
+               type="content"/>
+      <mapping elementName="question-wrap"
+               path="question-wrap.html"
+               type="content"/>
+      <mapping elementName="question-wrap-group"
+               path="question-wrap-group.html"
+               type="content"/>
+      <mapping elementName="rb" path="rb.html" type="content"/>
+      <mapping elementName="ref" path="ref.html" type="content"/>
+      <mapping elementName="ref-list" path="ref-list.html" type="content"/>
+      <mapping elementName="related-article"
+               path="related-article.html"
+               type="content"/>
+      <mapping elementName="related-object"
+               path="related-object.html"
+               type="content"/>
+      <mapping elementName="role" path="role.html" type="content"/>
+      <mapping elementName="roman" path="roman.html" type="content"/>
+      <mapping elementName="rp" path="rp.html" type="content"/>
+      <mapping elementName="rt" path="rt.html" type="content"/>
+      <mapping elementName="ruby" path="ruby.html" type="content"/>
+      <mapping elementName="sans-serif" path="sans-serif.html" type="content"/>
+      <mapping elementName="sc" path="sc.html" type="content"/>
+      <mapping elementName="season" path="season.html" type="content"/>
+      <mapping elementName="sec" path="sec.html" type="content"/>
+      <mapping elementName="sec-meta" path="sec-meta.html" type="content"/>
+      <mapping elementName="see" path="see.html" type="content"/>
+      <mapping elementName="see-also" path="see-also.html" type="content"/>
+      <mapping elementName="see-also-entry"
+               path="see-also-entry.html"
+               type="content"/>
+      <mapping elementName="see-entry" path="see-entry.html" type="content"/>
+      <mapping elementName="self-uri" path="self-uri.html" type="content"/>
+      <mapping elementName="series" path="series.html" type="content"/>
+      <mapping elementName="serif" path="serif.html" type="content"/>
+      <mapping elementName="sig" path="sig.html" type="content"/>
+      <mapping elementName="sig-block" path="sig-block.html" type="content"/>
+      <mapping elementName="size" path="size.html" type="content"/>
+      <mapping elementName="source" path="source.html" type="content"/>
+      <mapping elementName="speaker" path="speaker.html" type="content"/>
+      <mapping elementName="speech" path="speech.html" type="content"/>
+      <mapping elementName="state" path="state.html" type="content"/>
+      <mapping elementName="statement" path="statement.html" type="content"/>
+      <mapping elementName="std" path="std.html" type="content"/>
+      <mapping elementName="std-organization"
+               path="std-organization.html"
+               type="content"/>
+      <mapping elementName="strike" path="strike.html" type="content"/>
+      <mapping elementName="string-conf" path="string-conf.html" type="content"/>
+      <mapping elementName="string-date" path="string-date.html" type="content"/>
+      <mapping elementName="string-name" path="string-name.html" type="content"/>
+      <mapping elementName="styled-content"
+               path="styled-content.html"
+               type="content"/>
+      <mapping elementName="sub" path="sub.html" type="content"/>
+      <mapping elementName="subj-group" path="subj-group.html" type="content"/>
+      <mapping elementName="subject" path="subject.html" type="content"/>
+      <mapping elementName="subtitle" path="subtitle.html" type="content"/>
+      <mapping elementName="suffix" path="suffix.html" type="content"/>
+      <mapping elementName="sup" path="sup.html" type="content"/>
+      <mapping elementName="supplement" path="supplement.html" type="content"/>
+      <mapping elementName="supplementary-material"
+               path="supplementary-material.html"
+               type="content"/>
+      <mapping elementName="surname" path="surname.html" type="content"/>
+      <mapping elementName="table" path="table.html" type="content"/>
+      <mapping elementName="table-wrap" path="table-wrap.html" type="content"/>
+      <mapping elementName="table-wrap-foot"
+               path="table-wrap-foot.html"
+               type="content"/>
+      <mapping elementName="table-wrap-group"
+               path="table-wrap-group.html"
+               type="content"/>
+      <mapping elementName="target" path="target.html" type="content"/>
+      <mapping elementName="tbody" path="tbody.html" type="content"/>
+      <mapping elementName="td" path="td.html" type="content"/>
+      <mapping elementName="term" path="term.html" type="content"/>
+      <mapping elementName="term-head" path="term-head.html" type="content"/>
+      <mapping elementName="tex-math" path="tex-math.html" type="content"/>
+      <mapping elementName="textual-form" path="textual-form.html" type="content"/>
+      <mapping elementName="tfoot" path="tfoot.html" type="content"/>
+      <mapping elementName="th" path="th.html" type="content"/>
+      <mapping elementName="thead" path="thead.html" type="content"/>
+      <mapping elementName="title" path="title.html" type="content"/>
+      <mapping elementName="title-group" path="title-group.html" type="content"/>
+      <mapping elementName="toc" path="toc.html" type="content"/>
+      <mapping elementName="toc-div" path="toc-div.html" type="content"/>
+      <mapping elementName="toc-entry" path="toc-entry.html" type="content"/>
+      <mapping elementName="toc-group" path="toc-group.html" type="content"/>
+      <mapping elementName="toc-title-group"
+               path="toc-title-group.html"
+               type="content"/>
+      <mapping elementName="tr" path="tr.html" type="content"/>
+      <mapping elementName="trans-abstract"
+               path="trans-abstract.html"
+               type="content"/>
+      <mapping elementName="trans-source" path="trans-source.html" type="content"/>
+      <mapping elementName="trans-subtitle"
+               path="trans-subtitle.html"
+               type="content"/>
+      <mapping elementName="trans-title" path="trans-title.html" type="content"/>
+      <mapping elementName="trans-title-group"
+               path="trans-title-group.html"
+               type="content"/>
+      <mapping elementName="underline" path="underline.html" type="content"/>
+      <mapping elementName="underline-end"
+               path="underline-end.html"
+               type="content"/>
+      <mapping elementName="underline-start"
+               path="underline-start.html"
+               type="content"/>
+      <mapping elementName="unstructured-kwd-group"
+               path="unstructured-kwd-group.html"
+               type="content"/>
+      <mapping elementName="uri" path="uri.html" type="content"/>
+      <mapping elementName="verse-group" path="verse-group.html" type="content"/>
+      <mapping elementName="verse-line" path="verse-line.html" type="content"/>
+      <mapping elementName="version" path="version.html" type="content"/>
+      <mapping elementName="volume" path="volume.html" type="content"/>
+      <mapping elementName="volume-id" path="volume-id.html" type="content"/>
+      <mapping elementName="volume-in-collection"
+               path="volume-in-collection.html"
+               type="content"/>
+      <mapping elementName="volume-number"
+               path="volume-number.html"
+               type="content"/>
+      <mapping elementName="volume-series"
+               path="volume-series.html"
+               type="content"/>
+      <mapping elementName="volume-title" path="volume-title.html" type="content"/>
+      <mapping elementName="x" path="x.html" type="content"/>
+      <mapping elementName="xi:fallback" path="xi_fallback.html" type="content"/>
+      <mapping elementName="xi:include" path="xi_include.html" type="content"/>
+      <mapping elementName="xref" path="xref.html" type="content"/>
+      <mapping elementName="year" path="year.html" type="content"/>
+      <mapping attributeName="abbr" path="attr-abbr.html" type="content"/>
+      <mapping attributeName="abstract-type"
+               path="attr-abstract-type.html"
+               type="content"/>
+      <mapping attributeName="accept" path="attr-accept.html" type="content"/>
+      <mapping attributeName="accept-language"
+               path="attr-accept-language.html"
+               type="content"/>
+      <mapping attributeName="align" path="attr-align.html" type="content"/>
+      <mapping attributeName="alt" path="attr-alt.html" type="content"/>
+      <mapping attributeName="alt-title-type"
+               path="attr-alt-title-type.html"
+               type="content"/>
+      <mapping attributeName="arrange" path="attr-arrange.html" type="content"/>
+      <mapping attributeName="assigning-authority"
+               path="attr-assigning-authority.html"
+               type="content"/>
+      <mapping attributeName="audience" path="attr-audience.html" type="content"/>
+      <mapping attributeName="authenticated"
+               path="attr-authenticated.html"
+               type="content"/>
+      <mapping attributeName="award-type"
+               path="attr-award-type.html"
+               type="content"/>
+      <mapping attributeName="axis" path="attr-axis.html" type="content"/>
+      <mapping attributeName="baseline-shift"
+               path="attr-baseline-shift.html"
+               type="content"/>
+      <mapping attributeName="book-id-type"
+               path="attr-book-id-type.html"
+               type="content"/>
+      <mapping attributeName="book-part-id-type"
+               path="attr-book-part-id-type.html"
+               type="content"/>
+      <mapping attributeName="book-part-type"
+               path="attr-book-part-type.html"
+               type="content"/>
+      <mapping attributeName="book-type" path="attr-book-type.html" type="content"/>
+      <mapping attributeName="border" path="attr-border.html" type="content"/>
+      <mapping attributeName="calendar" path="attr-calendar.html" type="content"/>
+      <mapping attributeName="cellpadding"
+               path="attr-cellpadding.html"
+               type="content"/>
+      <mapping attributeName="cellspacing"
+               path="attr-cellspacing.html"
+               type="content"/>
+      <mapping attributeName="char" path="attr-char.html" type="content"/>
+      <mapping attributeName="charoff" path="attr-charoff.html" type="content"/>
+      <mapping attributeName="code-type" path="attr-code-type.html" type="content"/>
+      <mapping attributeName="code-version"
+               path="attr-code-version.html"
+               type="content"/>
+      <mapping attributeName="collab-type"
+               path="attr-collab-type.html"
+               type="content"/>
+      <mapping attributeName="collection-id-type"
+               path="attr-collection-id-type.html"
+               type="content"/>
+      <mapping attributeName="collection-type"
+               path="attr-collection-type.html"
+               type="content"/>
+      <mapping attributeName="colspan" path="attr-colspan.html" type="content"/>
+      <mapping attributeName="content-type"
+               path="attr-content-type.html"
+               type="content"/>
+      <mapping attributeName="continued-from"
+               path="attr-continued-from.html"
+               type="content"/>
+      <mapping attributeName="contrib-id-type"
+               path="attr-contrib-id-type.html"
+               type="content"/>
+      <mapping attributeName="contrib-type"
+               path="attr-contrib-type.html"
+               type="content"/>
+      <mapping attributeName="correct" path="attr-correct.html" type="content"/>
+      <mapping attributeName="corresp" path="attr-corresp.html" type="content"/>
+      <mapping attributeName="count" path="attr-count.html" type="content"/>
+      <mapping attributeName="count-type"
+               path="attr-count-type.html"
+               type="content"/>
+      <mapping attributeName="country" path="attr-country.html" type="content"/>
+      <mapping attributeName="currency" path="attr-currency.html" type="content"/>
+      <mapping attributeName="date-type" path="attr-date-type.html" type="content"/>
+      <mapping attributeName="deceased" path="attr-deceased.html" type="content"/>
+      <mapping attributeName="description"
+               path="attr-description.html"
+               type="content"/>
+      <mapping attributeName="designator"
+               path="attr-designator.html"
+               type="content"/>
+      <mapping attributeName="disp-level"
+               path="attr-disp-level.html"
+               type="content"/>
+      <mapping attributeName="display-as"
+               path="attr-display-as.html"
+               type="content"/>
+      <mapping attributeName="document-id"
+               path="attr-document-id.html"
+               type="content"/>
+      <mapping attributeName="document-id-type"
+               path="attr-document-id-type.html"
+               type="content"/>
+      <mapping attributeName="document-type"
+               path="attr-document-type.html"
+               type="content"/>
+      <mapping attributeName="dtd-version"
+               path="attr-dtd-version.html"
+               type="content"/>
+      <mapping attributeName="elocation-id"
+               path="attr-elocation-id.html"
+               type="content"/>
+      <mapping attributeName="encoding" path="attr-encoding.html" type="content"/>
+      <mapping attributeName="end_date" path="attr-end_date.html" type="content"/>
+      <mapping attributeName="equal-contrib"
+               path="attr-equal-contrib.html"
+               type="content"/>
+      <mapping attributeName="event-type"
+               path="attr-event-type.html"
+               type="content"/>
+      <mapping attributeName="executable"
+               path="attr-executable.html"
+               type="content"/>
+      <mapping attributeName="ext-link-type"
+               path="attr-ext-link-type.html"
+               type="content"/>
+      <mapping attributeName="fig-type" path="attr-fig-type.html" type="content"/>
+      <mapping attributeName="fn-type" path="attr-fn-type.html" type="content"/>
+      <mapping attributeName="fontchar" path="attr-fontchar.html" type="content"/>
+      <mapping attributeName="fontname" path="attr-fontname.html" type="content"/>
+      <mapping attributeName="format" path="attr-format.html" type="content"/>
+      <mapping attributeName="frame" path="attr-frame.html" type="content"/>
+      <mapping attributeName="from-where"
+               path="attr-from-where.html"
+               type="content"/>
+      <mapping attributeName="glyph-data"
+               path="attr-glyph-data.html"
+               type="content"/>
+      <mapping attributeName="headers" path="attr-headers.html" type="content"/>
+      <mapping attributeName="href" path="attr-href.html" type="content"/>
+      <mapping attributeName="id" path="attr-id.html" type="content"/>
+      <mapping attributeName="index-type"
+               path="attr-index-type.html"
+               type="content"/>
+      <mapping attributeName="indexed" path="attr-indexed.html" type="content"/>
+      <mapping attributeName="initials" path="attr-initials.html" type="content"/>
+      <mapping attributeName="institution-id-type"
+               path="attr-institution-id-type.html"
+               type="content"/>
+      <mapping attributeName="iso-8601-date"
+               path="attr-iso-8601-date.html"
+               type="content"/>
+      <mapping attributeName="issue" path="attr-issue.html" type="content"/>
+      <mapping attributeName="journal-id"
+               path="attr-journal-id.html"
+               type="content"/>
+      <mapping attributeName="journal-id-type"
+               path="attr-journal-id-type.html"
+               type="content"/>
+      <mapping attributeName="kwd-group-type"
+               path="attr-kwd-group-type.html"
+               type="content"/>
+      <mapping attributeName="language" path="attr-language.html" type="content"/>
+      <mapping attributeName="language-version"
+               path="attr-language-version.html"
+               type="content"/>
+      <mapping attributeName="license-type"
+               path="attr-license-type.html"
+               type="content"/>
+      <mapping attributeName="link-type" path="attr-link-type.html" type="content"/>
+      <mapping attributeName="list-content"
+               path="attr-list-content.html"
+               type="content"/>
+      <mapping attributeName="list-type" path="attr-list-type.html" type="content"/>
+      <mapping attributeName="mime-subtype"
+               path="attr-mime-subtype.html"
+               type="content"/>
+      <mapping attributeName="mimetype" path="attr-mimetype.html" type="content"/>
+      <mapping attributeName="name" path="attr-name.html" type="content"/>
+      <mapping attributeName="name-style"
+               path="attr-name-style.html"
+               type="content"/>
+      <mapping attributeName="nav-pointer-type"
+               path="attr-nav-pointer-type.html"
+               type="content"/>
+      <mapping attributeName="notation" path="attr-notation.html" type="content"/>
+      <mapping attributeName="notes-type"
+               path="attr-notes-type.html"
+               type="content"/>
+      <mapping attributeName="object-id" path="attr-object-id.html" type="content"/>
+      <mapping attributeName="object-id-type"
+               path="attr-object-id-type.html"
+               type="content"/>
+      <mapping attributeName="object-type"
+               path="attr-object-type.html"
+               type="content"/>
+      <mapping attributeName="orientation"
+               path="attr-orientation.html"
+               type="content"/>
+      <mapping attributeName="page" path="attr-page.html" type="content"/>
+      <mapping attributeName="parse" path="attr-parse.html" type="content"/>
+      <mapping attributeName="person-group-type"
+               path="attr-person-group-type.html"
+               type="content"/>
+      <mapping attributeName="platforms" path="attr-platforms.html" type="content"/>
+      <mapping attributeName="pointer-to-explained"
+               path="attr-pointer-to-explained.html"
+               type="content"/>
+      <mapping attributeName="pointer-to-question"
+               path="attr-pointer-to-question.html"
+               type="content"/>
+      <mapping attributeName="position" path="attr-position.html" type="content"/>
+      <mapping attributeName="prefix-word"
+               path="attr-prefix-word.html"
+               type="content"/>
+      <mapping attributeName="preformat-type"
+               path="attr-preformat-type.html"
+               type="content"/>
+      <mapping attributeName="product-type"
+               path="attr-product-type.html"
+               type="content"/>
+      <mapping attributeName="pub-id-type"
+               path="attr-pub-id-type.html"
+               type="content"/>
+      <mapping attributeName="publication-format"
+               path="attr-publication-format.html"
+               type="content"/>
+      <mapping attributeName="publication-type"
+               path="attr-publication-type.html"
+               type="content"/>
+      <mapping attributeName="publisher-type"
+               path="attr-publisher-type.html"
+               type="content"/>
+      <mapping attributeName="question-response-type"
+               path="attr-question-response-type.html"
+               type="content"/>
+      <mapping attributeName="rationale" path="attr-rationale.html" type="content"/>
+      <mapping attributeName="ref-type" path="attr-ref-type.html" type="content"/>
+      <mapping attributeName="related-article-type"
+               path="attr-related-article-type.html"
+               type="content"/>
+      <mapping attributeName="resolution"
+               path="attr-resolution.html"
+               type="content"/>
+      <mapping attributeName="rid" path="attr-rid.html" type="content"/>
+      <mapping attributeName="rowspan" path="attr-rowspan.html" type="content"/>
+      <mapping attributeName="rules" path="attr-rules.html" type="content"/>
+      <mapping attributeName="scope" path="attr-scope.html" type="content"/>
+      <mapping attributeName="sec-type" path="attr-sec-type.html" type="content"/>
+      <mapping attributeName="seq" path="attr-seq.html" type="content"/>
+      <mapping attributeName="show-in-toc"
+               path="attr-show-in-toc.html"
+               type="content"/>
+      <mapping attributeName="sort-key" path="attr-sort-key.html" type="content"/>
+      <mapping attributeName="source-id" path="attr-source-id.html" type="content"/>
+      <mapping attributeName="source-id-type"
+               path="attr-source-id-type.html"
+               type="content"/>
+      <mapping attributeName="source-type"
+               path="attr-source-type.html"
+               type="content"/>
+      <mapping attributeName="span" path="attr-span.html" type="content"/>
+      <mapping attributeName="specific-use"
+               path="attr-specific-use.html"
+               type="content"/>
+      <mapping attributeName="start_date"
+               path="attr-start_date.html"
+               type="content"/>
+      <mapping attributeName="style" path="attr-style.html" type="content"/>
+      <mapping attributeName="style-type"
+               path="attr-style-type.html"
+               type="content"/>
+      <mapping attributeName="subj-group-type"
+               path="attr-subj-group-type.html"
+               type="content"/>
+      <mapping attributeName="summary" path="attr-summary.html" type="content"/>
+      <mapping attributeName="supplement-type"
+               path="attr-supplement-type.html"
+               type="content"/>
+      <mapping attributeName="suppress" path="attr-suppress.html" type="content"/>
+      <mapping attributeName="symbol" path="attr-symbol.html" type="content"/>
+      <mapping attributeName="target-type"
+               path="attr-target-type.html"
+               type="content"/>
+      <mapping attributeName="toggle" path="attr-toggle.html" type="content"/>
+      <mapping attributeName="underline-style"
+               path="attr-underline-style.html"
+               type="content"/>
+      <mapping attributeName="units" path="attr-units.html" type="content"/>
+      <mapping attributeName="valign" path="attr-valign.html" type="content"/>
+      <mapping attributeName="version" path="attr-version.html" type="content"/>
+      <mapping attributeName="vol" path="attr-vol.html" type="content"/>
+      <mapping attributeName="width" path="attr-width.html" type="content"/>
+      <mapping attributeName="x-size" path="attr-x-size.html" type="content"/>
+      <mapping attributeName="xlink:actuate"
+               path="attr-xlink_actuate.html"
+               type="content"/>
+      <mapping attributeName="xlink:href"
+               path="attr-xlink_href.html"
+               type="content"/>
+      <mapping attributeName="xlink:role"
+               path="attr-xlink_role.html"
+               type="content"/>
+      <mapping attributeName="xlink:show"
+               path="attr-xlink_show.html"
+               type="content"/>
+      <mapping attributeName="xlink:title"
+               path="attr-xlink_title.html"
+               type="content"/>
+      <mapping attributeName="xlink:type"
+               path="attr-xlink_type.html"
+               type="content"/>
+      <mapping attributeName="xml:base" path="attr-xml_base.html" type="content"/>
+      <mapping attributeName="xml:lang" path="attr-xml_lang.html" type="content"/>
+      <mapping attributeName="xml:space" path="attr-xml_space.html" type="content"/>
+      <mapping attributeName="xmlns:ali" path="attr-xmlns_ali.html" type="content"/>
+      <mapping attributeName="xmlns:mml" path="attr-xmlns_mml.html" type="content"/>
+      <mapping attributeName="xmlns:xi" path="attr-xmlns_xi.html" type="content"/>
+      <mapping attributeName="xmlns:xlink"
+               path="attr-xmlns_xlink.html"
+               type="content"/>
+      <mapping attributeName="xmlns:xsi" path="attr-xmlns_xsi.html" type="content"/>
+      <mapping attributeName="xpointer" path="attr-xpointer.html" type="content"/>
+      <mapping attributeName="y-size" path="attr-y-size.html" type="content"/>
+   </mappingGroup>
+   <mappingGroup>
+      <mapping elementName="abbrev"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/abbrev.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="abstract"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/abstract.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ack"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ack.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="addr-line"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/addr-line.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="address"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/address.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="aff"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/aff.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="aff-alternatives"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/aff-alternatives.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ali:free_to_read"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ali_free_to_read.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ali:license_ref"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ali_license_ref.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="alt-text"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/alt-text.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="alt-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/alt-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="alternatives"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/alternatives.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="annotation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/annotation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="anonymous"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/anonymous.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="answer"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/answer.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="answer-set"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/answer-set.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="app"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/app.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="app-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/app-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="array"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/array.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="article-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/article-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="attrib"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/attrib.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="author-comment"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/author-comment.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="author-notes"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/author-notes.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="award-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/award-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="award-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/award-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="back"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/back.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="bio"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/bio.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="body"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/body.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="bold"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/bold.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-app"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-app.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-app-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-app-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-back"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-back.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-body"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-body.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-equation-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-equation-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-fig-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-fig-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-meta"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-meta.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-page-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-page-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-part"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-part.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-part-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-part-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-part-meta"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-part-meta.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-part-wrapper"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-part-wrapper.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-ref-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-ref-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-table-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-table-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-title-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-title-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-volume-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-volume-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-volume-number"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-volume-number.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="book-word-count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/book-word-count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="boxed-text"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/boxed-text.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="break"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/break.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="caption"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/caption.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="chapter-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/chapter-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="chem-struct"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/chem-struct.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="chem-struct-wrap"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/chem-struct-wrap.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="citation-alternatives"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/citation-alternatives.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="city"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/city.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="code"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/code.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="col"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/col.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="colgroup"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/colgroup.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="collab"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/collab.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="collab-alternatives"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/collab-alternatives.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="collection-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/collection-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="collection-meta"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/collection-meta.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="comment"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/comment.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="compound-kwd"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/compound-kwd.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="compound-kwd-part"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/compound-kwd-part.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="compound-subject"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/compound-subject.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="compound-subject-part"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/compound-subject-part.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-acronym"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-acronym.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-loc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-loc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-name"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-name.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-num"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-num.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-sponsor"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-sponsor.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conf-theme"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conf-theme.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="conference"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/conference.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="contrib"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/contrib.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="contrib-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/contrib-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="contrib-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/contrib-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="copyright-holder"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/copyright-holder.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="copyright-statement"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/copyright-statement.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="copyright-year"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/copyright-year.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="corresp"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/corresp.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="country"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/country.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="counts"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/counts.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="custom-meta"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/custom-meta.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="custom-meta-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/custom-meta-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="data-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/data-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="date-in-citation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/date-in-citation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="day"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/day.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="dedication"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/dedication.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="def"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/def.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="def-head"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/def-head.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="def-item"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/def-item.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="def-list"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/def-list.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="degrees"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/degrees.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="disp-formula"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/disp-formula.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="disp-formula-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/disp-formula-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="disp-quote"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/disp-quote.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="edition"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/edition.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="element-citation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/element-citation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="elocation-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/elocation-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="email"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/email.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="era"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/era.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="etal"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/etal.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="event"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/event.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="event-desc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/event-desc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="explanation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/explanation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ext-link"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ext-link.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fax"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fax.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fig"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fig.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fig-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fig-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fixed-case"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fixed-case.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="floats-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/floats-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fn"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fn.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fn-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fn-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="foreword"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/foreword.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="fpage"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/fpage.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="front-matter"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/front-matter.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="front-matter-part"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/front-matter-part.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="funding-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/funding-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="funding-source"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/funding-source.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="funding-statement"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/funding-statement.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="given-names"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/given-names.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="glossary"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/glossary.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="glyph-data"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/glyph-data.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="glyph-ref"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/glyph-ref.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="gov"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/gov.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="graphic"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/graphic.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="hr"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/hr.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index-div"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index-div.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index-entry"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index-entry.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index-term"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index-term.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index-term-range-end"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index-term-range-end.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="index-title-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/index-title-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="inline-formula"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/inline-formula.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="inline-graphic"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/inline-graphic.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="inline-supplementary-material"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/inline-supplementary-material.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="institution"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/institution.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="institution-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/institution-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="institution-wrap"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/institution-wrap.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="isbn"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/isbn.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="issn"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/issn.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="issn-l"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/issn-l.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="issue"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/issue.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="issue-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/issue-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="issue-part"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/issue-part.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="issue-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/issue-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="italic"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/italic.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="journal-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/journal-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="kwd"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/kwd.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="kwd-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/kwd-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="label"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/label.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="license"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/license.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="license-p"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/license-p.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="list"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/list.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="list-item"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/list-item.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="long-desc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/long-desc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="lpage"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/lpage.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="media"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/media.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="meta-name"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/meta-name.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="meta-value"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/meta-value.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="milestone-end"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/milestone-end.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="milestone-start"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/milestone-start.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="mixed-citation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/mixed-citation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="mml:math"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/mml_math.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="monospace"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/monospace.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="month"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/month.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="name"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/name.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="name-address-wrap"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/name-address-wrap.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="name-alternatives"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/name-alternatives.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="named-book-part-body"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/named-book-part-body.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="named-content"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/named-content.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="nav-pointer"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/nav-pointer.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="nav-pointer-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/nav-pointer-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="nested-kwd"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/nested-kwd.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="note"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/note.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="notes"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/notes.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="object-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/object-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="on-behalf-of"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/on-behalf-of.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="open-access"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/open-access.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="option"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/option.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="overline"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/overline.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="overline-end"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/overline-end.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="overline-start"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/overline-start.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="p"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/p.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="page-range"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/page-range.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="part-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/part-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="patent"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/patent.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="permissions"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/permissions.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="person-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/person-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="phone"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/phone.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="postal-code"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/postal-code.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="preface"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/preface.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="prefix"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/prefix.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="preformat"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/preformat.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="price"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/price.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="principal-award-recipient"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/principal-award-recipient.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="principal-investigator"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/principal-investigator.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="private-char"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/private-char.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="product"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/product.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="pub-date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/pub-date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="pub-history"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/pub-history.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="pub-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/pub-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="publisher"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/publisher.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="publisher-loc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/publisher-loc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="publisher-name"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/publisher-name.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="question"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/question.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="question-preamble"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/question-preamble.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="question-wrap"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/question-wrap.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="question-wrap-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/question-wrap-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="rb"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/rb.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ref"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ref.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ref-list"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ref-list.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="related-article"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/related-article.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="related-object"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/related-object.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="role"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/role.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="roman"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/roman.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="rp"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/rp.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="rt"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/rt.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="ruby"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/ruby.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sans-serif"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sans-serif.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="season"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/season.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sec"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sec.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sec-meta"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sec-meta.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="see"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/see.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="see-also"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/see-also.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="see-also-entry"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/see-also-entry.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="see-entry"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/see-entry.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="self-uri"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/self-uri.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="series"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/series.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="serif"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/serif.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sig"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sig.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sig-block"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sig-block.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="size"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/size.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="source"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/source.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="speaker"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/speaker.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="speech"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/speech.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="state"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/state.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="statement"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/statement.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="std"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/std.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="std-organization"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/std-organization.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="strike"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/strike.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="string-conf"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/string-conf.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="string-date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/string-date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="string-name"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/string-name.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="styled-content"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/styled-content.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sub"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sub.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="subj-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/subj-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="subject"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/subject.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="subtitle"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/subtitle.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="suffix"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/suffix.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="sup"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/sup.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="supplement"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/supplement.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="supplementary-material"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/supplementary-material.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="surname"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/surname.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="table"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/table.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="table-wrap"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/table-wrap.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="table-wrap-foot"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/table-wrap-foot.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="table-wrap-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/table-wrap-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="target"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/target.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="tbody"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/tbody.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="td"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/td.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="term"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/term.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="term-head"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/term-head.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="tex-math"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/tex-math.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="textual-form"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/textual-form.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="tfoot"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/tfoot.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="th"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/th.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="thead"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/thead.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="title-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/title-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="toc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/toc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="toc-div"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/toc-div.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="toc-entry"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/toc-entry.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="toc-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/toc-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="toc-title-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/toc-title-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="tr"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/tr.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="trans-abstract"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/trans-abstract.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="trans-source"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/trans-source.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="trans-subtitle"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/trans-subtitle.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="trans-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/trans-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="trans-title-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/trans-title-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="underline"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/underline.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="underline-end"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/underline-end.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="underline-start"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/underline-start.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="unstructured-kwd-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/unstructured-kwd-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="uri"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/uri.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="verse-group"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/verse-group.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="verse-line"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/verse-line.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="version"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/version.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="volume"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/volume.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="volume-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/volume-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="volume-in-collection"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/volume-in-collection.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="volume-number"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/volume-number.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="volume-series"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/volume-series.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="volume-title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/volume-title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="x"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/x.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="xi:fallback"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/xi_fallback.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="xi:include"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/xi_include.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="xref"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/xref.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping elementName="year"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/element/year.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="abbr"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/abbr.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="abstract-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/abstract-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="accept"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/accept.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="accept-language"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/accept-language.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="align"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/align.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="alt"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/alt.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="alt-title-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/alt-title-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="arrange"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/arrange.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="assigning-authority"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/assigning-authority.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="audience"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/audience.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="authenticated"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/authenticated.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="award-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/award-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="axis"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/axis.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="baseline-shift"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/baseline-shift.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="book-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/book-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="book-part-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/book-part-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="book-part-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/book-part-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="book-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/book-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="border"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/border.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="calendar"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/calendar.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="cellpadding"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/cellpadding.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="cellspacing"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/cellspacing.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="char"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/char.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="charoff"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/charoff.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="code-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/code-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="code-version"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/code-version.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="collab-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/collab-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="collection-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/collection-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="collection-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/collection-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="colspan"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/colspan.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="content-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/content-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="continued-from"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/continued-from.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="contrib-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/contrib-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="contrib-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/contrib-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="correct"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/correct.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="corresp"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/corresp.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="count"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/count.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="count-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/count-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="country"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/country.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="currency"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/currency.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="date-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/date-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="deceased"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/deceased.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="description"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/description.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="designator"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/designator.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="disp-level"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/disp-level.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="display-as"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/display-as.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="document-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/document-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="document-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/document-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="document-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/document-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="dtd-version"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/dtd-version.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="elocation-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/elocation-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="encoding"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/encoding.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="end_date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/end_date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="equal-contrib"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/equal-contrib.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="event-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/event-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="executable"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/executable.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="ext-link-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/ext-link-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="fig-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/fig-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="fn-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/fn-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="fontchar"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/fontchar.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="fontname"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/fontname.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="format"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/format.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="frame"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/frame.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="from-where"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/from-where.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="glyph-data"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/glyph-data.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="headers"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/headers.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="href"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/href.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="index-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/index-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="indexed"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/indexed.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="initials"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/initials.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="institution-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/institution-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="iso-8601-date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/iso-8601-date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="issue"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/issue.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="journal-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/journal-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="journal-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/journal-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="kwd-group-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/kwd-group-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="language"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/language.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="language-version"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/language-version.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="license-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/license-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="link-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/link-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="list-content"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/list-content.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="list-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/list-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="mime-subtype"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/mime-subtype.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="mimetype"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/mimetype.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="name"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/name.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="name-style"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/name-style.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="nav-pointer-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/nav-pointer-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="notation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/notation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="notes-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/notes-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="object-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/object-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="object-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/object-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="object-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/object-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="orientation"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/orientation.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="page"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/page.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="parse"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/parse.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="person-group-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/person-group-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="platforms"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/platforms.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="pointer-to-explained"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/pointer-to-explained.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="pointer-to-question"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/pointer-to-question.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="position"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/position.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="prefix-word"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/prefix-word.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="preformat-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/preformat-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="product-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/product-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="pub-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/pub-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="publication-format"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/publication-format.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="publication-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/publication-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="publisher-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/publisher-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="question-response-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/question-response-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="rationale"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/rationale.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="ref-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/ref-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="related-article-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/related-article-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="resolution"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/resolution.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="rid"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/rid.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="rowspan"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/rowspan.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="rules"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/rules.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="scope"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/scope.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="sec-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/sec-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="seq"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/seq.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="show-in-toc"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/show-in-toc.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="sort-key"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/sort-key.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="source-id"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/source-id.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="source-id-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/source-id-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="source-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/source-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="span"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/span.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="specific-use"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/specific-use.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="start_date"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/start_date.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="style"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/style.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="style-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/style-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="subj-group-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/subj-group-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="summary"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/summary.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="supplement-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/supplement-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="suppress"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/suppress.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="symbol"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/symbol.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="target-type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/target-type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="toggle"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/toggle.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="underline-style"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/underline-style.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="units"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/units.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="valign"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/valign.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="version"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/version.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="vol"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/vol.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="width"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/width.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="x-size"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/x-size.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xlink:actuate"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xlink_actuate.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xlink:href"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xlink_href.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xlink:role"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xlink_role.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xlink:show"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xlink_show.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xlink:title"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xlink_title.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xlink:type"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xlink_type.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xml:base"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xml_base.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xml:lang"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xml_lang.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xml:space"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xml_space.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xmlns:ali"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xmlns_ali.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xmlns:mml"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xmlns_mml.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xmlns:xi"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xmlns_xi.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xmlns:xlink"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xmlns_xlink.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xmlns:xsi"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xmlns_xsi.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="xpointer"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/xpointer.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+      <mapping attributeName="y-size"
+               path="http://jats.nlm.nih.gov/extensions/bits/tag-library/2.0/attribute/y-size.html"
+               type="link"
+               linkText="Book Interchange (BITS) 2.0 Tag Library"/>
+   </mappingGroup>
+</contentCompletionElementsMap>

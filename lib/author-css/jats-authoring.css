@@ -1,0 +1,827 @@
+@import "html_cals_table.css";
+
+@namespace xlink "http://www.w3.org/1999/xlink";
+
+article, book, book-part-wrapper, collection, collection-list {
+  display: block;
+  margin:0.5em
+}
+
+front, front-matter {
+  display: block;
+  font-family: sans-serif;
+  font-size:90%;
+  border: thin black solid;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+}
+
+body, back, book-body, book-back, book-part, named-book-part-body,
+dedication, foreword, preface, front-matter-part, index { display: block }
+
+book-part { border-top: thin solid black; margin-top: 1em; padding-top: 0.5em }
+
+body { padding-top: 1em }
+
+journal-meta, article-meta, collection-meta, book-meta, book-part-meta, sec-meta {
+  display: block;
+}
+
+book-part-meta > *,
+book-meta > *,
+book-part > *{
+    display:block;
+}
+
+journal-id, journal-title, issn , publisher {
+  display: block;
+}
+
+publisher-loc:before {
+  content: " (" }
+
+publisher-loc:after {
+  content: ")" }
+
+article-id, article-categories, book-id, book-part-id, collection-id {
+  display: block;
+}
+
+title-group, book-title-group {
+  display: block;
+  text-align: center;
+}
+
+title-group article-title, book-title-group book-title {
+  display: block;
+  font-size: 160%;
+  font-weight: bold }
+
+subtitle {
+  display: block;
+  font-size: 140%;
+}
+
+alt-title {
+  display: block;
+  font-size: 110%;
+}
+
+contrib-group, permissions {
+  display: block;
+  font-size: 90%;
+  background-color: #DDD;
+  border: thin black solid;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+contrib {
+  display: block;
+  background-color: white;
+  border: thin black solid;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+name:after {
+  content: " ";
+}
+
+surname {
+  display: inline;
+}
+
+given-names {
+  display: inline;
+}
+
+given-names:before {
+  content: ", ";
+}
+
+prefix,
+suffix {
+  display: inline;
+}
+
+prefix:before {
+  content: " (";
+}
+
+prefix:after {
+  content: ")";
+}
+
+suffix:before {
+  content: ", ";
+}
+
+aff {
+  display: block;
+}
+
+author-comment {
+  display: inline;
+}
+
+institution {
+  display: inline;
+}
+
+collab {
+  display:block
+}
+
+address {
+  display:block;
+}
+
+addr-line,
+country {
+  display:block;
+}
+
+publisher-loc * { display: block }
+
+email {
+  font-size: 90%;
+  color: blue;
+}
+
+email:before {
+  content: "[";
+}
+
+email:after {
+  content: "]";
+}
+
+article-categories subject, article-meta > pub-date,
+volume, issue, fpage, lpage, article-meta > ext-link, collection-member > ext-link, history, pub-history {
+  display: block }
+
+history > *, pub-history > *, event > * { display: block }
+
+product {
+  display: block;
+  margin-top: 0.5em;
+}
+
+copyright-holder,
+copyright-statement,
+copyright-year {
+  display: block;
+}
+
+license {
+  display: block;
+  font-size: 90%;
+  margin-top: 0.5em;
+  margin-left: 1em;
+}
+
+copyright-holder:before,
+copyright-statement:before,
+copyright-year:before {
+  content: " ";
+}
+
+self-uri {
+  display: block;
+  color:blue;
+  margin-top: 0.5em;
+}
+
+related-article {
+  display: inline;
+  color:purple;
+}
+
+article-meta related-article {
+  display: block;
+  margin-top: 0.5em;
+
+}
+
+abstract {
+  display: block;
+  font-size: 90%;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #FDC;
+  border: thin black solid;
+  margin-top: 0.5em;
+}
+
+kwd-group {
+  display: block;
+  font-size: 90%;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #CFC;
+  border: thin black solid;
+  margin-top: 0.5em;
+}
+
+kwd, collection-member {
+  display:list-item;
+  margin-left:2em;
+}
+
+contract-num {
+  display: block;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+conference {
+  display: block;
+  font-size: 90%;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+conf-date,
+conf-name,
+conf-acronym,
+conf-num,
+conf-loc,
+conf-sponsor,
+conf-theme
+{ display: block;
+  font-size: 90%;
+  margin-left: 2em;
+}
+
+/* start main body elements */
+
+p {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+article-meta p {
+  margin-bottom: 0.25em;
+}
+
+fn {
+  display: block;
+  font-size: 90%;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #DFD;
+  border: thin black solid;
+}
+
+title {
+  font-family: sans-serif;
+  display: block;
+  font-weight: bold;
+  font-size:100%;
+  margin-top: 1em;
+  font-style: normal;
+}
+
+boxed-text title {
+  font-size: 140%;
+  font-style: italic;
+  font-weight: bold;
+}
+
+sec {
+  display:block;
+}
+
+sec title {
+  font-size: 150%;
+}
+
+sec sec title {
+  font-size: 135%;
+  font-style: italic;
+}
+
+sec sec sec title {
+  font-size: 120%;
+  font-style: normal;
+}
+
+sec sec sec sec title {
+  font-size: 110%;
+  font-style: italic;
+}
+
+sec sec sec sec sec title {
+  font-size: 90%;
+  font-style: normal;
+}
+
+sec sec sec sec sec sec title {
+  font-size: 90%;
+  font-style: italic;
+}
+
+sec sec sec sec sec sec sec title {
+  font-weight: normal;
+  font-size: 90%;
+  font-style: normal;
+}
+
+statement title {
+  font-size: 130%;
+  font-style: italic;
+  font-weight: bold;
+}
+
+caption title {
+  font-size: 130%;
+  font-style: italic;
+  font-weight: bold;
+}
+
+boxed-text {
+  display: block;
+  font-size: 90%;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #FED;
+  border: thin black solid;
+}
+
+fig {
+  display: block;
+  font-size: 90%;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #EDF;
+  border: thin black double;
+}
+
+table-wrap {
+  display: block;
+  font-size: 90%;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #FDE
+}
+
+list {
+  display: block;
+  margin-top: 1em; margin-bottom: 1em;
+}
+
+list list-item {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 2em;
+}
+
+list[list-type="order"] list-item {
+  list-style-type: decimal;
+}
+
+list[list-type="simple"] list-item {
+  display: block;
+  margin-top: 1em;
+}
+
+list p {
+  margin-bottom: 0.25em;
+}
+/*
+def-list {
+  display: block;
+  margin-bottom:0.25em;
+}
+
+def-head {
+  display: block;
+}
+
+def-item {
+  display: block;
+  margin-top:1em;
+}
+
+def-item term {
+  display: block;
+  font-weight:bold;
+}
+
+def {
+  display: block;
+  margin-left: 2em;
+}*/
+
+
+def-list {
+  display: table;
+  margin-bottom:0.25em;
+}
+
+term-head {
+  display: table-caption;
+}
+
+def-head {
+  display: table-caption;
+}
+
+def-item {
+  display: table-row;
+  margin-top:1em;
+}
+
+def-item > term {
+  display: table-cell;
+  width: 120px;
+  font-weight:bold;
+}
+
+def-item > def {
+  display: table-cell;
+  margin-left: 2em;
+}
+
+def p {
+  margin-bottom:0.25em;
+}
+
+def {
+  display: block;
+  margin-left: 2em;
+}
+
+p def, p def p {
+  display: inline;
+}
+
+p def:before {
+  content: " [";
+}
+  
+p def:after {
+  content: " ]";
+}
+  
+
+disp-formula,
+disp-quote {
+  display: block;
+  margin-left:2em;
+  margin-top:0.25em;
+  margin-bottom:0.25em;
+}
+
+disp-formula {
+  font-style:italic;
+}
+
+preformat {
+  display: block;
+  font-family: monospace;
+  font-size: 80%;
+  white-space: pre;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  border: thin black solid;
+}
+
+speech {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+speaker {
+  display: block;
+  font-style:italic;
+}
+
+speaker:after {
+  content: ":";
+}
+
+speech p {
+  margin-bottom: 0.25em;
+  margin-left: 3em;
+}
+
+statement {
+  display: block;
+  font-size: 90%;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  border: thin black solid;
+}
+
+label {
+  font-weight:bold;
+}
+
+label:after {
+  content: " ";
+}
+
+table-wrap > label {
+    display:block;
+}
+
+verse-group {
+  display: block;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+verse-line {
+  display: block;
+}
+
+glossary title {
+  font-size: 150%;
+  font-style: normal;
+  font-weight: bold;
+}
+
+gloss-group title {
+  font-size: 120%;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+/* inline elements */
+
+alt-text {
+  display: inline;
+  background:#ACF;
+  color:#F44;
+}
+
+citation {
+  display: inline;
+}
+
+citation:before {
+  content: "[";
+}
+
+citation:after {
+  content: "]";
+}
+
+
+abbrev {
+  display: inline;
+  background-color:#BFD;
+}
+
+bold {
+  display: inline;
+  font-weight:bold;
+}
+
+italic {
+  display: inline;
+  font-style:italic;
+}
+
+monospace {
+  display: inline;
+  font-size:85%;
+  font-family:monospace;
+}
+
+index-term {
+ display: inline;
+ font-weight: bold
+}
+
+index-term:before {
+  content: '[' }
+
+index-term:after {
+  content: ']'
+}
+
+see:before, see-also:before {
+  content: '(' }
+
+see:after, see-also:after {
+  content: ')'
+}
+
+index-term-range-end { content: '' }
+
+inline-formula {
+  display: inline;
+  font-style:italic;
+}
+
+named-content {
+  display: inline;
+  background-color:#FCA;
+}
+
+overline {
+  display: inline;
+  border-top: thin solid black;
+  text-decoration:overline;
+}
+
+sc {
+  font-variant: small-caps;
+}
+
+strike {
+  display: inline;
+  text-decoration: line-through;
+}
+
+sub {
+  display:inline;
+  font-size:80%;
+  vertical-align:sub
+}
+
+sup {
+  display:inline;
+  font-size:80%;
+  vertical-align:super;
+}
+
+target {
+  display: inline;
+  color:#F44;
+  background-color:#EFF;
+}
+
+ext-link {
+  display: inline;
+  color:blue;
+  text-decoration:underline;
+}
+
+ext-link:after {
+  font-size: 80%; font-family: sans-serif;
+  content: attr(xlink\:href) }
+
+underline {
+  display: inline;
+  text-decoration:underline;
+}
+
+uri {
+  display: inline;
+  color:blue;
+  text-decoration:underline;
+}
+
+xref {
+  display: inline;
+  color: green;
+  background-color: #FFC;
+  font-weight: bold
+}
+
+
+/* graphics and media */
+
+graphic {
+  content: attr(xlink|href, url);
+  vertical-align: middle }
+
+inline-graphic {
+  content: attr(xlink|href, url);
+  vertical-align: middle }
+
+supplementary-material {
+  display:block;
+  font-size: 90%;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: #DFC;
+  border: thin black dotted;
+  margin-top: 0.5em;
+}
+
+caption {
+  display: block;
+  font-size: 90%
+}
+
+/* bibliographies and citations */
+
+ref-list {
+  display: block
+}
+
+ref-list:before {
+  content: "References:";
+  font-weight:bold;
+  font-size:150%;
+}
+
+ref {
+  display: block;
+  margin-top:0.5em;
+}
+
+ref citation {
+  display: block;
+}
+
+mixed-citation {
+    display:block;
+}
+
+citation *, mixed-citation * {
+  display: inline;
+}
+
+nlm-citation * {
+  display: inline;
+}
+
+element-citation article-title, nlm-citation article-title {
+  display: inline;
+  font-style: italic;
+  font-size: 100%;
+}
+
+/*Tables of contents and indexes */
+
+toc, toc-div, toc-group, toc-entry { display: block }
+
+toc-entry toc-entry { margin-left: 1em }
+
+index-div, index-group { display: block }
+
+index-entry, see-entry, see-also-entry {
+  display: block }
+
+index-entry index-entry, index-entry see-entry, index-entry see-also-entry {
+  margin-left: 1em }
+
+nav-pointer {
+  display: inline;
+  color:green;
+  text-decoration:underline;
+}
+
+index-entry > ext-link:before, nav-pointer:before {
+  text-decoration:none;
+  content: " " }
+
+see-entry:before, see-also-entry:before {
+  font-family: sans-serif;
+  font-size: 85%; font-style: italic }
+
+see-entry:before { content: "See: " }
+
+see-also-entry:before { content: "See also: " }
+
+xref:before {
+   link:"#" attr(rid);
+   content: url('../../img/link.png');
+} 

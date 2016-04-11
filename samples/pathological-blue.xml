@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with OASIS Tables with MathML3 v1.1 20151215//EN"
+  "JATS-journalpublishing-oasis-article1-mathml3.dtd">
+<article dtd-version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <front>
+    <journal-meta>
+      <journal-id>journalID</journal-id>
+      <issn>ISSN</issn>
+    </journal-meta>
+    <article-meta>
+      <title-group>
+        <article-title>Blue Title</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib>
+          <name>
+            <surname>Piez</surname>
+            <given-names>Wendell</given-names>
+          </name>
+        </contrib>
+      </contrib-group>
+      <pub-date>
+        <year>April 2016</year>
+      </pub-date>
+      <abstract>
+        <p>This document is a "pathological" test instance for JATSKit. Its contents are meant only
+          for demonstration.</p>
+      </abstract>
+      <counts>
+        <fig-count count="1"/>
+        <table-count count="4"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <p> Paragraph content, <code>lorem ipsum 
+hey this is 'preformatted'</code>
+      <monospace>etc</monospace> etc. Inline phenomena such as <bold>bold</bold> and
+        <italic>italic</italic> can be tagged as such. As always there can be boxes even in the
+      middle of paragraphs. Even inline MathML? Such as <mml:math>
+        <mml:pi/>
+      </mml:math><verse-group>
+        <verse-line>Lines of verse</verse-line>
+        <verse-line>Can be quite terse.</verse-line>
+      </verse-group><boxed-text id="box1">
+        <p>(Paragraphs may appear inside boxed-text inside paragraphs.)</p>
+      </boxed-text>
+    </p>
+    <table-wrap id="table-wrap-1">
+      <caption>
+        <title>HTML table example</title>
+      </caption>
+      <table>
+        <tr>
+          <td>One</td>
+          <td>Two</td>
+          <td>Three</td>
+          <td>Four</td>
+          <td>Five</td>
+          <td>Six</td>
+          <td>Seven</td>
+        </tr>
+        <tr>
+          <td>Ichi</td>
+          <td>Ni</td>
+          <td>San</td>
+          <td>Shi</td>
+          <td>Go</td>
+          <td>Roku</td>
+          <td>Shichi</td>
+        </tr>
+      </table>
+    </table-wrap>
+    <table-wrap id="table-wrap-2">
+      <caption>
+        <title>Complex HTML table example</title>
+      </caption>
+      <table>
+        <tr>
+          <td>One</td>
+          <td>Two</td>
+          <td>Three</td>
+          <td>Four</td>
+          <td>Five</td>
+          <td>Six</td>
+          <td>Seven</td>
+        </tr>
+        <tr>
+          <td>Ichi</td>
+          <td>Ni</td>
+          <td>San</td>
+          <td>Shi</td>
+          <td>Go</td>
+          <td>Roku</td>
+          <td>Shichi</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td rowspan="2">cell rowspan=2</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td colspan="3">cell colspan=3</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>Eins</td>
+          <td>Zwei</td>
+          <td>Drei</td>
+          <td>Vier</td>
+          <td>Fuenf</td>
+          <td>Sechs</td>
+          <td>Sieben</td>
+        </tr>
+      </table>
+    </table-wrap>
+    <table-wrap id="table-wrap-3">
+      <caption>
+        <title>Controlled complex HTML table example</title>
+        <p>This time the 'col' elements indicate widths.</p>
+      </caption>
+      <table>
+        <col width="10%"/>
+        <col width="20%"/>
+        <col width="10%"/>
+        <col width="20%"/>
+        <col width="10%"/>
+        <col width="20%"/>
+        <col width="10%"/>
+        <tr>
+          <td>One</td>
+          <td>Two</td>
+          <td>Three</td>
+          <td>Four</td>
+          <td>Five</td>
+          <td>Six</td>
+          <td>Seven</td>
+        </tr>
+        <tr>
+          <td>Ichi</td>
+          <td>Ni</td>
+          <td>San</td>
+          <td>Shi</td>
+          <td>Go</td>
+          <td>Roku</td>
+          <td>Shichi</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td rowspan="2">cell rowspan=2</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td colspan="3">cell colspan=3</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <td>Eins</td>
+          <td>Zwei</td>
+          <td>Drei</td>
+          <td>Vier</td>
+          <td>Fuenf</td>
+          <td>Sechs</td>
+          <td>Sieben</td>
+        </tr>
+      </table>
+    </table-wrap>
+    <table-wrap id="table-wrap-4">
+      <caption>
+        <title>OASIS table example</title>
+        <p>In JATS, so-called "OASIS" tables have the same model as OASIS (CALS) tables, except in a
+          namespace.</p>
+      </caption>
+      <oasis:table xmlns:oasis="http://www.niso.org/standards/z39-96/ns/oasis-exchange/table">
+        <oasis:tgroup cols="7">
+          <oasis:colspec colwidth="10%"/>
+          <oasis:colspec colwidth="20%"/>
+          <oasis:colspec colwidth="10%"/>
+          <oasis:colspec colwidth="20%" colname="iv"/>
+          <oasis:colspec colwidth="10%" colname="v"/>
+          <oasis:colspec colwidth="20%" colname="vi"/>
+          <oasis:colspec colwidth="10%"/>
+          <oasis:tbody>
+            <oasis:row>
+              <oasis:entry>One</oasis:entry>
+              <oasis:entry>Two</oasis:entry>
+              <oasis:entry>Three</oasis:entry>
+              <oasis:entry>Four</oasis:entry>
+              <oasis:entry>Five</oasis:entry>
+              <oasis:entry>Six</oasis:entry>
+              <oasis:entry>Seven</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>Ichi</oasis:entry>
+              <oasis:entry>Ni</oasis:entry>
+              <oasis:entry>San</oasis:entry>
+              <oasis:entry>Shi</oasis:entry>
+              <oasis:entry>Go</oasis:entry>
+              <oasis:entry>Roku</oasis:entry>
+              <oasis:entry>Shichi</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry morerows="1">cell morerows=1</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry/>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry namest="iv" nameend="vi">cell from col iv to col vi</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+              <oasis:entry>cell</oasis:entry>
+            </oasis:row>
+            <oasis:row>
+              <oasis:entry>Eins</oasis:entry>
+              <oasis:entry>Zwei</oasis:entry>
+              <oasis:entry>Drei</oasis:entry>
+              <oasis:entry>Vier</oasis:entry>
+              <oasis:entry>Fuenf</oasis:entry>
+              <oasis:entry>Sechs</oasis:entry>
+              <oasis:entry>Sieben</oasis:entry>
+            </oasis:row>
+          </oasis:tbody>
+        </oasis:tgroup>
+      </oasis:table>
+    </table-wrap>
+    <fig id="fig-1">
+      <caption>
+        <title>Figure Title</title>
+      </caption>
+    </fig>
+  </body>
+</article>

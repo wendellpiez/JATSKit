@@ -1,0 +1,135 @@
+@import "html_cals_table.css";
+
+@namespace oasis "http://www.niso.org/standards/z39-96/ns/oasis-exchange/table";
+
+/* Patched by hand to select elements in the JATS OASIS tables namespace */
+
+/*
+=================================
+    Modify the HTML defaults to reflect
+    the structure of the CALS table.
+    The master file is in the DITA framework.
+=================================
+*/
+
+/* Because the tgroup below is having the display: table, the table element 
+containing the element tgroup loses its display, becoming a block.*/
+oasis|table,
+oasis|informaltable{
+  border-color:#EEEEEE;
+  border-style:solid;
+  border-width:2px;
+  padding:2px;
+}
+
+/*
+  A wrapper for the main content of a table, or part of a table
+ */
+oasis|tgroup {
+  display:table;
+  border-color:black;
+  border-style:solid;
+  border-width:1px;  
+}
+
+
+/* 
+  Mechanism for toggling on/off the visibility of the colspecs. 
+ */
+oasis|colspec, oasis|spanspec{
+    display:none;    
+}
+oasis|tgroup:-oxy-visible-colspecs oasis|colspec, 
+oasis|tgroup:-oxy-visible-colspecs oasis|spanspec {
+    display:block;
+}
+oasis|tgroup:before! > oasis|colspec{ 
+    display:block;
+    content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
+    text-align:left;
+    font-family: sansserif, verdana, helvetica;
+    font-size: 0.75em;
+    color: navy;
+    padding-bottom: 0.2em;
+}
+oasis|tgroup:-oxy-visible-colspecs:before{
+    content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);       
+}
+
+oasis|col, oasis|colgroup {
+    display:block;
+}
+
+
+/*
+ * The frame is displayed on tgroup
+ */
+oasis|table[frame] {
+    border-style:none;
+}
+
+/* 
+   If no frame attribute value is set, use a 1px border. This is similar to the PDF output.
+*/
+oasis|table[frame] > oasis|tgroup {
+    border-style:none;
+}
+
+
+oasis|table[frame = 'above'] > oasis|tgroup,
+oasis|table[frame = 'top'] > oasis|tgroup {
+    border-top-color:black;
+    border-top-style:solid;
+    border-top-width:1px;
+}
+
+oasis|table[frame = 'below'] > oasis|tgroup,
+oasis|table[frame = 'bottom'] > oasis|tgroup {
+    border-bottom-color:black;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+}
+
+oasis|table[frame = 'rhs'] > oasis|tgroup,
+oasis|informaltable[frame = 'rhs'] > oasis|tgroup {
+    border-right-color:black;
+    border-right-style:solid;
+    border-right-width:1px;
+}
+
+oasis|table[frame = 'lhs'] > oasis|tgroup,
+oasis|informaltable[frame = 'lhs'] > oasis|tgroup {
+    border-left-color:black;
+    border-left-style:solid;
+    border-left-width:1px;
+}
+
+oasis|table[frame = 'vsides'] > oasis|tgroup,
+oasis|table[frame = 'sides'] > oasis|tgroup {
+    border-left-color:black;
+    border-left-style:solid;
+    border-left-width:1px;
+    
+    border-right-color:black;
+    border-right-style:solid;
+    border-right-width:1px;
+}
+
+oasis|table[frame = 'hsides'] > oasis|tgroup,
+oasis|table[frame = 'topbot'] > oasis|tgroup {
+    border-top-color:black;
+    border-top-style:solid;
+    border-top-width:1px;
+    
+    border-bottom-color:black;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+}
+
+oasis|table[frame = 'box'] > oasis|tgroup,
+oasis|table[frame = 'border'] > oasis|tgroup,
+oasis|table[frame = 'all'] > oasis|tgroup {
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+}

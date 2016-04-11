@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book
+  PUBLIC "-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"
+  "BITS-book2.dtd">
+<book dtd-version="2.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:mml="http://www.w3.org/1998/Math/MathML">
+  <book-meta>
+    <book-title-group>
+      <book-title/>
+    </book-title-group>
+    <contrib-group>
+      <contrib>
+        <contrib-id/>
+        <name>
+          <surname/>
+          <given-names/>
+        </name>
+      </contrib>
+    </contrib-group>
+  </book-meta>
+  <book-body>
+    <book-part>
+      <book-part-meta>
+        <title-group>
+          <title/>
+        </title-group>
+      </book-part-meta>
+    </book-part>
+  </book-body>
+  <book-back>
+    <ref-list>
+      <ref>
+        <mixed-citation/>
+      </ref>
+    </ref-list>
+  </book-back>
+</book>

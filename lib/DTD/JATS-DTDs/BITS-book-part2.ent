@@ -1,0 +1,802 @@
+<!-- ============================================================= -->
+<!--  MODULE:    BITS Book Component Elements                      -->
+<!--  VERSION:   BITS 2.0                                          -->
+<!--  DATE:      June 2015                                         -->
+<!--                                                               -->
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+<!--                    PUBLIC DOCUMENT TYPE DEFINITION            -->
+<!--                        TYPICAL INVOCATION                     -->
+<!--
+"-//NLM//DTD BITS Book Component Elements v2.0 20151225//EN"
+Delivered as file "BITS-book-part2.ent"                            -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!-- SYSTEM:     Book Interchange Tag Suite                        -->
+<!--                                                               -->
+<!-- PURPOSE:    Declare book-component-level elements such as     -->
+<!--             chapter-specific or part-specific elements.       -->
+<!--                                                               -->
+<!-- TAG SET SPONSOR                                               -->
+<!--             National Center for Biotechnology                 -->
+<!--                Information (NCBI)                             -->
+<!--             National Library of Medicine (NLM)                -->
+<!--                                                               -->
+<!-- CREATED FOR:                                                  -->
+<!--             This DTD was created as a superset customization  -->
+<!--             of the ANSI/NISO JATS Z39.96-2012 Version 1.0     -->
+<!--             Journal Article Tag Set.                          -->
+<!--                                                               -->
+<!--             Digital archives and publishers may use the       -->
+<!--             DTD as is for markup of books or book-like        -->
+<!--             material for archiving and transferring           -->
+<!--             such material between archives or they may create -->
+<!--             a custom XML DTD from the BITS Suite for          -->
+<!--             these purposes.                                   -->
+<!--                                                               -->
+<!--             This DTD is in the public domain. An organization -->
+<!--             that wishes to create its own DTD from the suite  -->
+<!--             may do so without permission from NLM.            -->
+<!--                                                               -->
+<!--             The suite has been set up to be extended using a  -->
+<!--             new DTD file and new DTD-specific customization   -->
+<!--             modules to redefine the many Parameter Entities.  -->
+<!--             Do not modify the suite directly or redistribute  -->
+<!--             modified versions of the suite.                   -->
+<!--                                                               -->
+<!--             In the interest of maintaining consistency and    -->
+<!--             clarity for potential users, NLM requests:        -->
+<!--                                                               -->
+<!--             1. If you create a DTD from the BITS DTD Suite    -->
+<!--                and intend to stay compatible with the suite,  -->
+<!--                then please include the following statement    -->
+<!--                as a comment in all of your DTD modules:       -->
+<!--                   "Created from, and fully compatible with,   -->
+<!--                    the Book Interchange Tag Suite (BITS).     -->
+<!--                                                               -->
+<!--             2. If you alter one or more modules of the suite, -->
+<!--                then please rename your version and all its    -->
+<!--                modules to avoid any confusion with the        -->
+<!--                original suite. Also, please include the       -->
+<!--                following statement as a comment in all your   -->
+<!--                DTD modules:                                   -->
+<!--                   "Based in part on, but not fully compatible -->
+<!--                    with, the Book Interchange Tag Suite       -->
+<!--                    (BITS)."                                   -->
+<!--                                                               -->
+<!-- ORIGINAL CREATION DATE:                                       -->
+<!--             April 2012                                        -->
+<!--                                                               -->
+<!-- CREATED BY: Mulberry Technologies, Inc. for the National      -->
+<!--             National Center for Biotechnology Information     -->
+<!--             (NCBI), a center of the US National Library of    -->
+<!--             Medicine (NLM).                                   -->
+<!--                                                               -->
+<!--             The BITS Book Interchange DTD is built from the   -->
+<!--             Journal Archiving and Interchange DTD of the      -->
+<!--             ANSI/NISO Journal Article Tag Suite (JATS)        -->
+<!--             Version 1.1d1 (Z39.96-2015).                      -->
+<!--                                                               -->
+<!--             Suggestions for refinements and enhancements to   -->
+<!--             this DTD should be sent in email to:              -->
+<!--                 bits@ncbi.nlm.nih.gov                         -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!--                    DTD VERSION\CHANGE HISTORY                 -->
+<!-- ============================================================= -->
+<!--
+Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
+    =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-12-25)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-12-15)
+
+     JATS is a continuing maintenance NISO Standard, which
+     requires voting by the ANSI and NISO memberships to be changed. 
+     JATS 1.1 was approved in late 2015, and BITS modified to use
+     the most recent version. No other changes to BITS were made.
+ 
+  5. BITS remained version "2.0" but became "v2.0 20151225"
+     JATS became version "1.1" and "v1.1 20151215"
+
+    =============================================================
+     BITS Version 2.0                (DAL/BTU) v2.0  (2015-03-15)
+     JATS Version 1.1                (DAL/BTU) v1.1  (2015-03-01)
+
+     BITS was modified, based on user feedback collected in 2014 
+     and January/February 2015, according to the decisions
+     made by the BITS Working Group. This DTD represents current 
+     BITS and an interim version of the non-normative JATS DTD 
+     Suite (version 1.1), as an indication to JATS users of 
+     the decisions that have been made by the JATS Standing
+     Committee. 
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+  4. ALI NAMESPACE - Added the ali: namespace to the attributes 
+     for <book-app>, <book-app-group>, and <book-part>.
+
+  3. BOOK APPENDIX AND BOOK APPENDIX GROUP
+      - New element Book Appendix (<book-app>), a 
+        book-part-level appendix structure.
+
+      - New element Book Appendix Group (<book-app-group>), a 
+        book-part-level appendix grouping structure.
+
+      These new components are only used in tthe back matter
+      for a whole book (<book-back>).
+
+  2. BITS became version "2.0" and   "v2.0 20150630"
+     JATS became version "1.1" and "v1.1 20150301"
+
+     =============================================================
+     BITS Version 1.1                (DAL/BTU) v1.1    (2014-09-30)
+     JATS Version 1.1d2              (DAL/BTU) v1.1d2  (2014-09-30)
+
+     NISO JATS is a continuing maintenance NISO Standard, which
+     requires voting by the NISO membership to be changed. This
+     Committee Draft 1.1d2 will be sent to the NISO voting
+     membership, to become (if approved) NISO JATS 1.1.
+
+     This catalog represents an interim version of the
+     non-normative JATS DTD Suite, as an indication to JATS users
+     the decisions that have been made by the JATS Standing
+     Committee.
+
+  2. BOOK APPENDIX - Added a new named book-part <book-app>,
+     that can be used in the back matter of books. It takes the
+     full book-part model and attributes.
+
+  1. BITS became version "1.1" and   "v1.1 20140930//EN"
+     JATS became version "1.1d2" and "v1.1d2 20140930//EN"
+
+     =============================================================
+                                                                   -->
+
+
+<!-- ============================================================= -->
+<!--                    PARAMETER ENTITIES FOR ATTRIBUTE VALUES    -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK PART LOCATIONS                        -->
+<!--                    When a <book-part> is exchanged, the
+                        @from-where attribute cam be used to record
+                        the origin of the <book-part>, inside the
+                        narrative <front-matter>, the <body>, the
+                        rear matter (<back>,) or in  supplementary
+                        material.                                  -->
+<!ENTITY % book-part-locations
+                        "front-matter | body | back | supplemental"  >
+
+
+<!-- ============================================================= -->
+<!--                    BOOK PART ATTRIBUTE LISTS                  -->
+<!-- ============================================================= -->
+
+
+<!--                    BACK ATTRIBUTES                            -->
+<!--                    Attributes for the <back> element          -->
+<!ENTITY % back-atts
+           "%jats-common-atts;
+             specific-use
+                        CDATA                             #IMPLIED"  >
+
+
+<!--                    BODY ATTRIBUTES                            -->
+<!--                    Attributes for the <body> element          -->
+<!ENTITY % body-atts
+           "%jats-common-atts;
+             specific-use
+                        CDATA                             #IMPLIED"  >
+
+
+<!--                    BOOK APPENDIX ATTRIBUTES                   -->
+<!--                    Attributes used with the <book-app> element
+                                                                   -->
+<!ENTITY % book-app-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %ali.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %xinclude.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!--                    BOOK APPENDIX GROUP ATTRIBUTES             -->
+<!--                    Attributes used with the <book-app-group> 
+                        element                                    -->
+<!ENTITY % book-app-group-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %ali.xmlns.attrib;
+             %xinclude.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!--                    BOOK PART ATTRIBUTES                       -->
+<!--                    Attributes used with the <book-part> element
+                                                                   -->
+<!ENTITY % book-part-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %ali.xmlns.attrib;
+             %xinclude.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!--                    BODY PART METADATA ATTRIBUTES              -->
+<!--                    Attributes for the <book-part-meta> element-->
+<!ENTITY % book-part-meta-atts
+           "%jats-common-atts;"                                      >
+
+
+<!--                    FRONT MATTER PART ATTRIBUTES               -->
+<!--                    Attributes used with the
+                        <front-matter-part> element                -->
+<!ENTITY % front-matter-part-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!--                    DEDICATION ATTRIBUTES                      -->
+<!--                    Attributes used with the
+                        <dedication> element                       -->
+<!ENTITY % dedication-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!--                    FOREWORD PART ATTRIBUTES                   -->
+<!--                    Attributes used with the
+                        <foreword> element                         -->
+<!ENTITY % foreword-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!--                    NAMED BOOK PART ATTRIBUTES                 -->
+<!--                    Attributes for the <named-book-part-body>
+                        element                                    -->
+<!ENTITY % named-book-part-body-atts
+           "%jats-common-atts;"                                      >
+
+
+<!--                    PREFACE ATTRIBUTES                         -->
+<!--                    Attributes used with the
+                        <preface> element                          -->
+<!ENTITY % preface-atts
+           "%jats-common-atts;
+             book-part-type
+                        CDATA                             #IMPLIED
+             seq        CDATA                             #IMPLIED
+             indexed    (yes | no)                        #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED
+             %XLINK.xmlns.attrib;
+             %MATHML.xmlns.attrib;
+             %Schema.xmlns.attrib;"                                  >
+
+
+<!-- ============================================================= -->
+<!--                    PARAMETER ENTITIES FOR ATTRIBUTE LISTS     -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK PART IDENTIFIER ATTRIBUTES            -->
+<!--                    Attributes for the <book-part-id> element  -->
+<!ENTITY % book-part-id-atts
+           "%jats-common-atts;
+             book-part-id-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    COLLECTION METADATA ATTRIBUTES             -->
+<!--                    Attributes used with the book set or book
+                        series element <collection-meta>           -->
+<!ENTITY % collection-meta-atts
+           "%jats-common-atts;
+             seq        CDATA                             #IMPLIED
+             collection-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!--                    COLLECTION IDENTIFIER ATTRIBUTES           -->
+<!--                    Attributes used with the book set or book
+                        series element <collection-id>             -->
+<!ENTITY % collection-id-atts
+           "%jats-common-atts;
+             collection-id-type
+                        CDATA                             #IMPLIED
+             specific-use
+                        CDATA                             #IMPLIED
+             xml:lang   NMTOKEN                           #IMPLIED"  >
+
+
+<!-- ============================================================= -->
+<!--                    BOOK PARTS (COMPONENTS SUCH AS CHAPTERS)   -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK PART MODEL                            -->
+<!--                    Content model for the <book-part> element  -->
+<!ENTITY % book-part-model
+                        "(book-part-meta?, front-matter?, body?,
+                          back?)"                                    >
+
+
+<!--ELEM  front-matter    Defined in book.dtd                      -->
+<!--ELEM  back            Defined in book.dtd                      -->
+
+
+<!--                    BOOK PART                                  -->
+<!--                    A major organizational unit of a book,
+                        typically called a "chapter", but given
+                        many names in common language, for example,
+                        chapter, part, unit, module, section, topic,
+                        lesson, canto, volume, or even "book".
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-part
+                                                                   -->
+<!ELEMENT  book-part    %book-part-model;                            >
+<!ATTLIST  book-part
+             %book-part-atts;                                        >
+
+
+<!-- ============================================================= -->
+<!--                    BOOK PART METADATA ELEMENTS                -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK PART METADATA MODEL                   -->
+<!--                    Full content model for the metadata that is
+                        specific to a book component, such as a
+                        chapter or unit.                           -->
+<!ENTITY % book-part-meta-model
+                        "(book-part-id*, subj-group*, title-group?,
+                          (%contrib-group.class; |
+                           %aff-alternatives.class; | %x.class;)*,
+                          author-notes?, pub-date*, edition*,
+                          issn*, issn-l?, isbn*,
+                          publisher*,
+                          ((fpage, lpage?) | elocation-id)?,
+                          supplementary-material*, pub-history*,
+                          permissions?, self-uri*,
+                          (%related-article.class;)*,
+                          (%abstract.class;)*, trans-abstract*,
+                          (%kwd-group.class;)*,
+                          funding-group*, conference*, counts?,
+                          custom-meta-group*,
+                          (%front-back.class;)* )"                   >
+
+
+<!--                    BOOK PART METADATA                         -->
+<!--                    Container element for the metadata that is
+                        specific to the large-scale components that
+                        comprise the body of a book, such as a
+                        chapter, unit, part, or module (all tagged
+                        as the element <book-part>).
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-part-meta
+                                                                   -->
+<!ELEMENT  book-part-meta
+                        %book-part-meta-model;                       >
+<!ATTLIST  book-part-meta
+             %book-part-meta-atts;                                   >
+
+
+<!--                    BOOK PART IDENTIFIER                       -->
+<!--                    An identifier, such as a DOI or archive
+                        control number, for a <book-part>.
+                        Remarks: The @book-part-id-type attribute
+                        should be used to name the type of
+                        identifier, such as "doi".
+                           There is a separate element for the
+                        ISBNs <isbn> related to a <book-part>.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-part-id
+                                                                   -->
+<!ELEMENT  book-part-id (#PCDATA)                                    >
+<!ATTLIST  book-part-id
+             %book-part-id-atts;                                     >
+
+
+<!-- ============================================================= -->
+<!--                    ELEMENTS WITHIN BOOK PARTS                 -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK PART BODY MODEL                       -->
+<!--                    Content model for the <book-part-body>
+                        element                                    -->
+<!ENTITY % body-model   "((%para-level;)*, (%sec-level;)*,
+                          (%book-part.class;)* )"                    >
+
+
+<!--                    BOOK PART BODY                             -->
+<!--                    The narrative and graphical portion of a
+                        major component of a book, such as a
+                        chapter. This is the text of the chapter as
+                        distinguished from the metadata such as the
+                        chapter number or editors.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=body
+                                                                   -->
+<!ELEMENT  body         %body-model;                                 >
+<!ATTLIST  body
+             %body-atts;                                             >
+
+
+<!-- ============================================================= -->
+<!--                    BOOK PART BACK MATTER ELEMENTS             -->
+<!-- ============================================================= -->
+
+
+<!--                    BACK MATTER MODEL                          -->
+<!--                    Content model for the Back Matter element
+                        which contains ancillary material such as
+                        reference lists and appendices for a book
+                        part such as a chapter.                    -->
+<!ENTITY % back-model   "(label?, title*,
+                          (%back-only.class; |
+                           %both-front-back.class; |
+                           %front-back.class; | %sec.class; |
+                           %sig-block.class;)+  )"                   >
+
+
+
+<!--                    BACK MATTER                                -->
+<!--                    Ancillary or supporting material not included
+                        as part of the main textual content of a
+                        book, for example appendices and lists of
+                        references.
+                        At first inception, this element differed from
+                        the <book-back> element in NOT containing
+                        book parts (<book-part>).
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=back
+                                                                   -->
+<!ELEMENT  back         %back-model;                                 >
+<!ATTLIST  back
+             %back-atts;                                             >
+
+
+<!-- ============================================================= -->
+<!--                    COLLECTION METADATA                        -->
+<!-- ============================================================= -->
+
+
+<!--                    COLLECTION METADATA                        -->
+<!--                    Content model for the collection metadata
+                        element <collection-meta>.                 -->
+<!ENTITY % collection-meta-model
+                        "(collection-id*, subj-group*, title-group?,
+                          (%contrib-group.class; |
+                          %aff-alternatives.class; | %x.class;)*,
+                          author-notes?, pub-history*,
+                          volume-in-collection*,
+                          issn*, issn-l?, isbn*,
+                          publisher*, edition*,
+                          permissions?, self-uri*,
+                          (%related-article.class;)*,
+                          (%abstract.class;)*, trans-abstract*,
+                          (%kwd-group.class;)*,
+                          funding-group*, conference*, counts?,
+                          custom-meta-group*,
+                          (%front-back.class;)* )"                   >
+
+
+<!--                    COLLECTION METADATA                        -->
+<!--                    Bibliographic metadata describing a book set
+                        or series to which this book or book part
+                        belongs. Note: This series metadata is not
+                        complete en ought to pro dice a publishers'
+                        catalog; this is just the series metadata that
+                        travels with a book. By design, this will
+                        NOT include metadata concerning other books
+                        in the series.
+                        Remarks: BITS is deliberately agnostic
+                        concerning the definition of a book series
+                        or a book set, leaving the question of
+                        definition to the publisher.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=collection-meta
+                                                                   -->
+<!ELEMENT  collection-meta
+                        %collection-meta-model;                      >
+<!ATTLIST  collection-meta
+             %collection-meta-atts;                                  >
+
+
+<!--                    COLLECTION IDENTIFIER                      -->
+<!--                    An identifier, such as a DOI or archive
+                        control number, or LCCN for a series or set
+                        of books.
+                        Remarks: The @collection-id-type attribute
+                        should be used to name the type of
+                        identifier, such as "lccn".
+                           There is a separate element for the
+                        ISBNs <isbn> related to a book.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=collection-id
+                                                                   -->
+<!ELEMENT  collection-id
+                        (#PCDATA)                                    >
+<!ATTLIST  collection-id
+             %collection-id-atts;                                    >
+
+
+<!-- ============================================================= -->
+<!--                    NAMED BOOK PART MODELS                     -->
+<!-- ============================================================= -->
+
+
+<!--                    NAMED BOOK PART MODEL                      -->
+<!--                    Content model for the named book part
+                        elements such as <foreword> and
+                        <dedication>.                              -->
+<!ENTITY % named-book-part-model
+                        "(book-part-meta?, named-book-part-body?,
+                          back?)"                                    >
+
+
+<!--                    NAMED BOOK PART BODY MODEL                 -->
+<!--                    Content model for the body of any of the named
+                        book parts such as the <dedication>.       -->
+<!ENTITY % named-book-part-body-model
+                        "( ((%para-level;)+, (%sec-level;)* ) |
+                            (%sec-level;)+ )"                        >
+
+<!--                    NAMED BOOK PART BODY                       -->
+<!--                    Content model for the non-recursive body of
+                        a named book parts such as a <dedication> or
+                        <foreword>.                                -->
+<!ELEMENT  named-book-part-body
+                        (%named-book-part-body-model;)               >
+<!ATTLIST  named-book-part-body
+             %named-book-part-body-atts;                             >
+
+
+<!-- ============================================================= -->
+<!--                    BOOK-BACK MATTER ELEMENTS                  -->
+<!-- ============================================================= -->
+
+
+<!--                    BOOK APPENDIX MODEL                        -->
+<!--                    Content model for the named book part
+                        <book-app>.                                -->
+<!ENTITY % book-app-model
+                        "(book-part-meta?, front-matter?, body?,
+                          back?)"                                    >
+
+ 
+<!--                    BOOK APPENDIX                              -->
+<!--                    An appendix to an entire book (a named book 
+                        part).
+                        Remarks: A Book Appendix contains ancillary 
+                        or supporting material for an entire
+                        book, which is not included as part of the 
+                        main textual content of the book, for example 
+                        reference tables, special glossaries, or an
+                        explanation of applications and software in
+                        a book on theory.
+                          A <book-app> may be a very large book
+                        part with its own contributors, Table of 
+                        Contents, indexing, etc. The <body> of
+                        a <book-app> may contain other <book-part>s.
+                        Related Elements: This element is similar to 
+                        (but not the same as) the JATS appendix
+                        element (<app>). An appendix (<app>) is part
+                        of a book part such as a chapter or a JATS 
+                        article and is placed into the back matter
+                        (<back>) of that chapter. A Book Appendix 
+                        (<book-app>) is an appendix that is a
+                        book-part-level component of a book, and 
+                        is found in the back matter of the whole 
+                        book (<book-back>) rather than within the
+                        back matter of a single book-part (<back>).
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-app
+                                                                   -->
+<!ELEMENT  book-app     %book-app-model;                             >
+<!ATTLIST  book-app 
+             %book-app-atts;                                         >
+
+
+
+<!--                    BOOK APPENDIX GROUP MODEL                  -->
+<!--                    Content model for the <book-app-group>
+                        model.                                     -->
+<!ENTITY % book-app-group-model
+                        "(book-part-meta?,
+                          (%para-level;)*, (%sec-level;)*,
+                          (book-app)+ )"                             >
+
+
+<!--                    BOOK APPENDIX GROUP MODEL                  -->
+<!--                    Container element for a collection of 
+                        book-level appendices.
+                        Remarks: This element was created to hold a
+                        book part that contains all the appendices
+                        of a book, perhaps with a title (such as
+                        "Appendices" and a few paragraphs of 
+                        introduction.
+                          Many books do not have this grouping, they 
+                        place each appendix in the <book-back> matter
+                        directly.                         
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=book-app-group
+                                                                   -->
+<!ELEMENT  book-app-group  
+                        %book-app-group-model;                       >
+<!ATTLIST  book-app-group
+             %book-app-group-atts;                                   >
+
+
+<!-- ============================================================= -->
+<!--                    FRONT MATTER BOOK PART MODELS              -->
+<!-- ============================================================= -->
+
+
+<!--                    FRONT MATTER PART MODEL                    -->
+<!--                    Content model for the named book part
+                        <front-matter-part>.                       -->
+<!ENTITY % front-matter-part-model
+                        "%named-book-part-model;"                    >
+
+
+<!--                    FRONT MATTER PART                          -->
+<!--                    Narrative introductory material such as
+                        Preface, Foreword, Dedication,
+                        Introduction to the Fifth Edition, etc.
+                        This is a more simplified version of a book
+                        part, being non-recursive.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=front-matter-part
+                                                                   -->
+<!ELEMENT  front-matter-part
+                        (%front-matter-part-model;)                  >
+<!ATTLIST  front-matter-part
+             %front-matter-part-atts;                                >
+
+
+<!-- ============================================================= -->
+<!--                    EXPLICITLY NAMED BOOK PART MODELS          -->
+<!--                    A BITS user is free to ignore all of the   -->
+<!--                    elements below and use the element         -->
+<!--                    <named-book-part> for all book-parts.      -->
+<!-- ============================================================= -->
+
+
+<!--                    DEDICATION MODEL                           -->
+<!--                    Content model for the named book part
+                        <dedication>.                              -->
+<!ENTITY % dedication-model
+                        "%named-book-part-model;"                    >
+
+
+<!--                    DEDICATION                                 -->
+<!--                    A named book component that contains text
+                        dedicating the book in some fashion.
+                        Note: A publisher could choose to call this
+                        component just another <book-part>, but many
+                        publishers specifically identify dedications,
+                        so this element was included in BITS.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=dedication
+                                                                   -->
+<!ELEMENT  dedication   %dedication-model;                           >
+<!ATTLIST  dedication
+             %dedication-atts;                                       >
+
+
+<!--                    FOREWORD MODEL                             -->
+<!--                    Content model for the named book part
+                        <foreword>.                                -->
+<!ENTITY % foreword-model
+                        "%named-book-part-model;"                    >
+
+
+<!--                    FOREWORD                                   -->
+<!--                    A named book component that contains text
+                        which is called a "Foreword"; each publisher
+                        is free to define that term.
+                        Note: A publisher could choose to call this
+                        component just another <book-part>, but many
+                        publishers specifically identify dedications,
+                        so this element was included in BITS.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=foreword
+                                                                   -->
+<!ELEMENT  foreword     %foreword-model;                             >
+<!ATTLIST  foreword
+             %foreword-atts;                                         >
+
+
+<!--                    PREFACE MODEL                              -->
+<!--                    Content model for the named book part
+                        <preface>.                                 -->
+<!ENTITY % preface-model
+                        "%named-book-part-model;"                    >
+
+
+<!--                    PREFACE                                    -->
+<!--                    A named book component that contains text
+                        which is called a "Preface"; each publisher
+                        is free to define that term.
+                        Note: A publisher could choose to call this
+                        component just another <book-part>, but many
+                        publishers specifically identify dedications,
+                        so this element was included in BITS.
+                        Details at:
+                        http://jats.nlm.nih.gov/extensions/bits/2.0/index.html?elem=preface
+                                                                   -->
+<!ELEMENT  preface      %preface-model;                              >
+<!ATTLIST  preface
+             %preface-atts;                                          >
+
+
+<!-- ================== End Book Part Elements =================== -->
