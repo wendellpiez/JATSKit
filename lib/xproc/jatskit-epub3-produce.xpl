@@ -15,11 +15,13 @@
   <p:output primary="true" port="result" sequence="true"/>
   <p:serialization         port="result" indent="true"/>
   
-  <p:output primary="false" port="debug" sequence="true">
+  <!-- 
+  <p:output primary="false" port="debug" sequence="true"/>
     <p:pipe step="opf-source" port="result"/>
     <p:pipe step="opf-file"   port="bound-to-URI"/>
   </p:output>
   <p:serialization port="debug" indent="true"/>
+  -->
   
   <p:import href="xml-bindtoURI.xpl"/>
   
