@@ -14,45 +14,19 @@ through version 3.0.
 The NLM BITS format is a closely related document model built to support
 books (fairly broadly defined).
 
-This oXygen framework supports editing JATS articles along with books
-conformant to the specifications of BITS, the JATS-based NLM book
-tag set (being finalized as of late 2015). Included are DTDs, CSS files
-for authoring, document templates, and XSLT stylesheets for production
-of HTML and PDF (preview) outputs, as well as XProc pipelines assembling
-transformations to generate EPUB as well as an EPUB-lookalike web
-(in XHTML) for proofing.
+This oXygen framework supports editing JATS articles (v1.1) along with books
+conformant to the specifications of BITS, the JATS-based NLM book tag set
+(version 2.0 conformant with JATS 1.1). Included are DTDs, CSS files
+for authoring, document templates, XSLT stylesheets and other utilities
+for editing of JATS XML and production of HTML, PDF (preview) and EPUB outputs.
+
+(Note: Outputs are explicitly not 'production grade', while not all formats 
+are available for all document types. This toolkit does not aim for high 
+production values, but serves as a starting point for further development
+and refinement.)
 
 See the project wiki at https://github.com/wendellpiez/JATSKit/wiki
-for installation instructions.
+for help and installation instructions.
 
-Wendell Piez (http://www.wendellpiez.com), November 2012, 2015
-
-In this directory find the following:
-
-* `i18n`
-  * oXygen UI configuration
-* `img`
-  * support for oXygen UI
-* `lib`
-  * Libraries, with the following:
-    * `author-css` - CSS supporting formatted authoring in oXygen XML Author
-    * `DTD` - DTD files
-    * `epub` - EPUB support (static files)
-    * `Schematron` - extra-schema validation of various sorts
-    * `web-css` - CSS for HTML and XHTML outputs
-    * `xproc` - XProc pipelines
-    * `xslt` - XSLT for various transformations into HTML, XHTML and EPUB
-      * This directory includes a copy of the JATS Preview XSLT stylesheets
-      (See https://github.com/ncbi/JATSPreviewStylesheets)
-* `resources` - mainly XSLT for oXygen import into JATS (smart paste)
-* `src` - Source code for java extensions to oXygen
-* `templates` - Document templates for JATS and BITS
-* `build.xml`
-* `jats-framework-docs.html` (HTML version via XSLT)
-* `jats-framework-docs.xml` (source JATS article)
-* `jats.framework` (oXygen settings)
-* `jats.jar` (oXygen Java support)
-* `LICENSE.TXT`
-* oXygenJATSframework.xml - more configuration for oXygen
-* README.md
+Wendell Piez (http://www.wendellpiez.com), November 2012, 2015, 2016
 
