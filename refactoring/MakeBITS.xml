@@ -3,8 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://www.oxygenxml.com/ns/xmlRefactoring" 
     id="MakeBITS" 
-    name="Assign NLM/NCBI BITS 2.0 FPI">
-	<description>The NLM/NCBI BITS 2.0 Formal Public Identifier is assigned.</description>    
-	<script type="XSLT" href="MakeBITS.xsl"/>
+    name="Add BITS DOCTYPE - NLM/NCBI Book Interchange 2.0">
+  <description>A DOCTYPE declaration is added with the FPI indicating the NLM 'BITS' (Book Interchange) 2.0 tag set.
+    If you end up with a parser error from having two such declarations, remove or comment out your old one
+    (Ctrl-Shift-Comma).</description>    
+  <script type="XSLT" href="MakeBITS.xsl"/>
 	<category>JATSKit</category>
 </refactoringOperationDescriptor>
