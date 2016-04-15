@@ -15,18 +15,18 @@
     doctype-system="BITS-book2.dtd"
     doctype-public="-//NLM//DTD BITS Book Interchange DTD with OASIS and XHTML Tables v2.0 20151225//EN"/>
   
-  <xsl:template match="node()">
+  <xsl:template match="node() | @*">
     <xsl:copy>
-      <xsl:copy-of select="@*"/>
+      <!-- Assigning these namespace everywhere so their declarations float to the top. -->
       <xsl:namespace name="xlink">http://www.w3.org/1999/xlink</xsl:namespace>
       <xsl:namespace name="mml">http://www.w3.org/1998/Math/MathML</xsl:namespace>
-      <xsl:apply-templates select="node()"/>
+      <xsl:apply-templates select="node() | @*"/>
     </xsl:copy>
   </xsl:template>
       
       
   <xsl:template match="book/@dtd-version">
-    <xsl:attribute name="version">2.0</xsl:attribute>
+    <xsl:attribute name="dtd-version">2.0</xsl:attribute>
   </xsl:template>
   
 </xsl:stylesheet>

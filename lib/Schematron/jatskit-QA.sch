@@ -19,17 +19,18 @@
         <sqf:add node-type="attribute" target="id" select="$element-id"/>
       </sqf:fix>
       <sch:let name="title" value="(title | book-part-meta/title-group/title | caption/title)[1]/normalize-space(.)"/>
-      <sqf:fix id="add-named-id" use-when="matches($title,'\S')">
-        <sch:let name="named-id" value="replace($title,'\s','_')"/>
+      <sqf:fix id="add-named-id"            use-when="matches($title,'\c')"><!-- Using if the title has any name character. -->
+        <sch:let name="space-spliced"       value="replace(normalize-space($title),' ','_')"/>
+        <sch:let name="trimmed-to-namechar" value="replace($space-spliced,'\C','')"/>
         <sqf:description>
-          <sqf:title>Add @id '<sch:value-of select="$named-id"/>'</sqf:title>
+          <sqf:title>Add @id '<sch:value-of select="$trimmed-to-namechar"/>'</sqf:title>
         </sqf:description>
         <!--<sqf:user-entry name="user-id">
           <sqf:description>
             <sqf:title>ID</sqf:title>
           </sqf:description>
         </sqf:user-entry>-->
-        <sqf:add node-type="attribute" target="id" select="$named-id"/>
+        <sqf:add node-type="attribute" target="id" select="$trimmed-to-namechar"/>
       </sqf:fix>
     </sch:rule>
   </sch:pattern>

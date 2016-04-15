@@ -111,8 +111,10 @@
   </xsl:template>
   
   <!-- At the top, the new ID (component) echoes the old ID. -->
-  <xsl:template match="book | article" mode="id" as="xs:string">
-    <xsl:value-of select="@id"/>
+  <!-- We want this to return nothing, not even an empty string or text node,
+       when the document is given no such @id. -->
+  <xsl:template match="book | article" mode="id" as="xs:string?">
+    <xsl:sequence select="@id/string(.)"/>
   </xsl:template>
   
 </xsl:stylesheet> 

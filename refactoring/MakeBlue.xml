@@ -3,8 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://www.oxygenxml.com/ns/xmlRefactoring" 
     id="MakeBlue" 
-    name="Assign NISO JATS Publishing (Blue) 1.1 FPI">
-	<description>The NISO JATS Publishing 1.1 ('Blue') Formal Public Identifier is assigned.</description>    
+    name="Add Blue DOCTYPE - NISO JATS Publishing 1.1">
+	<description>A DOCTYPE declaration is added with the FPI indicating the JATS 'Blue' (Publishing) 1.1 tag set.
+	  If you end up with a parser error from having two such declarations, remove or comment out your old one
+	  (Ctrl-Shift-Comma).</description>    
 	<script type="XSLT" href="MakeBlue.xsl"/>
 	<category>JATSKit</category>
 </refactoringOperationDescriptor>
