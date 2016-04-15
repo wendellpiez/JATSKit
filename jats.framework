@@ -405,7 +405,7 @@
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<null/>
+											<String>M1 M2 L</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>

@@ -24,17 +24,16 @@
     doctype-system="JATS-journalpublishing-oasis-article1-mathml3.dtd"
     doctype-public="-//NLM//DTD JATS (Z39.96) Journal Publishing DTD with OASIS Tables with MathML3 v1.1 20151215//EN"/>
   
-  <xsl:template match="node()">
+  <xsl:template match="node() | @*">
     <xsl:copy>
-      <xsl:copy-of select="@*"/>
       <xsl:namespace name="xlink">http://www.w3.org/1999/xlink</xsl:namespace>
       <xsl:namespace name="mml">http://www.w3.org/1998/Math/MathML</xsl:namespace>
-      <xsl:apply-templates select="node()"/>
+      <xsl:apply-templates select="node() | @*"/>
     </xsl:copy>
   </xsl:template>
 
   <xsl:template match="article/@dtd-version">
-    <xsl:attribute name="version">1.1</xsl:attribute>
+    <xsl:attribute name="dtd-version">1.1</xsl:attribute>
   </xsl:template>
   
 </xsl:stylesheet>

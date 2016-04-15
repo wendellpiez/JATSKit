@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article
-  PUBLIC "-//NLM//DTD JATS (Z39.96) Article Authoring DTD v1.0 20120330//EN"
-  "JATS-articleauthoring1.dtd">
-<article dtd-version="1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Article Authoring DTD with MathML3 v1.1 20151215//EN"
+  "JATS-articleauthoring1-mathml3.dtd">
+<article dtd-version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:mml="http://www.w3.org/1998/Math/MathML"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <front>
@@ -27,6 +27,12 @@
     </article-meta>
   </front>
   <body>
+    <boxed-text>
+      <p>Note: the copy below was included as (bare-bones) documentation for the first version of
+        this framework in 2012. It is included here as a sample file valid for testing, and for
+        historical interest, but its information is no longer current. For current documentation see
+        the project wiki at <uri>https://github.com/wendellpiez/JATSKit/wiki</uri>.</p>
+    </boxed-text>
     <p>As the NLM/NISO JATS (Journal article tag suite) matures and standard practices and tools
       associated with it are better formalized, it becomes possible for users to develop and share
       customizations without fear of rapid obsolescence. This document describes such a framework,
@@ -47,20 +53,20 @@
         Archiving ("green") and book (BITS) DTDs. They come from the following sources:<list>
           <list-item>
             <p>Archiving (green) DTD:
-                <ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/archiving/1.0/jats-archiving-dtd-1.0.zip</ext-link></p>
+                <uri>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/archiving/1.0/jats-archiving-dtd-1.0.zip</uri></p>
           </list-item>
           <list-item>
             <p>Publishing (blue) DTD:
-                <ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/publishing/1.0/jats-publishing-dtd-1.0.zip</ext-link></p>
+                <uri>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/publishing/1.0/jats-publishing-dtd-1.0.zip</uri></p>
           </list-item>
           <list-item>
             <p>Authoring (orange) DTD:
-                <ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/articleauthoring/1.0/jats-articleauthoring-dtd-1.0.zip</ext-link></p>
+                <uri>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/articleauthoring/1.0/jats-articleauthoring-dtd-1.0.zip</uri></p>
           </list-item>
           <list-item>
             <p>Book DTD (BITS),
-                v0.2<ext-link>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/extensions/bits/0.2/bits-dtd-0.2.zip
-              </ext-link></p>
+                v0.2<uri>ftp://ftp.ncbi.nlm.nih.gov/pub/jats/extensions/bits/0.2/bits-dtd-0.2.zip
+              </uri></p>
           </list-item>
         </list></p>
       <sec>
