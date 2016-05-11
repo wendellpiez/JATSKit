@@ -553,10 +553,10 @@
 											<String>Insert 'code' element, wrapping selection</String>
 										</field>
 										<field name="largeIconPath">
-											<String></String>
+											<String>${framework}/img/Code24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String></String>
+											<String>${framework}/img/Code16.png</String>
 										</field>
 										<field name="accessKey">
 											<String>c</String>
@@ -599,10 +599,10 @@
 											<String>Insert monospace</String>
 										</field>
 										<field name="largeIconPath">
-											<String></String>
+											<String>${framework}/img/Monospace24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String></String>
+											<String>${framework}/img/Monospace16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -645,10 +645,10 @@
 											<String>Insert or wrap as 'boxed-text'</String>
 										</field>
 										<field name="largeIconPath">
-											<String></String>
+											<String>${framework}/img/BoxedText24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String></String>
+											<String>${framework}/img/BoxedText16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -691,10 +691,10 @@
 											<String>Insert MathML</String>
 										</field>
 										<field name="largeIconPath">
-											<String></String>
+											<String>${framework}/img/Equation24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String></String>
+											<String>${framework}/img/Equation16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -732,10 +732,10 @@
 											<String>Insert or wrap as 'disp-quote'</String>
 										</field>
 										<field name="largeIconPath">
-											<String></String>
+											<String>${framework}/img/DisplayQuote24.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String></String>
+											<String>${framework}/img/DisplayQuote16.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
