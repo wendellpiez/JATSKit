@@ -1,7 +1,4 @@
 <?xml version="1.0"?>
-<!DOCTYPE catalog PUBLIC
-"-//OASIS//DTD Entity Resolution XML Catalog V3.0//EN"
-"http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
          prefer="public"
          xml:base="JATS-DTDs/">
@@ -437,6 +434,7 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 
 <group prefer="public" >
 
+  <systemSuffix systemIdSuffix="BITS-book2.xsd" uri="../BITS-2.0-XSD/BITS-book2.xsd"/>
 <!--                    The following modules are used for ALL of   -->
 <!--                    the Journal Publishing DTDs (Blue)          -->
 
