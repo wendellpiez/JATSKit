@@ -241,6 +241,48 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>doctypeRules</String>
+										</field>
+										<field name="index">
+											<Integer>2</Integer>
+										</field>
+										<field name="value">
+											<documentTypeRule>
+												<field name="namespace">
+													<String>*</String>
+												</field>
+												<field name="rootElem">
+													<String>*</String>
+												</field>
+												<field name="fileName">
+													<String>*</String>
+												</field>
+												<field name="publicID">
+													<String>*</String>
+												</field>
+												<field name="javaRuleClass">
+													<String></String>
+												</field>
+												<field name="attributeLocalName">
+													<String>noNamespaceSchemaLocation</String>
+												</field>
+												<field name="attributeNamespace">
+													<String>http://www.w3.org/2001/XMLSchema-instance</String>
+												</field>
+												<field name="attributeValue">
+													<String>*BITS-book2.xsd</String>
+												</field>
+											</documentTypeRule>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>scenarios</String>
 										</field>
 										<field name="index">
