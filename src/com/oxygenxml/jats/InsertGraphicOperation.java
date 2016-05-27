@@ -73,12 +73,22 @@ import ro.sync.ecss.extensions.commons.ImageFileChooser;
  */
 @API(type=APIType.INTERNAL, src=SourceType.PUBLIC)
 public class InsertGraphicOperation implements AuthorOperation {
+  
+  /**
+   * The reference value argument sent by the WebAuthor.
+   */
+  private static final String ARGUMENT_REFERENCE_VALUE = "imageUrl";
+  
   /**
    * @see ro.sync.ecss.extensions.api.AuthorOperation#doOperation(ro.sync.ecss.extensions.api.AuthorAccess, ro.sync.ecss.extensions.api.ArgumentsMap)
    */
   public void doOperation(AuthorAccess authorAccess, ArgumentsMap args)
   throws IllegalArgumentException, AuthorOperationException {
-    String ref = ImageFileChooser.chooseImageFile(authorAccess);
+    // the Web Author passes the ref as an argument.
+    String ref = (String)args.getArgumentValue(ARGUMENT_REFERENCE_VALUE);
+    if (ref == null) {
+      ref = ImageFileChooser.chooseImageFile(authorAccess);
+    }
     if(ref != null) {
       insertImageRef(authorAccess, ref);
     }
@@ -111,7 +121,7 @@ public class InsertGraphicOperation implements AuthorOperation {
       } catch (BadLocationException e) {
     	  e.printStackTrace();
       }
-      if(insertImageRef){
+      if(insertImageRef) {
     	  //First try to insert an inline-graphic
     	  String inlineGraphFrag = createFragmentToInsert(ref, "inline-graphic");
     	  AuthorDocumentFragment frag = authorAccess.getDocumentController().createNewDocumentFragmentInContext(inlineGraphFrag,  caretOffset);
