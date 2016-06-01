@@ -194,5 +194,59 @@
     <xsl:attribute name="color">midnightblue</xsl:attribute>
   </xsl:attribute-set>
   
+<!-- Overriding the template imported from xhtml-tables-fo.xsl.  -->
+  <xsl:template name="process-common-attributes">
+    <xsl:if test="not(self::colgroup | self::col)">
+      <xsl:attribute name="role">
+        <xsl:value-of select="local-name()"/>
+      </xsl:attribute>
+    </xsl:if>
+    
+    <xsl:copy-of select="@xml:lang"/>
+    <xsl:for-each select="@lang">
+      <xsl:attribute name="xml:lang">
+        <xsl:value-of select="."/>
+      </xsl:attribute>
+    </xsl:for-each>
+    
+    <xsl:for-each select="self::a/@name">
+      <xsl:attribute name="id">
+        <xsl:value-of select="."/>
+      </xsl:attribute>
+    </xsl:for-each>
+    <xsl:copy-of select="@id"/>
+    
+    <!-- (following is verbatim AH code -->
+    <xsl:if test="@align">
+      <xsl:choose>
+        <xsl:when test="self::caption"/>
+        
+        <xsl:when test="self::img or self::object">
+          <xsl:if test="@align = 'bottom' or @align = 'middle' or @align = 'top'">
+            <xsl:attribute name="vertical-align">
+              <xsl:value-of select="@align"/>
+            </xsl:attribute>
+          </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="process-cell-align">
+            <xsl:with-param name="align" select="@align"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+    <xsl:if test="@valign">
+      <xsl:call-template name="process-cell-valign">
+        <xsl:with-param name="valign" select="@valign"/>
+      </xsl:call-template>
+    </xsl:if>
+    
+    <xsl:if test="@style">
+      <xsl:call-template name="process-style">
+        <xsl:with-param name="style" select="@style"/>
+      </xsl:call-template>
+    </xsl:if>
+    
+  </xsl:template>
   
 </xsl:stylesheet>
