@@ -129,7 +129,7 @@
 											<Integer>0</Integer>
 										</field>
 										<field name="value">
-											<String>${frameworkDir}/templates/BITS</String>
+											<String>${frameworkDir}/templates/bits</String>
 										</field>
 										<field name="patchHandling">
 											<String>addIndex</String>
