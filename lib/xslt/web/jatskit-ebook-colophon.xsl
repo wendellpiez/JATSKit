@@ -48,10 +48,10 @@
             components, defined using publicly-specified open technologies such as XSLT and XProc, are made to
             be hacked. Developers who make improvements and extensions to <cite>JATSKit</cite>, or reuse or adapt
               parts of it, are invited to edit the XSLT that generates this text to give themselves notice.</p>
-            <p>Acknowledgement for contributions to <cite>JATSKit</cite> in present or earlier versions is owed
-            (among others) to <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (including for <a
-              href="https://github.com/ncbi/JATSPreviewStylesheets">JATS Preview XSLTs)</a>, to
-            <a href="http://www.mulberrytech.com">Mulberry Technologies, Inc.</a>, and to the 
+            <p>Contributors to <cite>JATSKit</cite> or its components include 
+            (among others) <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (for <a
+              href="https://github.com/ncbi/JATSPreviewStylesheets">JATS Preview XSLTs)</a>,
+            <a href="http://www.mulberrytech.com">Mulberry Technologies, Inc.</a>, and the 
             <a href="http://www.oxygenxml.com">oXygen XML Editor</a> team.</p>
           </div>
           <ul class="pagelinks">
