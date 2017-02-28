@@ -77,12 +77,17 @@
   <xsl:template match="book-part | *[exists(named-book-part-body)] | ack" mode="directory">
     <li>
       <xsl:apply-templates select="." mode="title-link"/>
+<!-- modify the TOC here! -->
       <xsl:for-each-group select="*/sec | */book-part" group-by="true()">
         <ol>
           <xsl:apply-templates select="current-group()" mode="#current"/>
         </ol>
       </xsl:for-each-group>
     </li>
+  </xsl:template>
+  
+  <xsl:template match="sec[empty(title)]" mode="directory">
+    <xsl:apply-templates select="sec" mode="#current"/>
   </xsl:template>
   
   <xsl:template match="sec" mode="directory">
@@ -137,5 +142,5 @@
     </xsl:apply-templates>
   </xsl:template>
   
-  
+
 </xsl:stylesheet>

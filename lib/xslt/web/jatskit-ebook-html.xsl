@@ -21,7 +21,7 @@
   <xsl:variable name="auto-label-fig"              select="true()"/>
   <xsl:variable name="auto-label-ref"              select="not(//ref[label])"/>
   <!-- ref elements are labeled unless any ref already has a label -->
-  <xsl:variable name="auto-label-statement"        select="true()"/>
+  <xsl:variable name="auto-label-statement"        select="false()"/>
   <xsl:variable name="auto-label-supplementary"    select="true()"/>
   <xsl:variable name="auto-label-table-wrap"       select="true()"/>
   
@@ -140,6 +140,30 @@
   </xsl:template>
   -->
 
+  <xsl:template match="book-part/book-part-meta/title-group/title">
+    <xsl:if test="normalize-space(string(.))">
+      <header>
+        <h1 class="title">
+        <xsl:apply-templates/>
+      </h1>
+      </header>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="section-title" match="sec/title">
+    <xsl:param name="contents">
+      <xsl:apply-templates/>
+    </xsl:param>   
+    <xsl:if test="normalize-space(string($contents))">
+      <!-- coding defensively since empty titles make glitchy HTML -->
+      <header>
+      <h1 class="section-title">
+        <xsl:copy-of select="$contents"/>
+      </h1>
+      </header>
+    </xsl:if>
+  </xsl:template>
+  
   <!-- xref becomes a no-op unless its @rid points to a single @id. -->
   <xsl:template match="xref">
     <xsl:apply-templates/>

@@ -40,15 +40,15 @@
           <p>This presentation of <xsl:sequence select="$rendered-title"/>
             <xsl:text> is a production from XML source data encoded in NISO/NLM JATS 
               or BITS format, using (at least in part) stylesheets and tools distributed
-              as </xsl:text><tt>JATSKit</tt><xsl:text>.</xsl:text>
+              as </xsl:text><code>JATSKit</code><xsl:text>.</xsl:text>
           </p>
-            <p><a href="https://github.com/wendellpiez/JATSKit"><tt>JATSKit</tt> (see its Github page)</a> is a
-            project of Wendell Piez, 2015-. <tt>JATSKit</tt> is built to be open and extensible, so much of what 
+            <p><a href="https://github.com/wendellpiez/JATSKit"><code>JATSKit</code> (see its Github page)</a> is a
+            project of Wendell Piez, 2015-. <code>JATSKit</code> is built to be open and extensible, so much of what 
             you see might be due to alterations and extensions for local use. This is part of the idea: its system
             components, defined using publicly-specified open technologies such as XSLT and XProc, are made to
-            be hacked. Developers who make improvements and extensions to <tt>JATSKit</tt>, or reuse or adapt
+            be hacked. Developers who make improvements and extensions to <code>JATSKit</code>, or reuse or adapt
               parts of it, are invited to edit the XSLT that generates this text to give themselves notice.</p>
-            <p>Acknowledgement for contributions to <tt>JATSKit</tt> in present or earlier versions is owed
+            <p>Acknowledgement for contributions to <code>JATSKit</code> in present or earlier versions is owed
             (among others) to <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (including for <a
               href="https://github.com/ncbi/JATSPreviewStylesheets">JATS Preview XSLTs)</a>, to
             <a href="http://www.mulberrytech.com">Mulberry Technologies, Inc.</a>, and to the 

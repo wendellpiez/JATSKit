@@ -11,9 +11,9 @@
     </xsl:copy>
   </xsl:template>
   
-  <!-- We need to add titles to book-parts and 'sec' elements that have none ...
-       this is tricky, since in the case of book-part, the title is three steps down
-       a branch of optional elements, any of which may have to be added. -->
+  <!-- We need to add titles to book-parts that have none ...
+       as a purely defensive measure. (So something is there at least at
+       book-part level in the ToC.) -->
   
   <xsl:variable name="book-part-title-proxy" as="element(book-part-meta)">
     <book-part-meta>
@@ -44,7 +44,8 @@
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="title-group | sec">
+<!-- XXXX fixup here to permit untitled sections -->
+  <xsl:template match="title-group">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates select="label"/>
