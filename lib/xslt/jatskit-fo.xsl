@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:fo="http://www.w3.org/1999/XSL/Format"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:mml="http://www.w3.org/1998/Math/MathML"
   exclude-result-prefixes="xlink">
   
-  <xsl:import href="jats-preview-xslt/xslt/main/jats-xslfo.xsl"/>
+  <!-- Calling in modified version, not NCBI version in the library. -->
+  <xsl:import href="jats-xslfo.xsl"/>
+  <xsl:import href="jats-preview-xslt/xslt/main/xhtml-tables-fo.xsl"/>
+  <xsl:import href="jats-preview-xslt/xslt/oasis-tables/oasis-table-fo.xsl"/>
+  
+  <xsl:param name="suppress-floating" as="xs:string">yes</xsl:param>
   
   <xsl:template match="book">
     <fo:page-sequence master-reference="cover-sequence" force-page-count="even">
@@ -78,8 +84,13 @@
   </fo:page-sequence>
   </xsl:template>
   
+  
+  <!-- Pulled in by 'set-book-part-opener' below -->
+  <xsl:template match="book-part-meta"/>
+  
 <!-- modified from set-article-opener -->
   <xsl:template name="set-book-part-opener">
+    <!--<xsl:apply-templates select="book-part-meta" mode="grid"/>-->
     <xsl:for-each select="book-part-meta">
       <fo:block>
         <xsl:call-template name="set-copyright-note"/>
@@ -104,8 +115,6 @@
       </xsl:if>
       <xsl:apply-templates select="$abstracts"/>
       
-      <xsl:call-template name="banner-rule"/>
-      
       <!-- content model:
         
         (book-part-id*, subj-group*, title-group?, (contrib-group | aff | aff-alternatives | x)*,
@@ -129,6 +138,21 @@
       <xsl:apply-templates mode="page-header-text"/>
     </xsl:for-each>
   </xsl:template>
+  
+  <xsl:template match="title-group/title">
+    <fo:block xsl:use-attribute-sets="firstpage-title">
+      <xsl:for-each select="../../book-part-id[1]">
+        <xsl:apply-templates/>
+        <xsl:text>. </xsl:text>
+      </xsl:for-each>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+  
+  <xsl:template match="alternatives">
+    <!-- Take (only) the first graphic available, or first thing available. -->
+    <xsl:apply-templates select="(graphic,*)[1]"/>
+  </xsl:template>  
   
   <xsl:variable name="element-names" select="document('taglib-names.xml')/*/element"/>
   
@@ -193,6 +217,24 @@
     <xsl:attribute name="font-family">sans-serif</xsl:attribute>
     <xsl:attribute name="color">midnightblue</xsl:attribute>
   </xsl:attribute-set>
+  
+<!-- Overriding in imported table handler, since FOP can't do table-and-caption.
+     FWIW, table/caption never appears in the data, so the given code is always inoperable anyway.
+     -->
+  <xsl:template match="table">
+      <fo:table xsl:use-attribute-sets="table">
+        <xsl:call-template name="process-table"/>
+      </fo:table>
+  </xsl:template>
+  
+  <!--<xsl:template match="table">
+    <fo:table-and-caption xsl:use-attribute-sets="table-and-caption">
+      <xsl:call-template name="make-table-caption"/>
+      <fo:table xsl:use-attribute-sets="table">
+        <xsl:call-template name="process-table"/>
+      </fo:table>
+    </fo:table-and-caption>
+  </xsl:template>-->
   
   
 </xsl:stylesheet>
