@@ -608,7 +608,7 @@
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<String>ctrl M</String>
+											<String>M1 M</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
@@ -654,7 +654,7 @@
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<String>ctrl shift B</String>
+											<String>M1 M2 B</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
@@ -700,7 +700,7 @@
 											<String></String>
 										</field>
 										<field name="accelerator">
-											<String>ctrl shift M</String>
+											<String>M1 M2 M</String>
 										</field>
 										<field name="actionModes">
 											<actionMode-array>
