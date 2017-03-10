@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="5in" height="3in" viewBox="0 0 1000 600">
+    <desc></desc>
+  <!--<rect width="100%" height="100%" stroke="black" fill="none"/>-->
+  
+    <g  transform="translate(400 150)" text-anchor="middle" font-size="24">
+      <!--<preformat>
+        Magic
+        |
+        -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+        |                    |
+        Theoretical           Practical
+        (Magic as a          (Magic as a
+        pseudo-science)         pseudo-art)
+        |
+        -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+        |               |
+        Positive Magic   Negative Magic
+        or Sorcery      or Taboo
+        
+      </preformat>-->
+      <path d="M 0 -50 L 0 0 h -240 v 50 M 0 0 h 240 v 50"
+        stroke="black" stroke-width="3" fill="none"/>
+      
+      <text y="-70">Magic</text>
+      
+      <g transform="translate(-240 100)">
+      <text y="0">Theoretical</text>
+      <text y="40">(Magic as a</text>
+        <text y="80">pseudo-science)</text>
+      </g>
+      
+      <g transform="translate(240 100)">
+        <text y="0">Practical</text>
+        <text y="40">(Magic as a</text>
+        <text y="80">pseudo-art)</text>
+        
+        <g transform="translate(0 150)">
+        <path d="M 0 -50 L 0 0 h -200 v 50 M 0 0 h 200 v 50"
+          stroke="black" stroke-width="3" fill="none"/>
+          
+          <g transform="translate(-200 100)">
+            <text y="0">Positive Magic</text>
+            <text y="40">or Sorcery</text>
+          </g>
+          
+          <g transform="translate(200 100)">
+            <text y="0">Negative Magic</text>
+            <text y="40">or Taboo</text>
+          </g>
+        </g>
+      </g>
+      
+    </g>
+</svg>
