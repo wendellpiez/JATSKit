@@ -61,6 +61,7 @@
                 or local-name() = 'u'])
             and empty(index-of($context.path.names.sequence, 'p'))
             and empty(index-of($context.path.names.sequence, 'para'))
+            and empty(index-of($context.path.names.sequence, 'title'))
             and empty(index-of($context.path.names.sequence, 'codeblock'))
             and empty(index-of($context.path.names.sequence, 'code'))
             and empty(index-of($context.path.names.sequence, 'lq'))
