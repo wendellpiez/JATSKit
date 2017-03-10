@@ -2182,7 +2182,7 @@
 									<null/>
 								</field>
 								<field name="inputXSLURL">
-									<String>${frameworks}/lib/xproc/jatskit-ebook-produce.xpl</String>
+									<String>${framework}/lib/xproc/jatskit-ebook-produce.xpl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String></String>
@@ -2320,7 +2320,7 @@
 									<null/>
 								</field>
 								<field name="inputXSLURL">
-									<String>${frameworks}/lib/xproc/jatskit-ebook-produce.xpl</String>
+									<String>${framework}/lib/xproc/jatskit-ebook-produce.xpl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String></String>
@@ -2446,7 +2446,7 @@
 									<null/>
 								</field>
 								<field name="inputXSLURL">
-									<String>${frameworks}/lib/xproc/jatskit-epub3-produce.xpl</String>
+									<String>${framework}/lib/xproc/jatskit-epub3-produce.xpl</String>
 								</field>
 								<field name="inputXMLURL">
 									<String></String>
