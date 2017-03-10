@@ -3,7 +3,7 @@ JATSKit
 
 [Formerly oXygenJATSframework]
 
-oXygen XML Editor framework for NISO JATS 1.0 / NLM BITS. Now with
+oXygen XML Editor framework for NISO JATS 1.1 / NLM BITS. Now with
 tools including XSLT and XProc that can be run independently of oXygen.
 
 NISO JATS Z39.96-2012 defines an XML-based format for the authoring,
