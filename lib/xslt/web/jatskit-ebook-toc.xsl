@@ -37,13 +37,9 @@
                 <jatskit:halftitle/>
               </xsl:with-param>
             </xsl:call-template>
-            <xsl:for-each-group
-              select="
-                (front-matter | book-body | book-back)/
-                (book-part | *[exists(named-book-part-body)] | ack)"
-              group-by="true()">
-              <xsl:apply-templates select="current-group()" mode="directory"/>
-            </xsl:for-each-group>
+            <xsl:apply-templates  mode="directory"
+              select="(front-matter | book-body | book-back)/
+                (book-part | *[exists(named-book-part-body)] | ack)"/>
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
                 <jatskit:colophon/>

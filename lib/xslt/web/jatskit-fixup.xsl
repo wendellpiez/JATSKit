@@ -5,9 +5,9 @@
   exclude-result-prefixes="xs"
   version="2.0">
   
-  <xsl:template match="node() | @*">
+  <xsl:template match="node() | @*" mode="#all">
     <xsl:copy>
-      <xsl:apply-templates select="node() | @*"/>
+      <xsl:apply-templates mode="#current" select="node() | @*"/>
     </xsl:copy>
   </xsl:template>
   
@@ -49,11 +49,77 @@
     <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates select="label"/>
-      <xsl:if test="empty(title)">
+      <xsl:if test="empty(title | article-title)">
         <xsl:sequence select="$book-part-title-proxy/title-group/title"/>
       </xsl:if>
       <xsl:apply-templates select="* except label"/>
     </xsl:copy>
   </xsl:template>
+  
+<!-- Mapping JATS into BITS for EPUB production. This spares downstream XSLT
+     from having to do both formats. -->
+  
+  <xsl:template match="book">
+  <book>
+    <xsl:copy-of select="@* | //namespace::*"/>
+    <xsl:call-template name="book-id"/>
+    <xsl:apply-templates/>
+  </book>
+  </xsl:template>
+  
+  <xsl:template name="book-id">
+    <xsl:variable name="made-id">book</xsl:variable>
+    <xsl:attribute name="id">
+      <xsl:value-of select="(@id,$made-id)[1]"/>
+    </xsl:attribute>
+  </xsl:template>
+  
+  <xsl:template match="article">
+    <book>
+      <xsl:copy-of select="@* | //namespace::*"/>
+      <xsl:call-template name="book-id"/>
+      <book-meta>
+        <xsl:apply-templates mode="book-meta" select="front/journal-meta/* | front/article-meta/* | front/notes"/>
+      </book-meta>
+      <book-body>
+        <book-part>
+          <book-part-meta>
+            <xsl:apply-templates select="front/*/(title-group | contrib-group)"/>
+          </book-part-meta>
+          <xsl:apply-templates select="body | back | sub-article | response"/>
+        </book-part>
+      </book-body>
+    </book>
+  </xsl:template>
+  
+  <xsl:template match="sub-article | response">
+    <book-part>
+      <xsl:for-each select="front | front-stub">
+        <book-part-meta>
+          <xsl:apply-templates select="journal-meta/*, article-meta/*, notes, self::front-stub/*"/>
+        </book-part-meta>
+      </xsl:for-each>
+      <xsl:apply-templates select="body | back | sub-article | response"/>
+    </book-part>
+  </xsl:template>
+  
+  <xsl:template match="article-meta/title-group" mode="book-meta">
+    <book-title-group>
+      <xsl:apply-templates mode="#current"/>
+    </book-title-group>
+  </xsl:template>
+  
+  <xsl:template match="article-title" mode="book-meta">
+    <book-title>
+      <xsl:apply-templates/>
+    </book-title>
+  </xsl:template>
+  
+  <xsl:template match="article-title">
+    <title>
+      <xsl:apply-templates/>
+    </title>
+  </xsl:template>
+  
   
 </xsl:stylesheet>

@@ -51,6 +51,7 @@
   <!-- To split, we create a book, copy the top-level metadata,
        and go back up to the top to recurse back down to ourselves,
        copying the structure as we go. -->
+  <!-- Note that each (split) book has metadata for the entire book. -->
   <xsl:template match="*[exists(@jatskit:split)]" mode="split">
     <xsl:variable name="splitting" select="."/>
     <book>

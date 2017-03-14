@@ -68,17 +68,29 @@
   </p:output>
   
   <p:output primary="false" port="source-ready" sequence="true">
-    <p:pipe port="result" step="ready-to-split"/>
+    <p:pipe port="result" step="marked-for-splitting"/>
   </p:output>
   
-  <p:serialization port="page-sequence"     indent="true"/>
-  <p:serialization port="apparatus"         indent="true"/>
-  <p:serialization port="graphics-manifest" indent="true"/>
-  <p:serialization port="support-manifest"  indent="true"/>
+  <p:serialization port="page-sequence"            indent="true"/>
+  <p:serialization port="apparatus"                indent="true"/>
+  <p:serialization port="graphics-manifest"        indent="true"/>
+  <p:serialization port="support-manifest"         indent="true"/>
   <p:serialization port="bookparts-split-document" indent="true"/>
-  <p:serialization port="source-ready"     indent="true"/>
+  <p:serialization port="source-ready"             indent="true"/>
   
   <p:import href="xml-bindtoURI.xpl"/>
+  
+  <!-- First there are a number of small interventions that may also need to be
+       performed. -->
+  <!-- In this pass we also cast JATS into BITS by wrapping a JATS document
+       in a BITS document with a book-part for each article/subarticle ... -->
+  <!-- The results of this step are also inputs for steps in subpipelines
+       that generate ToC page, etc. -->
+  <p:xslt name="ready-to-split">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/jatskit-fixup.xsl"/>
+    </p:input>  
+  </p:xslt>
   
   <!-- Delivers a copy of the input BITS document, with marks for splitting.
        Can be modified to provide a different splitting logic. -->
@@ -103,17 +115,6 @@
     -->
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-mark-for-splitting.xsl"/>
-    </p:input>  
-  </p:xslt>
-  
-  <!-- There are a number of small interventions that may also need to be
-       performed, such as adding titles where there are none. This step
-       is also a good one for content improvements such as automated labeling. -->
-  <!-- The results of this step are also inputs for steps in subpipelines
-       that generate ToC page, etc. -->
-  <p:xslt name="ready-to-split">
-    <p:input port="stylesheet">
-      <p:document href="../xslt/web/jatskit-fixup.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -162,8 +163,8 @@
   <!-- Starting up again - to produce a directory (ToC) page -->
   <p:xslt>
     <p:input port="source">
-      <!-- Main source port: the original, unsplit BITS documen, after ID cleanup, marked for splitting -->
-      <p:pipe port="result" step="ready-to-split"/>
+      <!-- Main source port: the original, unsplit BITS document, after ID cleanup, marked for splitting -->
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-toc.xsl"/>
@@ -190,7 +191,7 @@
     <p:input port="source">
       <!-- Main source port: the original, unsplit BITS document -
            after ID cleanup, marked for splitting -->
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-titlepage.xsl"/>
@@ -209,7 +210,7 @@
   
   <p:xslt>
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-halftitle.xsl"/>
@@ -228,7 +229,7 @@
   
   <p:xslt>
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-colophon.xsl"/>
@@ -247,7 +248,7 @@
 
   <p:xslt name="graphics-manifest">
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:inline>
@@ -278,7 +279,7 @@
   <!-- This could be static, except the paths to which the resources will be written will vary. -->
   <p:xslt name="support-manifest">
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:inline>

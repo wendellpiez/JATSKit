@@ -65,7 +65,8 @@
 
   <xsl:function name="jatskit:book-code" as="xs:string">
     <xsl:param name="e" as="node()"/>
-    <xsl:sequence select="jatskit:uri-basename(document-uri(root($e)))"/>    
+    <xsl:sequence select="jatskit:uri-basename(document-uri(root($e)))"/>
+    <!--<xsl:sequence select="jatskit:uri-basename((document-uri(root($e)),'jatskit-pub')[1])"/>-->    
   </xsl:function>
   
   <xsl:function name="jatskit:page-id" as="xs:string">
