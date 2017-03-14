@@ -22,7 +22,7 @@
   </xsl:template>
 
   <!-- Any IDREFS attributes must also mapped. -->
-  <xsl:template match="@rid | @headers | @glyph-data">
+  <xsl:template match="@rid | @headers | @glyph-data | @continued-from | @xref">
     <xsl:attribute name="rid" separator=" ">
       <xsl:apply-templates mode="id" select="key('element-by-id',tokenize(.,'\s+'))"/>
     </xsl:attribute>
