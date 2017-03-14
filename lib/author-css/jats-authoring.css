@@ -828,4 +828,17 @@ see-also-entry:before { content: "See also: " }
 xref:before {
    link:"#" attr(rid);
    content: url('../../img/link.png');
-} 
+}
+
+book-part-meta { text-align: center }
+
+sec { border: thin dotted black; padding: 0.5em; margin: 0.5em }
+
+label { border: thin solid darkred; padding: 0.25em }
+
+toc-entry { border: thin dashed black; padding: 0.25em; margin-top: 0.5em }
+
+toc-entry * { border: none; padding: 0px; display: inline }
+
+license-p { display: block; margin-top: 0.5em }
+

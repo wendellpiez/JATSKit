@@ -7,6 +7,10 @@
     ( ?, ref-count?, page-count?, word-count?)-->
 */    
 
+* { 
+  -oxy-tags-color: skyblue;
+  -oxy-tags-background-color: midnightblue; }
+
 count:before, book-count:before { font-family: sans-serif; font-size: 80%;
   content: "Count " attr(count-type) }
 

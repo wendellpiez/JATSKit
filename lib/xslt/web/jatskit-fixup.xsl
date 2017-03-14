@@ -79,7 +79,11 @@
       <xsl:copy-of select="@* | //namespace::*"/>
       <xsl:call-template name="book-id"/>
       <book-meta>
-        <xsl:apply-templates mode="book-meta" select="front/journal-meta/* | front/article-meta/* | front/notes"/>
+      <!-- mode book-meta permits necessary modifications to make a nominal book
+        from a JATS article. Some slight adjustments are necessary. We are not aiming 
+        for valid BITS, so JATS metadata is okay - as long as it is BITS-like enough -->
+        <xsl:apply-templates mode="book-meta"
+          select="front/journal-meta/* | front/article-meta/* | front/notes"/>
       </book-meta>
       <book-body>
         <book-part>
