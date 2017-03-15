@@ -258,7 +258,7 @@
           <!-- Function declarations for here... -->
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(/),$documentURI)"/>
+            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(),$documentURI)"/>
             <jatskit:kit>
               <!-- Element proxies for graphics files support copying them around. Both @target (a full pathname),
                    and @as (a relative pathname) are available for subsequent pipelines. -->
@@ -289,7 +289,7 @@
           <!-- Function declarations for here... -->
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),$documentURI)"/>
+            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(),$documentURI)"/>
             <jatskit:kit>
               <jatskit:css as="css/jatskit-epub.css"
                   href="../web-css/jatskit-epub.css"

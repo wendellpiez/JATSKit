@@ -68,7 +68,6 @@
   </xsl:function>
 
   <xsl:function name="jatskit:book-code" as="xs:string">
-    <xsl:param name="e" as="node()"/>
     <xsl:sequence select="jatskit:uri-basename($documentURI)"/>
     <!--<xsl:sequence select="jatskit:uri-basename((document-uri(root($e)),'jatskit-pub')[1])"/>-->    
   </xsl:function>
@@ -85,7 +84,7 @@
 
   <xsl:function name="jatskit:page-path" as="xs:anyURI">
     <xsl:param name="book" as="element(book)"/>
-    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(root($book)),'/contents/',jatskit:page-id($book),'.xhtml'),$documentURI)"/>
+    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(),'/contents/',jatskit:page-id($book),'.xhtml'),$documentURI)"/>
   </xsl:function>
   
   <xsl:function name="jatskit:current-lang" as="xs:string?">
@@ -107,10 +106,10 @@
       id="BigBook-toc" base="file:/d:/path/to/books/BigBook/Big-Book-toc.page -->
     <xsl:param name="page-label" as="xs:string"  required="yes"/>
     <xsl:param name="page-format" as="xs:string" required="yes"/>
-    <xsl:variable name="page-code" select="string-join((jatskit:book-code(/),$page-label),'-')"/>
+    <xsl:variable name="page-code" select="string-join((jatskit:book-code(),$page-label),'-')"/>
     
     <xsl:attribute name="id" select="$page-code"/>
-    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(/),'/',$page-code,'.',$page-format),$documentURI)"/>
+    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(),'/',$page-code,'.',$page-format),$documentURI)"/>
   </xsl:template>
   
 <!-- Attempts to produce an ISO formatted date string from a JATS/BITS 'date' element.

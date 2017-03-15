@@ -53,7 +53,7 @@
   
   <xsl:template name="toc-component-links">
     <xsl:param name="pages" as="element()+"/>
-    <xsl:variable name="book-code" select="jatskit:book-code(/)"/>
+    <xsl:variable name="book-code" select="jatskit:book-code()"/>
     <xsl:for-each select="$pages">
       <li>
         <xsl:call-template name="jatskit-component-link">
