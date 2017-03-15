@@ -628,6 +628,13 @@ italic {
   font-style:italic;
 }
 
+code {
+  display: inline;
+  font-size:85%;
+  font-family:monospace;
+  background-color: gainsboro;
+}
+
 monospace {
   display: inline;
   font-size:85%;

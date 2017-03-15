@@ -1,0 +1,34 @@
+@import url("jatskit-simple.css");
+
+img { max-width: 100% }
+
+h1, h2, h3, h4, h5, h6 { color: inherit }
+.generated { color: grey; font-size: 80%; font-family: sans-serif }
+
+div.metadata-area { }
+
+div.metadata-area,
+p.metadata-entry { border: thin inset black; padding: 0.25em }
+
+div.metadata-area p.metadata-entry { border: none; padding: 0em }
+
+
+a[href] { color: inherit; border-bottom: thin dotted black }
+a:hover { color: white; background-color: black }
+
+nav a { text-decoration: none }
+
+nav ol li { margin-top: 1em; margin-bottom: 1em }
+
+div.titlepage-body { text-align: center; line-height: 300%; margin-top: 5em }
+
+h2.book-subtitle { font-style: italic }
+
+ul.pagelinks  { display: block; padding: 0em; line-height: 300%; text-align: center;
+                font-family: sans-serif; font-weight: bold; font-size: 80% }
+ul.pagelinks li { display: block; width: 8em; margin: 0.25em auto; line-height: 200%;
+                  padding: 0.25em; border: medium ridge black; background-color: gainsboro }
+
+ul.pagelinks li
+{ display: inline-block; margin: 0.25em 1em }
+
