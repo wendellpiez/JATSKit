@@ -3,17 +3,36 @@
 <book xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="2.0">
    <book-meta>
       <book-title-group>
-         <book-title>The Project Gutenberg eBook of The Golden Bough, by Sir James George Frazer</book-title>
+         <book-title>The Golden Bough</book-title>
       </book-title-group>
       <contrib-group>
          <contrib contrib-type="author">
-            <string-name>Sir James George <surname>Frazer</surname>
-            </string-name>
-         </contrib>
+        <string-name>Sir James George <surname>Frazer</surname>
+        </string-name>
+        <role>author</role>
+      </contrib>
+      <contrib>
+        <collab>Macmillan and Company</collab>
+        <role>original publisher</role>
+      </contrib>
+      <contrib>
+        <string-name>David Reed</string-name>
+        <role>data conversion and HTML encoding</role>
+      </contrib>
+      <contrib>
+        <string-name>Wendell Piez</string-name>
+        <role>BITS encoding</role>
+      </contrib>
       </contrib-group>
+    <edition>An open-source electronic edition based on the 1922 abridgement.</edition>
    </book-meta>
    <front-matter>
      <dedication>
+      <book-part-meta>
+        <title-group>
+          <title>Dedication</title>
+        </title-group>
+      </book-part-meta>
         <named-book-part-body>
           <disp-quote>
           <verse-group>

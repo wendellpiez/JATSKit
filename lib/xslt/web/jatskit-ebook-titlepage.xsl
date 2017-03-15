@@ -75,7 +75,7 @@
   </xsl:template>
 
   <xsl:template match="contrib">
-    <xsl:apply-templates select="(anonymous | collab | */collab | name | */name )"/>
+    <xsl:apply-templates select="(string-name | anonymous | collab | */collab | name | */name )"/>
   </xsl:template>
   
   <xsl:template match="contrib/* | collab | name" priority="100">

@@ -746,7 +746,6 @@ a:hover { text-decoration: underline }
         
         <xsl:for-each select="contrib">
           <!-- Essentially borrowed from jats-html.xsl -->
-          
           <div class="metadata">
             <xsl:call-template name="contrib-identify"/>
             <xsl:variable name="info">
@@ -778,7 +777,6 @@ a:hover { text-decoration: underline }
     (anonymous | collab | collab-alternatives |
     name | name-alternatives | degrees | xref)
     and @equal-contrib -->
-    <div class="metadata-group">
       <xsl:for-each select="anonymous | string-name |
         collab | collab-alternatives/* | name | name-alternatives/*">
         <xsl:call-template name="metadata-entry">
@@ -811,11 +809,17 @@ a:hover { text-decoration: underline }
           </xsl:with-param>
         </xsl:call-template>
       </xsl:if>
-    </div>
+  </xsl:template>
+  
+  <xsl:template name="contrib-info">
+      <xsl:apply-templates mode="metadata"
+        select="address | aff | author-comment | bio | email |
+        ext-link | on-behalf-of | role | uri"/>
   </xsl:template>
   
   
-  <!-- end of contrib -->
+  
+  <!-- end of contrib patches -->
   
   
   
@@ -890,6 +894,15 @@ a:hover { text-decoration: underline }
         <xsl:apply-templates mode="metadata"/>
       </xsl:with-param>
     </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template name="metadata-entry">
+    <xsl:param name="contents">
+      <xsl:apply-templates/>
+    </xsl:param>
+    <p class="metadata-entry {local-name()}">
+      <xsl:copy-of select="$contents"/>
+    </p>
   </xsl:template>
   
   

@@ -12,6 +12,7 @@ p.metadata-entry { border: thin inset black; padding: 0.25em }
 
 div.metadata-area p.metadata-entry { border: none; padding: 0em }
 
+p.metadata-entry.role { font-size: 80% ; padding-bottom: 0.5em }
 
 a[href] { color: inherit; border-bottom: thin dotted black }
 a:hover { color: white; background-color: black }
