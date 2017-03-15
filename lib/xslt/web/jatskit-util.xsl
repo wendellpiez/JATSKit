@@ -85,7 +85,7 @@
 
   <xsl:function name="jatskit:page-path" as="xs:anyURI">
     <xsl:param name="book" as="element(book)"/>
-    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(root($book)),'/contents/',jatskit:page-id($book),'.xhtml'),document-uri(root($book)))"/>
+    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(root($book)),'/contents/',jatskit:page-id($book),'.xhtml'),$documentURI)"/>
   </xsl:function>
   
   <xsl:function name="jatskit:current-lang" as="xs:string?">
