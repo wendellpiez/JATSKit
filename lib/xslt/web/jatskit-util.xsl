@@ -78,10 +78,13 @@
       (a) the assigned ID of the first component (probably a book-part) marked for splitting
           (there will always be one, and only one, on controlled inputs)
       (b) or, the @id of the book (if no splits are marked)
-      (c) or, the string 'ERROR' which of course we should never see. -->
-    <xsl:sequence select="concat(($page//@jatskit:split/../@id,$page/@id,'ERROR')[1],'-page')"/>
+      
+      The fallback more or less ensures we will never have duplicate files written, but it's
+      an error condition. What we expect is an @id assigned earlier if not carried in from the input.-->
+    <xsl:sequence select="concat(($page//@jatskit:split/../@id,generate-id($page))[1],'-page')"/>
   </xsl:function>
 
+<!-- Called by individual book elements after splitting ... -->
   <xsl:function name="jatskit:page-path" as="xs:anyURI">
     <xsl:param name="book" as="element(book)"/>
     <xsl:sequence select="resolve-uri(concat(jatskit:book-code(),'/contents/',jatskit:page-id($book),'.xhtml'),$documentURI)"/>

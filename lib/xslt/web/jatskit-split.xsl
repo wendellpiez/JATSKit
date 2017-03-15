@@ -106,6 +106,12 @@
     </xsl:apply-templates>
   </xsl:template>
   
+  <xsl:template match="front-matter/*" mode="make-book-part">
+    <xsl:apply-templates select=".">
+      <xsl:with-param name="splitting" tunnel="yes" select="."/>
+    </xsl:apply-templates>
+  </xsl:template>
+  
   <!-- Error trapping; if splitting is to happen on elements other than book-parts,
        they need (new) templates to make book-parts out of them. -->
   <xsl:template match="*" mode="make-book-part">

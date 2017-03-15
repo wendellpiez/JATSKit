@@ -59,6 +59,13 @@
 <!-- Mapping JATS into BITS for EPUB production. This spares downstream XSLT
      from having to do both formats. -->
   
+  <xsl:template match="named-book-part-body">
+    <body>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates/>
+    </body>
+  </xsl:template>
+  
   <xsl:template match="book">
   <book>
     <xsl:copy-of select="@* | //namespace::*"/>

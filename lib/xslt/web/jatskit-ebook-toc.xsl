@@ -39,7 +39,7 @@
             </xsl:call-template>
             <xsl:apply-templates  mode="directory"
               select="(front-matter | book-body | book-back)/
-                (book-part | *[exists(named-book-part-body)] | ack)"/>
+                (book-part | *[exists(named-book-part-body|body)] | ack)"/>
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
                 <jatskit:colophon/>
@@ -70,7 +70,7 @@
     </li>
   </xsl:template>
   
-  <xsl:template match="book-part | *[exists(named-book-part-body)] | ack" mode="directory">
+  <xsl:template match="book-part | *[exists(named-book-part-body|body)] | ack" mode="directory">
     <li>
       <xsl:apply-templates select="." mode="title-link"/>
 <!-- modify the TOC here! -->
@@ -97,7 +97,7 @@
     </li>
   </xsl:template>
   
-  <xsl:template match="*[exists(named-book-part-body)]" mode="title-link">
+  <xsl:template match="*[exists(named-book-part-body | body)]" mode="title-link">
     <xsl:variable name="title" select="book-part-meta/title-group/title | title"/>
     <xsl:apply-templates select="." mode="link-here">
       <xsl:with-param name="path">contents</xsl:with-param>

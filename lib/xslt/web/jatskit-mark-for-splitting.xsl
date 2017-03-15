@@ -25,7 +25,7 @@
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="book-part | sec">
+  <xsl:template match="book-part | sec | front-matter/*">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:if test="not(matches(@id,'^\i\c*$'))">
@@ -38,6 +38,8 @@
   
   <xsl:template match="*" mode="mark-for-split"/>
 
+  <!--<xsl:template match="toc" mode="mark-for-split" priority="5"/>-->
+  
   <!-- Match any element, where splits should be made, in this mode.
        Splits can be made at multiple levels.
        
@@ -46,7 +48,7 @@
             match="book-part[tokenize(@specific-use,'\s+')='split']" - any book-part that includes 'split' in its @specific-use value -->
   
   <!-- By default, splits at any book-part at any level (recursive) -->
-  <xsl:template match="book-part" mode="mark-for-split">
+  <xsl:template match="book-part | front-matter/*" mode="mark-for-split">
     <xsl:attribute name="jatskit:split" select="local-name(.)"/>
   </xsl:template>
 
