@@ -72,6 +72,7 @@
     <xsl:attribute name="id">
       <xsl:value-of select="(@id,$made-id)[1]"/>
     </xsl:attribute>
+    <xsl:attribute name="jatskit:documentURI" select="document-uri(/)"/>
   </xsl:template>
   
   <xsl:template match="article">

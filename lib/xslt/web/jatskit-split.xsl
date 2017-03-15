@@ -43,6 +43,7 @@
   
   <xsl:template match="/book">
     <jatskit:book-sequence>
+      <xsl:copy-of select="/*/@jatskit:documentURI"/>
       <xsl:copy-of select="/*/namespace::*"/>
       <xsl:apply-templates select="//@jatskit:split/.." mode="split"/>
     </jatskit:book-sequence>

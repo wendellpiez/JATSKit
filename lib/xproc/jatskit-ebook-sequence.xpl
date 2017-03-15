@@ -78,6 +78,8 @@
   <p:serialization port="bookparts-split-document" indent="true"/>
   <p:serialization port="source-ready"             indent="true"/>
   
+  <p:variable name="documentURI" select="document-uri(/)"/>
+  
   <p:import href="xml-bindtoURI.xpl"/>
   
   <!-- First there are a number of small interventions that may also need to be
@@ -256,13 +258,13 @@
           <!-- Function declarations for here... -->
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
+            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(/),$documentURI)"/>
             <jatskit:kit>
               <!-- Element proxies for graphics files support copying them around. Both @target (a full pathname),
                    and @as (a relative pathname) are available for subsequent pipelines. -->
               <xsl:for-each-group select="//(graphic|inline-graphic)/@xlink:href" group-by=".">
                 <xsl:variable name="relative-path" select="concat('graphics/',replace(current-grouping-key(),'^.*/',''))"/>
-                <jatskit:graphic href="{resolve-uri(current-grouping-key(),document-uri(/))}"
+                <jatskit:graphic href="{resolve-uri(current-grouping-key(),$documentURI)}"
                 target="{string-join(($target-dir,$relative-path),'/')}"
                 as="{$relative-path}" suffix="{replace(current-grouping-key(),'^.*\.','')}"/>
               </xsl:for-each-group>
@@ -287,7 +289,7 @@
           <!-- Function declarations for here... -->
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
+            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),$documentURI)"/>
             <jatskit:kit>
               <jatskit:css as="css/jatskit-epub.css"
                   href="../web-css/jatskit-epub.css"

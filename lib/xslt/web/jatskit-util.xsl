@@ -25,6 +25,10 @@
     <xsl:apply-templates select="/descendant::book-title[1]" mode="link-text"/>
   </xsl:variable>
   
+  <!-- /*/@jatskit:documentURI provided by earlier steps jatskit-fixup.xsl jatskit-split.xsl -->
+  <!-- (This value is also bound in the XProc and could be passed in as a parameter.) -->
+  <xsl:variable name="documentURI" select="/*/@jatskit:documentURI" as="xs:anyURI"/>
+  
   <xsl:template name="make-html-page">
     <xsl:param name="attribute-proxies" as="element()?"/>
     <xsl:param name="page-title" select="$show-book-title"/>
@@ -65,7 +69,7 @@
 
   <xsl:function name="jatskit:book-code" as="xs:string">
     <xsl:param name="e" as="node()"/>
-    <xsl:sequence select="jatskit:uri-basename(document-uri(root($e)))"/>
+    <xsl:sequence select="jatskit:uri-basename($documentURI)"/>
     <!--<xsl:sequence select="jatskit:uri-basename((document-uri(root($e)),'jatskit-pub')[1])"/>-->    
   </xsl:function>
   
@@ -106,7 +110,7 @@
     <xsl:variable name="page-code" select="string-join((jatskit:book-code(/),$page-label),'-')"/>
     
     <xsl:attribute name="id" select="$page-code"/>
-    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(/),'/',$page-code,'.',$page-format),document-uri(/))"/>
+    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(/),'/',$page-code,'.',$page-format),$documentURI)"/>
   </xsl:template>
   
 <!-- Attempts to produce an ISO formatted date string from a JATS/BITS 'date' element.
