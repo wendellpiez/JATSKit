@@ -8,7 +8,7 @@
   <sch:ns uri="http://www.niso.org/standards/z39-96/ns/oasis-exchange/table" prefix="oasis"/>
   
   <sch:pattern>
-    <sch:rule context="book-part | sec | fig | table-wrap | boxed-text | disp-formula | statement">
+    <sch:rule context="book-part | sec | fig | table-wrap | boxed-text | disp-formula | statement | app">
       <sch:assert test="matches(@id,'\S')" role="warning" sqf:fix="add-composed-id add-named-id">Missing @id on <sch:name/></sch:assert>
       <sqf:fix id="add-composed-id">
         <sch:let name="name" value="name()"/>

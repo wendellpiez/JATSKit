@@ -513,7 +513,7 @@ disp-formula {
   font-style:italic;
 }
 
-preformat {
+code, preformat {
   display: block;
   font-family: monospace;
   font-size: 80%;

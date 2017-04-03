@@ -57,3 +57,12 @@ pub-date:after, string-date:after { font-family: sans-serif; font-size: 80%;
 }
 
 
+xref:before {
+    font-family: sans-serif; font-size: 80%;
+    content: "rid: "
+        oxy_textfield(           
+            edit, "@rid",
+            columns, 14);
+}
+
+

@@ -60,6 +60,20 @@
     </xsl:for-each>
   </xsl:template>
 
+  <!-- Elements added to JATS/BITS since old preview XSLT -->
+  <xsl:template match="code">
+    <pre class="preformat code">
+      <xsl:apply-templates/>
+    </pre>
+  </xsl:template>
+  
+  <xsl:template match="fixed-case">
+    <span class="fixed-case">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  
 <!--  -->
   
 <!-- Now, amendments to cover 'book' elements. -->
