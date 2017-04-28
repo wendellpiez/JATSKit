@@ -27,7 +27,7 @@
   
   <!-- /*/@jatskit:documentURI provided by earlier steps jatskit-fixup.xsl jatskit-split.xsl -->
   <!-- (This value is also bound in the XProc and could be passed in as a parameter.) -->
-  <xsl:variable name="documentURI" select="/*/@jatskit:documentURI" as="xs:anyURI"/>
+  <xsl:variable name="documentURI" select="/*/@jatskit:documentURI" as="xs:anyURI?"/>
   
   <xsl:template name="make-html-page">
     <xsl:param name="attribute-proxies" as="element()?"/>
