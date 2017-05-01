@@ -3,8 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.oxygenxml.com/ns/extension http://www.oxygenxml.com/ns/extension/extensions.xsd">
   <xt:extension id="v1.1.0">
-    <!-- Change this when 'develop' branch is merged into 'master' -->
-    <xt:location href="https://github.com/wendellpiez/JATSKit/archive/develop.zip"/>
+    <xt:location href="https://github.com/wendellpiez/JATSKit/archive/master.zip"/>
     <xt:version>1.1.0</xt:version>
     <xt:oxy_version>17.0+</xt:oxy_version>
     <xt:type>framework</xt:type>
