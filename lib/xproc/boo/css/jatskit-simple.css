@@ -6,7 +6,7 @@ a { color: darkgreen }
 
 table.navigation { border: thin outset black }
 
-body {  }
+body { line-height: 120% }
 
 .book-meta.metadata { margin: 2%; padding: 1%; background-color: gainsboro;
   font-size: 80%; border: medium groove black }

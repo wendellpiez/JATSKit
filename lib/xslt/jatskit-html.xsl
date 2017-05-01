@@ -60,6 +60,20 @@
     </xsl:for-each>
   </xsl:template>
 
+  <!-- Elements added to JATS/BITS since old preview XSLT -->
+  <xsl:template match="code">
+    <pre class="preformat code">
+      <xsl:apply-templates/>
+    </pre>
+  </xsl:template>
+  
+  <xsl:template match="fixed-case">
+    <span class="fixed-case">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  
 <!--  -->
   
 <!-- Now, amendments to cover 'book' elements. -->
@@ -746,12 +760,8 @@ a:hover { text-decoration: underline }
         
         <xsl:for-each select="contrib">
           <!-- Essentially borrowed from jats-html.xsl -->
-          
           <div class="metadata">
             <xsl:call-template name="contrib-identify"/>
-            <!-- handles (contrib-id)*,
-                (anonymous | collab | collab-alternatives |
-                 name | name-alternatives | degrees | xref) -->
             <xsl:variable name="info">
               <xsl:call-template name="contrib-info"/>
             </xsl:variable>
@@ -774,8 +784,56 @@ a:hover { text-decoration: underline }
       </div>
     </xsl:if></xsl:template>
   
+  <!-- Overriding imported stylesheet -->
+  <xsl:template name="contrib-identify">
+    <!-- Placed in a left-hand pane  -->
+    <!--handles
+    (anonymous | collab | collab-alternatives |
+    name | name-alternatives | degrees | xref)
+    and @equal-contrib -->
+      <xsl:for-each select="anonymous | string-name |
+        collab | collab-alternatives/* | name | name-alternatives/*">
+        <xsl:call-template name="metadata-entry">
+          <xsl:with-param name="contents">
+            <xsl:if test="position() = 1">
+              <!-- a named anchor for the contrib goes with its
+              first member -->
+              <xsl:call-template name="named-anchor"/>
+              <!-- so do any contrib-ids -->
+              <xsl:apply-templates mode="metadata-inline"
+                select="../contrib-id"/>
+            </xsl:if>
+            <xsl:apply-templates select="." mode="metadata-inline"/>
+            <xsl:if test="position() = last()">
+              <xsl:apply-templates mode="metadata-inline"
+                select="degrees | xref"/>
+              <!-- xrefs in the parent contrib-group go with the last member
+              of *each* contrib in the group -->
+              <xsl:apply-templates mode="metadata-inline"
+                select="following-sibling::xref"/>
+            </xsl:if>
+            
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:for-each>
+      <xsl:if test="@equal-contrib='yes'">
+        <xsl:call-template name="metadata-entry">
+          <xsl:with-param name="contents">
+            <span class="generated">(Equal contributor)</span>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:if>
+  </xsl:template>
   
-  <!-- end of contrib -->
+  <xsl:template name="contrib-info">
+      <xsl:apply-templates mode="metadata"
+        select="address | aff | author-comment | bio | email |
+        ext-link | on-behalf-of | role | uri"/>
+  </xsl:template>
+  
+  
+  
+  <!-- end of contrib patches -->
   
   
   
@@ -850,6 +908,15 @@ a:hover { text-decoration: underline }
         <xsl:apply-templates mode="metadata"/>
       </xsl:with-param>
     </xsl:call-template>
+  </xsl:template>
+  
+  <xsl:template name="metadata-entry">
+    <xsl:param name="contents">
+      <xsl:apply-templates/>
+    </xsl:param>
+    <p class="metadata-entry {local-name()}">
+      <xsl:copy-of select="$contents"/>
+    </p>
   </xsl:template>
   
   

@@ -37,9 +37,10 @@
   </xsl:template>
   
   <xsl:template match="book">
-    <!-- $discrete-part is true iff there is only a single top-level book-part for the book -
-         which should be the case when the input has been split. -->
-    <xsl:variable name="single-part" select=".[count(*/book-part) eq 1]/*/book-part"/>
+    <!-- A book is (should be) identified with a single book-body/book-part,
+      front-matter/* (dedications and what not) or book-back/* (almost anything) -->
+    <xsl:variable name="book-contents" select="(front-matter|book-body|book-back)/*"/>
+    <xsl:variable name="single-part" select="$book-contents[1]"/>
     <xsl:call-template name="make-html-page">
       <xsl:with-param name="attribute-proxies" as="element()?">
         <html id="{jatskit:page-id(.)}" base="{jatskit:page-path(.)}"/>
@@ -55,13 +56,19 @@
         <xsl:for-each select="$single-part[not($format = 'epub')]">
           <xsl:call-template name="web-navigation"/>
         </xsl:for-each>
-        <xsl:apply-templates select="*/book-part" mode="build-part"/>
+        <xsl:apply-templates select="*/*" mode="build-part"/>
         <xsl:for-each select="$single-part[not($format = 'epub')]">
           <xsl:call-template name="web-navigation"/>
         </xsl:for-each>
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
+  
+  <xsl:template match="*" mode="build-part">
+    <!-- Keeping the context, basically doing book-part logic for anything. -->
+    <xsl:call-template name="make-book-part"/>
+  </xsl:template>
+  
   
   <!-- The context for $web-navigation should be a book-part. -->
   
@@ -98,7 +105,7 @@
             </xsl:with-param>
           </xsl:call-template>
           </span>
-<!--          <a href="{$path-to-root}/{jatskit:book-code(/)}-toc.xhtml">Contents</a>-->
+<!--          <a href="{$path-to-root}/{jatskit:book-code()}-toc.xhtml">Contents</a>-->
         </td>
         <xsl:for-each select="following::book-part[1]">
           <!-- If there is a following book-part in another book, split from this one. --> 
@@ -222,7 +229,7 @@
   
   <xsl:template name="toc-component-links">
     <xsl:param name="pages" as="element()+"/>
-    <xsl:variable name="book-code" select="jatskit:book-code(/)"/>
+    <xsl:variable name="book-code" select="jatskit:book-code()"/>
     <xsl:for-each select="$pages">
       <li>
         <xsl:call-template name="jatskit-component-link">
@@ -235,7 +242,7 @@
   
   <xsl:template name="jatskit-component-link">
     <xsl:param name="page" as="element()"/>
-    <xsl:param name="book-code" select="jatskit:book-code(.)"/>
+    <xsl:param name="book-code" select="jatskit:book-code()"/>
     <a href="{$path-to-root}/{$book-code}-{local-name($page)}.xhtml">
       <xsl:apply-templates select="$page" mode="component-title"/>
     </a>
@@ -330,4 +337,5 @@
     <xsl:apply-templates/>
   </xsl:template>
   
+    
 </xsl:stylesheet>

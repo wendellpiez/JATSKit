@@ -43,6 +43,7 @@
   
   <xsl:template match="/book">
     <jatskit:book-sequence>
+      <xsl:copy-of select="/*/@jatskit:documentURI"/>
       <xsl:copy-of select="/*/namespace::*"/>
       <xsl:apply-templates select="//@jatskit:split/.." mode="split"/>
     </jatskit:book-sequence>
@@ -51,6 +52,7 @@
   <!-- To split, we create a book, copy the top-level metadata,
        and go back up to the top to recurse back down to ourselves,
        copying the structure as we go. -->
+  <!-- Note that each (split) book has metadata for the entire book. -->
   <xsl:template match="*[exists(@jatskit:split)]" mode="split">
     <xsl:variable name="splitting" select="."/>
     <book>
@@ -99,6 +101,12 @@
   </xsl:template>-->
   
   <xsl:template match="book-part" mode="make-book-part">
+    <xsl:apply-templates select=".">
+      <xsl:with-param name="splitting" tunnel="yes" select="."/>
+    </xsl:apply-templates>
+  </xsl:template>
+  
+  <xsl:template match="front-matter/*" mode="make-book-part">
     <xsl:apply-templates select=".">
       <xsl:with-param name="splitting" tunnel="yes" select="."/>
     </xsl:apply-templates>

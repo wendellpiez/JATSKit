@@ -68,17 +68,31 @@
   </p:output>
   
   <p:output primary="false" port="source-ready" sequence="true">
-    <p:pipe port="result" step="ready-to-split"/>
+    <p:pipe port="result" step="marked-for-splitting"/>
   </p:output>
   
-  <p:serialization port="page-sequence"     indent="true"/>
-  <p:serialization port="apparatus"         indent="true"/>
-  <p:serialization port="graphics-manifest" indent="true"/>
-  <p:serialization port="support-manifest"  indent="true"/>
+  <p:serialization port="page-sequence"            indent="true"/>
+  <p:serialization port="apparatus"                indent="true"/>
+  <p:serialization port="graphics-manifest"        indent="true"/>
+  <p:serialization port="support-manifest"         indent="true"/>
   <p:serialization port="bookparts-split-document" indent="true"/>
-  <p:serialization port="source-ready"     indent="true"/>
+  <p:serialization port="source-ready"             indent="true"/>
+  
+  <p:variable name="documentURI" select="document-uri(/)"/>
   
   <p:import href="xml-bindtoURI.xpl"/>
+  
+  <!-- First there are a number of small interventions that may also need to be
+       performed. -->
+  <!-- In this pass we also cast JATS into BITS by wrapping a JATS document
+       in a BITS document with a book-part for each article/subarticle ... -->
+  <!-- The results of this step are also inputs for steps in subpipelines
+       that generate ToC page, etc. -->
+  <p:xslt name="ready-to-split">
+    <p:input port="stylesheet">
+      <p:document href="../xslt/web/jatskit-fixup.xsl"/>
+    </p:input>  
+  </p:xslt>
   
   <!-- Delivers a copy of the input BITS document, with marks for splitting.
        Can be modified to provide a different splitting logic. -->
@@ -103,17 +117,6 @@
     -->
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-mark-for-splitting.xsl"/>
-    </p:input>  
-  </p:xslt>
-  
-  <!-- There are a number of small interventions that may also need to be
-       performed, such as adding titles where there are none. This step
-       is also a good one for content improvements such as automated labeling. -->
-  <!-- The results of this step are also inputs for steps in subpipelines
-       that generate ToC page, etc. -->
-  <p:xslt name="ready-to-split">
-    <p:input port="stylesheet">
-      <p:document href="../xslt/web/jatskit-fixup.xsl"/>
     </p:input>  
   </p:xslt>
   
@@ -162,8 +165,8 @@
   <!-- Starting up again - to produce a directory (ToC) page -->
   <p:xslt>
     <p:input port="source">
-      <!-- Main source port: the original, unsplit BITS documen, after ID cleanup, marked for splitting -->
-      <p:pipe port="result" step="ready-to-split"/>
+      <!-- Main source port: the original, unsplit BITS document, after ID cleanup, marked for splitting -->
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-toc.xsl"/>
@@ -190,7 +193,7 @@
     <p:input port="source">
       <!-- Main source port: the original, unsplit BITS document -
            after ID cleanup, marked for splitting -->
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-titlepage.xsl"/>
@@ -209,7 +212,7 @@
   
   <p:xslt>
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-halftitle.xsl"/>
@@ -228,7 +231,7 @@
   
   <p:xslt>
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-colophon.xsl"/>
@@ -247,7 +250,7 @@
 
   <p:xslt name="graphics-manifest">
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:inline>
@@ -255,13 +258,13 @@
           <!-- Function declarations for here... -->
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
+            <xsl:variable name="target-dir"    select="resolve-uri(jatskit:book-code(),$documentURI)"/>
             <jatskit:kit>
               <!-- Element proxies for graphics files support copying them around. Both @target (a full pathname),
                    and @as (a relative pathname) are available for subsequent pipelines. -->
               <xsl:for-each-group select="//(graphic|inline-graphic)/@xlink:href" group-by=".">
                 <xsl:variable name="relative-path" select="concat('graphics/',replace(current-grouping-key(),'^.*/',''))"/>
-                <jatskit:graphic href="{resolve-uri(current-grouping-key(),document-uri(/))}"
+                <jatskit:graphic href="{resolve-uri(current-grouping-key(),$documentURI)}"
                 target="{string-join(($target-dir,$relative-path),'/')}"
                 as="{$relative-path}" suffix="{replace(current-grouping-key(),'^.*\.','')}"/>
               </xsl:for-each-group>
@@ -278,7 +281,7 @@
   <!-- This could be static, except the paths to which the resources will be written will vary. -->
   <p:xslt name="support-manifest">
     <p:input port="source">
-      <p:pipe port="result" step="ready-to-split"/>
+      <p:pipe port="result" step="marked-for-splitting"/>
     </p:input>
     <p:input port="stylesheet">
       <p:inline>
@@ -286,7 +289,7 @@
           <!-- Function declarations for here... -->
           <xsl:import href="../xslt/web/jatskit-util.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(/),document-uri(/))"/>
+            <xsl:variable name="target-dir" select="resolve-uri(jatskit:book-code(),$documentURI)"/>
             <jatskit:kit>
               <jatskit:css as="css/jatskit-epub.css"
                   href="../web-css/jatskit-epub.css"

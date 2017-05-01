@@ -185,7 +185,7 @@
   
   <xsl:template name="attribute-string">
     <!-- Tests true if any attribute has a value not whitespace. -->
-    <xsl:if test="@*/matches(.,'\S')">
+    <xsl:if test="exists(@*[matches(.,'\S')])">
       <xsl:text> [</xsl:text>
       <xsl:for-each select="@*[matches(.,'\S')]">
         <xsl:if test="position() gt 1">; </xsl:if>

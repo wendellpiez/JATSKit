@@ -1493,20 +1493,20 @@ or pipeline) parameterized.
   </xsl:template>
   
   <xsl:template mode="metadata" match="article-meta/contrib-group">
-      <!-- content model of contrib-group:
+    <!-- content model of contrib-group:
         (contrib+, 
         (address | aff | author-comment | bio | email |
         ext-link | on-behalf-of | role | uri | xref)*) -->
-      <!-- each contrib makes a row: name at left, details at right -->
-      <xsl:for-each select="contrib">
-        <!--  content model of contrib:
+    <!-- each contrib makes a row: name at left, details at right -->
+    <xsl:for-each select="contrib">
+      <!--  content model of contrib:
           ((contrib-id)*,
            (anonymous | collab | collab-alternatives | name | name-alternatives)*,
            (degrees)*,
            (address | aff | aff-alternatives | author-comment | bio | email |
             ext-link | on-behalf-of | role | uri | xref)*)       -->
-        <div class="metadata two-column table">
-          <div class="row">
+      <div class="metadata two-column table">
+        <div class="row">
           <div class="cell" style="text-align: right">
             <xsl:call-template name="contrib-identify">
               <!-- handles (contrib-id)*,
@@ -1521,15 +1521,15 @@ or pipeline) parameterized.
                     ext-link | on-behalf-of | role | uri) -->
             </xsl:call-template>
           </div>
-          </div>
         </div>
-      </xsl:for-each>
-      <!-- end of contrib -->
-      <xsl:variable name="misc-contrib-data"
-        select="*[not(self::contrib | self::xref)]"/>
-      <xsl:if test="$misc-contrib-data">
-        <div class="metadata two-column table">
-          <div class="row">
+      </div>
+    </xsl:for-each>
+    <!-- end of contrib -->
+    <xsl:variable name="misc-contrib-data"
+      select="*[not(self::contrib | self::xref)]"/>
+    <xsl:if test="$misc-contrib-data">
+      <div class="metadata two-column table">
+        <div class="row">
           <div class="cell">&#160;</div>
           <div class="cell">
             <div class="metadata-group">
@@ -1537,11 +1537,11 @@ or pipeline) parameterized.
                 select="$misc-contrib-data"/>
             </div>
           </div>
-          </div>
         </div>
-      </xsl:if>
+      </div>
+    </xsl:if>
   </xsl:template>
-
+  
 
   <xsl:template name="contrib-identify">
     <!-- Placed in a left-hand pane  -->

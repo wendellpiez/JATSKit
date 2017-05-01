@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="4in" height="2in" viewBox="0 0 800 400">
+    <desc></desc>
+    <g  transform="translate(400 200)" text-anchor="middle" font-size="24">
+      <!--<preformat>
+        Sympathetic Magic
+        (Law of Sympathy)
+        |
+        -\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+        |                             |
+        Homoeopathic Magic             Contagious Magic
+        (Law of Similarity)            (Law of Contact)
+      </preformat>-->
+      <path d="M 0 -50 L 0 0 h 240 v 50 M 0 0 h -240 v 50"
+        stroke="black" stroke-width="3" fill="none"/>
+      <text y="-120">Sympathetic Magic</text>
+      <text y="-70">(Law of Sympathy)</text>
+      
+      <g transform="translate(-240 100)">
+      <text y="0">Homeopathic Magic</text>
+      <text y="50">(Law of Similarity)</text>
+      </g>
+      
+      <g transform="translate(240 100)">
+        <text y="0">Contagious Magic</text>
+      <text y="50">(Law of Contact)</text>
+      </g>
+      
+    </g>
+</svg>

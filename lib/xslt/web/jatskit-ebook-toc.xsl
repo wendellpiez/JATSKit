@@ -37,13 +37,9 @@
                 <jatskit:halftitle/>
               </xsl:with-param>
             </xsl:call-template>
-            <xsl:for-each-group
-              select="
-                (front-matter | book-body | book-back)/
-                (book-part | *[exists(named-book-part-body)] | ack)"
-              group-by="true()">
-              <xsl:apply-templates select="current-group()" mode="directory"/>
-            </xsl:for-each-group>
+            <xsl:apply-templates  mode="directory"
+              select="(front-matter | book-body | book-back)/
+                (book-part | *[exists(named-book-part-body|body)] | ack)"/>
             <xsl:call-template name="toc-component-links">
               <xsl:with-param name="pages" as="element()*">
                 <jatskit:colophon/>
@@ -57,7 +53,7 @@
   
   <xsl:template name="toc-component-links">
     <xsl:param name="pages" as="element()+"/>
-    <xsl:variable name="book-code" select="jatskit:book-code(/)"/>
+    <xsl:variable name="book-code" select="jatskit:book-code()"/>
     <xsl:for-each select="$pages">
       <li>
         <xsl:call-template name="jatskit-component-link">
@@ -74,7 +70,7 @@
     </li>
   </xsl:template>
   
-  <xsl:template match="book-part | *[exists(named-book-part-body)] | ack" mode="directory">
+  <xsl:template match="book-part | *[exists(named-book-part-body|body)] | ack" mode="directory">
     <li>
       <xsl:apply-templates select="." mode="title-link"/>
 <!-- modify the TOC here! -->
@@ -101,7 +97,7 @@
     </li>
   </xsl:template>
   
-  <xsl:template match="*[exists(named-book-part-body)]" mode="title-link">
+  <xsl:template match="*[exists(named-book-part-body | body)]" mode="title-link">
     <xsl:variable name="title" select="book-part-meta/title-group/title | title"/>
     <xsl:apply-templates select="." mode="link-here">
       <xsl:with-param name="path">contents</xsl:with-param>

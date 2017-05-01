@@ -402,6 +402,10 @@ list {
   margin-top: 1em; margin-bottom: 1em;
 }
 
+list list {
+  margin-top: 0em; margin-bottom: 0em;
+}
+
 list list-item {
   display: list-item;
   list-style-type: disc;
@@ -509,7 +513,7 @@ disp-formula {
   font-style:italic;
 }
 
-preformat {
+code, preformat {
   display: block;
   font-family: monospace;
   font-size: 80%;
@@ -622,6 +626,13 @@ bold {
 italic {
   display: inline;
   font-style:italic;
+}
+
+code {
+  display: inline;
+  font-size:85%;
+  font-family:monospace;
+  background-color: gainsboro;
 }
 
 monospace {
@@ -824,4 +835,17 @@ see-also-entry:before { content: "See also: " }
 xref:before {
    link:"#" attr(rid);
    content: url('../../img/link.png');
-} 
+}
+
+book-part-meta { text-align: center }
+
+sec { border: thin dotted black; padding: 0.5em; margin: 0.5em }
+
+label { border: thin solid darkred; padding: 0.25em }
+
+toc-entry { border: thin dashed black; padding: 0.25em; margin-top: 0.5em }
+
+toc-entry * { border: none; padding: 0px; display: inline }
+
+license-p { display: block; margin-top: 0.5em }
+

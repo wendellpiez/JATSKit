@@ -149,5 +149,6 @@
     <projectTree name="JATSKit-dev.xpr">
         <folder path="../../"/>
         <folder path="../../../PellucidLiterature/EpigramMicrophone/"/>
+        <folder path="../../../../public_html/"/>
     </projectTree>
 </project>

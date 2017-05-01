@@ -25,6 +25,10 @@
     <xsl:apply-templates select="/descendant::book-title[1]" mode="link-text"/>
   </xsl:variable>
   
+  <!-- /*/@jatskit:documentURI provided by earlier steps jatskit-fixup.xsl jatskit-split.xsl -->
+  <!-- (This value is also bound in the XProc and could be passed in as a parameter.) -->
+  <xsl:variable name="documentURI" select="/*/@jatskit:documentURI" as="xs:anyURI?"/>
+  
   <xsl:template name="make-html-page">
     <xsl:param name="attribute-proxies" as="element()?"/>
     <xsl:param name="page-title" select="$show-book-title"/>
@@ -64,8 +68,8 @@
   </xsl:function>
 
   <xsl:function name="jatskit:book-code" as="xs:string">
-    <xsl:param name="e" as="node()"/>
-    <xsl:sequence select="jatskit:uri-basename(document-uri(root($e)))"/>    
+    <xsl:sequence select="jatskit:uri-basename($documentURI)"/>
+    <!--<xsl:sequence select="jatskit:uri-basename((document-uri(root($e)),'jatskit-pub')[1])"/>-->    
   </xsl:function>
   
   <xsl:function name="jatskit:page-id" as="xs:string">
@@ -74,13 +78,16 @@
       (a) the assigned ID of the first component (probably a book-part) marked for splitting
           (there will always be one, and only one, on controlled inputs)
       (b) or, the @id of the book (if no splits are marked)
-      (c) or, the string 'ERROR' which of course we should never see. -->
-    <xsl:sequence select="concat(($page//@jatskit:split/../@id,$page/@id,'ERROR')[1],'-page')"/>
+      
+      The fallback more or less ensures we will never have duplicate files written, but it's
+      an error condition. What we expect is an @id assigned earlier if not carried in from the input.-->
+    <xsl:sequence select="concat(($page//@jatskit:split/../@id,generate-id($page))[1],'-page')"/>
   </xsl:function>
 
+<!-- Called by individual book elements after splitting ... -->
   <xsl:function name="jatskit:page-path" as="xs:anyURI">
     <xsl:param name="book" as="element(book)"/>
-    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(root($book)),'/contents/',jatskit:page-id($book),'.xhtml'),document-uri(root($book)))"/>
+    <xsl:sequence select="resolve-uri(concat(jatskit:book-code(),'/contents/',jatskit:page-id($book),'.xhtml'),$documentURI)"/>
   </xsl:function>
   
   <xsl:function name="jatskit:current-lang" as="xs:string?">
@@ -102,10 +109,10 @@
       id="BigBook-toc" base="file:/d:/path/to/books/BigBook/Big-Book-toc.page -->
     <xsl:param name="page-label" as="xs:string"  required="yes"/>
     <xsl:param name="page-format" as="xs:string" required="yes"/>
-    <xsl:variable name="page-code" select="string-join((jatskit:book-code(/),$page-label),'-')"/>
+    <xsl:variable name="page-code" select="string-join((jatskit:book-code(),$page-label),'-')"/>
     
     <xsl:attribute name="id" select="$page-code"/>
-    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(/),'/',$page-code,'.',$page-format),document-uri(/))"/>
+    <xsl:attribute name="base" select="resolve-uri(concat(jatskit:book-code(),'/',$page-code,'.',$page-format),$documentURI)"/>
   </xsl:template>
   
 <!-- Attempts to produce an ISO formatted date string from a JATS/BITS 'date' element.

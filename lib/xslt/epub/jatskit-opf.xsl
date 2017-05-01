@@ -94,7 +94,7 @@
           Support jpeg, jpg, png, svg images
         CSS files and any other resources e.g. generic logos. 
         -->
-        <!--<item media-type="application/x-dtbncx+xml" id="ncx" href="{jatskit:book-code(/)}-epub.ncx"/>-->
+        <!--<item media-type="application/x-dtbncx+xml" id="ncx" href="{jatskit:book-code()}-epub.ncx"/>-->
         
         <xsl:apply-templates mode="manifest" select="/jatskit:kit/jatskit:*"/>
         

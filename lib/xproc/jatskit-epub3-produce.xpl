@@ -197,7 +197,7 @@
        The jatskit:kit file listing (for an internal manifest) along with
        a copy of original book input (for its metadata). -->
   <p:wrap-sequence wrapper="jatskit:kit" name="opf-source">
-    <p:input port="source"  sequence="true">
+    <p:input port="source">
       <p:pipe port="result" step="file-manifest"/>
       <p:pipe port="source-ready" step="web-sequence"/>
     </p:input>
