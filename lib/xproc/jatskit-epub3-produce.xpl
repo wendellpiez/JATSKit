@@ -163,12 +163,10 @@
      from the jatskit:kit element resulting from the last step. -->
   <p:xslt>
     <p:with-param name="source-filename" select="$source-filename"/>
-    <p:with-param name="xproc-loc" select="$xproc-loc"/>
     <p:input port="stylesheet">
       <p:inline>
         <xsl:stylesheet version="2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
           <xsl:param name="source-filename" required="yes"/>
-          <xsl:param name="xproc-loc" required="yes"/>
           <xsl:variable name="base-dir" select="concat(replace($source-filename,'\..*$',''),'/')"/>
           <xsl:template match="/jatskit:kit">
             <c:zip-manifest>
@@ -176,9 +174,8 @@
               <c:entry name="mimetype" compression-method="stored" compression-level="none"
                 href="../epub/mimetype.text"/>
               <!-- ../epub/container.xml -->
-              <c:entry href="{resolve-uri('../epub/container.xml',$xproc-loc)}" name="META-INF/container.xml"/>
+              <c:entry href="../epub/container.xml" name="META-INF/container.xml"/>
               <!-- OPF file named literally, since it doesn't come in through the 'source' pipe -->
-              <!--<c:entry href="../epub/mimetype.text" name="JATSKit-opf.opf"/>-->
               <c:entry href="{resolve-uri('JATSKit-opf.opf',$base-dir)}" name="JATSKit-opf.opf"/>
               <!-- Attributes on XML inside jatskit:fileset provides for these to be listed.
                    These include EPUB resources such as OPF, HTML resources, and static
@@ -191,7 +188,7 @@
             <c:entry name="{substring-after(@target,$base-dir)}" href="{@target}"/>
           </xsl:template>
           <xsl:template match="jatskit:*">
-            <c:entry name="{@as}" href="{resolve-uri(@href,$xproc-loc)}"/>
+            <c:entry name="{@as}" href="{@href}"/>
           </xsl:template>
           <xsl:template match="text()"/>
         </xsl:stylesheet>
