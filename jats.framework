@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="18.1" xml:space="preserve">
+<serialized version="19.0" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -2402,7 +2402,19 @@
 									<xprocOutputPort-array/>
 								</field>
 								<field name="xprocOptions">
-									<xprocOption-array/>
+									<xprocOption-array>
+										<xprocOption>
+											<field name="namespaceURI">
+												<String></String>
+											</field>
+											<field name="localName">
+												<String>xproc-loc</String>
+											</field>
+											<field name="value">
+												<String>${framework}/lib/xproc/jatskit-epub3-produce.xpl</String>
+											</field>
+										</xprocOption>
+									</xprocOption-array>
 								</field>
 								<field name="xprocParameters">
 									<xprocParameterPort-array>
@@ -2776,6 +2788,9 @@
 						<String>com.oxygenxml.jats.JATSExternalObjectInsertionHandler</String>
 					</field>
 					<field name="customAttributeValueEditor">
+						<null/>
+					</field>
+					<field name="textModeExternalObjectInsertionHandler">
 						<null/>
 					</field>
 				</documentTypeDescriptor>

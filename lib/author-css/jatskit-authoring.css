@@ -73,6 +73,7 @@ list:before { font-family: sans-serif; font-size: 80%;
         values, "order, bullet, simple");
 }
 
+
 fn { -oxy-foldable:true; display: inline }
 fn:before { font-family: sans-serif; font-size: 80%;
 color: #440000; counter-increment: footnote; content: "Note " counter(footnote);
