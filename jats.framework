@@ -63,17 +63,6 @@
 											<Boolean>true</Boolean>
 										</field>
 									</cssFile>
-									<cssFile>
-										<field name="href">
-											<String>${framework}/lib/author-css/jatskit-noisy-authoring.css</String>
-										</field>
-										<field name="title">
-											<String>JATSKit 'noisy' Authoring</String>
-										</field>
-										<field name="alternate">
-											<Boolean>true</Boolean>
-										</field>
-									</cssFile>
 								</cssFile-array>
 							</field>
 							<field name="mergeCSSsFromDocument">

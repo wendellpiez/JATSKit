@@ -38,7 +38,11 @@
   
   <xsl:template match="book">
     <!-- A book is (should be) identified with a single book-body/book-part,
-      front-matter/* (dedications and what not) or book-back/* (almost anything) -->
+      front-matter/* (dedications and what not) or book-back/* (almost anything)
+    - the rest of the 'book' is just a nominal shell for this single bit. The
+    allocation of book contents into such shells (each containing a single 'chunk' level
+    i.e. book-part level hunk of contents) is the task of the preceding pipeline step.
+    Over raw BITS without splitting out first this template may have unexpected results. -->
     <xsl:variable name="book-contents" select="(front-matter|book-body|book-back)/*"/>
     <xsl:variable name="single-part" select="$book-contents[1]"/>
     <xsl:call-template name="make-html-page">
@@ -56,7 +60,10 @@
         <xsl:for-each select="$single-part[not($format = 'epub')]">
           <xsl:call-template name="web-navigation"/>
         </xsl:for-each>
-        <xsl:apply-templates select="*/*" mode="build-part"/>
+        
+        <!-- Defensively - in case no splitting has occurred - we go ahead and produce all the contents
+             of the book as delivered ... -->
+        <xsl:apply-templates select="$book-contents" mode="build-part"/>
         <xsl:for-each select="$single-part[not($format = 'epub')]">
           <xsl:call-template name="web-navigation"/>
         </xsl:for-each>
@@ -206,6 +213,16 @@
     <a href="{string-join(($path,$href),'/')}">
       <xsl:sequence select="$text"/>
     </a>
+  </xsl:template>
+  
+  <xsl:template match="*" mode="link-text"/>
+  
+  <xsl:template match="front-matter/* | book-back/*" mode="link-text">
+    <xsl:apply-templates select="book-part-meta/title-group/title"/>
+  </xsl:template>
+  
+  <xsl:template match="book-title | title" mode="link-text">
+    <xsl:apply-templates/>
   </xsl:template>
   
   <xsl:template match="sec" mode="link-text">
