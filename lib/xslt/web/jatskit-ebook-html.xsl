@@ -309,6 +309,12 @@
     </h2>
   </xsl:template>
   
+  <xsl:template match="book-part-meta/contrib-group" mode="metadata">
+    <div class="contrib-group">
+      <xsl:apply-templates/>
+    </div>
+  </xsl:template>
+  
   
   <xsl:template match="book-title-group/trans-title-group" mode="metadata">
     <!-- content model: (trans-title, trans-subtitle*) -->

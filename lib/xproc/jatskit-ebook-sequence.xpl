@@ -171,7 +171,7 @@
     <p:input port="stylesheet">
       <p:document href="../xslt/web/jatskit-ebook-toc.xsl"/>
       <!-- Note the directory needs to know where files are being split, to
-           write links correctly ... hence the usefulness of @jatskit:spit markers. -->
+           write links correctly ... hence the usefulness of @jatskit:split markers. -->
     </p:input>  
   </p:xslt>
 
