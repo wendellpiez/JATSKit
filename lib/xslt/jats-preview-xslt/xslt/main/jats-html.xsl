@@ -2882,9 +2882,9 @@ or pipeline) parameterized.
 
 
   <xsl:template match="monospace">
-    <tt>
+    <code>
       <xsl:apply-templates/>
-    </tt>
+    </code>
   </xsl:template>
 
 
