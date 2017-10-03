@@ -43,11 +43,13 @@
               as </xsl:text><code>JATSKit</code><xsl:text>.</xsl:text>
           </p>
             <p><a href="https://github.com/wendellpiez/JATSKit"><code>JATSKit</code> (see its Github page)</a> is a
-            project of Wendell Piez, 2015-. <code>JATSKit</code> is built to be open and extensible, so much of what 
-            you see might be due to alterations and extensions for local use. This is part of the idea: its system
+            project of Wendell Piez since 2015 (components much earlier). <code>JATSKit</code> is designed to be 
+            open and extensible, so what you see might be due to alterations and extensions: its system
             components, defined using publicly-specified open technologies such as XSLT and XProc, are made to
             be hacked. Developers who make improvements and extensions to <code>JATSKit</code>, or reuse or adapt
-              parts of it, are invited to edit the XSLT that generates this text to give themselves notice.</p>
+            it in whole or in part, are invited to edit the XSLT that generates this text to give themselves notice –
+            or replace it or remove it. (Propagating this notice is not a condition of using
+            or adapting JATSKit.)</p>
             <p>Acknowledgement for contributions to <code>JATSKit</code> in present or earlier versions is owed
             (among others) to <a href="http://www.ncbi.nlm.nih.gov/">NLM/NCBI</a> (including for <a
               href="https://github.com/ncbi/JATSPreviewStylesheets">JATS Preview XSLTs)</a>, to

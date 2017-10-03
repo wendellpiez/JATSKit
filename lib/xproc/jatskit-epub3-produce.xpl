@@ -6,7 +6,10 @@
   xmlns:opf="http://www.idpf.org/2007/opf"
   xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0">
   
-  <p:option name="debug" select="'no'"/>
+  <p:option name="xproc-loc"  required="true"/>
+  
+  <p:option name="debug" select="'none'"/>
+<!-- Recognize 'package' (show results for packing) or 'manifest' (show the zip manifest)  -->
   
   <p:input  port="source"/>
 
@@ -158,7 +161,7 @@
  
 <!-- For the zipping process, we need a zip manifest, which we produce here
      from the jatskit:kit element resulting from the last step. -->
-  <p:xslt name="zip-manifest">
+  <p:xslt>
     <p:with-param name="source-filename" select="$source-filename"/>
     <p:input port="stylesheet">
       <p:inline>
@@ -170,10 +173,10 @@
               <!-- First, the files that are always the same. -->
               <c:entry name="mimetype" compression-method="stored" compression-level="none"
                 href="../epub/mimetype.text"/>
+              <!-- ../epub/container.xml -->
               <c:entry href="../epub/container.xml" name="META-INF/container.xml"/>
               <!-- OPF file named literally, since it doesn't come in through the 'source' pipe -->
-              <!--<c:entry href="../epub/mimetype.text" name="JATSKit-opf.opf"/>-->
-              <c:entry href="{$base-dir}JATSKit-opf.opf" name="JATSKit-opf.opf"/>
+              <c:entry href="{resolve-uri('JATSKit-opf.opf',$base-dir)}" name="JATSKit-opf.opf"/>
               <!-- Attributes on XML inside jatskit:fileset provides for these to be listed.
                    These include EPUB resources such as OPF, HTML resources, and static
                    resources listed in pipeline steps above (graphics etc.) -->
@@ -192,6 +195,7 @@
       </p:inline>
     </p:input>
   </p:xslt>
+  <p:make-absolute-uris  name="zip-manifest" base-uri="$xproc-loc" match="@href"/>
 
   <!-- Here we aggregate resources from which we will generate the OPF file:
        The jatskit:kit file listing (for an internal manifest) along with
@@ -221,12 +225,19 @@
      pulls the zip manifest in along with the bound results of file generation. -->
 
   <p:choose>
-    <p:when test="$debug='yes'">
+    <p:when test="$debug='package'">
       <p:identity name="generated-sources">
         <p:input port="source">
           <p:pipe port="bound-to-URI" step="opf-file"/>
           <p:pipe port="result"       step="epub-files"/>
           <p:pipe port="result"       step="web-files"/>
+        </p:input>
+      </p:identity>
+    </p:when>
+    <p:when test="$debug='manifest'">
+      <p:identity name="show-manifest">
+        <p:input port="source">
+          <p:pipe step="zip-manifest" port="result"/>
         </p:input>
       </p:identity>
     </p:when>
@@ -246,8 +257,15 @@
         <p:with-option name="href" select="replace($source-filename,'\..*ml$','.epub')"/>
         <p:with-option name="command" select="'create'"/>
       </pxp:zip>
-      
       <p:identity name="zip-echo"/>
+      <!--<p:identity name="zip-echo">
+        <p:input port="source">
+          <p:pipe step="zip-manifest" port="result"/>
+        </p:input>
+      </p:identity>-->
+      
+      
+      
     </p:otherwise>
   </p:choose>
   
