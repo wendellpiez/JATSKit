@@ -29,19 +29,19 @@ publisher-loc:after {
   font-family: inherit; font-size: inherit }
 
 article-id:before {
-  content: "Article ID (", attr(pub-id-type), ") ";
+  content: "Article ID (" attr(pub-id-type) ") ";
   font-weight: bold }
   
 collection-id:before {
-  content: "Book ID (", attr(collection-id-type), ") ";
+  content: "Book ID (" attr(collection-id-type) ") ";
   font-weight: bold }
   
 book-id:before {
-  content: "Book ID (", attr(book-id-type), ") ";
+  content: "Book ID (" attr(book-id-type) ") ";
   font-weight: bold }
   
 book-part-id:before {
-  content: "Book ID (", attr(book-part-id-type), ") ";
+  content: "Book ID (" attr(book-part-id-type) ") ";
   font-weight: bold }
 
 contrib-group:before {
@@ -51,7 +51,7 @@ contrib-group:before {
 }
 
 article-meta > pub-date:before {
-  content: "Publication date (", attr(pub-type), "): ";
+  content: "Publication date (" attr(pub-type) "): ";
   font-weight: bold }
 
 volume:before {
@@ -71,7 +71,7 @@ lpage:before {
   font-weight: bold }
 
 article-meta > ext-link:before {
-  content: attr(ext-link-type), ": ";
+  content: attr(ext-link-type) ": ";
   color: black;
   text-decoration: none;
   font-weight: bold }
@@ -96,7 +96,7 @@ pub-history:before {
   font-weight: bold }
 
 history date:before {
-  content: attr(date-type), " " }
+  content: attr(date-type) " " }
 
 product:before {
   content: "Product: ";
