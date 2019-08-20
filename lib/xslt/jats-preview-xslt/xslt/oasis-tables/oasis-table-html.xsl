@@ -112,7 +112,7 @@
           <xsl:text>border-collapse: collapse</xsl:text>
           <xsl:if test="$pgwide">; width: 100%</xsl:if>
           <xsl:if test="$continuing">; margin-bottom: 0px</xsl:if>
-          <xsl:if test="$continued">; marging-top: 0px</xsl:if>
+          <xsl:if test="$continued">; margin-top: 0px</xsl:if>
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
