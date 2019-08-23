@@ -176,7 +176,7 @@ or pipeline) parameterized.
               conf-sponsor conf-theme contrib-id copyright-holder
               copyright-statement copyright-year corresp country
               date-in-citation day def-head degrees disp-formula
-              edition elocation-id email etal ext-link fax fpage
+              edition elocation-id email entry etal ext-link fax fpage
               funding-source funding-statement given-names glyph-data
               gov inline-formula inline-supplementary-material
               institution isbn issn-l issn issue issue-id issue-part
@@ -2993,7 +2993,7 @@ or pipeline) parameterized.
   
   <xsl:template match="ack">
     <xsl:call-template name="backmatter-section">
-      <xsl:with-param name="generated-title">Acknowledgements</xsl:with-param>
+      <xsl:with-param name="generated-title">Acknowledgments</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
   

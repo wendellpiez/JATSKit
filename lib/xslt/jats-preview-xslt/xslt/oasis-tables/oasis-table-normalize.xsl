@@ -347,12 +347,12 @@
     <!-- $top is set if the closest available @rowsep is '1'
          (from among the neighbor entry's @rowsep, its colspec's @rowsep, its row's @rowsep,
           a @rowsep on the entry's tgroup or table) -->
-    <xsl:variable name="top" select="(($neighbor-up/@rowsep, $neighbor-up/p:colspec-for-entry(.)/@rowsep,
-      $neighbor-up/parent::row/@rowsep, $entry/ancestor::tgroup[1]/@rowsep, $entry/ancestor::table[1]/@rowsep)[1] = '1')
+    <xsl:variable name="top" select="(($neighbor-up/@rowsep, $neighbor-up/parent::row/@rowsep, 
+      $neighbor-up/p:colspec-for-entry(.)/@rowsep, $entry/ancestor::tgroup[1]/@rowsep, $entry/ancestor::table[1]/@rowsep)[1] = '1')
       or ($top-edge and $frame-spec=('top','topbot','all'))"/>
     <!-- checking the entry likewise for $bottom -->
-    <xsl:variable name="bottom" select="(($entry/@rowsep, $entry/p:colspec-for-entry(.)/@rowsep,
-      $entry/parent::row/@rowsep, $entry/ancestor::tgroup[1]/@rowsep, $entry/ancestor::table[1]/@rowsep)[1] = '1')
+    <xsl:variable name="bottom" select="(($entry/@rowsep, $entry/parent::row/@rowsep, 
+      $entry/p:colspec-for-entry(.)/@rowsep, $entry/ancestor::tgroup[1]/@rowsep, $entry/ancestor::table[1]/@rowsep)[1] = '1')
       or ($bottom-edge and $frame-spec=('bottom','topbot','all'))"/>
     <!-- $left is set if the closest available @colsep is 1
          (from among the neighbor entry's @colsep, its colspec's @colsep,
