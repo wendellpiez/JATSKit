@@ -1,5 +1,5 @@
 @import "html_cals_table.css";
-
+@import "authoring-extension.css";
 @namespace xlink "http://www.w3.org/1999/xlink";
 
 article, book, book-part-wrapper, collection, collection-list {

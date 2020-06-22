@@ -1,0 +1,58 @@
+permissions license_ref:before {
+  content: oxy_concat("Start date :  ", attr(start_date), " : ");
+}
+permissions free_to_read:before {
+  content: oxy_concat("Start date :  ", attr(start_date), " End date :  ", attr(end_date), " : ");
+}
+addr-line:before {
+  content: "Addr-line: " !important;
+  font-weight: bold!important;
+}
+volume:before {
+  content: "Volume: ";
+  font-weight: bold;
+}
+issue:before {
+  content: "Issue: ";
+  font-weight: bold;
+}
+lpage:before {
+  content: "Lpage: ";
+  font-weight: bold;
+}
+fpage:before {
+  content: "Fpage: ";
+  font-weight: bold;
+}
+institution:before {
+  content: "Institution: ";
+  font-weight: bold;
+}
+country:before {
+  content: "Country: ";
+  font-weight: bold;
+}
+phone:before {
+  content: "Phone: ";
+  font-weight: bold;
+}
+fax:before {
+  content: "Fax: ";
+  font-weight: bold;
+}
+email:before {
+  content: "Email: ";
+  font-weight: bold;
+}
+year:before {
+  content: "Year: ";
+  font-weight: bold;
+}
+given-names:before,
+suffix:before {
+  content: oxy_xpath("if (ends-with(./preceding-sibling::*[1]/text(), ',') or string-length(text()) < 1 or starts-with(./text(), ',')) then '' else ','") !important;
+  color: gray;
+}
+speaker:after {
+  content: oxy_xpath("if (ends-with(./text(), ':')) then '' else ':' ") !important;
+}

@@ -1,4 +1,5 @@
-goog.provide('com.oxygenxml.JatsExtension');
+window.com = window.com || {};
+window.com.oxygenxml = window.com.oxygenxml || {};
 
 /**
  * Constructor for the jats Extension.
