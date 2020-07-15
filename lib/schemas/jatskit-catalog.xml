@@ -458,8 +458,8 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 <!--                    Journal Publishing DTD (Blue), that uses    -->
 <!--                    XHTML tables with MathML 2.0                -->
 
-  <!--<public publicId="-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN"
-               uri="JATS-journalpublishing1.dtd"/>-->
+  <public publicId="-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN"
+               uri="JATS-journalpublishing1.dtd"/>
 
 <!--                    The following modules are used ONLY for the -->
 <!--                    Journal Publishing DTD (Blue), that uses    -->
@@ -721,8 +721,8 @@ Version  Reason/Occasion                   (who) vx.x (yyyy-mm-dd)
 
 <!--                    SET UP MATHML                              -->
 
-  <!--<public publicId="-//NLM//DTD JATS (Z39.96) JATS DTD Suite MathML Setup Module v1.1 20151215//EN"
-               uri="JATS-mathmlsetup1.ent"/>-->
+  <public publicId="-//NLM//DTD JATS (Z39.96) JATS DTD Suite MathML Setup Module v1.1 20151215//EN"
+               uri="JATS-mathmlsetup1.ent"/>
 
   <public publicId="-//NLM//DTD JATS (Z39.96) JATS DTD Suite MathML 3.0 Setup Module v1.1 20151215//EN"
                uri="JATS-mathml3-mathmlsetup1.ent"/>
