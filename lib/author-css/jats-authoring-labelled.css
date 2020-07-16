@@ -73,7 +73,6 @@ lpage:before {
 
 article-meta > ext-link:before {
   content: attr(ext-link-type) ": ";
-  color: black;
   text-decoration: none;
   font-weight: bold }
 

@@ -84,7 +84,6 @@ contrib-group, permissions {
 
 contrib {
   display: block;
-  background-color: white;
   border: thin black solid;
   padding-top: 0.5em;
   padding-left: 0.5em;
@@ -394,7 +393,6 @@ table-wrap {
   padding-left: 0.5em;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
-  background-color: #FDE
 }
 
 list {

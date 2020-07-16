@@ -201,6 +201,12 @@ thead {
     background-color: #f4fbff;
   }
 }
+@media oxygen-high-contrast-black, oxygen-dark-theme {
+  thead,
+  th {
+    background-color: #03096b !important;
+  }
+}
 /* 
     A table footer consisting of one or more rows 
 */

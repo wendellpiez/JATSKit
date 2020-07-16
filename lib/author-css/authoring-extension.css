@@ -3,7 +3,6 @@
 @namespace xlink "http://www.w3.org/1999/xlink";
 @namespace oasis "http://www.niso.org/standards/z39-96/ns/oasis-exchange/table";
 .title {
-  color: black;
   font-weight: bold;
 }
 .border {
@@ -76,15 +75,10 @@
   }
 }
 @media oxygen AND (min-width: 25cm) {
-  /* A gray background */
-  oxy|document {
-    background-color: #fbfbfb;
-  }
   /* The white page.*/
   :root {
     /* White page */
     border: 1px solid #c6c6c6;
-    background-color: white;
     /* Centered*/
     margin-left: auto;
     margin-right: auto;
@@ -516,6 +510,12 @@ thead {
   th {
     /*See -colors.css */
     background-color: #f4fbff;
+  }
+}
+@media oxygen-high-contrast-black, oxygen-dark-theme {
+  thead,
+  th {
+    background-color: #03096b !important;
   }
 }
 /* 
@@ -1064,7 +1064,6 @@ journal-meta:before {
   padding-left: 0.5em;
 }
 article-title {
-  color: black;
   font-weight: bold;
   display: block!important;
   margin-top: 1em!important;
@@ -1155,7 +1154,6 @@ fig,
 table-wrap,
 fn,
 supplementary-material {
-  background: white!important;
   border: none!important;
   margin-left: 0em!important;
   padding-left: 0em!important;
