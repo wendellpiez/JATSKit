@@ -1,10 +1,7 @@
-
-sync.table.HtmlExtension = sync.table.HtmlExtension || {};
-
-sync.xhtml = sync.xhtml || {};
+sync.table = sync.table || {};
 
 /**
- * Constructor for the xhtml Extension.
+ * Constructor for the Jats Extension.
  *
  * @constructor
  */
@@ -12,6 +9,8 @@ sync.table.HtmlExtension = function(){
   sync.ext.Extension.call(this);
 };
 goog.inherits(sync.table.HtmlExtension, sync.ext.Extension);
+
+sync.table.FRAMEWORK_NAME = "JATSKit";
 
 /**
  * Editor created callback.
@@ -21,7 +20,7 @@ goog.inherits(sync.table.HtmlExtension, sync.ext.Extension);
 sync.table.HtmlExtension.prototype.editorCreated = function(editor) {
   goog.events.listen(editor, sync.api.Editor.EventTypes.ACTIONS_LOADED, function(e) {
     var actionsManager = editor.getActionsManager();
-    addOldStyleTableActions(e.actionsConfiguration, "XHTML", editor);
+    addOldStyleTableActions(e.actionsConfiguration, sync.table.FRAMEWORK_NAME, editor);
   }, true);
 };
 
