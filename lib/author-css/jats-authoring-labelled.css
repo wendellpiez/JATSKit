@@ -1,5 +1,6 @@
 @import "jats-authoring.css";
- 
+@import "./authoring-extension.css";
+@import "./labelled-extension.css";
 @namespace xlink "http://www.w3.org/1999/xlink";
 
  *:before { font-family: sans-serif; font-size: 90% }
@@ -72,7 +73,6 @@ lpage:before {
 
 article-meta > ext-link:before {
   content: attr(ext-link-type) ": ";
-  color: black;
   text-decoration: none;
   font-weight: bold }
 

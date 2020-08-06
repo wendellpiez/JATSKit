@@ -1,29 +1,26 @@
-/*
-==============================================
- 		   HTML and Docbook CALS tables 
-   [the master copy is in the DITA framework]
-==============================================
-*/
-
-/*
-    The caption of the table.
-*/
 table > caption,
 table > info > title,
 table > title{ 
-    display: table-caption;
-    font-weight:bold;
-    text-align: left;
-    margin-top: 0.5em;
+    margin-top: 0!important;
+    border-left-color: rgba(210, 210, 210, 1.0);
+    border-left-style: solid;
+    border-left-width: 1px;
 }
 
+
 @media print {
-  /* 
-    Put a number before the table title.
-    The counter is reset in p-page-titles-and-numbers.css
-  */
-table > info > title,
-table > title{ 
+	
+table > caption,
+table > info,
+table > title {
+	page-break-after: avoid;
+}
+	
+/* 
+   Put a number before the table title.
+   The counter is reset in p-page-titles-and-numbers.css
+ */
+table {
     counter-increment: tablecount;
 }
 table > info > title:before,
@@ -39,18 +36,6 @@ table > title:before{
 table,
 informaltable{
   display: table;
-}
-
-@media oxygen {
-	table,
-	informaltable{
-	  /*overriden in cals_table.css*/
-	  /*See -colors.css */
-	  border-color: #EEEEEE;
-	  border-style:solid;
-	  border-width:1px;
-	  margin: 1.5em 0;
-	}
 }
 
 
@@ -129,6 +114,60 @@ informaltable[frame='all']{
   border-style:solid;
 }
 
+
+/* Valign. */
+
+*[valign='baseline']{
+   vertical-align:baseline;
+}
+*[valign='bottom']{
+   vertical-align:bottom;
+}
+*[valign='middle']{
+   vertical-align:middle;
+}
+*[valign='top']{
+   vertical-align:top;
+}
+
+
+table[valign='middle'],
+table[valign='baseline'],
+informaltable[valign='middle'],
+informaltable[valign='baseline']{
+	margin-left:auto;
+	vertical-align:inherit;
+}
+
+
+
+@media oxygen {
+	/*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
+	it's silly to align the colspec element*/
+	colspec[valign], 
+	col[valign]{
+	   vertical-align:baseline;
+	}
+}
+@media print {
+    /* CH-284 Is important for the @media print, because the property is taken into accound 
+       when aligning the text from cells - the colspec elements are not visible. */
+    colspec[valign], 
+    col[valign]{
+      vertical-align:attr(valign);
+    }    
+}
+
+col[valign] td, col[valign] th{
+    vertical-align:attr(valign) !important;
+}
+
+
+
+
+
+
+
 /* Alignment. */
 
 *[align='left']{
@@ -163,8 +202,9 @@ informaltable[align='left']{
 	/*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
 	it's silly to align the colspec element*/
 	colspec[align], 
-	col[align]{
-	   text-align:left;
+	col[align]
+	{
+       text-align: left;
 	}
 }
 @media print {
@@ -175,6 +215,7 @@ informaltable[align='left']{
        text-align:attr(align);
     }    
 }
+
 
 /*
   A wrapper for the main content of a table, or part of a table
@@ -203,7 +244,12 @@ thead {
 	  background-color: #f4fbff;
 	}
 }
-
+@media oxygen-high-contrast-black, oxygen-dark-theme {
+  thead,
+  th {
+    background-color: rgb(3, 9, 107) !important;
+  }
+}
 /* 
     A table footer consisting of one or more rows 
 */
@@ -237,6 +283,7 @@ entry,
 td{
     display:table-cell;
 }
+
 tr {
 	vertical-align: middle;
 }
@@ -845,63 +892,7 @@ tfoot         > row         > entry[valign=baseline]{
 }
 
 
-
-
 colspec, col, spanspec{
     text-align:attr(align);    
 }
 
-@media oxygen {
-
-/* These have meaning only for editing. In publishing, 
-   these properties would be passed to the table cells.*/	
-colspec, col, spanspec{
-    background-color:inherit;
-    font-family:sansserif, verdana, helvetica;
-	font-size:0.75em;
-}
-	
-colspec:after{
-    content:
-    		"  name " oxy_textfield(edit, "@colname", columns, 7) 
-    		"  number " oxy_textfield(edit, "@colnum", columns, 7)
-    		"  width " oxy_textfield(edit, "@colwidth", columns, 7)
-    		"  align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10)
-    		"  "    		
-    		oxy_checkbox(edit, "@colsep", values, "1", labels, "colsep", fontInherit, true) 
-    		oxy_checkbox(edit, "@rowsep", values, "1", labels, "rowsep", fontInherit, true);
-	white-space: pre;
-	padding-bottom: 5px;
-  
-  unicode-bidi:embed;
-  direction:ltr;
-}
-
-col:after{
-    content:
-    		"  title " oxy_textfield(edit, "@title", columns, 7)   
-    		"  span " oxy_textfield(edit, "@span", columns, 7) 
-    		"  width " oxy_textfield(edit, "@width", columns, 7)
-    		"  align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10);
-    white-space: pre;
-    padding-bottom: 5px;
-    
-    unicode-bidi:embed;
-    direction:ltr;
-}
-
-spanspec:before{
-    content:"before";
-}
-spanspec:after{
-    content:
-    		"name " oxy_textfield(edit, "@spanname", columns, 7) 
-    		" start column " oxy_textfield(edit, "@namest", columns, 7) 
-    		" end column " oxy_textfield(edit, "@nameend", columns, 7);    
-	white-space: pre;
-  
-  unicode-bidi:embed;
-  direction:ltr;
-}
-
-}

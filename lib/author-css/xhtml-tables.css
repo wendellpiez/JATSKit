@@ -1,0 +1,725 @@
+table > caption,
+table > info > title,
+table > title {
+  margin-top: 0!important;
+  border-left-color: #d2d2d2;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+@media print {
+  table > caption,
+  table > info,
+  table > title {
+    page-break-after: avoid;
+  }
+  /* 
+   Put a number before the table title.
+   The counter is reset in p-page-titles-and-numbers.css
+ */
+  table {
+    counter-increment: tablecount;
+  }
+  table > info > title:before,
+  table > title:before {
+    content: "Table " counter(tablecount) ": ";
+  }
+}
+/* 
+    A Table in a document 
+*/
+table,
+informaltable {
+  display: table;
+}
+/*
+  Frame attribute - Specifies how the table is to be framed.
+*/
+/*
+     Reset the border.
+*/
+table[border],
+informaltable[border] {
+  border-width: attr(border, length);
+  border-style: solid;
+}
+/*
+    Define each border.
+    Even if HTML indicates that the framing should not be done if
+    there is no border, Docbook is not explicit.
+    
+    Should be: table[border][frame]
+*/
+table[frame],
+informaltable[frame] {
+  border-style: none;
+  border-color: black;
+}
+table[frame='above'],
+table[frame='top'],
+informaltable[frame='above'],
+informaltable[frame='top'] {
+  border-top-style: solid;
+}
+table[frame='below'],
+table[frame='bottom'],
+informaltable[frame='below'],
+informaltable[frame='bottom'] {
+  border-bottom-style: solid;
+}
+table[frame='rhs'],
+informaltable[frame='rhs'] {
+  border-right-style: solid;
+}
+table[frame='lhs'],
+informaltable[frame='lhs'] {
+  border-left-style: solid;
+}
+table[frame='vsides'],
+table[frame='sides'],
+informaltable[frame='vsides'],
+informaltable[frame='sides'] {
+  border-left-style: solid;
+  border-right-style: solid;
+}
+table[frame='hsides'],
+table[frame='topbot'],
+informal[frame='hsides'],
+informal[frame='topbot'] {
+  border-bottom-style: solid;
+  border-top-style: solid;
+}
+table[frame='box'],
+table[frame='border'],
+table[frame='all'],
+informaltable[frame='box'],
+informaltable[frame='border'],
+informaltable[frame='all'] {
+  border-style: solid;
+}
+/* Valign. */
+*[valign='baseline'] {
+  vertical-align: baseline;
+}
+*[valign='bottom'] {
+  vertical-align: bottom;
+}
+*[valign='middle'] {
+  vertical-align: middle;
+}
+*[valign='top'] {
+  vertical-align: top;
+}
+table[valign='middle'],
+table[valign='baseline'],
+informaltable[valign='middle'],
+informaltable[valign='baseline'] {
+  margin-left: auto;
+  vertical-align: inherit;
+}
+@media oxygen {
+  /*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
+	it's silly to align the colspec element*/
+  colspec[valign],
+  col[valign] {
+    vertical-align: baseline;
+  }
+}
+@media print {
+  /* CH-284 Is important for the @media print, because the property is taken into accound 
+       when aligning the text from cells - the colspec elements are not visible. */
+  colspec[valign],
+  col[valign] {
+    vertical-align: attr(valign);
+  }
+}
+col[valign] td,
+col[valign] th {
+  vertical-align: attr(valign) !important;
+}
+/* Alignment. */
+*[align='left'] {
+  text-align: left;
+}
+*[align='right'] {
+  text-align: right;
+}
+*[align='center'] {
+  text-align: center;
+}
+table[align='center'],
+table[align='right'],
+informaltable[align='center'],
+informaltable[align='right'] {
+  margin-left: auto;
+  text-align: inherit;
+}
+table[align='center'],
+table[align='left'],
+informaltable[align='center'],
+informaltable[align='left'] {
+  margin-right: auto;
+  text-align: inherit;
+}
+@media oxygen {
+  /*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
+	it's silly to align the colspec element*/
+  colspec[align],
+  col[align] {
+    text-align: left;
+  }
+}
+@media print {
+  /* CH-284 Is important for the @media print, because the property is taken into accound 
+       when aligning the text from cells - the colspec elements are not visible. */
+  colspec[align],
+  col[align] {
+    text-align: attr(align);
+  }
+}
+/*
+  A wrapper for the main content of a table, or part of a table
+ */
+tgroup {
+  display: table;
+}
+tbody {
+  /* overriden in cals_table.css */
+  display: table-row-group;
+}
+/* 
+    A table header consisting of one or more rows 
+*/
+thead {
+  display: table-header-group;
+  font-weight: bold;
+  text-align: center;
+}
+@media oxygen {
+  thead,
+  th {
+    /*See -colors.css */
+    background-color: #f4fbff;
+  }
+}
+@media oxygen-high-contrast-black, oxygen-dark-theme {
+  thead,
+  th {
+    background-color: #03096b !important;
+  }
+}
+/* 
+    A table footer consisting of one or more rows 
+*/
+tfoot {
+  display: table-footer-group;
+  font-weight: bold;
+  text-align: center;
+}
+@media oxygen {
+  tfoot {
+    /*See -colors.css */
+    background-color: #DEDEDE;
+  }
+}
+/*
+    Table row.
+*/
+row,
+tr {
+  display: table-row;
+}
+/*
+    Table cell.
+*/
+entry,
+td {
+  display: table-cell;
+}
+tr {
+  vertical-align: middle;
+}
+@media screen {
+  entry,
+  td {
+    /*See -colors.css */
+    border-color: #EEEEEE;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+th {
+  display: table-cell;
+  font-weight: bold;
+  text-align: center;
+}
+@media oxygen {
+  th {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d2d2d2;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
+@media oxygen and (platform: webapp) {
+  tr > th,
+  tr > td {
+    -oxy-show-placeholder: no;
+    font-weight: normal;
+  }
+}
+/* 
+    entrytbl - A subtable appearing in place of an Entry in a table 
+*/
+entrytbl {
+  display: table;
+}
+table[bgcolor],
+informaltable[bgcolor],
+tr[bgcolor],
+td[bgcolor] {
+  background-color: attr(bgcolor);
+  color: inherit;
+}
+/*
+    The columns are separated.
+*/
+table[border][rules=cols] > tr > td,
+table[border][rules=cols] > tr > th,
+table[border][rules=cols] > tbody > tr > td,
+table[border][rules=cols] > tbody > tr > th,
+table[border][rules=cols] > thead > tr > td,
+table[border][rules=cols] > thead > tr > th,
+table[border][rules=cols] > tfoot > tr > td,
+table[border][rules=cols] > tfoot > tr > th {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+/*
+    The columns are separated.
+*/
+table[border][rules=rows] > tr > td,
+table[border][rules=rows] > tr > th,
+table[border][rules=rows] > tbody > tr > td,
+table[border][rules=rows] > tbody > tr > th,
+table[border][rules=rows] > thead > tr > td,
+table[border][rules=rows] > thead > tr > th,
+table[border][rules=rows] > tfoot > tr > td,
+table[border][rules=rows] > tfoot > tr > th {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+/*
+    All the columns and rows are separated.
+*/
+table[border][rules=all] > tr > td,
+table[border][rules=all] > tr > th,
+table[border][rules=all] > tbody > tr > td,
+table[border][rules=all] > tbody > tr > th,
+table[border][rules=all] > thead > tr > td,
+table[border][rules=all] > thead > tr > th,
+table[border][rules=all] > tfoot > tr > td,
+table[border][rules=all] > tfoot > tr > th {
+  border: 1px solid;
+}
+/*
+    None of the columns and rows are separated.
+*/
+table[border][rules=none] > tr > td,
+table[border][rules=none] > tr > th,
+table[border][rules=none] > tbody > tr > td,
+table[border][rules=none] > tbody > tr > th,
+table[border][rules=none] > thead > tr > td,
+table[border][rules=none] > thead > tr > th,
+table[border][rules=none] > tfoot > tr > td,
+table[border][rules=none] > tfoot > tr > th {
+  border: 1px solid #EEEEEE;
+}
+/*
+========================
+    The align with the priority is set to the td, then 
+    it follows the one from the row and then the one 
+    from the row group.
+========================
+*/
+/*
+    HTML tables.
+*/
+/*
+-------
+    Bottom
+-------
+*/
+/*Least specific*/
+tbody[valign=bottom] > tr > td,
+tbody[valign=bottom] > tr > th,
+thead[valign=bottom] > tr > td,
+thead[valign=bottom] > tr > th,
+tfoot[valign=bottom] > tr > td,
+tfoot[valign=bottom] > tr > th {
+  vertical-align: bottom;
+}
+/*More specific*/
+tbody[valign] > tr[valign=bottom] > td,
+tbody > tr[valign=bottom] > td,
+tbody[valign] > tr[valign=bottom] > th,
+tbody > tr[valign=bottom] > th,
+thead[valign] > tr[valign=bottom] > td,
+thead > tr[valign=bottom] > td,
+thead[valign] > tr[valign=bottom] > th,
+thead > tr[valign=bottom] > th,
+tfoot[valign] > tr[valign=bottom] > td,
+tfoot > tr[valign=bottom] > td,
+tfoot[valign] > tr[valign=bottom] > th,
+tfoot > tr[valign=bottom] > th {
+  vertical-align: bottom;
+}
+/*Even more specific*/
+tbody[valign] > tr[valign] > td[valign=bottom],
+tbody > tr[valign] > td[valign=bottom],
+tbody[valign] > tr > td[valign=bottom],
+tbody > tr > td[valign=bottom],
+tbody[valign] > tr[valign] > th[valign=bottom],
+tbody > tr[valign] > th[valign=bottom],
+tbody[valign] > tr > th[valign=bottom],
+tbody > tr > th[valign=bottom],
+thead[valign] > tr[valign] > td[valign=bottom],
+thead > tr[valign] > td[valign=bottom],
+thead[valign] > tr > td[valign=bottom],
+thead > tr > td[valign=bottom],
+thead[valign] > tr[valign] > th[valign=bottom],
+thead > tr[valign] > th[valign=bottom],
+thead[valign] > tr > th[valign=bottom],
+thead > tr > th[valign=bottom],
+tfoot[valign] > tr[valign] > td[valign=bottom],
+tfoot > tr[valign] > td[valign=bottom],
+tfoot[valign] > tr > td[valign=bottom],
+tfoot > tr > td[valign=bottom],
+tfoot[valign] > tr[valign] > th[valign=bottom],
+tfoot > tr[valign] > th[valign=bottom],
+tfoot[valign] > tr > th[valign=bottom],
+tfoot > tr > th[valign=bottom] {
+  vertical-align: bottom;
+}
+/*
+-------
+    Top
+-------
+*/
+/*Least specific*/
+tbody[valign=top] > tr > td,
+tbody[valign=top] > tr > th,
+thead[valign=top] > tr > td,
+thead[valign=top] > tr > th,
+tfoot[valign=top] > tr > td,
+tfoot[valign=top] > tr > th {
+  vertical-align: top;
+}
+/*More specific*/
+tbody[valign] > tr[valign=top] > td,
+tbody > tr[valign=top] > td,
+tbody[valign] > tr[valign=top] > th,
+tbody > tr[valign=top] > th,
+thead[valign] > tr[valign=top] > td,
+thead > tr[valign=top] > td,
+thead[valign] > tr[valign=top] > th,
+thead > tr[valign=top] > th,
+tfoot[valign] > tr[valign=top] > td,
+tfoot > tr[valign=top] > td,
+tfoot[valign] > tr[valign=top] > th,
+tfoot > tr[valign=top] > th {
+  vertical-align: top;
+}
+/*Even more specific*/
+tbody[valign] > tr[valign] > td[valign=top],
+tbody > tr[valign] > td[valign=top],
+tbody[valign] > tr > td[valign=top],
+tbody > tr > td[valign=top],
+tbody[valign] > tr[valign] > th[valign=top],
+tbody > tr[valign] > th[valign=top],
+tbody[valign] > tr > th[valign=top],
+tbody > tr > th[valign=top],
+thead[valign] > tr[valign] > td[valign=top],
+thead > tr[valign] > td[valign=top],
+thead[valign] > tr > td[valign=top],
+thead > tr > td[valign=top],
+thead[valign] > tr[valign] > th[valign=top],
+thead > tr[valign] > th[valign=top],
+thead[valign] > tr > th[valign=top],
+thead > tr > th[valign=top],
+tfoot[valign] > tr[valign] > td[valign=top],
+tfoot > tr[valign] > td[valign=top],
+tfoot[valign] > tr > td[valign=top],
+tfoot > tr > td[valign=top],
+tfoot[valign] > tr[valign] > th[valign=top],
+tfoot > tr[valign] > th[valign=top],
+tfoot[valign] > tr > th[valign=top],
+tfoot > tr > th[valign=top] {
+  vertical-align: top;
+}
+/*
+-------
+    Middle
+-------
+*/
+/*Least specific*/
+tbody[valign=middle] > tr > td,
+tbody[valign=middle] > tr > th,
+thead[valign=middle] > tr > td,
+thead[valign=middle] > tr > th,
+tfoot[valign=middle] > tr > td,
+tfoot[valign=middle] > tr > th {
+  vertical-align: middle;
+}
+/*More specific*/
+tbody[valign] > tr[valign=middle] > td,
+tbody > tr[valign=middle] > td,
+tbody[valign] > tr[valign=middle] > th,
+tbody > tr[valign=middle] > th,
+thead[valign] > tr[valign=middle] > td,
+thead > tr[valign=middle] > td,
+thead[valign] > tr[valign=middle] > th,
+thead > tr[valign=middle] > th,
+tfoot[valign] > tr[valign=middle] > td,
+tfoot > tr[valign=middle] > td,
+tfoot[valign] > tr[valign=middle] > th,
+tfoot > tr[valign=middle] > th {
+  vertical-align: middle;
+}
+/*Even more specific*/
+tbody[valign] > tr[valign] > td[valign=middle],
+tbody > tr[valign] > td[valign=middle],
+tbody[valign] > tr > td[valign=middle],
+tbody > tr > td[valign=middle],
+tbody[valign] > tr[valign] > th[valign=middle],
+tbody > tr[valign] > th[valign=middle],
+tbody[valign] > tr > th[valign=middle],
+tbody > tr > th[valign=middle],
+thead[valign] > tr[valign] > td[valign=middle],
+thead > tr[valign] > td[valign=middle],
+thead[valign] > tr > td[valign=middle],
+thead > tr > td[valign=middle],
+thead[valign] > tr[valign] > th[valign=middle],
+thead > tr[valign] > th[valign=middle],
+thead[valign] > tr > th[valign=middle],
+thead > tr > th[valign=middle],
+tfoot[valign] > tr[valign] > td[valign=middle],
+tfoot > tr[valign] > td[valign=middle],
+tfoot[valign] > tr > td[valign=middle],
+tfoot > tr > td[valign=middle],
+tfoot[valign] > tr[valign] > th[valign=middle],
+tfoot > tr[valign] > th[valign=middle],
+tfoot[valign] > tr > th[valign=middle],
+tfoot > tr > th[valign=middle] {
+  vertical-align: middle;
+}
+/*
+-------
+    Baseline
+-------
+*/
+/*Least specific*/
+tbody[valign=baseline] > tr > td,
+tbody[valign=baseline] > tr > th,
+thead[valign=baseline] > tr > td,
+thead[valign=baseline] > tr > th,
+tfoot[valign=baseline] > tr > td,
+tfoot[valign=baseline] > tr > th {
+  vertical-align: baseline;
+}
+/*More specific*/
+tbody[valign] > tr[valign=baseline] > td,
+tbody > tr[valign=baseline] > td,
+tbody[valign] > tr[valign=baseline] > th,
+tbody > tr[valign=baseline] > th,
+thead[valign] > tr[valign=baseline] > td,
+thead > tr[valign=baseline] > td,
+thead[valign] > tr[valign=baseline] > th,
+thead > tr[valign=baseline] > th,
+tfoot[valign] > tr[valign=baseline] > td,
+tfoot > tr[valign=baseline] > td,
+tfoot[valign] > tr[valign=baseline] > th,
+tfoot > tr[valign=baseline] > th {
+  vertical-align: baseline;
+}
+/*Even more specific*/
+tbody[valign] > tr[valign] > td[valign=baseline],
+tbody > tr[valign] > td[valign=baseline],
+tbody[valign] > tr > td[valign=baseline],
+tbody > tr > td[valign=baseline],
+tbody[valign] > tr[valign] > th[valign=baseline],
+tbody > tr[valign] > th[valign=baseline],
+tbody[valign] > tr > th[valign=baseline],
+tbody > tr > th[valign=baseline],
+thead[valign] > tr[valign] > td[valign=baseline],
+thead > tr[valign] > td[valign=baseline],
+thead[valign] > tr > td[valign=baseline],
+thead > tr > td[valign=baseline],
+thead[valign] > tr[valign] > th[valign=baseline],
+thead > tr[valign] > th[valign=baseline],
+thead[valign] > tr > th[valign=baseline],
+thead > tr > th[valign=baseline],
+tfoot[valign] > tr[valign] > td[valign=baseline],
+tfoot > tr[valign] > td[valign=baseline],
+tfoot[valign] > tr > td[valign=baseline],
+tfoot > tr > td[valign=baseline],
+tfoot[valign] > tr[valign] > th[valign=baseline],
+tfoot > tr[valign] > th[valign=baseline],
+tfoot[valign] > tr > th[valign=baseline],
+tfoot > tr > th[valign=baseline] {
+  vertical-align: baseline;
+}
+/*
+    Docbook CALLS tables.
+*/
+/*
+-------
+    Bottom
+-------
+*/
+/*Least specific*/
+tbody[valign=bottom] > row > entry,
+thead[valign=bottom] > row > entry,
+tfoot[valign=bottom] > row > entry {
+  vertical-align: bottom;
+}
+/*More specific*/
+tbody[valign] > row[valign=bottom] > entry,
+thead[valign] > row[valign=bottom] > entry,
+tfoot[valign] > row[valign=bottom] > entry,
+tbody > row[valign=bottom] > entry,
+thead > row[valign=bottom] > entry,
+tfoot > row[valign=bottom] > entry {
+  vertical-align: bottom;
+}
+/*Even more specific*/
+tbody[valign] > row[valign] > entry[valign=bottom],
+thead[valign] > row[valign] > entry[valign=bottom],
+tfoot[valign] > row[valign] > entry[valign=bottom],
+tbody > row[valign] > entry[valign=bottom],
+thead > row[valign] > entry[valign=bottom],
+tfoot > row[valign] > entry[valign=bottom],
+tbody[valign] > row > entry[valign=bottom],
+thead[valign] > row > entry[valign=bottom],
+tfoot[valign] > row > entry[valign=bottom],
+tbody > row > entry[valign=bottom],
+thead > row > entry[valign=bottom],
+tfoot > row > entry[valign=bottom] {
+  vertical-align: bottom;
+}
+/*
+-------
+    Top
+-------
+*/
+/*Least specific*/
+tbody[valign=top] > row > entry,
+thead[valign=top] > row > entry,
+tfoot[valign=top] > row > entry {
+  vertical-align: top;
+}
+/*More specific*/
+tbody[valign] > row[valign=top] > entry,
+thead[valign] > row[valign=top] > entry,
+tfoot[valign] > row[valign=top] > entry,
+tbody > row[valign=top] > entry,
+thead > row[valign=top] > entry,
+tfoot > row[valign=top] > entry {
+  vertical-align: top;
+}
+/*Even more specific*/
+tbody[valign] > row[valign] > entry[valign=top],
+thead[valign] > row[valign] > entry[valign=top],
+tfoot[valign] > row[valign] > entry[valign=top],
+tbody > row[valign] > entry[valign=top],
+thead > row[valign] > entry[valign=top],
+tfoot > row[valign] > entry[valign=top],
+tbody[valign] > row > entry[valign=top],
+thead[valign] > row > entry[valign=top],
+tfoot[valign] > row > entry[valign=top],
+tbody > row > entry[valign=top],
+thead > row > entry[valign=top],
+tfoot > row > entry[valign=top] {
+  vertical-align: top;
+}
+/*
+-------
+    Middle
+-------
+*/
+/*Least specific*/
+tbody[valign=middle] > row > entry,
+thead[valign=middle] > row > entry,
+tfoot[valign=middle] > row > entry {
+  vertical-align: middle;
+}
+/*More specific*/
+tbody[valign] > row[valign=middle] > entry,
+thead[valign] > row[valign=middle] > entry,
+tfoot[valign] > row[valign=middle] > entry,
+tbody > row[valign=middle] > entry,
+thead > row[valign=middle] > entry,
+tfoot > row[valign=middle] > entry {
+  vertical-align: middle;
+}
+/*Even more specific*/
+tbody[valign] > row[valign] > entry[valign=middle],
+thead[valign] > row[valign] > entry[valign=middle],
+tfoot[valign] > row[valign] > entry[valign=middle],
+tbody > row[valign] > entry[valign=middle],
+thead > row[valign] > entry[valign=middle],
+tfoot > row[valign] > entry[valign=middle],
+tbody[valign] > row > entry[valign=middle],
+thead[valign] > row > entry[valign=middle],
+tfoot[valign] > row > entry[valign=middle],
+tbody > row > entry[valign=middle],
+thead > row > entry[valign=middle],
+tfoot > row > entry[valign=middle] {
+  vertical-align: middle;
+}
+/*
+-------
+    Baseline
+-------
+*/
+/*Least specific*/
+tbody[valign=baseline] > row > entry,
+thead[valign=baseline] > row > entry,
+tfoot[valign=baseline] > row > entry {
+  vertical-align: baseline;
+}
+/*More specific*/
+tbody[valign] > row[valign=baseline] > entry,
+thead[valign] > row[valign=baseline] > entry,
+tfoot[valign] > row[valign=baseline] > entry,
+tbody > row[valign=baseline] > entry,
+thead > row[valign=baseline] > entry,
+tfoot > row[valign=baseline] > entry {
+  vertical-align: baseline;
+}
+/*Even more specific*/
+tbody[valign] > row[valign] > entry[valign=baseline],
+thead[valign] > row[valign] > entry[valign=baseline],
+tfoot[valign] > row[valign] > entry[valign=baseline],
+tbody > row[valign] > entry[valign=baseline],
+thead > row[valign] > entry[valign=baseline],
+tfoot > row[valign] > entry[valign=baseline],
+tbody[valign] > row > entry[valign=baseline],
+thead[valign] > row > entry[valign=baseline],
+tfoot[valign] > row > entry[valign=baseline],
+tbody > row > entry[valign=baseline],
+thead > row > entry[valign=baseline],
+tfoot > row > entry[valign=baseline] {
+  vertical-align: baseline;
+}
+colspec,
+col,
+spanspec {
+  text-align: attr(align);
+}

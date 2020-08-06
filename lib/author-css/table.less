@@ -1,0 +1,117 @@
+table, table-wrap, thead, tfoot{
+  width:100%;
+}
+
+tr, th, td {
+  width: auto !important;
+} 
+
+table-wrap p {
+    margin:0 !important;
+}
+
+caption {
+    display: table-header-group;
+}
+article table > caption{
+    display: table-caption;
+}
+
+caption p{ 
+        margin-top:0!important;
+        margin-bottom:0!important;
+        margin-left:50%!important;
+    }
+
+td{
+    border-left:thin;
+    border-left-color:rgba(238, 238, 238, 1.0);
+    border-left-width: 2px !important;
+}
+
+col:before{
+    content:"" !important;
+}
+
+/* Recreate behavior similar with the one above for the WebAuthor
+   but put 'colspecs...' before colgroup element because subject selector is not supported. */
+@media oxygen and (platform:webapp) {
+   col {
+       display:none;
+   } 
+   colgroup,
+   colgroup:-oxy-visible-colspecs col {
+       display:block;
+   }
+   colgroup:before(10) {
+       content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true);
+       text-align:left;
+       font-family: sansserif, verdana, helvetica;
+       font-size: 0.75em;
+       color: navy;
+   }
+   colgroup:-oxy-visible-colspecs:before(10) {
+       content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true);		
+   }
+}
+
+colspec, col, spanspec{
+    text-align:attr(align);    
+}
+
+@media oxygen {
+
+/* These have meaning only for editing. In publishing, 
+   these properties would be passed to the table cells.*/	
+colspec, col, spanspec{
+    background-color:inherit;
+    font-family:sansserif, verdana, helvetica;
+	font-size:0.75em;
+}
+	
+colspec:after{
+    content:
+    		"  width " oxy_textfield(edit, "@colwidth", columns, 7)
+    		"  align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10)
+    		"  "    		
+    		oxy_checkbox(edit, "@colsep", values, "1", labels, "colsep", fontInherit, true) 
+    		oxy_checkbox(edit, "@rowsep", values, "1", labels, "rowsep", fontInherit, true);
+	white-space: pre;
+	padding-bottom: 5px;
+  
+  unicode-bidi:embed;
+  direction:ltr;
+}
+
+col:after{
+    content:
+    		"  Width " oxy_textfield(edit, "@width", columns, 7)
+    		"  Align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10);
+    		
+    white-space: pre;
+    padding-bottom: 5px;
+    
+    unicode-bidi:embed;
+    direction:ltr;
+}
+
+colgroup:-oxy-visible-colspecs:before(1){
+    content:
+        oxy_button(
+        actionID, 'refresh');
+}
+spanspec:before{
+    content:"before";
+}
+spanspec:after{
+    content:
+    		"name " oxy_textfield(edit, "@spanname", columns, 7) 
+    		" start column " oxy_textfield(edit, "@namest", columns, 7) 
+    		" end column " oxy_textfield(edit, "@nameend", columns, 7);    
+	white-space: pre;
+  
+  unicode-bidi:embed;
+  direction:ltr;
+}
+
+}

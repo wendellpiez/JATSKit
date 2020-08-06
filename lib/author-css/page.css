@@ -1,0 +1,26 @@
+@media oxygen AND (platform: webapp) {
+  /* WA-1336: Avoid scroll on mobile devices when a contiguous line of text of a large image is used in content. */
+  oxy|document {
+    max-width: 100vw;
+  }
+}
+@media oxygen AND (min-width: 25cm) {
+  /* The white page.*/
+  :root {
+    /* White page */
+    border: 1px solid #c6c6c6;
+    /* Centered*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.25in;
+    margin-bottom: 0.25in;
+    /* Letter */
+    width: 21.59cm;
+    min-height: 10cm;
+    /*27.94cm; would be the letter, but a smaller size avoids large caret jumps*/
+    padding-top: 2em;
+    padding-right: 2em;
+    padding-left: 3em;
+    padding-bottom: 5em;
+  }
+}

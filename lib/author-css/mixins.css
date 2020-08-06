@@ -1,0 +1,66 @@
+.title {
+  font-weight: bold;
+}
+.border {
+  border-top-color: #ababac;
+  border-right-color: #ababac;
+  border-left-color: #ababac;
+  border-bottom-color: #ababac;
+  border-top-style: solid ;
+  border-right-style: solid ;
+  border-left-style: solid ;
+  border-bottom-style: solid ;
+  border-top-width: 1px ;
+  border-right-width: 1px ;
+  border-left-width: 1px ;
+  border-bottom-width: 1px ;
+  padding-top: 0.3em ;
+  padding-bottom: 0.3em ;
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+}
+.border-page {
+  border-width: 1px;
+  border-color: #c6c6c6;
+}
+.border-element {
+  border-left-width: thick ;
+  border-left-style: solid ;
+  border-right-width: thick ;
+  border-right-style: solid ;
+  border-left-width: 0.3em!important;
+  border-right-width: 0.3em!important;
+  border-left-color: green !important;
+  border-right-color: green !important;
+}
+.edit-id-textfield {
+  content: oxy_concat("Id ", oxy_xpath("./name()"), ": ") oxy_textfield(edit, "@id", columns, 10);
+}
+.border-comment {
+  border-left-width: thick ;
+  border-left-style: solid ;
+  border-right-width: thick ;
+  border-right-style: solid ;
+  border-left-width: 0.3em!important;
+  border-right-width: 0.3em!important;
+  border-left-color: green !important;
+  border-right-color: green !important;
+}
+.border-dita {
+  border-top-color: #ababac;
+  border-right-color: #ababac;
+  border-left-color: #ababac;
+  border-bottom-color: #ababac;
+  border-top-style: solid ;
+  border-right-style: solid ;
+  border-left-style: solid ;
+  border-bottom-style: solid ;
+  border-top-width: 1px ;
+  border-right-width: 1px ;
+  border-left-width: 1px ;
+  border-bottom-width: 1px ;
+  padding-top: 0.3em ;
+  padding-bottom: 0.3em ;
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+}

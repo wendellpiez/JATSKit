@@ -1,0 +1,408 @@
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+@namespace ali "http://www.niso.org/schemas/ali/1.0/";
+@namespace xlink "http://www.w3.org/1999/xlink";
+@namespace oasis "http://www.niso.org/standards/z39-96/ns/oasis-exchange/table";
+
+@import "./mixins.less";
+@import "./page.less";
+@import "./override-base.less";
+@import "./table.less";
+@import "./xhtml-tables.less";
+
+
+*:root{
+    .border-page();
+    font-feature-settings: "lnum"!important;
+    font-family: Georgia, Caladea, Cambria, serif !important;
+    line-height: 27px!important;
+    font-size:19px!important;
+    padding-right:20px!important;
+    padding-left:20px!important;
+}
+
+p{
+    margin-left:0em!important;
+    padding-left:0em!important;
+    margin-top:1em!important;
+    margin-bottom:1em!important;
+}
+
+title{
+    margin-top:0.25em!important;
+    display:block;
+    font-style:normal !important;
+    font-weight:bold !important;
+}
+
+journal-meta {
+    width: 15em;
+    border:solid black;
+    &:before{
+        padding-left:0.5em;
+    }
+}
+article-title {
+    .title();
+    display:block!important;
+    margin-top:1em!important;
+    font-size:1em;
+    text-align:center;
+}
+ref article-title {
+    display:inline!important;
+    margin-top:unset!important;
+    font-size:1em;
+    text-align:left;
+}
+journal-id:before {
+    content: "Journal ID (" attr(journal-id-type)"): ";
+}
+
+journal-id, issn, isbn, issn-l, publisher{
+    padding-left:0.5em;
+    .border();
+}
+
+article-meta
+{
+    margin-top:1em;
+    & article-categories {
+        padding-top:1em;
+        padding-bottom:1em;
+        & subject {
+            margin-left: 1em;
+        }
+        & subj-group {
+            display:block;
+            margin-left: 1em;
+        }
+    }
+    & article-id:before {
+        content:"Article Id (" attr(pub-id-type) ") : ";
+    }
+}
+ack{
+    font-size:20px!important;
+}
+  
+back{
+    & ref-list{
+        display:-moz-box;
+        & ref[id]:before {
+            content : "" ;
+        }
+        & ref[id]:after {
+            display:block;
+            content : "id: " oxy_textfield(edit , "@id" , columns , 10) ;
+        }
+        & label{ 
+            list-style-type:check;
+        }
+        & element-citation, & mixed-citation{
+            & article-title{
+                content:" ";
+                display:block!important;
+                margin-bottom:0.25em!important;
+            }
+        content:" ";
+        }
+    }           
+}     
+
+abstract, contrib-group, permissions, kwd-group, alt-text, fig, table-wrap, fn, supplementary-material{
+    border:none!important;
+    margin-left:0em!important;
+    padding-left:0em!important;
+}
+
+front, contrib, sec{
+    border:none !important;
+    margin-left:0em!important;
+    padding-left:0em!important;
+}
+
+abbrev{
+    background:inherit!important;
+}
+
+
+sec sec ref mixed-ciation oxy|entity{
+    background-color:inherit!important;
+}
+
+institution, addr-line, country, phone,fax{    
+    display:block!important;
+    margin-left:0em!important;
+    padding-left:0em!important;
+}
+
+contrib-group contrib name + * {
+    margin-left:0em!important;
+    padding-left:0em!important;
+}
+
+article-meta aff{
+    margin-top:0!important;
+    margin-left:0!important;
+    margin-bottom:0!important;
+}
+
+*{
+   & name{
+       margin-top:0.5em;
+   }
+   & aff[id]:before {
+        content: " ";
+   }
+   & aff{
+       margin-top:1em;
+       margin-bottom:1em;
+       display: block;
+   }
+   & aff[id] {
+       display: block;
+   }                           
+   & aff[id]:before {
+       .edit-id-textfield();
+   }
+}
+
+author-comment p{
+    margin-bottom:0em!important;
+}
+
+volume, issue, lpage, fpage, pub-id, edition, elocation-id, year, season, page-range, source, month{
+    padding-left:0.5em;
+    display:block !important;
+    width:17em;
+    .border();
+    border-collapse:collapse;
+}
+
+ref, element-citation, mixed-citation, nlm-citation {
+    & volume, & issue, & lpage, & fpage, & pub-id, & edition, & elocation-id, & year, & season, & page-range, & source, month {
+        border:none!important;
+        display:inline!important;
+    }
+}
+
+anonymous{
+    display:none;
+}
+
+alt-text{
+    color:black !important;
+}
+
+code{
+    display : block !important;
+    background:rgb(240 , 240 , 240) !important;
+    padding-top : 0.5em ;
+    padding-left : 0.5em ;
+    padding-bottom : 0.5em ;
+    font-family : monospace !important;
+    width:100% !important;
+    font-size : 90% !important;
+    border:none !important;
+    white-space : pre ;
+}
+
+* comment:not(oxy|comment){
+    font-size:17px!important;
+    color:black;
+    text-align:left;
+    padding-left:0.25em!important;
+    height:1.0em!important;
+    width:100%;
+    font-family:serif;
+    display : block !important;
+    background:rgb(217, 255, 193)!important;
+    margin-bottom : 0.5em ;
+    .border-comment();
+}
+
+license{
+    margin-left:0!important;
+    padding-left:0!important;
+}
+
+term{
+    .border();
+}
+
+kwd-group{
+    padding-left:0!important;
+    margin-left:0!important;
+    & nested-kwd{
+        & kwd{} 
+        padding-left:1em!important;
+        & compound-kwd{
+            padding-left:1em!important;
+            display:list-item!important;
+            & compound-kwd-part:before{
+                content:" ";
+            }
+        }
+    }
+}
+
+label, statement{
+    border:none!important;
+    margin-left:0!important;
+    padding-left:0!important;
+}
+
+* oxy|entity{
+    background:white!important;
+}
+
+break{
+    visibility:hidden;
+    display:block!important;
+}
+
+contrib bio p {
+    font-size:inherit!important;
+}
+
+glossary def-list def-item def{ 
+    .border-dita();
+}
+
+disp-formula{
+    display:inline!important;
+}
+
+glyph-data{
+    display:block!important;
+    border-collapse:collapse;
+}
+
+named-content{
+    display : inline ;
+    font-style : italic ;
+    font-family : monospace ;
+    -oxy-show-placeholder : always ;
+    background:white!important;
+}
+
+xref{
+    background:inherit!important;
+    color:black;
+    font-weight:normal!important;
+    &:before(10){ 
+        content:"[";
+    }
+    &:after{
+        content:"]";
+    }
+}
+
+related-article[related-article-type]:before {
+    text-align:left!important;
+    content:attr(related-article-type) !important;
+    color:black!important;
+    font-weight:normal!important;
+    font-size:17px!important;
+}
+
+related-article:before(10) { 
+    content: url(../img/link.png) !important;
+    -oxy-link: attr(href) !important;
+}
+
+
+ali|license_ref:before(3){
+    content: url(../img/link.png) !important;
+    -oxy-link: oxy_xpath("./normalize-space(text())") !important;
+}
+
+ali|license_ref{
+    color:blue!important;
+    display:block!important;
+}
+
+conf-sponsor, conf-date, conf-name, conf-acronym, conf-num, conf-loc, conf-theme{
+    margin-left:0!important;
+    display:block;
+}
+
+speech{
+    margin-bottom:0!important;
+    margin-top:0!important;
+}
+
+* comment{
+    font-weight:normal!important;
+}
+
+oxy|entity{
+    background:inherit!important;
+}
+
+sec{
+    margin-right:0!important;
+}
+
+sec sec{
+    padding-left:1em!important;
+}
+
+self-uri{
+    color:black!important;
+}
+
+element-citation article-title{
+    font-style:normal!important;
+}
+
+boxed-text{
+    background:white!important;
+    border-color:rgb(171 , 171 , 172)!important;
+    padding-top:0!important;
+    padding-bottom:0px!important;
+    & title{
+        font-size:17px!important;
+    }
+}
+
+graphic[xlink|href]:before {
+    content: initial !important;
+    -oxy-link: none !important;
+}
+
+*[xlink|title]:after {
+    content: attr(title) !important;
+}
+
+citation-alternatives, nlm-citation, element-citation, mixed-citation {
+    display: inline !important;
+}
+
+preformat{
+    border-color: rgb(171 , 171 , 172)!important;
+}
+
+table-wrap{
+    & table{
+        margin-bottom:0 !important;
+    }    
+    & table-wrap-foot{
+        font-size:0.8em!important;
+        counter-reset: my-tfoot-counter;
+            line-height:1.5em!important;
+        fn{
+            padding-left:1em!important;
+            padding-top:0;
+            padding-bottom:0;
+            margin-top:0!important;
+            & p{
+                font-size:0.8em!important;
+                &:before{ 
+                    counter-increment: my-tfoot-counter;
+                    content: counter(my-tfoot-counter) ") ";
+                }
+            }
+        }
+    }
+}
