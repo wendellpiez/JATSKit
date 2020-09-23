@@ -231,10 +231,10 @@ CHANGES TO NLM JATS v3.0 stylesheet        (wap) v1.0 (2009-12-08)
 <xsl:variable name="mainindent" select="'5pc'"/>
 
 <!-- Font used for Section titles and the like. -->
-  <xsl:variable name="titlefont">Helvetica, Arial Unicode MS, Tahoma, Batang, SimSun</xsl:variable>
+  <xsl:param name="titlefont">sans-serif</xsl:param>
 
 <!-- Font used for normal paragraph text.  -->
-  <xsl:variable name="textfont">Times New Roman, Times, Arial Unicode MS, Tahoma, Batang, SimSun</xsl:variable>
+  <xsl:param name="textfont">serif</xsl:param>
 
 <!-- Font size for for normal paragraph text and the like. -->
 <xsl:variable name="textsize" select="'10pt'"/>
