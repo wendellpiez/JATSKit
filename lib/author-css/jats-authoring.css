@@ -85,11 +85,10 @@ contrib-group, permissions {
 contrib {
   display: block;
   border: thin black solid;
-  padding-top: 0.5em;
-  padding-left: 0.5em;
+  padding-top: 0.3em;
+  padding-left: 0.3em;
   padding-right: 0.5em;
   padding-bottom: 0.5em;
-  margin-bottom: 0.5em;
 }
 
 name:after {

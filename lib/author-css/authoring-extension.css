@@ -37,9 +37,6 @@
   border-left-color: green !important;
   border-right-color: green !important;
 }
-.edit-id-textfield {
-  content: oxy_concat("Id ", oxy_xpath("./name()"), ": ") oxy_textfield(edit, "@id", columns, 10);
-}
 .border-comment {
   border-left-width: thick ;
   border-left-style: solid ;
@@ -1040,25 +1037,14 @@ spanspec {
   font-feature-settings: "lnum" !important;
   font-family: Georgia, Caladea, Cambria, serif !important;
   line-height: 27px!important;
-  font-size: 19px!important;
   padding-right: 20px!important;
   padding-left: 20px!important;
-}
-p {
-  margin-left: 0em!important;
-  padding-left: 0em!important;
-  margin-top: 1em!important;
-  margin-bottom: 1em!important;
 }
 title {
   margin-top: 0.25em!important;
   display: block;
   font-style: normal !important;
-  font-weight: bold !important;
-}
-journal-meta {
-  width: 15em;
-  border: solid black;
+  font-weight: bold;
 }
 journal-meta:before {
   padding-left: 0.5em;
@@ -1072,35 +1058,7 @@ article-title {
 }
 ref article-title {
   display: inline!important;
-  margin-top: unset!important;
-  font-size: 1em;
-  text-align: left;
-}
-journal-id:before {
-  content: "Journal ID (" attr(journal-id-type) "): ";
-}
-journal-id,
-issn,
-isbn,
-issn-l,
-publisher {
-  padding-left: 0.5em;
-  border-top-color: #ababac;
-  border-right-color: #ababac;
-  border-left-color: #ababac;
-  border-bottom-color: #ababac;
-  border-top-style: solid ;
-  border-right-style: solid ;
-  border-left-style: solid ;
-  border-bottom-style: solid ;
-  border-top-width: 1px ;
-  border-right-width: 1px ;
-  border-left-width: 1px ;
-  border-bottom-width: 1px ;
-  padding-top: 0.3em ;
-  padding-bottom: 0.3em ;
-  padding-left: 0.5em ;
-  padding-right: 0.5em ;
+  font-weight: normal;
 }
 article-meta {
   margin-top: 1em;
@@ -1109,40 +1067,17 @@ article-meta article-categories {
   padding-top: 1em;
   padding-bottom: 1em;
 }
-article-meta article-categories subject {
-  margin-left: 1em;
-}
 article-meta article-categories subj-group {
   display: block;
-  margin-left: 1em;
-}
-article-meta article-id:before {
-  content: "Article Id (" attr(pub-id-type) ") : ";
 }
 ack {
   font-size: 20px!important;
 }
-back ref-list {
-  display: -moz-box;
-}
-back ref-list ref[id]:before {
-  content: "";
-}
-back ref-list ref[id]:after {
-  display: block;
-  content: "id: " oxy_textfield(edit, "@id", columns, 10);
-}
 back ref-list label {
   list-style-type: check;
 }
-back ref-list element-citation,
-back ref-list mixed-citation {
-  content: " ";
-}
 back ref-list element-citation article-title,
 back ref-list mixed-citation article-title {
-  content: " ";
-  display: block!important;
   margin-bottom: 0.25em!important;
 }
 abstract,
@@ -1155,8 +1090,6 @@ table-wrap,
 fn,
 supplementary-material {
   border: none!important;
-  margin-left: 0em!important;
-  padding-left: 0em!important;
 }
 front,
 contrib,
@@ -1171,15 +1104,6 @@ abbrev {
 sec sec ref mixed-ciation oxy|entity {
   background-color: inherit!important;
 }
-institution,
-addr-line,
-country,
-phone,
-fax {
-  display: block!important;
-  margin-left: 0em!important;
-  padding-left: 0em!important;
-}
 contrib-group contrib name + * {
   margin-left: 0em!important;
   padding-left: 0em!important;
@@ -1192,106 +1116,13 @@ article-meta aff {
 * name {
   margin-top: 0.5em;
 }
-* aff[id]:before {
-  content: " ";
-}
 * aff {
   margin-top: 1em;
   margin-bottom: 1em;
   display: block;
 }
-* aff[id] {
-  display: block;
-}
-* aff[id]:before {
-  content: oxy_concat("Id ", oxy_xpath("./name()"), ": ") oxy_textfield(edit, "@id", columns, 10);
-}
 author-comment p {
   margin-bottom: 0em!important;
-}
-volume,
-issue,
-lpage,
-fpage,
-pub-id,
-edition,
-elocation-id,
-year,
-season,
-page-range,
-source,
-month {
-  padding-left: 0.5em;
-  display: block !important;
-  width: 17em;
-  border-top-color: #ababac;
-  border-right-color: #ababac;
-  border-left-color: #ababac;
-  border-bottom-color: #ababac;
-  border-top-style: solid ;
-  border-right-style: solid ;
-  border-left-style: solid ;
-  border-bottom-style: solid ;
-  border-top-width: 1px ;
-  border-right-width: 1px ;
-  border-left-width: 1px ;
-  border-bottom-width: 1px ;
-  padding-top: 0.3em ;
-  padding-bottom: 0.3em ;
-  padding-left: 0.5em ;
-  padding-right: 0.5em ;
-  border-collapse: collapse;
-}
-ref volume,
-element-citation volume,
-mixed-citation volume,
-nlm-citation volume,
-ref issue,
-element-citation issue,
-mixed-citation issue,
-nlm-citation issue,
-ref lpage,
-element-citation lpage,
-mixed-citation lpage,
-nlm-citation lpage,
-ref fpage,
-element-citation fpage,
-mixed-citation fpage,
-nlm-citation fpage,
-ref pub-id,
-element-citation pub-id,
-mixed-citation pub-id,
-nlm-citation pub-id,
-ref edition,
-element-citation edition,
-mixed-citation edition,
-nlm-citation edition,
-ref elocation-id,
-element-citation elocation-id,
-mixed-citation elocation-id,
-nlm-citation elocation-id,
-ref year,
-element-citation year,
-mixed-citation year,
-nlm-citation year,
-ref season,
-element-citation season,
-mixed-citation season,
-nlm-citation season,
-ref page-range,
-element-citation page-range,
-mixed-citation page-range,
-nlm-citation page-range,
-ref source,
-element-citation source,
-mixed-citation source,
-nlm-citation source,
-ref month,
-element-citation month,
-mixed-citation month,
-nlm-citation month {
-  border: none!important;
-  display: inline!important;
 }
 anonymous {
   display: none;
@@ -1426,14 +1257,7 @@ xref:before(10) {
 xref:after {
   content: "]";
 }
-related-article[related-article-type]:before {
-  text-align: left!important;
-  content: attr(related-article-type) !important;
-  color: black!important;
-  font-weight: normal!important;
-  font-size: 17px!important;
-}
-related-article:before(10) {
+related-article[href]:before(10) {
   content: url(../img/link.png) !important;
   -oxy-link: attr(href) !important;
 }
@@ -1487,7 +1311,6 @@ boxed-text title {
   font-size: 17px!important;
 }
 graphic[xlink|href]:before {
-  content: initial !important;
   -oxy-link: none !important;
 }
 *[xlink|title]:after {
