@@ -15,28 +15,18 @@
     font-feature-settings: "lnum"!important;
     font-family: Georgia, Caladea, Cambria, serif !important;
     line-height: 27px!important;
-    font-size:19px!important;
     padding-right:20px!important;
     padding-left:20px!important;
 }
 
-p{
-    margin-left:0em!important;
-    padding-left:0em!important;
-    margin-top:1em!important;
-    margin-bottom:1em!important;
-}
-
-title{
+title {
     margin-top:0.25em!important;
     display:block;
     font-style:normal !important;
-    font-weight:bold !important;
+    font-weight:bold;
 }
 
 journal-meta {
-    width: 15em;
-    border:solid black;
     &:before{
         padding-left:0.5em;
     }
@@ -50,18 +40,9 @@ article-title {
 }
 ref article-title {
     display:inline!important;
-    margin-top:unset!important;
-    font-size:1em;
-    text-align:left;
-}
-journal-id:before {
-    content: "Journal ID (" attr(journal-id-type)"): ";
+    font-weight:normal;
 }
 
-journal-id, issn, isbn, issn-l, publisher{
-    padding-left:0.5em;
-    .border();
-}
 
 article-meta
 {
@@ -69,16 +50,9 @@ article-meta
     & article-categories {
         padding-top:1em;
         padding-bottom:1em;
-        & subject {
-            margin-left: 1em;
-        }
         & subj-group {
             display:block;
-            margin-left: 1em;
         }
-    }
-    & article-id:before {
-        content:"Article Id (" attr(pub-id-type) ") : ";
     }
 }
 ack{
@@ -87,32 +61,19 @@ ack{
   
 back{
     & ref-list{
-        display:-moz-box;
-        & ref[id]:before {
-            content : "" ;
-        }
-        & ref[id]:after {
-            display:block;
-            content : "id: " oxy_textfield(edit , "@id" , columns , 10) ;
-        }
         & label{ 
             list-style-type:check;
         }
-        & element-citation, & mixed-citation{
+        & element-citation, & mixed-citation  {
             & article-title{
-                content:" ";
-                display:block!important;
                 margin-bottom:0.25em!important;
             }
-        content:" ";
         }
     }           
 }     
 
 abstract, contrib-group, permissions, kwd-group, alt-text, fig, table-wrap, fn, supplementary-material{
     border:none!important;
-    margin-left:0em!important;
-    padding-left:0em!important;
 }
 
 front, contrib, sec{
@@ -130,12 +91,6 @@ sec sec ref mixed-ciation oxy|entity{
     background-color:inherit!important;
 }
 
-institution, addr-line, country, phone,fax{    
-    display:block!important;
-    margin-left:0em!important;
-    padding-left:0em!important;
-}
-
 contrib-group contrib name + * {
     margin-left:0em!important;
     padding-left:0em!important;
@@ -151,39 +106,15 @@ article-meta aff{
    & name{
        margin-top:0.5em;
    }
-   & aff[id]:before {
-        content: " ";
-   }
    & aff{
        margin-top:1em;
        margin-bottom:1em;
        display: block;
    }
-   & aff[id] {
-       display: block;
-   }                           
-   & aff[id]:before {
-       .edit-id-textfield();
-   }
 }
 
 author-comment p{
     margin-bottom:0em!important;
-}
-
-volume, issue, lpage, fpage, pub-id, edition, elocation-id, year, season, page-range, source, month{
-    padding-left:0.5em;
-    display:block !important;
-    width:17em;
-    .border();
-    border-collapse:collapse;
-}
-
-ref, element-citation, mixed-citation, nlm-citation {
-    & volume, & issue, & lpage, & fpage, & pub-id, & edition, & elocation-id, & year, & season, & page-range, & source, month {
-        border:none!important;
-        display:inline!important;
-    }
 }
 
 anonymous{
@@ -298,15 +229,7 @@ xref{
     }
 }
 
-related-article[related-article-type]:before {
-    text-align:left!important;
-    content:attr(related-article-type) !important;
-    color:black!important;
-    font-weight:normal!important;
-    font-size:17px!important;
-}
-
-related-article:before(10) { 
+related-article[href]:before(10) { 
     content: url(../img/link.png) !important;
     -oxy-link: attr(href) !important;
 }
@@ -367,7 +290,6 @@ boxed-text{
 }
 
 graphic[xlink|href]:before {
-    content: initial !important;
     -oxy-link: none !important;
 }
 

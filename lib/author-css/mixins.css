@@ -33,9 +33,6 @@
   border-left-color: green !important;
   border-right-color: green !important;
 }
-.edit-id-textfield {
-  content: oxy_concat("Id ", oxy_xpath("./name()"), ": ") oxy_textfield(edit, "@id", columns, 10);
-}
 .border-comment {
   border-left-width: thick ;
   border-left-style: solid ;
