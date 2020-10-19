@@ -145,51 +145,6 @@ xref:before,
 oasis|tgroup:before > oasis|colspec {
   font-family: Georgia, Caladea, Cambria, serif !important;
 }
-front,
-front-matter,
-contrib-group,
-permissions,
-email,
-license,
-abstract,
-kwd-group,
-conference,
-conf-date,
-conf-name,
-conf-acronym,
-conf-num,
-conf-loc,
-conf-sponsor,
-conf-theme,
-sub,
-fn,
-fig,
-table-wrap,
-statement,
-ext-link:after,
-supplementary-material,
-caption,
-ref-list:before,
-see-entry:before,
-see-also-entry:before see-entry:before,
-see-also-entry:before,
-*:before,
-publisher-loc:before,
-publisher-loc:after,
-graphic:after,
-inline-graphic:after,
-index-term:before,
-index-term:after,
-see:before,
-see:after,
-see-also:before,
-see-also:after,
-index-term-range-end:after,
-inline-graphic:before,
-nlm-citation *:before,
-element-citation *:before {
-  font-size: 19px!important;
-}
 table > caption,
 table > info > title,
 table > title,
@@ -229,11 +184,6 @@ caption {
 }
 article table > caption {
   display: table-caption;
-}
-caption p {
-  margin-top: 0!important;
-  margin-bottom: 0!important;
-  margin-left: 50%!important;
 }
 td {
   border-left: thin;
@@ -1031,14 +981,8 @@ col,
 spanspec {
   text-align: attr(align);
 }
-*:root {
-  border-width: 1px;
-  border-color: #c6c6c6;
-  font-feature-settings: "lnum" !important;
-  font-family: Georgia, Caladea, Cambria, serif !important;
-  line-height: 27px!important;
-  padding-right: 20px!important;
-  padding-left: 20px!important;
+:root {
+  line-height: 1.2;
 }
 title {
   margin-top: 0.25em!important;
@@ -1053,7 +997,6 @@ article-title {
   font-weight: bold;
   display: block!important;
   margin-top: 1em!important;
-  font-size: 1em;
   text-align: center;
 }
 ref article-title {
@@ -1069,9 +1012,6 @@ article-meta article-categories {
 }
 article-meta article-categories subj-group {
   display: block;
-}
-ack {
-  font-size: 20px!important;
 }
 back ref-list label {
   list-style-type: check;
@@ -1138,12 +1078,10 @@ code {
   padding-bottom: 0.5em ;
   font-family: monospace !important;
   width: 100% !important;
-  font-size: 90% !important;
   border: none !important;
   white-space: pre ;
 }
 * comment:not(oxy|comment) {
-  font-size: 17px!important;
   color: black;
   text-align: left;
   padding-left: 0.25em!important;
@@ -1210,9 +1148,6 @@ statement {
 break {
   visibility: hidden;
   display: block!important;
-}
-contrib bio p {
-  font-size: inherit!important;
 }
 glossary def-list def-item def {
   border-top-color: #ababac;
@@ -1305,10 +1240,7 @@ boxed-text {
   background: white!important;
   border-color: #ababac !important;
   padding-top: 0!important;
-  padding-bottom: 0px!important;
-}
-boxed-text title {
-  font-size: 17px!important;
+  padding-bottom: 0!important;
 }
 graphic[xlink|href]:before {
   -oxy-link: none !important;
@@ -1329,7 +1261,6 @@ table-wrap table {
   margin-bottom: 0 !important;
 }
 table-wrap table-wrap-foot {
-  font-size: 0.8em!important;
   counter-reset: my-tfoot-counter;
   line-height: 1.5em!important;
 }
@@ -1338,9 +1269,6 @@ table-wrap table-wrap-foot fn {
   padding-top: 0;
   padding-bottom: 0;
   margin-top: 0!important;
-}
-table-wrap table-wrap-foot fn p {
-  font-size: 0.8em!important;
 }
 table-wrap table-wrap-foot fn p:before {
   counter-increment: my-tfoot-counter;

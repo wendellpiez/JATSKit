@@ -1,0 +1,27 @@
+/**
+ * Resets the page constraints, making the contents use the entire viewport width.
+ */
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+oxy|document {
+      background-color:inherit;
+      background-image:none;
+      max-width: none;
+}
+:root {
+      background-color:inherit;
+      background-image:none;
+      border:none;  
+      width:inherit;
+      min-height:0;
+      
+      /* Not the same as in -topic-basic.css */
+      margin:0.5em;
+      padding:0em;
+}
+
+@media oxygen AND (platform: "webapp") {
+  *[class~="topic/tgroup"] {
+    overflow: visible;
+  }
+}
