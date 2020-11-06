@@ -22,6 +22,8 @@
 							<String>${framework}/styleguide/</String>
 							<String>${framework}/refactoring/</String>
 							<String>${framework}/xhtml.jar</String>
+							<String>${framework}/log4j-api-2.13.0.jar</String>
+							<String>${framework}/log4j-core-2.13.0.jar</String>
 						</String-array>
 					</field>
 					<field name="parentClassLoaderID">
