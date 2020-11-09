@@ -1,0 +1,14 @@
+=========================================================================
+==  NOTICE file corresponding to the section 4 d of                    ==
+==  the Apache License, Version 2.0,                                   ==
+==  in this case for the JATSKit distribution.                         ==
+=========================================================================
+This product includes software from the following projects:
+
+log4j-api-2.13.0.jar
+Site: https://logging.apache.org/log4j/2.x/
+License: Apache License 2.0 ( http://www.apache.org/licenses/LICENSE-2.0)
+
+log4j-core-2.13.0.jar
+Site: https://logging.apache.org/log4j/2.x/
+License: Apache License 2.0 ( http://www.apache.org/licenses/LICENSE-2.0)
