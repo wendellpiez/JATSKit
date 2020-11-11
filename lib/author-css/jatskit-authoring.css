@@ -50,14 +50,6 @@ sec { border-top: thin dotted black;
     -oxy-foldable:true;
     -oxy-not-foldable-child: title }
 
-
-xref:after {
-  content:  oxy_combobox(           
-            edit, "@rid",
-            editable, true,
-            columns, 12 );
-}
-
 ext-link:after { font-family: sans-serif; font-size: 80%;
     content:
       oxy_urlChooser(        
@@ -123,8 +115,7 @@ word-count:before, book-word-count:before { font-family: sans-serif; font-size: 
 counts > *:after { font-family: sans-serif; font-size: 80%;
     content:
         oxy_textfield(        
-        edit, "@count",
-        columns 5 )
+        edit, "@count")
 }
 
 date:after, access-date:after, conf-date:after,
@@ -140,17 +131,16 @@ pub-date:after, string-date:after { font-family: sans-serif; font-size: 80%;
     font-family: sans-serif; font-size: 80%;
     content: "id: "
         oxy_textfield(           
-            edit, "@id",
-            columns, 28);
+            edit, "@id");
 }
 
 
 xref:before {
     font-family: sans-serif; font-size: 80%;
-    content: "rid: "
-        oxy_textfield(           
+    -oxy-link:"#" attr(rid);
+    content: url("../../img/link.png") "rid: " oxy_combobox(           
             edit, "@rid",
-            columns, 14);
+            editable, true);
 }
 
 /* Treatment of specialized named-content illustrating potential enhancements */
@@ -181,3 +171,17 @@ named-content[content-type=mention]:after,
 named-content[content-type=quoted]:after,
 named-content[content-type=quote]:after,
 named-content[content-type=quoted-title]:after { content: "”"  }
+/* Add links for each pubid reference type. */
+pub-id[pub-id-type="doi"]:before{
+     content:url("../../img/link.png");
+    -oxy-link:oxy_concat("https://doi.org/", oxy_xpath("text()"));
+}
+pub-id[pub-id-type="pmid"]:before{
+     content:url("../../img/link.png");
+    -oxy-link:oxy_concat("https://pubmed.ncbi.nlm.nih.gov/", oxy_xpath("text()"));
+}
+journal-id:before, journal-title:before, issn:before, publisher:before,
+article-id:before, article-categories:before, book-id:before, book-part-id:before, collection-id:before{
+  content: oxy_capitalize(oxy_local-name()) ": ";
+  color:gray;
+}

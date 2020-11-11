@@ -783,7 +783,7 @@ mixed-citation {
     display:block;
 }
 
-citation *, mixed-citation * {
+citation *, mixed-citation *, element-citation * {
   display: inline;
 }
 
